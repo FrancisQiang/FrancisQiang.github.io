@@ -88,13 +88,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Francis的博客">
-<meta property="og:url" content="https://francisqiang.github.io/categories/CSS/index.html">
+<meta name="description" content="使用背景  这几天在写秒杀项目，其中有一个需求是生成订单并返回订单号（主键）然后再生成秒杀订单将刚刚返回的订单号作为某个字段插入秒杀订单中，也就是秒杀订单表中的order_id。这其中就使用到了插入信息并返回主键。   我使用的是Mybatis逆向工程生成的Mapper文件，其中自动生成的insert方法返回的是影响的行数，我在使用的时候一直返回给我的是1，导致报错。 相关Mapper的编写  其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis插入字段并返回主键的小问题">
+<meta property="og:url" content="https://francisqiang.github.io/2019/05/04/Mybatis插入字段并返回主键的小问题/index.html">
 <meta property="og:site_name" content="Francis的博客">
+<meta property="og:description" content="使用背景  这几天在写秒杀项目，其中有一个需求是生成订单并返回订单号（主键）然后再生成秒杀订单将刚刚返回的订单号作为某个字段插入秒杀订单中，也就是秒杀订单表中的order_id。这其中就使用到了插入信息并返回主键。   我使用的是Mybatis逆向工程生成的Mapper文件，其中自动生成的insert方法返回的是影响的行数，我在使用的时候一直返回给我的是1，导致报错。 相关Mapper的编写  其">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-04T15:07:58.577Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Francis的博客">
+<meta name="twitter:title" content="Mybatis插入字段并返回主键的小问题">
+<meta name="twitter:description" content="使用背景  这几天在写秒杀项目，其中有一个需求是生成订单并返回订单号（主键）然后再生成秒杀订单将刚刚返回的订单号作为某个字段插入秒杀订单中，也就是秒杀订单表中的order_id。这其中就使用到了插入信息并返回主键。   我使用的是Mybatis逆向工程生成的Mapper文件，其中自动生成的insert方法返回的是影响的行数，我在使用的时候一直返回给我的是1，导致报错。 相关Mapper的编写  其">
 
 
 
@@ -124,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/categories/CSS/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/05/04/Mybatis插入字段并返回主键的小问题/">
 
 
 
 
 
-  <title>分类: CSS | Francis的博客</title>
+  <title>Mybatis插入字段并返回主键的小问题 | Francis的博客</title>
   
 
 
@@ -149,7 +153,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband">
 	<a href="https://github.com/FrancisQiang" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 	</div>
@@ -277,105 +281,262 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>CSS<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/05/04/Mybatis插入字段并返回主键的小问题/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Francis Qiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Francis的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/01/26/CSS中的定位/" itemprop="url">
-              
-                <span itemprop="name">CSS中的定位</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Mybatis插入字段并返回主键的小问题</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-26T11:41:21+08:00" content="2019-01-26">
-          01-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-04T22:54:14+08:00">
+                2019-05-04
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mybatis/" itemprop="url" rel="index">
+                    <span itemprop="name">Mybatis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/04/Mybatis插入字段并返回主键的小问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/04/Mybatis插入字段并返回主键的小问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/05/04/Mybatis插入字段并返回主键的小问题/" class="leancloud_visitors" data-flag-title="Mybatis插入字段并返回主键的小问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  536
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/25/CSS的盒子模型/" itemprop="url">
-              
-                <span itemprop="name">CSS的盒子模型</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-25T22:41:46+08:00" content="2019-01-25">
-          01-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/01/24/CSS—的浮动/" itemprop="url">
-              
-                <span itemprop="name">CSS的浮动</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-01-24T23:08:05+08:00" content="2019-01-24">
-          01-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="使用背景"><a href="#使用背景" class="headerlink" title="使用背景"></a>使用背景</h2><p>  这几天在写秒杀项目，其中有一个需求是生成订单并返回订单号（主键）然后再生成秒杀订单将刚刚返回的订单号作为某个字段插入秒杀订单中，也就是秒杀订单表中的order_id。这其中就使用到了插入信息并返回主键。</p>
+<p>  我使用的是Mybatis逆向工程生成的Mapper文件，其中自动生成的insert方法返回的是影响的行数，我在使用的时候一直返回给我的是1，导致报错。</p>
+<h2 id="相关Mapper的编写"><a href="#相关Mapper的编写" class="headerlink" title="相关Mapper的编写"></a>相关Mapper的编写</h2><p>  其中最关键的就是在insert标签上增加useGeneratedKeys和keyProperty</p>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"insertOrderAndReturnOrderId"</span> <span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">parameterType</span>=<span class="string">"com.lgq.miaosha.domain.OrderInfo"</span>&gt;</span></span><br><span class="line">  insert into t_order_info (id, user_id, goods_id,</span><br><span class="line">  delivey_addr_id, goods_name, goods_count,</span><br><span class="line">  goods_price, order_channel, status,</span><br><span class="line">  create_date, pay_date)</span><br><span class="line">  values (#&#123;id,jdbcType=BIGINT&#125;, #&#123;userId,jdbcType=BIGINT&#125;, #&#123;goodsId,jdbcType=BIGINT&#125;,</span><br><span class="line">  #&#123;deliveyAddrId,jdbcType=BIGINT&#125;, #&#123;goodsName,jdbcType=VARCHAR&#125;, #&#123;goodsCount,jdbcType=INTEGER&#125;,</span><br><span class="line">  #&#123;goodsPrice,jdbcType=DECIMAL&#125;, #&#123;orderChannel,jdbcType=TINYINT&#125;, #&#123;status,jdbcType=TINYINT&#125;,</span><br><span class="line">  #&#123;createDate,jdbcType=TIMESTAMP&#125;, #&#123;payDate,jdbcType=TIMESTAMP&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>  其中keyProperty=”id”，这个id就是传入对象中的某个属性值，比如说这里就是OrderInfo对象，执行成功之后就会自动将主键的值赋给对象中的id属性。然后原本作为参数的OrderInfo对象中的id就得到了更新，这时候我们再取这个对象的id字段就可以获取到主键的值了。</p>
+<h2 id="使用代码"><a href="#使用代码" class="headerlink" title="使用代码"></a>使用代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 生成订单</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> user 用户</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> goodsVo 商品</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> 订单详情</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="meta">@Transactional</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> OrderInfo <span class="title">createOrder</span><span class="params">(User user, GoodsVo goodsVo)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//这里主要就是生成OrderInfo对象</span></span><br><span class="line">    OrderInfo orderInfo=<span class="keyword">new</span> OrderInfo();</span><br><span class="line">    orderInfo.setCreateDate(<span class="keyword">new</span> Date());</span><br><span class="line">    orderInfo.setDeliveyAddrId(<span class="number">0L</span>);</span><br><span class="line">    orderInfo.setGoodsCount(<span class="number">1</span>);</span><br><span class="line">    orderInfo.setGoodsId(goodsVo.getId());</span><br><span class="line">    orderInfo.setGoodsName(goodsVo.getGoodsName());</span><br><span class="line">    orderInfo.setGoodsPrice(goodsVo.getMiaoshaPrice());</span><br><span class="line">    <span class="keyword">byte</span> b=<span class="number">1</span>;</span><br><span class="line">    orderInfo.setOrderChannel(b);</span><br><span class="line">    b=<span class="number">0</span>;</span><br><span class="line">    orderInfo.setStatus(b);</span><br><span class="line">    orderInfo.setUserId(user.getId());</span><br><span class="line">    <span class="comment">//插入订单</span></span><br><span class="line">    orderInfoMapper.insertOrderAndReturnOrderId(orderInfo);</span><br><span class="line">    <span class="comment">//最关键的一步</span></span><br><span class="line">    <span class="comment">//获取到刚刚对象中的id字段就是主键的值了</span></span><br><span class="line">    Long orderId=orderInfo.getId();</span><br><span class="line">    MiaoshaOrder miaoshaOrder=<span class="keyword">new</span> MiaoshaOrder();</span><br><span class="line">    miaoshaOrder.setGoodsId(goodsVo.getId());</span><br><span class="line">    <span class="comment">//这里不是很严谨，意思是将MiaoShaOrder的id设置成和OrderInfo的id一样</span></span><br><span class="line">    miaoshaOrder.setId(orderId);</span><br><span class="line">    miaoshaOrder.setUserId(user.getId());</span><br><span class="line">    <span class="comment">//将miaosha_order表中的order_id字段设置为order_id表中的主键</span></span><br><span class="line">    miaoshaOrder.setOrderId(orderId);</span><br><span class="line">    miaoshaOrderMapper.insert(miaoshaOrder);</span><br><span class="line">    <span class="keyword">return</span> orderInfo;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
+    
+    
+    
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢阅读-------------</div>
+    
+</div>
+  
+    </div>
+	
+	<div>
+      
+        
+      
+    </div>
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/03/SpringBoot整合Redis/" rel="next" title="SpringBoot整合Redis">
+                <i class="fa fa-chevron-left"></i> SpringBoot整合Redis
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -383,6 +544,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -403,9 +571,18 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -498,6 +675,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用背景"><span class="nav-number">1.</span> <span class="nav-text">使用背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关Mapper的编写"><span class="nav-number">2.</span> <span class="nav-text">相关Mapper的编写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用代码"><span class="nav-number">3.</span> <span class="nav-text">使用代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -673,6 +866,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

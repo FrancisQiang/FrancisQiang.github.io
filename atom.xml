@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://francisqiang.github.io/"/>
-  <updated>2019-05-03T15:36:05.583Z</updated>
+  <updated>2019-05-04T15:07:58.577Z</updated>
   <id>https://francisqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mybatis插入字段并返回主键的小问题</title>
+    <link href="https://francisqiang.github.io/2019/05/04/Mybatis%E6%8F%92%E5%85%A5%E5%AD%97%E6%AE%B5%E5%B9%B6%E8%BF%94%E5%9B%9E%E4%B8%BB%E9%94%AE%E7%9A%84%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    <id>https://francisqiang.github.io/2019/05/04/Mybatis插入字段并返回主键的小问题/</id>
+    <published>2019-05-04T14:54:14.000Z</published>
+    <updated>2019-05-04T15:07:58.577Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="使用背景"><a href="#使用背景" class="headerlink" title="使用背景"></a>使用背景</h2><p>  这几天在写秒杀项目，其中有一个需求是生成订单并返回订单号（主键）然后再生成秒杀订单将刚刚返回的订单号作为某个字段插入秒杀订单中，也就是秒杀订单表中的order_id。这其中就使用到了插入信息并返回主键。</p><p>  我使用的是Mybatis逆向工程生成的Mapper文件，其中自动生成的insert方法返回的是影响的行数，我在使用的时候一直返回给我的是1，导致报错。</p><h2 id="相关Mapper的编写"><a href="#相关Mapper的编写" class="headerlink" title="相关Mapper的编写"></a>相关Mapper的编写</h2><p>  其中最关键的就是在insert标签上增加useGeneratedKeys和keyProperty</p>  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"insertOrderAndReturnOrderId"</span> <span class="attr">useGeneratedKeys</span>=<span class="string">"true"</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">parameterType</span>=<span class="string">"com.lgq.miaosha.domain.OrderInfo"</span>&gt;</span></span><br><span class="line">  insert into t_order_info (id, user_id, goods_id,</span><br><span class="line">  delivey_addr_id, goods_name, goods_count,</span><br><span class="line">  goods_price, order_channel, status,</span><br><span class="line">  create_date, pay_date)</span><br><span class="line">  values (#&#123;id,jdbcType=BIGINT&#125;, #&#123;userId,jdbcType=BIGINT&#125;, #&#123;goodsId,jdbcType=BIGINT&#125;,</span><br><span class="line">  #&#123;deliveyAddrId,jdbcType=BIGINT&#125;, #&#123;goodsName,jdbcType=VARCHAR&#125;, #&#123;goodsCount,jdbcType=INTEGER&#125;,</span><br><span class="line">  #&#123;goodsPrice,jdbcType=DECIMAL&#125;, #&#123;orderChannel,jdbcType=TINYINT&#125;, #&#123;status,jdbcType=TINYINT&#125;,</span><br><span class="line">  #&#123;createDate,jdbcType=TIMESTAMP&#125;, #&#123;payDate,jdbcType=TIMESTAMP&#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure><p>  其中keyProperty=”id”，这个id就是传入对象中的某个属性值，比如说这里就是OrderInfo对象，执行成功之后就会自动将主键的值赋给对象中的id属性。然后原本作为参数的OrderInfo对象中的id就得到了更新，这时候我们再取这个对象的id字段就可以获取到主键的值了。</p><h2 id="使用代码"><a href="#使用代码" class="headerlink" title="使用代码"></a>使用代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 生成订单</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> user 用户</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> goodsVo 商品</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> 订单详情</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="meta">@Transactional</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> OrderInfo <span class="title">createOrder</span><span class="params">(User user, GoodsVo goodsVo)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//这里主要就是生成OrderInfo对象</span></span><br><span class="line">    OrderInfo orderInfo=<span class="keyword">new</span> OrderInfo();</span><br><span class="line">    orderInfo.setCreateDate(<span class="keyword">new</span> Date());</span><br><span class="line">    orderInfo.setDeliveyAddrId(<span class="number">0L</span>);</span><br><span class="line">    orderInfo.setGoodsCount(<span class="number">1</span>);</span><br><span class="line">    orderInfo.setGoodsId(goodsVo.getId());</span><br><span class="line">    orderInfo.setGoodsName(goodsVo.getGoodsName());</span><br><span class="line">    orderInfo.setGoodsPrice(goodsVo.getMiaoshaPrice());</span><br><span class="line">    <span class="keyword">byte</span> b=<span class="number">1</span>;</span><br><span class="line">    orderInfo.setOrderChannel(b);</span><br><span class="line">    b=<span class="number">0</span>;</span><br><span class="line">    orderInfo.setStatus(b);</span><br><span class="line">    orderInfo.setUserId(user.getId());</span><br><span class="line">    <span class="comment">//插入订单</span></span><br><span class="line">    orderInfoMapper.insertOrderAndReturnOrderId(orderInfo);</span><br><span class="line">    <span class="comment">//最关键的一步</span></span><br><span class="line">    <span class="comment">//获取到刚刚对象中的id字段就是主键的值了</span></span><br><span class="line">    Long orderId=orderInfo.getId();</span><br><span class="line">    MiaoshaOrder miaoshaOrder=<span class="keyword">new</span> MiaoshaOrder();</span><br><span class="line">    miaoshaOrder.setGoodsId(goodsVo.getId());</span><br><span class="line">    <span class="comment">//这里不是很严谨，意思是将MiaoShaOrder的id设置成和OrderInfo的id一样</span></span><br><span class="line">    miaoshaOrder.setId(orderId);</span><br><span class="line">    miaoshaOrder.setUserId(user.getId());</span><br><span class="line">    <span class="comment">//将miaosha_order表中的order_id字段设置为order_id表中的主键</span></span><br><span class="line">    miaoshaOrder.setOrderId(orderId);</span><br><span class="line">    miaoshaOrderMapper.insert(miaoshaOrder);</span><br><span class="line">    <span class="keyword">return</span> orderInfo;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;使用背景&quot;&gt;&lt;a href=&quot;#使用背景&quot; class=&quot;headerlink&quot; title=&quot;使用背景&quot;&gt;&lt;/a&gt;使用背景&lt;/h2&gt;&lt;p&gt;  这几天在写秒杀项目，其中有一个需求是生成订单并返回订单号（主键）然后再生成秒杀订单将刚刚返回的订单号作为某个字段插入秒杀
+      
+    
+    </summary>
+    
+      <category term="Mybatis" scheme="https://francisqiang.github.io/categories/Mybatis/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>SpringBoot整合Redis</title>
@@ -451,30 +474,6 @@
       
         &lt;h2 id=&quot;使用POJO对象绑定请求参数值&quot;&gt;&lt;a href=&quot;#使用POJO对象绑定请求参数值&quot; class=&quot;headerlink&quot; title=&quot;使用POJO对象绑定请求参数值&quot;&gt;&lt;/a&gt;使用POJO对象绑定请求参数值&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Spring MV
-      
-    
-    </summary>
-    
-      <category term="Spring MVC" scheme="https://francisqiang.github.io/categories/Spring-MVC/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>SpringMVC中的RequestParam注解</title>
-    <link href="https://francisqiang.github.io/2019/01/27/SpringMVC%E4%B8%AD%E7%9A%84RequestParam%E6%B3%A8%E8%A7%A3/"/>
-    <id>https://francisqiang.github.io/2019/01/27/SpringMVC中的RequestParam注解/</id>
-    <published>2019-01-27T10:10:13.000Z</published>
-    <updated>2019-01-27T10:56:01.004Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="请求处理方法签名"><a href="#请求处理方法签名" class="headerlink" title="请求处理方法签名"></a>请求处理方法签名</h2><ul><li><p>Spring MVC 通过分析处理方法的签名，将HTTP 请求信息绑定到处理方法的相应入参中</p></li><li><p>Spring MVC 对控制器处理方法签名的限制是很宽松的，几乎可以按喜欢的任何方式对方法进行签名。</p></li><li><p>必要时可以对方法及方法入参标注相应的注解（<br>@PathVariable、@RequestParam、@RequestHeader 等）、Spring MVC 框架会将 HTTP 请求的信息绑定到相应的方法入参中，并根据方法的返回值类型做出相应的后续处理</p></li></ul><h2 id="使用-RequestParam绑定请求参数值"><a href="#使用-RequestParam绑定请求参数值" class="headerlink" title="使用@RequestParam绑定请求参数值"></a>使用@RequestParam绑定请求参数值</h2><ul><li><p>在处理方法入参使用 @RequestParam 可以把请求参数传递给请求方法</p><ul><li><p>value:参数名</p></li><li><p>required:是否必须。默认为true，表示请求参数中必须包含对应的参数，若不存在，将抛出异常,网页中会报400请求错误。但是，当required设置为false时，方法参数为int型这种基本类型参数时，访问URL时不加参数值会报500服务器错误，解决方法是给RequestParam加一个defaultValue值。因为，如果参数是非必需的，则会赋值为null，所以参数应该是一个object对象，它才能接受这个null值。</p></li></ul></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//这里RequestParam的value值id其实指的是传过来的参数，即url上带的参数</span><br><span class="line">//当RequestParam不写的时候其实跟写了这个注解加上required=false是一样的，但是为了阅读方便，一般都加上</span><br><span class="line">@RequestMapping(value = &quot;/testRequestParam&quot;,method = RequestMethod.GET)</span><br><span class="line">public String testRequestParam(@RequestParam(value = &quot;id&quot;,required = false) int id)&#123;</span><br><span class="line">    System.out.println(&quot;参数为:&quot;+id);</span><br><span class="line">    return TEST;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  <img src="/2019/01/27/SpringMVC中的RequestParam注解/1.jpg"></p><h2 id="相类似的RequestHeader和CookieValue注解"><a href="#相类似的RequestHeader和CookieValue注解" class="headerlink" title="相类似的RequestHeader和CookieValue注解"></a>相类似的RequestHeader和CookieValue注解</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 了解:</span><br><span class="line"> * </span><br><span class="line"> * @CookieValue: 映射一个 Cookie 值. 属性同 @RequestParam</span><br><span class="line"> */</span><br><span class="line">@RequestMapping(&quot;/testCookieValue&quot;)</span><br><span class="line">public String testCookieValue(@CookieValue(&quot;JSESSIONID&quot;) String sessionId) &#123;</span><br><span class="line">System.out.println(&quot;testCookieValue: sessionId: &quot; + sessionId);</span><br><span class="line">return SUCCESS;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 了解: 映射请求头信息 用法同 @RequestParam</span><br><span class="line"> */</span><br><span class="line">@RequestMapping(&quot;/testRequestHeader&quot;)</span><br><span class="line">public String testRequestHeader(</span><br><span class="line">@RequestHeader(value = &quot;Accept-Language&quot;) String al) &#123;</span><br><span class="line">System.out.println(&quot;testRequestHeader, Accept-Language: &quot; + al);</span><br><span class="line">return SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;请求处理方法签名&quot;&gt;&lt;a href=&quot;#请求处理方法签名&quot; class=&quot;headerlink&quot; title=&quot;请求处理方法签名&quot;&gt;&lt;/a&gt;请求处理方法签名&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Spring MVC 通过分析处理方法的签名，将HTTP 请求信息绑定到处
       
     
     </summary>
