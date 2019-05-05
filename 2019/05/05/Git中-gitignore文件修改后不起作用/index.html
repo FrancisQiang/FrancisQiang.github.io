@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="项目介绍  最近在写一个秒杀的项目，是跟着慕课网的一个教程学习的。其中用到了redis进行session共享等等功能，现如今做到的步骤是使用redis将用户信息存入redis中，并且同时将用户的唯一token值存入cookie中（cookie的有效期和redis键值的有效期一样），当我们用户跳转到某个页面的时候，先查询cookie中是否存在键值为user的cookie，如果存在就获取到cookie">
+<meta name="description" content="问题背景  当我使用git上传项目的时候，有些本应该忽略的文件没有被忽略，这时候我修改.gitignore文件再次上传的时候，本该忽略的文件还是在那里 问题原因  这是因为git缓存的原因，如果某些文件已经被纳入版本管理中，就算是在.gitignore文件中声明了忽略文件的路径也是不起作用的，这时候我们就应该先把本地缓存删除，然后再add和push。 问题解决 首先清除本地缓存git rm -r">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot整合Redis">
-<meta property="og:url" content="https://francisqiang.github.io/2019/05/03/SpringBoot整合Redis/index.html">
+<meta property="og:title" content="Git中.gitignore文件修改后不起作用">
+<meta property="og:url" content="https://francisqiang.github.io/2019/05/05/Git中-gitignore文件修改后不起作用/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="项目介绍  最近在写一个秒杀的项目，是跟着慕课网的一个教程学习的。其中用到了redis进行session共享等等功能，现如今做到的步骤是使用redis将用户信息存入redis中，并且同时将用户的唯一token值存入cookie中（cookie的有效期和redis键值的有效期一样），当我们用户跳转到某个页面的时候，先查询cookie中是否存在键值为user的cookie，如果存在就获取到cookie">
+<meta property="og:description" content="问题背景  当我使用git上传项目的时候，有些本应该忽略的文件没有被忽略，这时候我修改.gitignore文件再次上传的时候，本该忽略的文件还是在那里 问题原因  这是因为git缓存的原因，如果某些文件已经被纳入版本管理中，就算是在.gitignore文件中声明了忽略文件的路径也是不起作用的，这时候我们就应该先把本地缓存删除，然后再add和push。 问题解决 首先清除本地缓存git rm -r">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-03T15:36:05.583Z">
+<meta property="og:updated_time" content="2019-05-05T08:27:13.106Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringBoot整合Redis">
-<meta name="twitter:description" content="项目介绍  最近在写一个秒杀的项目，是跟着慕课网的一个教程学习的。其中用到了redis进行session共享等等功能，现如今做到的步骤是使用redis将用户信息存入redis中，并且同时将用户的唯一token值存入cookie中（cookie的有效期和redis键值的有效期一样），当我们用户跳转到某个页面的时候，先查询cookie中是否存在键值为user的cookie，如果存在就获取到cookie">
+<meta name="twitter:title" content="Git中.gitignore文件修改后不起作用">
+<meta name="twitter:description" content="问题背景  当我使用git上传项目的时候，有些本应该忽略的文件没有被忽略，这时候我修改.gitignore文件再次上传的时候，本该忽略的文件还是在那里 问题原因  这是因为git缓存的原因，如果某些文件已经被纳入版本管理中，就算是在.gitignore文件中声明了忽略文件的路径也是不起作用的，这时候我们就应该先把本地缓存删除，然后再add和push。 问题解决 首先清除本地缓存git rm -r">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2019/05/03/SpringBoot整合Redis/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/05/05/Git中-gitignore文件修改后不起作用/">
 
 
 
 
 
-  <title>SpringBoot整合Redis | Francis的博客</title>
+  <title>Git中.gitignore文件修改后不起作用 | Francis的博客</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/05/03/SpringBoot整合Redis/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/05/05/Git中-gitignore文件修改后不起作用/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringBoot整合Redis</h1>
+          <h1 class="post-title" itemprop="name headline">Git中.gitignore文件修改后不起作用</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-03T23:00:57+08:00">
-                2019-05-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T16:18:50+08:00">
+                2019-05-05
               </time>
             
 
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index">
-                    <span itemprop="name">SpringBoot</span>
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
                   </a>
                 </span>
 
@@ -365,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/05/03/SpringBoot整合Redis/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/03/SpringBoot整合Redis/" itemprop="commentCount"></span>
+                <a href="/2019/05/05/Git中-gitignore文件修改后不起作用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/05/Git中-gitignore文件修改后不起作用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +374,7 @@
 
           
           
-             <span id="/2019/05/03/SpringBoot整合Redis/" class="leancloud_visitors" data-flag-title="SpringBoot整合Redis">
+             <span id="/2019/05/05/Git中-gitignore文件修改后不起作用/" class="leancloud_visitors" data-flag-title="Git中.gitignore文件修改后不起作用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k
+                  246
                 </span>
               
 
@@ -416,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  5
+                  1
                 </span>
               
             </div>
@@ -437,21 +437,19 @@
       
 
       
-        <h2 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h2><p>  最近在写一个秒杀的项目，是跟着慕课网的一个教程学习的。其中用到了redis进行session共享等等功能，现如今做到的步骤是使用redis将用户信息存入redis中，并且同时将用户的唯一token值存入cookie中（cookie的有效期和redis键值的有效期一样），当我们用户跳转到某个页面的时候，先查询cookie中是否存在键值为user的cookie，如果存在就获取到cookieValue（token值），然后通过这个token作为键去查询redis中查找对应token的用户信息。</p>
-<p>  五一玩了几天，这几天没怎么进食新东西，今天趁着假期学校不熄灯，继续写一篇博客。</p>
-<h2 id="引入依赖和配置变量"><a href="#引入依赖和配置变量" class="headerlink" title="引入依赖和配置变量"></a>引入依赖和配置变量</h2><p>  首先是pom.xml的依赖</p>
-  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.5.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>  然后我们需要在application.yaml文件中写入redis的配置环境</p>
-  <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">redis:</span></span><br><span class="line"><span class="attr">host:</span> <span class="number">119.82</span><span class="number">.123</span><span class="number">.134</span></span><br><span class="line"><span class="attr">port:</span> <span class="number">6379</span></span><br></pre></td></tr></table></figure>
-<h2 id="配置类的编写"><a href="#配置类的编写" class="headerlink" title="配置类的编写"></a>配置类的编写</h2><p>  编写RedisConfig配置类</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">  <span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisConfig</span> </span>&#123;</span><br><span class="line">  <span class="comment">//这里是引入刚刚yaml文件的配置变量</span></span><br><span class="line">  <span class="keyword">private</span> <span class="meta">@Value</span>(<span class="string">"$&#123;redis.host&#125;"</span>) String host;</span><br><span class="line">  <span class="keyword">private</span> <span class="meta">@Value</span>(<span class="string">"$&#123;redis.port&#125;"</span>) <span class="keyword">int</span> port;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//引入JedisConnection工厂，主要负责的是redis的连接</span></span><br><span class="line">  <span class="comment">//其中要设置地址和端口号</span></span><br><span class="line">  <span class="meta">@Bean</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> JedisConnectionFactory <span class="title">redisConnectionFactory</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    RedisStandaloneConfiguration redisStandaloneConfiguration = <span class="keyword">new</span> RedisStandaloneConfiguration();</span><br><span class="line">    redisStandaloneConfiguration.setHostName(host);</span><br><span class="line">    redisStandaloneConfiguration.setPort(port);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> JedisConnectionFactory(redisStandaloneConfiguration);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//配置redis模板，这个主要是进行一些redis的操作，就像jdbc的模板类一样</span></span><br><span class="line">  <span class="meta">@Bean</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> RedisTemplate&lt;String,Object&gt; <span class="title">redisTemplate</span><span class="params">(RedisConnectionFactory factory)</span></span>&#123;</span><br><span class="line">    RedisTemplate&lt;String,Object&gt; redisTemplate=<span class="keyword">new</span> RedisTemplate&lt;&gt;();</span><br><span class="line">    redisTemplate.setConnectionFactory(factory);</span><br><span class="line">    <span class="keyword">return</span> redisTemplate;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="相关操作的编写"><a href="#相关操作的编写" class="headerlink" title="相关操作的编写"></a>相关操作的编写</h2><p>  关于redis的操作有很多，我也学的不是很好，这里面只写了最简单的set和get</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Lin</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019-04-18 23:23</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedisUtil</span> </span>&#123;</span><br><span class="line">  <span class="comment">//引入刚刚我们设置的redis模板</span></span><br><span class="line">  <span class="meta">@Resource</span></span><br><span class="line">  RedisTemplate&lt;String,Object&gt; redisTemplate;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//这是redis单独印出来的string的模板——因为对于redis的操作大部分都是以String类型为基础的，这里没有用到</span></span><br><span class="line">  <span class="meta">@Autowired</span></span><br><span class="line">  StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 往redis中缓存数据,这里使用T模板更加灵活</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> key</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(String key,T value)</span></span>&#123;</span><br><span class="line">    <span class="comment">//将value对象转换为json字符串</span></span><br><span class="line">    String jsonString=beanToString(value);</span><br><span class="line">    <span class="comment">//valueOperations用来set和get 它是由redisTemplate产生的</span></span><br><span class="line">    ValueOperations&lt;String,Object&gt; valueOperations=redisTemplate.opsForValue();</span><br><span class="line">    <span class="comment">//这里是将value对象转换为jsonString，因为项目中User是一个java对象</span></span><br><span class="line">    valueOperations.set(key,jsonString);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 往redis中缓存数据并加上过期时间</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> key</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> time 过期时间，秒</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> &lt;T&gt; <span class="function"><span class="keyword">void</span> <span class="title">set</span><span class="params">(String key,T value,<span class="keyword">long</span> time)</span></span>&#123;</span><br><span class="line">    <span class="comment">//这个方法跟上面差不多，多加了一个设置过期时间，为的是与项目需求设置redis过期时间和cookie相等</span></span><br><span class="line">    String jsonString=beanToString(value);</span><br><span class="line">    ValueOperations&lt;String,Object&gt; valueOperations=redisTemplate.opsForValue();</span><br><span class="line">    valueOperations.set(key, jsonString, time,TimeUnit.SECONDS);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 从redis1中获取数据</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> key</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">public</span> &lt;T&gt; <span class="function">T <span class="title">get</span><span class="params">(String key,Class&lt;T&gt; clazz)</span></span>&#123;</span><br><span class="line">    ValueOperations&lt;String,Object&gt; valueOperations=redisTemplate.opsForValue();</span><br><span class="line">    <span class="comment">//这里其实获取的是存在redis中对象的json字符串</span></span><br><span class="line">    Object object=valueOperations.get(key);</span><br><span class="line">    <span class="comment">//如果获取的不为空，那么就像这个json字符串转换为java对象</span></span><br><span class="line">    <span class="keyword">if</span> (object!=<span class="keyword">null</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> stringToBean(object.toString(),clazz);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//获取为空就return null</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 将对象转换为json</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> value 对象</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> &lt;T&gt; 泛型</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> json数据</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="keyword">private</span>  &lt;T&gt; <span class="function">String <span class="title">beanToString</span><span class="params">(T value)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (value==<span class="keyword">null</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    Class&lt;?&gt; clazz=value.getClass();</span><br><span class="line">    <span class="comment">//如果value是int类型或者Integer类型的直接返回</span></span><br><span class="line">    <span class="keyword">if</span> (clazz==<span class="keyword">int</span>.class||clazz==Integer.class)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">""</span>+value;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(clazz==String.class)&#123;</span><br><span class="line">      <span class="keyword">return</span> (String)value;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (clazz==<span class="keyword">long</span>.class||clazz==Long.class)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">""</span>+value;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> JSON.toJSONString(value);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 将jsonString转换为java的对象</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> jsonString json字符串</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> clazz 类</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> &lt;T&gt; 泛型</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@return</span> java对象</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">  <span class="keyword">private</span> &lt;T&gt; <span class="function">T <span class="title">stringToBean</span><span class="params">(String jsonString,Class&lt;T&gt; clazz)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (jsonString==<span class="keyword">null</span>||jsonString.length()&lt;=<span class="number">0</span>||clazz==<span class="keyword">null</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(clazz == <span class="keyword">int</span>.class || clazz == Integer.class) &#123;</span><br><span class="line">      <span class="keyword">return</span> (T)Integer.valueOf(jsonString);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(clazz == String.class) &#123;</span><br><span class="line">      <span class="keyword">return</span> (T)jsonString;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(clazz == <span class="keyword">long</span>.class || clazz == Long.class) &#123;</span><br><span class="line">      <span class="keyword">return</span>  (T)Long.valueOf(jsonString);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> JSON.toJavaObject(JSON.parseObject(jsonString), clazz);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  上述代码使用了阿里巴巴的fastJson作为json和java对象转换的工具，具体的pom依赖为:</p>
-  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fastjson<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.47<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>  对于这个SpringBoot整合Redis虽然是跟着视频写的，但是也踩了很多坑，因为版本更新非常快，我使用的SpringBoot和Redis都是最新版的，很多地方配置和代码书写都和视频中和网上绝大数整合教程不相同，我也是查看很多资料才写好这个整合的，对于英文文档不感冒是真的吃亏，所以英语能力一定要提高！！！</p>
-<p>  还有就是在整合redis的时候，如果连接的是远程服务器中的redis的话一定要更改服务器上的redis.conf文件，最重要的两点就是将bind后面的地址修改或者直接注释掉bind那一行配置，还有就是将protected-mode更改为no，不然远程电脑连接不上。</p>
-<p>  当然还有很多细节问题都需要注意，留下这篇文章作为踩坑记录，希望下面敲代码的日子会越来越顺利。</p>
+        <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>  当我使用git上传项目的时候，有些本应该忽略的文件没有被忽略，这时候我修改.gitignore文件再次上传的时候，本该忽略的文件还是在那里</p>
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>  这是因为git缓存的原因，如果某些文件已经被纳入版本管理中，就算是在.gitignore文件中声明了忽略文件的路径也是不起作用的，这时候我们就应该先把本地缓存删除，然后再add和push。</p>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ol>
+<li><p>首先清除本地缓存<br>git rm -r –cached .</p>
+</li>
+<li><p>再次add文件<br>git add .</p>
+</li>
+<li><p>提交<br>git commit -m “chore:update .gitignore”</p>
+</li>
+<li><p>push<br>git push</p>
+</li>
+</ol>
+<h2 id="gitignore书写格式"><a href="#gitignore书写格式" class="headerlink" title=".gitignore书写格式"></a>.gitignore书写格式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 此为注释 – 将被 Git 忽略</span><br><span class="line">*.a       # 忽略所有 .a 结尾的文件</span><br><span class="line">!lib.a    # 但 lib.a 除外</span><br><span class="line">/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span><br><span class="line">build/    # 忽略 build/ 目录下的所有文件</span><br><span class="line">doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -491,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/28/链表和递归/" rel="next" title="链表和递归">
-                <i class="fa fa-chevron-left"></i> 链表和递归
+              <a href="/2019/05/05/从源文件到可执行文件/" rel="next" title="从源文件到可执行文件">
+                <i class="fa fa-chevron-left"></i> 从源文件到可执行文件
               </a>
             
           </div>
@@ -500,10 +498,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/04/Mybatis插入字段并返回主键的小问题/" rel="prev" title="Mybatis插入字段并返回主键的小问题">
-                Mybatis插入字段并返回主键的小问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -698,7 +692,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目介绍"><span class="nav-number">1.</span> <span class="nav-text">项目介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引入依赖和配置变量"><span class="nav-number">2.</span> <span class="nav-text">引入依赖和配置变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置类的编写"><span class="nav-number">3.</span> <span class="nav-text">配置类的编写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关操作的编写"><span class="nav-number">4.</span> <span class="nav-text">相关操作的编写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题背景"><span class="nav-number">1.</span> <span class="nav-text">问题背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题原因"><span class="nav-number">2.</span> <span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解决"><span class="nav-number">3.</span> <span class="nav-text">问题解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore书写格式"><span class="nav-number">4.</span> <span class="nav-text">.gitignore书写格式</span></a></li></ol></div>
             
 
           </div>

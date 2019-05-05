@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://francisqiang.github.io/"/>
-  <updated>2019-05-05T07:04:04.811Z</updated>
+  <updated>2019-05-05T08:27:13.106Z</updated>
   <id>https://francisqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git中.gitignore文件修改后不起作用</title>
+    <link href="https://francisqiang.github.io/2019/05/05/Git%E4%B8%AD-gitignore%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9%E5%90%8E%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/"/>
+    <id>https://francisqiang.github.io/2019/05/05/Git中-gitignore文件修改后不起作用/</id>
+    <published>2019-05-05T08:18:50.000Z</published>
+    <updated>2019-05-05T08:27:13.106Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>  当我使用git上传项目的时候，有些本应该忽略的文件没有被忽略，这时候我修改.gitignore文件再次上传的时候，本该忽略的文件还是在那里</p><h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>  这是因为git缓存的原因，如果某些文件已经被纳入版本管理中，就算是在.gitignore文件中声明了忽略文件的路径也是不起作用的，这时候我们就应该先把本地缓存删除，然后再add和push。</p><h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ol><li><p>首先清除本地缓存<br>git rm -r –cached .</p></li><li><p>再次add文件<br>git add .</p></li><li><p>提交<br>git commit -m “chore:update .gitignore”</p></li><li><p>push<br>git push</p></li></ol><h2 id="gitignore书写格式"><a href="#gitignore书写格式" class="headerlink" title=".gitignore书写格式"></a>.gitignore书写格式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 此为注释 – 将被 Git 忽略</span><br><span class="line">*.a       # 忽略所有 .a 结尾的文件</span><br><span class="line">!lib.a    # 但 lib.a 除外</span><br><span class="line">/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span><br><span class="line">build/    # 忽略 build/ 目录下的所有文件</span><br><span class="line">doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题背景&quot;&gt;&lt;a href=&quot;#问题背景&quot; class=&quot;headerlink&quot; title=&quot;问题背景&quot;&gt;&lt;/a&gt;问题背景&lt;/h2&gt;&lt;p&gt;  当我使用git上传项目的时候，有些本应该忽略的文件没有被忽略，这时候我修改.gitignore文件再次上传的时候，本该忽
+      
+    
+    </summary>
+    
+      <category term="Git" scheme="https://francisqiang.github.io/categories/Git/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>从源文件到可执行文件</title>
@@ -449,30 +472,6 @@
       
         &lt;h2 id=&quot;数据转换&quot;&gt;&lt;a href=&quot;#数据转换&quot; class=&quot;headerlink&quot; title=&quot;数据转换&quot;&gt;&lt;/a&gt;数据转换&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;Spring MVC 上下文中内建了很多转换器,可完成大多数Java类型的转换工作。&lt;/p&gt;
 &lt;p&gt;
-      
-    
-    </summary>
-    
-      <category term="Spring MVC" scheme="https://francisqiang.github.io/categories/Spring-MVC/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>SpringMVC——处理模型数据</title>
-    <link href="https://francisqiang.github.io/2019/01/27/SpringMVC%E2%80%94%E2%80%94%E5%A4%84%E7%90%86%E6%A8%A1%E5%9E%8B%E6%95%B0%E6%8D%AE/"/>
-    <id>https://francisqiang.github.io/2019/01/27/SpringMVC——处理模型数据/</id>
-    <published>2019-01-27T12:33:45.000Z</published>
-    <updated>2019-01-27T14:27:51.051Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="ModelAndView"><a href="#ModelAndView" class="headerlink" title="ModelAndView"></a>ModelAndView</h2><ul><li><p>当控制器方法的返回值如果为ModelAndView，那么它既包含视图信息，也包含模型数据信息,其实如果返回String的话，他最终也会被SpringMVc转换成ModelAndView对象。</p></li><li><p>添加模型数据的方法</p><ul><li>ModelAndView  addObject(String attributeName,Object attributeValue)</li><li>ModelAndView  addAllObject(Map&lt;String,?&gt; modelMap)</li></ul></li><li><p>设置视图</p><ul><li>void setView(View view)</li><li>void setViewName(String viewName)</li></ul></li><li><p>例子:</p></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">@RequestMapping(&quot;/user&quot;)</span><br><span class="line">public class TestController &#123;</span><br><span class="line">    </span><br><span class="line">    /**</span><br><span class="line">     * 利用ModelAndView来转发数据,给前端视图</span><br><span class="line">     * @return modelAndView</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(&quot;/testModelAndView&quot;)</span><br><span class="line">    public ModelAndView testModelAndView() &#123;</span><br><span class="line">        //创建ModelAndView对象</span><br><span class="line">        ModelAndView modelAndView = new ModelAndView();</span><br><span class="line">        //设置返回视图信息</span><br><span class="line">        modelAndView.setViewName(&quot;success&quot;);</span><br><span class="line">        //添加模型数据</span><br><span class="line">        modelAndView.addObject(&quot;message&quot;, &quot;Hello World&quot;);</span><br><span class="line">        return modelAndView;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Map和Model"><a href="#Map和Model" class="headerlink" title="Map和Model"></a>Map和Model</h2><ul><li><p>Spring MVC 在内部使用了一个org.springframework.ui.Model 接口存储模型数据</p></li><li><p>Spring MVC 在调用方法前会创建一个隐含的模型对象作为模型数据的存储容器。</p></li><li><p><font color="red">如果方法的入参为Map或Model类型</font>，Spring MVC 会将隐含模型的引用传递给这些入参。在方法体中，开发者可以通过这个入参对象访问到模型中的所有数据，也可以向模型中添加新的属性数据</p></li></ul><h2 id="SessionAttributes注解"><a href="#SessionAttributes注解" class="headerlink" title="@SessionAttributes注解"></a>@SessionAttributes注解</h2><ul><li><p>若希望在多个请求之间共用某个模型属性数据，则可以在控制器类上标注一个 @SessionAttributes,Spring MVC 将在模型中对应的属性暂存到 HttpSession 中</p></li><li><p>该注解只能放在类的上面. 而不能修饰方法。</p></li><li><p>@SessionAttributes 除了可以通过属性名指定需要放到会话中的属性外，还可以通过模型属性的对象类型指定哪些模型属性需要放到会话中</p><ul><li><p>@SessionAttributes(types=User.class) 会将隐含模型中所有类型为 User.class 的属性添加到会话中。</p></li><li><p>@SessionAttributes(value={“user1”, “user2”}) 会将名字为user1和user2的属性添加到session对话中</p></li><li><p>@SessionAttributes(types={User.class, Dept.class})会将User类型和Dept类型的对象添加到会话中</p></li><li><p>@SessionAttributes(value={“user1”, “user2”}, types={Dept.class}) 会将名字为user1，user2还有类型为Dept的对象添加到session会话中</p></li></ul></li></ul><h2 id="ModelAttribute的使用场景"><a href="#ModelAttribute的使用场景" class="headerlink" title="ModelAttribute的使用场景"></a>ModelAttribute的使用场景</h2><ul><li><p>比如当我们要修改一个user对象的属性，但是其中ID属性的值我们不能修改，这时我们可以先从数据库中拿到这个user对象，然后再把用户发送过来的修改请求赋值给这个user对象，(前端只对除ID属性以外的属性赋值修改了)这时我们拿到的就是ID没有被修改的user对象了</p></li><li><p>例子:</p></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">   //被ModelAttribute修饰的方法会在每个目标方法执行之前被SpringMVC调用</span><br><span class="line"></span><br><span class="line">@ModelAttribute</span><br><span class="line">public void getUser(@RequestParam(value=&quot;id&quot;,required=false) Integer id, </span><br><span class="line">Map&lt;String, Object&gt; map)&#123;</span><br><span class="line">System.out.println(&quot;modelAttribute method&quot;);</span><br><span class="line">if(id != null)&#123;</span><br><span class="line">//模拟从数据库中获取对象</span><br><span class="line">User user = new User(1, &quot;Tom&quot;, &quot;123456&quot;, &quot;tom@atguigu.com&quot;, 12);</span><br><span class="line">System.out.println(&quot;从数据库中获取一个对象: &quot; + user);</span><br><span class="line"></span><br><span class="line">map.put(&quot;user&quot;, user);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@RequestMapping(&quot;/testModelAttribute&quot;)</span><br><span class="line">public String testModelAttribute(User user)&#123;</span><br><span class="line">System.out.println(&quot;修改: &quot; + user);</span><br><span class="line">return SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行流程：</p><ol><li><p>ModelAttribute修饰的方法先从数据库中获取要修改的user对象，并把这个对象放入Map中，键为user</p></li><li><p>SpringMVC从map中取出键为user的对象，并将用户输入的修改的值赋给这个对象的相应属性</p></li><li><p>SpringMVC将这个被赋值好的对象传到目标方法的入参中</p></li><li><p>放入map的对象的键值要和目标方法第一个字母小写的String值要相同</p></li></ol><h2 id="SpringMVC-确定目标方法-POJO-类型入参的过程"><a href="#SpringMVC-确定目标方法-POJO-类型入参的过程" class="headerlink" title="SpringMVC 确定目标方法 POJO 类型入参的过程"></a>SpringMVC 确定目标方法 POJO 类型入参的过程</h2><ul><li>调用 @ModelAttribute 注解修饰的方法. 实际上把 @ModelAttribute 方法中 Map 中的数据放在了 implicitModel 中.</li><li><p>确定一个 key:</p><ul><li><p>若目标方法的 POJO 类型的参数木有使用 @ModelAttribute 作为修饰, 则 key 为 POJO 类名第一个字母小写</p></li><li><p>若使用了  @ModelAttribute 来修饰, 则 key 为 @ModelAttribute 注解的 value 属性值. </p></li></ul></li><li><p>在 implicitModel 中查找 key 对应的对象, 若存在, 则作为入参传入</p><ul><li><p>若在 @ModelAttribute 标记的方法中在 Map 中保存过, 且 key 和 1 确定的 key 一致, 则会获取到.</p></li><li><p>若 implicitModel 中不存在 key 对应的对象, 则检查当前的 Handler 是否使用 @SessionAttributes 注解修饰, 若使用了该注解, 且 @SessionAttributes 注解的 value 属性值中包含了 key, 则会从HttpSession 中来获取 key 所对应的 value 值, 若存在则直接传入到目标方法的入参中. 若不存在则将抛出异常. </p></li><li><p>若 Handler 没有标识 @SessionAttributes 注解或 @SessionAttributes 注解的 value 值中不包含 key, 则 会通过反射来创建 POJO 类型的参数, 传入为目标方法的参数</p></li></ul></li><li><p>SpringMVC 会把 key 和 POJO 类型的对象保存到 implicitModel 中, 进而会保存到 request 中. </p></li></ul><h2 id="ModelAttribute修饰方法的入参"><a href="#ModelAttribute修饰方法的入参" class="headerlink" title="ModelAttribute修饰方法的入参"></a>ModelAttribute修饰方法的入参</h2><ul><li><p>ModelAttribute修饰的POJO类型入参有个value值，SpringMVC会通过value值为key在implicitModel中查找对应的属性，若存在，则把这个属性直接赋值给目标方法入参(POJO对象)。</p></li><li><p>若不存在，则SpringMVC会以value为key，POJO入参为value存入Request中</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;ModelAndView&quot;&gt;&lt;a href=&quot;#ModelAndView&quot; class=&quot;headerlink&quot; title=&quot;ModelAndView&quot;&gt;&lt;/a&gt;ModelAndView&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;当控制器方法的返回值如果为ModelAnd
       
     
     </summary>
