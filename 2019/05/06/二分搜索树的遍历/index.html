@@ -88,28 +88,21 @@
 
 
 
-<meta name="description" content="什么是盒子模型&amp;nbsp;&amp;nbsp;CSS中将每个元素都设置为了一个矩形的盒子来方便页面的布局，所以当这些元素都变成了盒子之后，我们的布局就变成了在页面中摆放盒子  内容(content)&amp;nbsp;&amp;nbsp;元素的所有子元素都是放在父元素的内容区中 &amp;nbsp;&amp;nbsp;内容区有宽度和高度——width，height 内边距(padding)&amp;nbsp;&amp;nbsp;内边距指的是内容区和边框">
+<meta name="description" content="二分搜索树的遍历  其实这里就是二叉树的遍历，只是因为二分搜索树因为是依靠它的特定规则而排列的，所以再经过不同方法遍历之后，它的顺序会有很多特点。   我们是依靠根节点顺序来命名的，记住！是根结点。   前序遍历就是先遍历根结点，然后遍历左结点，最后遍历右结点。   中序遍历就是先遍历左结点，然后遍历根结点，最后遍历右结点。   后序遍历就是先遍历左结点，然后遍历右结点，最后遍历根结点。   最后">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS的盒子模型">
-<meta property="og:url" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/index.html">
+<meta property="og:title" content="二分搜索树的遍历">
+<meta property="og:url" content="https://francisqiang.github.io/2019/05/06/二分搜索树的遍历/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="什么是盒子模型&amp;nbsp;&amp;nbsp;CSS中将每个元素都设置为了一个矩形的盒子来方便页面的布局，所以当这些元素都变成了盒子之后，我们的布局就变成了在页面中摆放盒子  内容(content)&amp;nbsp;&amp;nbsp;元素的所有子元素都是放在父元素的内容区中 &amp;nbsp;&amp;nbsp;内容区有宽度和高度——width，height 内边距(padding)&amp;nbsp;&amp;nbsp;内边距指的是内容区和边框">
+<meta property="og:description" content="二分搜索树的遍历  其实这里就是二叉树的遍历，只是因为二分搜索树因为是依靠它的特定规则而排列的，所以再经过不同方法遍历之后，它的顺序会有很多特点。   我们是依靠根节点顺序来命名的，记住！是根结点。   前序遍历就是先遍历根结点，然后遍历左结点，最后遍历右结点。   中序遍历就是先遍历左结点，然后遍历根结点，最后遍历右结点。   后序遍历就是先遍历左结点，然后遍历右结点，最后遍历根结点。   最后">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/1.png">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/2.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/3.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/4.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/5.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/6.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/7.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/8.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/9.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/10.jpg">
-<meta property="og:updated_time" content="2019-01-27T07:59:06.329Z">
+<meta property="og:image" content="https://francisqiang.github.io/2019/05/06/二分搜索树的遍历/1.jpg">
+<meta property="og:image" content="https://francisqiang.github.io/2019/05/06/二分搜索树的遍历/2.jpg">
+<meta property="og:image" content="https://francisqiang.github.io/2019/05/06/二分搜索树的遍历/3.jpg">
+<meta property="og:updated_time" content="2019-05-06T09:27:53.474Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS的盒子模型">
-<meta name="twitter:description" content="什么是盒子模型&amp;nbsp;&amp;nbsp;CSS中将每个元素都设置为了一个矩形的盒子来方便页面的布局，所以当这些元素都变成了盒子之后，我们的布局就变成了在页面中摆放盒子  内容(content)&amp;nbsp;&amp;nbsp;元素的所有子元素都是放在父元素的内容区中 &amp;nbsp;&amp;nbsp;内容区有宽度和高度——width，height 内边距(padding)&amp;nbsp;&amp;nbsp;内边距指的是内容区和边框">
-<meta name="twitter:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/1.png">
+<meta name="twitter:title" content="二分搜索树的遍历">
+<meta name="twitter:description" content="二分搜索树的遍历  其实这里就是二叉树的遍历，只是因为二分搜索树因为是依靠它的特定规则而排列的，所以再经过不同方法遍历之后，它的顺序会有很多特点。   我们是依靠根节点顺序来命名的，记住！是根结点。   前序遍历就是先遍历根结点，然后遍历左结点，最后遍历右结点。   中序遍历就是先遍历左结点，然后遍历根结点，最后遍历右结点。   后序遍历就是先遍历左结点，然后遍历右结点，最后遍历根结点。   最后">
+<meta name="twitter:image" content="https://francisqiang.github.io/2019/05/06/二分搜索树的遍历/1.jpg">
 
 
 
@@ -139,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/05/06/二分搜索树的遍历/">
 
 
 
 
 
-  <title>CSS的盒子模型 | Francis的博客</title>
+  <title>二分搜索树的遍历 | Francis的博客</title>
   
 
 
@@ -306,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/05/06/二分搜索树的遍历/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -323,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS的盒子模型</h1>
+          <h1 class="post-title" itemprop="name headline">二分搜索树的遍历</h1>
         
 
         <div class="post-meta">
@@ -335,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-25T22:41:46+08:00">
-                2019-01-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-06T16:46:46+08:00">
+                2019-05-06
               </time>
             
 
@@ -358,8 +351,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -376,8 +369,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/25/CSS的盒子模型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/25/CSS的盒子模型/" itemprop="commentCount"></span>
+                <a href="/2019/05/06/二分搜索树的遍历/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/06/二分搜索树的遍历/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -385,7 +378,7 @@
 
           
           
-             <span id="/2019/01/25/CSS的盒子模型/" class="leancloud_visitors" data-flag-title="CSS的盒子模型">
+             <span id="/2019/05/06/二分搜索树的遍历/" class="leancloud_visitors" data-flag-title="二分搜索树的遍历">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -427,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  5
                 </span>
               
             </div>
@@ -448,95 +441,30 @@
       
 
       
-        <h2 id="什么是盒子模型"><a href="#什么是盒子模型" class="headerlink" title="什么是盒子模型"></a>什么是盒子模型</h2><p>&nbsp;&nbsp;CSS中将每个元素都设置为了一个矩形的盒子来方便页面的布局，所以当这些元素都变成了盒子之后，我们的布局就变成了在页面中摆放盒子</p>
-<p><img src="/2019/01/25/CSS的盒子模型/1.png"></p>
-<h2 id="内容-content"><a href="#内容-content" class="headerlink" title="内容(content)"></a>内容(content)</h2><p>&nbsp;&nbsp;元素的所有子元素都是放在父元素的内容区中</p>
-<p>&nbsp;&nbsp;内容区有宽度和高度——width，height</p>
-<h2 id="内边距-padding"><a href="#内边距-padding" class="headerlink" title="内边距(padding)"></a>内边距(padding)</h2><p>&nbsp;&nbsp;内边距指的是内容区和边框区之间的距离，<font color="red">内边距会影响盒子的大小</font>。</p>
-<p><img src="/2019/01/25/CSS的盒子模型/2.jpg"></p>
-<p>此时box1原本高度宽度只有10px，设置内边距之后整个盒子可见框的大小就发生变化了，而且元素的背景颜色延伸到了内边距。</p>
-<p>其中属性有五种</p>
-<ul>
-<li>padding</li>
-</ul>
-<p>当只设置一个值的时候这个值则是给上右下左都设置了</p>
-<p>当设置两个值时，第一个值是上下，第二个值是左右</p>
-<p>当设置三个值时，第一个值是上，第二个值是左右，第三个值是下</p>
-<p>当设置四个值时，就是上右下左</p>
-<ul>
-<li><p>padding-top</p>
-</li>
-<li><p>padding-right</p>
-</li>
-<li><p>padding-bottom</p>
-</li>
-<li><p>padding-left</p>
-</li>
-</ul>
-<h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><p>&nbsp;&nbsp;<font color="red">整个盒子的可见框大小是由内容区、内边距区，边框区决定的</font></p>
-<p>&nbsp;&nbsp;设置边框需要设置三个样式。他们分别是border-width，border-color，border-style</p>
-<p>border-width设置的是边框的宽度</p>
-<p>border-color设置的是边框的颜色</p>
-<p>border-style设置的是边框的样式，一般有solid实线，dotted点线，dashed虚线等等</p>
-<p>&nbsp;&nbsp;通过使用border直接给边框三个属性赋值，例:border: 1px solid red;&nbsp;三个属性没有顺序要求</p>
-<h2 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h2><h3 id="外边距的简述和语法规范"><a href="#外边距的简述和语法规范" class="headerlink" title="外边距的简述和语法规范"></a>外边距的简述和语法规范</h3><p>&nbsp;&nbsp;外边距是盒子和其他盒子之间地距离，外边距不会影响可见框的大小，但是会影响盒子的位置。</p>
-<p>&nbsp;&nbsp;外边距也具有四个方向，语法跟padding相类似。</p>
-<p>&nbsp;&nbsp;margin值：单独将左右外边距设置为auto，则会将左右外边距设置为最大值</p>
-<p>&nbsp;&nbsp;如果同时将左右外边距设置为auto，则他的左右外边距会相同，所以一般我们会通过这种方式使一个子元素在他的父元素中水平居中&nbsp;&nbsp;<font color="red">margin:0 auto</font></p>
-<p>&nbsp;&nbsp;外边距可以设置为负值，则元素会向相反方向移动</p>
-<h3 id="外边距的重叠和取和现象"><a href="#外边距的重叠和取和现象" class="headerlink" title="外边距的重叠和取和现象"></a>外边距的重叠和取和现象</h3><p>&nbsp;&nbsp;相邻元素的外边距会取最大值</p>
-<p><img src="/2019/01/25/CSS的盒子模型/3.jpg"><br><img src="/2019/01/25/CSS的盒子模型/4.jpg"></p>
-<p>上面两张图我们可以看见box1和box2之间地margin值重叠在了一起，所以他们之间地margin值取得是最大的那一个</p>
-<p>&nbsp;&nbsp;子元素的外边距会传给父元素</p>
-<p><img src="/2019/01/25/CSS的盒子模型/5.jpg"></p>
-<p>上图我们可以知道box1把外边距传给了他的父元素box3</p>
-<p>&nbsp;&nbsp;另外一个就是水平外边距不会重叠，他们会取和</p>
-<h2 id="内联元素的盒子模型"><a href="#内联元素的盒子模型" class="headerlink" title="内联元素的盒子模型"></a>内联元素的盒子模型</h2><h3 id="内联元素的width和height"><a href="#内联元素的width和height" class="headerlink" title="内联元素的width和height"></a>内联元素的width和height</h3><p>&nbsp;&nbsp;<font color="red">内联元素是不支持宽高属性的!</font></p>
-<h3 id="内联元素的padding"><a href="#内联元素的padding" class="headerlink" title="内联元素的padding"></a>内联元素的padding</h3><p>&nbsp;&nbsp;内联元素支持水平方向的padding</p>
-<p><img src="/2019/01/25/CSS的盒子模型/6.jpg"></p>
-<p>&nbsp;&nbsp;内联元素也支持垂直方向的padding但是不会影响布局</p>
-<p><img src="/2019/01/25/CSS的盒子模型/7.jpg"></p>
-<h3 id="内联元素的border"><a href="#内联元素的border" class="headerlink" title="内联元素的border"></a>内联元素的border</h3><p>&nbsp;&nbsp;支持四个方向的边框，但是垂直的边框不会影响布局</p>
-<h3 id="内联元素的margin"><a href="#内联元素的margin" class="headerlink" title="内联元素的margin"></a>内联元素的margin</h3><p>&nbsp;&nbsp;支持水平方向的外边距，不支持垂直方向上的</p>
-<p><img src="/2019/01/25/CSS的盒子模型/8.jpg"></p>
-<h2 id="盒模型相关的样式"><a href="#盒模型相关的样式" class="headerlink" title="盒模型相关的样式"></a>盒模型相关的样式</h2><h3 id="display"><a href="#display" class="headerlink" title="display"></a>display</h3><p>&nbsp;&nbsp;display决定元素的显示方式</p>
-<ul>
-<li>none&nbsp;&nbsp;当属性值为none时，这个元素不会在页面中显示且不会占据页面的位置</li>
-<li>block&nbsp;&nbsp;元素作为块元素显示</li>
-<li>inline&nbsp;&nbsp;元素作为内联元素显示</li>
-<li>inline-block&nbsp;&nbsp;作为行内块元素显示，具有块元素和内联元素的特点——<font color="red">能进行宽高的设置，不会进行换行</font></li>
-</ul>
-<h3 id="visibility"><a href="#visibility" class="headerlink" title="visibility"></a>visibility</h3><p>&nbsp;&nbsp;visibility属性设置元素是否在页面中显示</p>
-<ul>
-<li>visible&nbsp;&nbsp;默认值，元素可以正常显示</li>
-<li>hidden&nbsp;&nbsp;元素不在页面中显示，但是<font color="red">依然在页面占据着它原来的空间</font></li>
-</ul>
-<h3 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h3><p>&nbsp;&nbsp;overflow设置元素如何处理溢出内容</p>
-<ul>
-<li>visible&nbsp;&nbsp;默认值，子元素溢出的东西会在父元素以外的地方显示</li>
-</ul>
-<p><img src="/2019/01/25/CSS的盒子模型/9.jpg"></p>
-<ul>
-<li>hidden 溢出内容会被隐藏</li>
-<li>scroll 会添加滚动条显示溢出内容不管内容是否溢出都会添加滚动条</li>
-</ul>
-<p><img src="/2019/01/25/CSS的盒子模型/10.jpg"></p>
-<ul>
-<li>auto&nbsp;&nbsp;根据需要自动生成滚动条</li>
-</ul>
-<h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>文档流指的是网页中的一个位置</p>
-<p>文档流是网页的基础，是网页的最底层，所有的元素默认都是在文档流中排列</p>
-<p>元素在文档流中默认自左向右，自上向下排列（和我们的书写习惯一致）</p>
-<h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><ol>
-<li>块元素在文档流中自上向下排列</li>
-<li>块元素在文档流中宽度默认是父元素的100%</li>
-<li>块元素在文档流中高度默认被内容撑开</li>
-</ol>
-<h3 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h3><ol>
-<li>内联元素在文档流中自左向右排列，如果一行中不足以容下所有的内联元素，则换到下一行，继续自左至右排列</li>
-<li>内联元素在文档流中宽度和高度默认都被内容撑开</li>
-</ol>
-
+        <h2 id="二分搜索树的遍历"><a href="#二分搜索树的遍历" class="headerlink" title="二分搜索树的遍历"></a>二分搜索树的遍历</h2><p>  其实这里就是二叉树的遍历，只是因为二分搜索树因为是依靠它的特定规则而排列的，所以再经过不同方法遍历之后，它的顺序会有很多特点。</p>
+<p>  我们是依靠根节点顺序来命名的，记住！是根结点。</p>
+<p>  前序遍历就是先遍历根结点，然后遍历左结点，最后遍历右结点。</p>
+<p>  中序遍历就是先遍历左结点，然后遍历根结点，最后遍历右结点。</p>
+<p>  后序遍历就是先遍历左结点，然后遍历右结点，最后遍历根结点。</p>
+<p>  最后要注意，这个提示可能不是适合所有人，对于我来说，我书写一个二叉树的前中后序遍历的时候都告诫自己要等待一个结点能遍历的时候才能遍历，什么意思呢？就是要遍历一个结点的时候需要把它的子节点先遍历了（子节点优先遍历），其实这个前中后序遍历另一个名字就是深度优先遍历，跟这个有关。</p>
+<p>  慕课网中有另一种快速书写三种遍历方式遍历后的顺序结果的方法，如图:</p>
+<p>  <img src="/2019/05/06/二分搜索树的遍历/1.jpg" alt="三种深度优先遍历"></p>
+<p>  它是在每个结点上画上三个点，然后不管什么遍历方式都从根节点到左节点到右节点的方式遍历(比较图中)，每个结点其实都会经过三次，当中序遍历就去中间的点作为顺序参照，前序遍历就取左边的点作为顺序参照，后序遍历就取右边的点作为顺序参照。</p>
+<p>  如果中序和后序的图看不懂，那么就将前序遍历那些顺序线放入中序和后序的图中，然后根据那个顺序线依次找蓝色的点，最后这些点连接成的就是遍历顺序了。</p>
+<h2 id="深度优先遍历的递归代码实现"><a href="#深度优先遍历的递归代码实现" class="headerlink" title="深度优先遍历的递归代码实现"></a>深度优先遍历的递归代码实现</h2><p>  前面说了，前中后序遍历都可以称为深度优先遍历。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">  preOrder(root);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//前序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">preOrder</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (node!=<span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="comment">//先打印根节点</span></span><br><span class="line">    System.out.println(node.e);</span><br><span class="line">    <span class="comment">//然后遍历左节点</span></span><br><span class="line">    preOrder(node.left);</span><br><span class="line">    <span class="comment">//遍历右结点</span></span><br><span class="line">    preOrder(node.right);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">inOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">  inOrder(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">inOrder</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (node!=<span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="comment">//优先遍历左节点</span></span><br><span class="line">    inOrder(node.left);</span><br><span class="line">    System.out.println(node.e);</span><br><span class="line">    inOrder(node.right);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">postOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">  postOrder(root);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">postOrder</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (node!=<span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="comment">//先遍历左节点</span></span><br><span class="line">    postOrder(node.left);</span><br><span class="line">    <span class="comment">//然后遍历右结点</span></span><br><span class="line">    postOrder(node.right);</span><br><span class="line">    <span class="comment">//最后遍历根结点</span></span><br><span class="line">    System.out.println(node.e);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用递归实现深度优先遍历很简单，只需要记住顺序就行了。</p>
+<h2 id="非递归实现前序遍历"><a href="#非递归实现前序遍历" class="headerlink" title="非递归实现前序遍历"></a>非递归实现前序遍历</h2><p>  其实非递归实现前序遍历就是模拟系统方法栈，这时候我们不通过递归，我们就要自己使用栈来实现前序遍历。</p>
+<p>  比如说我们需要将一个树前序遍历，这时候我们先将根结点放入我们new的一个栈中，然后我们把栈中这个结点元素取出来，对它进行打印(或者其他操作)，然后我们将它的右孩子，左孩子依次放入栈中(因为栈是先进后出)。然后我们再次取出栈中的一个元素，这时候我们取的是根结点的左孩子，然后我们对这个节点进行打印，然后把这个结点的右左孩子依次放入栈中，继续进行出栈操作。。。</p>
+<p>  <img src="/2019/05/06/二分搜索树的遍历/2.jpg" alt="非递归实现前序遍历"></p>
+<p>  代码实现：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 非递归实现前序遍历</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">perOrderWithoutRecurrence</span><span class="params">()</span></span>&#123;</span><br><span class="line">  Stack&lt;Node&gt; stack=<span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">  stack.push(root);</span><br><span class="line">  <span class="keyword">while</span> (!stack.isEmpty())&#123;</span><br><span class="line">    <span class="comment">//栈中元素不为空那么就出栈操作</span></span><br><span class="line">    Node currentNode=stack.pop();</span><br><span class="line">    System.out.println(currentNode.e);</span><br><span class="line">    <span class="comment">//依次将右左孩子放入栈中</span></span><br><span class="line">    <span class="keyword">if</span> (currentNode.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">      stack.push(currentNode.right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (currentNode.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">      stack.push(currentNode.left);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二叉树的层序遍历"><a href="#二叉树的层序遍历" class="headerlink" title="二叉树的层序遍历"></a>二叉树的层序遍历</h2><p>  层序遍历又是广度优先遍历，它是将树一层一层地进行遍历的。</p>
+<p>  <img src="/2019/05/06/二分搜索树的遍历/3.jpg" alt="广度优先遍历"></p>
+<p>  比如上图，我们广度优先遍历（层序遍历）的顺序就是28,16,30,13,22,29,42.</p>
+<p>  我们如何实现呢？其实我们这时候需要一个队列，这个队列里将根结点放入，然后把根结点取出来进行操作（同时也要将队列里的根节点删除，后面的结点被取出来的时候也要删除），然后把根节点的左孩子，右孩子依次进行入队，这时候我们再取出队列里的第一个元素（根节点的左孩子结点），然后我们对它进行操作并删除队列里它的元素，然后将他的左右孩子依次入队，之后我们再取出来队列的第一个元素（根节点的右孩子），后面依次同上操作，如图所示。</p>
+<p>  代码实现：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 层序遍历(广度优先遍历)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">levelOrder</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (root!=<span class="keyword">null</span>)&#123;</span><br><span class="line">    Queue&lt;Node&gt; queue=<span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    queue.add(root);</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty())&#123;</span><br><span class="line">      Node currentNode=queue.remove();</span><br><span class="line">      System.out.println(currentNode.e);</span><br><span class="line">      <span class="keyword">if</span> (currentNode.left!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        queue.add(currentNode.left);</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (currentNode.right!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        queue.add(currentNode.right);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -575,8 +503,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/24/CSS—的浮动/" rel="next" title="CSS的浮动">
-                <i class="fa fa-chevron-left"></i> CSS的浮动
+              <a href="/2019/05/06/二分搜索树的增删改查/" rel="next" title="二分搜索树的增删改查">
+                <i class="fa fa-chevron-left"></i> 二分搜索树的增删改查
               </a>
             
           </div>
@@ -584,10 +512,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/26/CSS中的定位/" rel="prev" title="CSS中的定位">
-                CSS中的定位 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -782,7 +706,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是盒子模型"><span class="nav-number">1.</span> <span class="nav-text">什么是盒子模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容-content"><span class="nav-number">2.</span> <span class="nav-text">内容(content)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内边距-padding"><span class="nav-number">3.</span> <span class="nav-text">内边距(padding)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边框"><span class="nav-number">4.</span> <span class="nav-text">边框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外边距"><span class="nav-number">5.</span> <span class="nav-text">外边距</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#外边距的简述和语法规范"><span class="nav-number">5.1.</span> <span class="nav-text">外边距的简述和语法规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外边距的重叠和取和现象"><span class="nav-number">5.2.</span> <span class="nav-text">外边距的重叠和取和现象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联元素的盒子模型"><span class="nav-number">6.</span> <span class="nav-text">内联元素的盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素的width和height"><span class="nav-number">6.1.</span> <span class="nav-text">内联元素的width和height</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素的padding"><span class="nav-number">6.2.</span> <span class="nav-text">内联元素的padding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素的border"><span class="nav-number">6.3.</span> <span class="nav-text">内联元素的border</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素的margin"><span class="nav-number">6.4.</span> <span class="nav-text">内联元素的margin</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型相关的样式"><span class="nav-number">7.</span> <span class="nav-text">盒模型相关的样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#display"><span class="nav-number">7.1.</span> <span class="nav-text">display</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#visibility"><span class="nav-number">7.2.</span> <span class="nav-text">visibility</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#overflow"><span class="nav-number">7.3.</span> <span class="nav-text">overflow</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档流"><span class="nav-number">8.</span> <span class="nav-text">文档流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">8.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块元素"><span class="nav-number">8.2.</span> <span class="nav-text">块元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素"><span class="nav-number">8.3.</span> <span class="nav-text">内联元素</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#二分搜索树的遍历"><span class="nav-number">1.</span> <span class="nav-text">二分搜索树的遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度优先遍历的递归代码实现"><span class="nav-number">2.</span> <span class="nav-text">深度优先遍历的递归代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非递归实现前序遍历"><span class="nav-number">3.</span> <span class="nav-text">非递归实现前序遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树的层序遍历"><span class="nav-number">4.</span> <span class="nav-text">二叉树的层序遍历</span></a></li></ol></div>
             
 
           </div>
