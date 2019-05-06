@@ -88,28 +88,21 @@
 
 
 
-<meta name="description" content="什么是盒子模型&amp;nbsp;&amp;nbsp;CSS中将每个元素都设置为了一个矩形的盒子来方便页面的布局，所以当这些元素都变成了盒子之后，我们的布局就变成了在页面中摆放盒子  内容(content)&amp;nbsp;&amp;nbsp;元素的所有子元素都是放在父元素的内容区中 &amp;nbsp;&amp;nbsp;内容区有宽度和高度——width，height 内边距(padding)&amp;nbsp;&amp;nbsp;内边距指的是内容区和边框">
+<meta name="description" content="什么是二分搜索树  首先我们要先知道二叉树是什么，二叉树其实就是从一个根节点左右两端延伸出左右结点，延伸出的结点再次延伸出结点，然后一直延伸下去，所以树这种数据结构天生满足递归特性。   而二分搜索树就是对二叉树做了一个限制，首先二分搜索树中的元素必须是可比较的（对于Java来说就是必须继承Comparable接口）。为什么需要它可比较呢？就是因为，二分搜索树的排列需要根据数值来排列。   二分搜">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS的盒子模型">
-<meta property="og:url" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/index.html">
+<meta property="og:title" content="二分搜索树的增删改查">
+<meta property="og:url" content="https://francisqiang.github.io/2019/05/06/二分搜索树的增删改查/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="什么是盒子模型&amp;nbsp;&amp;nbsp;CSS中将每个元素都设置为了一个矩形的盒子来方便页面的布局，所以当这些元素都变成了盒子之后，我们的布局就变成了在页面中摆放盒子  内容(content)&amp;nbsp;&amp;nbsp;元素的所有子元素都是放在父元素的内容区中 &amp;nbsp;&amp;nbsp;内容区有宽度和高度——width，height 内边距(padding)&amp;nbsp;&amp;nbsp;内边距指的是内容区和边框">
+<meta property="og:description" content="什么是二分搜索树  首先我们要先知道二叉树是什么，二叉树其实就是从一个根节点左右两端延伸出左右结点，延伸出的结点再次延伸出结点，然后一直延伸下去，所以树这种数据结构天生满足递归特性。   而二分搜索树就是对二叉树做了一个限制，首先二分搜索树中的元素必须是可比较的（对于Java来说就是必须继承Comparable接口）。为什么需要它可比较呢？就是因为，二分搜索树的排列需要根据数值来排列。   二分搜">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/1.png">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/2.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/3.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/4.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/5.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/6.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/7.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/8.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/9.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/10.jpg">
-<meta property="og:updated_time" content="2019-01-27T07:59:06.329Z">
+<meta property="og:image" content="https://francisqiang.github.io/2019/05/06/二分搜索树的增删改查/1.jpg">
+<meta property="og:image" content="https://francisqiang.github.io/2019/05/06/二分搜索树的增删改查/2.jpg">
+<meta property="og:image" content="https://francisqiang.github.io/2019/05/06/二分搜索树的增删改查/3.jpg">
+<meta property="og:updated_time" content="2019-05-06T05:49:32.218Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS的盒子模型">
-<meta name="twitter:description" content="什么是盒子模型&amp;nbsp;&amp;nbsp;CSS中将每个元素都设置为了一个矩形的盒子来方便页面的布局，所以当这些元素都变成了盒子之后，我们的布局就变成了在页面中摆放盒子  内容(content)&amp;nbsp;&amp;nbsp;元素的所有子元素都是放在父元素的内容区中 &amp;nbsp;&amp;nbsp;内容区有宽度和高度——width，height 内边距(padding)&amp;nbsp;&amp;nbsp;内边距指的是内容区和边框">
-<meta name="twitter:image" content="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/1.png">
+<meta name="twitter:title" content="二分搜索树的增删改查">
+<meta name="twitter:description" content="什么是二分搜索树  首先我们要先知道二叉树是什么，二叉树其实就是从一个根节点左右两端延伸出左右结点，延伸出的结点再次延伸出结点，然后一直延伸下去，所以树这种数据结构天生满足递归特性。   而二分搜索树就是对二叉树做了一个限制，首先二分搜索树中的元素必须是可比较的（对于Java来说就是必须继承Comparable接口）。为什么需要它可比较呢？就是因为，二分搜索树的排列需要根据数值来排列。   二分搜">
+<meta name="twitter:image" content="https://francisqiang.github.io/2019/05/06/二分搜索树的增删改查/1.jpg">
 
 
 
@@ -139,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/05/06/二分搜索树的增删改查/">
 
 
 
 
 
-  <title>CSS的盒子模型 | Francis的博客</title>
+  <title>二分搜索树的增删改查 | Francis的博客</title>
   
 
 
@@ -306,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/05/06/二分搜索树的增删改查/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -323,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS的盒子模型</h1>
+          <h1 class="post-title" itemprop="name headline">二分搜索树的增删改查</h1>
         
 
         <div class="post-meta">
@@ -335,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-25T22:41:46+08:00">
-                2019-01-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-06T13:01:10+08:00">
+                2019-05-06
               </time>
             
 
@@ -358,8 +351,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -376,8 +369,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/25/CSS的盒子模型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/25/CSS的盒子模型/" itemprop="commentCount"></span>
+                <a href="/2019/05/06/二分搜索树的增删改查/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/06/二分搜索树的增删改查/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -385,7 +378,7 @@
 
           
           
-             <span id="/2019/01/25/CSS的盒子模型/" class="leancloud_visitors" data-flag-title="CSS的盒子模型">
+             <span id="/2019/05/06/二分搜索树的增删改查/" class="leancloud_visitors" data-flag-title="二分搜索树的增删改查">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -411,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.3k
+                  1.7k
                 </span>
               
 
@@ -427,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  7
                 </span>
               
             </div>
@@ -448,94 +441,54 @@
       
 
       
-        <h2 id="什么是盒子模型"><a href="#什么是盒子模型" class="headerlink" title="什么是盒子模型"></a>什么是盒子模型</h2><p>&nbsp;&nbsp;CSS中将每个元素都设置为了一个矩形的盒子来方便页面的布局，所以当这些元素都变成了盒子之后，我们的布局就变成了在页面中摆放盒子</p>
-<p><img src="/2019/01/25/CSS的盒子模型/1.png"></p>
-<h2 id="内容-content"><a href="#内容-content" class="headerlink" title="内容(content)"></a>内容(content)</h2><p>&nbsp;&nbsp;元素的所有子元素都是放在父元素的内容区中</p>
-<p>&nbsp;&nbsp;内容区有宽度和高度——width，height</p>
-<h2 id="内边距-padding"><a href="#内边距-padding" class="headerlink" title="内边距(padding)"></a>内边距(padding)</h2><p>&nbsp;&nbsp;内边距指的是内容区和边框区之间的距离，<font color="red">内边距会影响盒子的大小</font>。</p>
-<p><img src="/2019/01/25/CSS的盒子模型/2.jpg"></p>
-<p>此时box1原本高度宽度只有10px，设置内边距之后整个盒子可见框的大小就发生变化了，而且元素的背景颜色延伸到了内边距。</p>
-<p>其中属性有五种</p>
-<ul>
-<li>padding</li>
+        <h2 id="什么是二分搜索树"><a href="#什么是二分搜索树" class="headerlink" title="什么是二分搜索树"></a>什么是二分搜索树</h2><p>  首先我们要先知道二叉树是什么，二叉树其实就是从一个根节点左右两端延伸出左右结点，延伸出的结点再次延伸出结点，然后一直延伸下去，所以树这种数据结构天生满足递归特性。</p>
+<p>  而二分搜索树就是对二叉树做了一个限制，首先二分搜索树中的元素必须是可比较的（对于Java来说就是必须继承Comparable接口）。为什么需要它可比较呢？就是因为，二分搜索树的排列需要根据数值来排列。</p>
+<p>  二分搜索树的某个结点的左孩子必须小于原来的节点且某个结点的左子树的所有结点必须比这个结点小。</p>
+<p>  右边同上。</p>
+<p>  <img src="/2019/05/06/二分搜索树的增删改查/1.jpg" alt="什么是二分搜索树和二叉树"></p>
+<h2 id="二分搜索树的基本定义"><a href="#二分搜索树的基本定义" class="headerlink" title="二分搜索树的基本定义"></a>二分搜索树的基本定义</h2><p>  根据上面的定义，我们很容易就能写出代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BinarySearchTree</span>&lt;<span class="title">E</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">E</span>&gt;&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> E e;</span><br><span class="line">    <span class="keyword">private</span> Node left,right;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Node</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.e=e;</span><br><span class="line">      left=<span class="keyword">null</span>;</span><br><span class="line">      right=<span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> Node root;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">BinarySearchTree</span><span class="params">()</span></span>&#123;</span><br><span class="line">    root=<span class="keyword">null</span>;</span><br><span class="line">    size=<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二分搜索树的一些方法"><a href="#二分搜索树的一些方法" class="headerlink" title="二分搜索树的一些方法"></a>二分搜索树的一些方法</h2><ul>
+<li>首先就是getSize()和isEmpty()方法，很容易，返回size和判断size是否为0就行了</li>
 </ul>
-<p>当只设置一个值的时候这个值则是给上右下左都设置了</p>
-<p>当设置两个值时，第一个值是上下，第二个值是左右</p>
-<p>当设置三个值时，第一个值是上，第二个值是左右，第三个值是下</p>
-<p>当设置四个值时，就是上右下左</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> size;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">return</span> size==<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>padding-top</p>
-</li>
-<li><p>padding-right</p>
-</li>
-<li><p>padding-bottom</p>
-</li>
-<li><p>padding-left</p>
+<li><p>添加元素</p>
+<p>添加元素的时候我们只需要在树的叶子节点中添加就行了。</p>
 </li>
 </ul>
-<h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><p>&nbsp;&nbsp;<font color="red">整个盒子的可见框大小是由内容区、内边距区，边框区决定的</font></p>
-<p>&nbsp;&nbsp;设置边框需要设置三个样式。他们分别是border-width，border-color，border-style</p>
-<p>border-width设置的是边框的宽度</p>
-<p>border-color设置的是边框的颜色</p>
-<p>border-style设置的是边框的样式，一般有solid实线，dotted点线，dashed虚线等等</p>
-<p>&nbsp;&nbsp;通过使用border直接给边框三个属性赋值，例:border: 1px solid red;&nbsp;三个属性没有顺序要求</p>
-<h2 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h2><h3 id="外边距的简述和语法规范"><a href="#外边距的简述和语法规范" class="headerlink" title="外边距的简述和语法规范"></a>外边距的简述和语法规范</h3><p>&nbsp;&nbsp;外边距是盒子和其他盒子之间地距离，外边距不会影响可见框的大小，但是会影响盒子的位置。</p>
-<p>&nbsp;&nbsp;外边距也具有四个方向，语法跟padding相类似。</p>
-<p>&nbsp;&nbsp;margin值：单独将左右外边距设置为auto，则会将左右外边距设置为最大值</p>
-<p>&nbsp;&nbsp;如果同时将左右外边距设置为auto，则他的左右外边距会相同，所以一般我们会通过这种方式使一个子元素在他的父元素中水平居中&nbsp;&nbsp;<font color="red">margin:0 auto</font></p>
-<p>&nbsp;&nbsp;外边距可以设置为负值，则元素会向相反方向移动</p>
-<h3 id="外边距的重叠和取和现象"><a href="#外边距的重叠和取和现象" class="headerlink" title="外边距的重叠和取和现象"></a>外边距的重叠和取和现象</h3><p>&nbsp;&nbsp;相邻元素的外边距会取最大值</p>
-<p><img src="/2019/01/25/CSS的盒子模型/3.jpg"><br><img src="/2019/01/25/CSS的盒子模型/4.jpg"></p>
-<p>上面两张图我们可以看见box1和box2之间地margin值重叠在了一起，所以他们之间地margin值取得是最大的那一个</p>
-<p>&nbsp;&nbsp;子元素的外边距会传给父元素</p>
-<p><img src="/2019/01/25/CSS的盒子模型/5.jpg"></p>
-<p>上图我们可以知道box1把外边距传给了他的父元素box3</p>
-<p>&nbsp;&nbsp;另外一个就是水平外边距不会重叠，他们会取和</p>
-<h2 id="内联元素的盒子模型"><a href="#内联元素的盒子模型" class="headerlink" title="内联元素的盒子模型"></a>内联元素的盒子模型</h2><h3 id="内联元素的width和height"><a href="#内联元素的width和height" class="headerlink" title="内联元素的width和height"></a>内联元素的width和height</h3><p>&nbsp;&nbsp;<font color="red">内联元素是不支持宽高属性的!</font></p>
-<h3 id="内联元素的padding"><a href="#内联元素的padding" class="headerlink" title="内联元素的padding"></a>内联元素的padding</h3><p>&nbsp;&nbsp;内联元素支持水平方向的padding</p>
-<p><img src="/2019/01/25/CSS的盒子模型/6.jpg"></p>
-<p>&nbsp;&nbsp;内联元素也支持垂直方向的padding但是不会影响布局</p>
-<p><img src="/2019/01/25/CSS的盒子模型/7.jpg"></p>
-<h3 id="内联元素的border"><a href="#内联元素的border" class="headerlink" title="内联元素的border"></a>内联元素的border</h3><p>&nbsp;&nbsp;支持四个方向的边框，但是垂直的边框不会影响布局</p>
-<h3 id="内联元素的margin"><a href="#内联元素的margin" class="headerlink" title="内联元素的margin"></a>内联元素的margin</h3><p>&nbsp;&nbsp;支持水平方向的外边距，不支持垂直方向上的</p>
-<p><img src="/2019/01/25/CSS的盒子模型/8.jpg"></p>
-<h2 id="盒模型相关的样式"><a href="#盒模型相关的样式" class="headerlink" title="盒模型相关的样式"></a>盒模型相关的样式</h2><h3 id="display"><a href="#display" class="headerlink" title="display"></a>display</h3><p>&nbsp;&nbsp;display决定元素的显示方式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">    <span class="comment">//如果根节点为空，那么直接new</span></span><br><span class="line">    <span class="keyword">if</span>(root==<span class="keyword">null</span>)&#123;</span><br><span class="line">        root=<span class="keyword">new</span> Node(e);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        add(root,e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(Node node,E e)</span></span>&#123;</span><br><span class="line">  <span class="comment">//如果这个结点不等于这个时候才能添加元素</span></span><br><span class="line">  <span class="keyword">if</span> (!e.equals(node.e))&#123;</span><br><span class="line">    <span class="comment">//如果插入元素小于该结点的元素且该结点的左孩子为空</span></span><br><span class="line">    <span class="comment">//那么直接插入左孩子</span></span><br><span class="line">    <span class="keyword">if</span> (e.compareTo(node.e)&lt;<span class="number">0</span>&amp;&amp;node.left==<span class="keyword">null</span>)&#123;</span><br><span class="line">      node.left=<span class="keyword">new</span> Node(e);</span><br><span class="line">      size++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//这个同上</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (e.compareTo(node.e)&gt;<span class="number">0</span>&amp;&amp;node.right==<span class="keyword">null</span>)&#123;</span><br><span class="line">      node.right=<span class="keyword">new</span> Node(e);</span><br><span class="line">      size++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果小于，那么就递归调用</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (e.compareTo(node.e)&lt;<span class="number">0</span>)&#123;</span><br><span class="line">      add(node.left,e);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (e.compareTo(node.e)&gt;<span class="number">0</span>)&#123;</span><br><span class="line">      <span class="comment">//同上</span></span><br><span class="line">      add(node.right,e);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  当然添加方法还有优化的地方</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">  add(root,e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">add</span><span class="params">(Node node,E e)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (node==<span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="comment">//该结点为空，那么直接返回给上一级new出来的元素为e的节点，这里就是添加，只是现在遍历到最后了而已</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Node(e);</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span> (e.compareTo(node.e)&lt;<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="comment">//如果小于，那么该结点的左孩子就是下一层二分搜索树的添加元素后的二分搜索树</span></span><br><span class="line">    node.left=add(node.left,e);</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span> (e.compareTo(node.e)&gt;<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="comment">//如果大于，那么该结点的右孩子就是下一层二分搜索树的添加元素后的二分搜索树</span></span><br><span class="line">    node.right=add(node.right,e);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//最后return被添加过结点的根节点</span></span><br><span class="line">  <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>none&nbsp;&nbsp;当属性值为none时，这个元素不会在页面中显示且不会占据页面的位置</li>
-<li>block&nbsp;&nbsp;元素作为块元素显示</li>
-<li>inline&nbsp;&nbsp;元素作为内联元素显示</li>
-<li>inline-block&nbsp;&nbsp;作为行内块元素显示，具有块元素和内联元素的特点——<font color="red">能进行宽高的设置，不会进行换行</font></li>
-</ul>
-<h3 id="visibility"><a href="#visibility" class="headerlink" title="visibility"></a>visibility</h3><p>&nbsp;&nbsp;visibility属性设置元素是否在页面中显示</p>
+<li><p>查询元素</p>
 <ul>
-<li>visible&nbsp;&nbsp;默认值，元素可以正常显示</li>
-<li>hidden&nbsp;&nbsp;元素不在页面中显示，但是<font color="red">依然在页面占据着它原来的空间</font></li>
+<li><p>这里就是判断二分搜索树是否包含某个元素</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> contains(root,e);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Node node,E e)</span></span>&#123;</span><br><span class="line">    <span class="comment">//如果该树的根节点就是空，那么直接false</span></span><br><span class="line">    <span class="keyword">if</span> (root==<span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果查询到了那么返回该结点</span></span><br><span class="line">    <span class="keyword">if</span> (e.equals(node.e))&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (e.compareTo(node.e)&lt;<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="comment">//小于的时候遍历左孩子树</span></span><br><span class="line">    <span class="keyword">return</span> contains(node.left,e);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (e.compareTo(node.e)&gt;<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="comment">//大于的时候遍历右孩子树</span></span><br><span class="line">    <span class="keyword">return</span> contains(node.right,e);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取最小元素和最大元素</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">minimum</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">//当树的大小为0就不能删除</span></span><br><span class="line">    <span class="keyword">if</span> (size==<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"BST is empty"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> minimum(root).e;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">minimum</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//当遍历到最后的某个结点的左孩子为null，那么这个结点就是最小元素</span></span><br><span class="line">    <span class="keyword">if</span> (node.left==<span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> minimum(node.left);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//同理</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">maximum</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (size==<span class="number">0</span>)&#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"BST is empty"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> maximum(root).e;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">maximum</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line"><span class="keyword">if</span> (node.right==<span class="keyword">null</span>)&#123;</span><br><span class="line">  <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> maximum(node.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h3><p>&nbsp;&nbsp;overflow设置元素如何处理溢出内容</p>
+</li>
+<li><p>删除元素，其中删除元素是最复杂的，对于删除最小最大元素来说并不复杂，因为只需要往左往右遍历二分搜索树就行了，但是对于任意元素的删除就要考虑多种情况。</p>
 <ul>
-<li>visible&nbsp;&nbsp;默认值，子元素溢出的东西会在父元素以外的地方显示</li>
+<li>删除最小元素</li>
 </ul>
-<p><img src="/2019/01/25/CSS的盒子模型/9.jpg"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">removeMin</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (size==<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"BST is empty"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> removeMin(root).e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">removeMin</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">  <span class="comment">//如果左孩子为空，那么这个结点就是要删除的结点</span></span><br><span class="line">  <span class="keyword">if</span> (node.left==<span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="comment">//将该结点的右子树放入临时变量</span></span><br><span class="line">    Node rightNode=node.right;</span><br><span class="line">    <span class="comment">//将这个结点的右子树置为null，然后返回刚刚的临时变量rightNode</span></span><br><span class="line">    node.right=<span class="keyword">null</span>;</span><br><span class="line">    size--;</span><br><span class="line">    <span class="keyword">return</span> rightNode;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//不然就一直向左遍历，并且将下一级删除后返回的二分搜索树赋值给上一级的结点</span></span><br><span class="line">  node.left=removeMin(node.left);</span><br><span class="line">  <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>hidden 溢出内容会被隐藏</li>
-<li>scroll 会添加滚动条显示溢出内容不管内容是否溢出都会添加滚动条</li>
+<li>删除最大元素</li>
 </ul>
-<p><img src="/2019/01/25/CSS的盒子模型/10.jpg"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">removeMax</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (size==<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">throw</span>  <span class="keyword">new</span> IllegalArgumentException(<span class="string">"BST is empty"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> removeMax(root).e;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">removeMax</span><span class="params">(Node node)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (node.right==<span class="keyword">null</span>)&#123;</span><br><span class="line">    Node leftNode=node.left;</span><br><span class="line">    node.left=<span class="keyword">null</span>;</span><br><span class="line">    size--;</span><br><span class="line">    <span class="keyword">return</span> leftNode;</span><br><span class="line">  &#125;</span><br><span class="line">  node.right=removeMax(node.right);</span><br><span class="line">  <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>auto&nbsp;&nbsp;根据需要自动生成滚动条</li>
+<li>删除某个结点</li>
 </ul>
-<h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>文档流指的是网页中的一个位置</p>
-<p>文档流是网页的基础，是网页的最底层，所有的元素默认都是在文档流中排列</p>
-<p>元素在文档流中默认自左向右，自上向下排列（和我们的书写习惯一致）</p>
-<h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><ol>
-<li>块元素在文档流中自上向下排列</li>
-<li>块元素在文档流中宽度默认是父元素的100%</li>
-<li>块元素在文档流中高度默认被内容撑开</li>
-</ol>
-<h3 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h3><ol>
-<li>内联元素在文档流中自左向右排列，如果一行中不足以容下所有的内联元素，则换到下一行，继续自左至右排列</li>
-<li>内联元素在文档流中宽度和高度默认都被内容撑开</li>
-</ol>
+<p>我们可以通过寻找需要被删除节点的后继或者前驱，并且把它从原来树中删除然后代替被删除节点的位置</p>
+<p><img src="/2019/05/06/二分搜索树的增删改查/2.jpg" alt="通过后继删除元素"></p>
+<p><img src="/2019/05/06/二分搜索树的增删改查/3.jpg" alt="通过前驱删除元素"></p>
+<p>这里我只写了通过后继删除某个元素，当然前驱书写方式也是一样的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(E e)</span></span>&#123;</span><br><span class="line">  root=remove(root,e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> Node <span class="title">remove</span><span class="params">(Node node,E e)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (node==<span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (e.compareTo(node.e)&lt;<span class="number">0</span>)&#123;</span><br><span class="line">    node.left=remove(node.left,e);</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (e.compareTo(node.e)&gt;<span class="number">0</span>) &#123;</span><br><span class="line">    node.right=remove(node.right,e);</span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//如果相等就要删除</span></span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//首先判断这个树是不是只有一边的孩子</span></span><br><span class="line">    <span class="comment">//如果只有左边有孩子或者只有右边有孩子</span></span><br><span class="line">    <span class="keyword">if</span> (node.right==<span class="keyword">null</span>)&#123;</span><br><span class="line">      <span class="comment">//如果只有左子树</span></span><br><span class="line">      <span class="comment">//那么我们将该结点的左子树返回给上一节点的左子树</span></span><br><span class="line">      size--;</span><br><span class="line">      <span class="keyword">return</span> node.left;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span> (node.left==<span class="keyword">null</span>)&#123;</span><br><span class="line">      size--;</span><br><span class="line">      <span class="keyword">return</span> node.right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//如果左右都有孩子</span></span><br><span class="line">    <span class="comment">//寻找该节点的后继节点</span></span><br><span class="line">    <span class="comment">//后继结点就是离该结点最近的节点（数值最近而且是大于该节点）</span></span><br><span class="line">    <span class="comment">//那么这个结点的后继结点就是该节点右孩子的最小结点</span></span><br><span class="line">    Node successorNode=minimum(node.right);</span><br><span class="line">    <span class="comment">//我们需要删除该节点的后继结点并且将删除后的右孩子树赋值给我们获取到的successorNode的右孩子</span></span><br><span class="line">    successorNode.right=removeMin(node.right);</span><br><span class="line">    successorNode.left=node.left;</span><br><span class="line">    node.left=node.right=<span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">return</span> successorNode;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
     </div>
@@ -575,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/24/CSS—的浮动/" rel="next" title="CSS的浮动">
-                <i class="fa fa-chevron-left"></i> CSS的浮动
+              <a href="/2019/05/05/Git中-gitignore文件修改后不起作用/" rel="next" title="Git中.gitignore文件修改后不起作用">
+                <i class="fa fa-chevron-left"></i> Git中.gitignore文件修改后不起作用
               </a>
             
           </div>
@@ -584,10 +537,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/26/CSS中的定位/" rel="prev" title="CSS中的定位">
-                CSS中的定位 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -782,7 +731,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是盒子模型"><span class="nav-number">1.</span> <span class="nav-text">什么是盒子模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容-content"><span class="nav-number">2.</span> <span class="nav-text">内容(content)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内边距-padding"><span class="nav-number">3.</span> <span class="nav-text">内边距(padding)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边框"><span class="nav-number">4.</span> <span class="nav-text">边框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外边距"><span class="nav-number">5.</span> <span class="nav-text">外边距</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#外边距的简述和语法规范"><span class="nav-number">5.1.</span> <span class="nav-text">外边距的简述和语法规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外边距的重叠和取和现象"><span class="nav-number">5.2.</span> <span class="nav-text">外边距的重叠和取和现象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联元素的盒子模型"><span class="nav-number">6.</span> <span class="nav-text">内联元素的盒子模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素的width和height"><span class="nav-number">6.1.</span> <span class="nav-text">内联元素的width和height</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素的padding"><span class="nav-number">6.2.</span> <span class="nav-text">内联元素的padding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素的border"><span class="nav-number">6.3.</span> <span class="nav-text">内联元素的border</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素的margin"><span class="nav-number">6.4.</span> <span class="nav-text">内联元素的margin</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒模型相关的样式"><span class="nav-number">7.</span> <span class="nav-text">盒模型相关的样式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#display"><span class="nav-number">7.1.</span> <span class="nav-text">display</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#visibility"><span class="nav-number">7.2.</span> <span class="nav-text">visibility</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#overflow"><span class="nav-number">7.3.</span> <span class="nav-text">overflow</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档流"><span class="nav-number">8.</span> <span class="nav-text">文档流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">8.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块元素"><span class="nav-number">8.2.</span> <span class="nav-text">块元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素"><span class="nav-number">8.3.</span> <span class="nav-text">内联元素</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是二分搜索树"><span class="nav-number">1.</span> <span class="nav-text">什么是二分搜索树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分搜索树的基本定义"><span class="nav-number">2.</span> <span class="nav-text">二分搜索树的基本定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分搜索树的一些方法"><span class="nav-number">3.</span> <span class="nav-text">二分搜索树的一些方法</span></a></li></ol></div>
             
 
           </div>
