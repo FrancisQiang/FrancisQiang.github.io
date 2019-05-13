@@ -88,12 +88,12 @@
 
 
 
-<meta name="description" content="什么是集合(Set)  简单来说，集合就是一个不能存放重复元素的数据结构，通常可以运用于客户统计(网站访问人数)，词汇量统计等等。 定义Set接口123456789101112131415161718192021222324252627282930313233  public interface Set&amp;lt;E&amp;gt; &amp;#123;    /**     * 增加元素     * @param">
+<meta name="description" content="什么是集合(Set)  简单来说，集合就是一个不能存放重复元素的数据结构，通常可以运用于客户统计(网站访问人数)，词汇量统计等等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="集合与映射">
 <meta property="og:url" content="https://francisqiang.github.io/2019/05/13/集合与映射/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="什么是集合(Set)  简单来说，集合就是一个不能存放重复元素的数据结构，通常可以运用于客户统计(网站访问人数)，词汇量统计等等。 定义Set接口123456789101112131415161718192021222324252627282930313233  public interface Set&amp;lt;E&amp;gt; &amp;#123;    /**     * 增加元素     * @param">
+<meta property="og:description" content="什么是集合(Set)  简单来说，集合就是一个不能存放重复元素的数据结构，通常可以运用于客户统计(网站访问人数)，词汇量统计等等。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://francisqiang.github.io/2019/05/13/集合与映射/1.jpg">
 <meta property="og:image" content="https://francisqiang.github.io/2019/05/13/集合与映射/2.jpg">
@@ -105,10 +105,10 @@
 <meta property="og:image" content="https://francisqiang.github.io/2019/05/13/集合与映射/8.jpg">
 <meta property="og:image" content="https://francisqiang.github.io/2019/05/13/集合与映射/9.jpg">
 <meta property="og:image" content="https://francisqiang.github.io/2019/05/13/集合与映射/10.jpg">
-<meta property="og:updated_time" content="2019-05-13T14:42:43.540Z">
+<meta property="og:updated_time" content="2019-05-13T14:47:39.770Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集合与映射">
-<meta name="twitter:description" content="什么是集合(Set)  简单来说，集合就是一个不能存放重复元素的数据结构，通常可以运用于客户统计(网站访问人数)，词汇量统计等等。 定义Set接口123456789101112131415161718192021222324252627282930313233  public interface Set&amp;lt;E&amp;gt; &amp;#123;    /**     * 增加元素     * @param">
+<meta name="twitter:description" content="什么是集合(Set)  简单来说，集合就是一个不能存放重复元素的数据结构，通常可以运用于客户统计(网站访问人数)，词汇量统计等等。">
 <meta name="twitter:image" content="https://francisqiang.github.io/2019/05/13/集合与映射/1.jpg">
 
 
@@ -449,6 +449,7 @@
 
       
         <h2 id="什么是集合-Set"><a href="#什么是集合-Set" class="headerlink" title="什么是集合(Set)"></a>什么是集合(Set)</h2><p>  简单来说，集合就是一个不能存放重复元素的数据结构，通常可以运用于客户统计(网站访问人数)，词汇量统计等等。</p>
+<a id="more"></a>
 <h2 id="定义Set接口"><a href="#定义Set接口" class="headerlink" title="定义Set接口"></a>定义Set接口</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Set</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 增加元素</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> e 元素</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(E e)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 是否包含</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> e 元素</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 布尔</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(E e)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 移除元素</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> e 元素</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(E e)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取集合大小</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> size大小</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * set是否为空</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> boolean</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="使用二分搜索树实现集合"><a href="#使用二分搜索树实现集合" class="headerlink" title="使用二分搜索树实现集合"></a>使用二分搜索树实现集合</h2><p>  对于二分搜索树有一个很重要的特性就是它是根据元素的大小来放入元素到树中的，所以二分搜索树基本是不存在相同元素的，我们就可以通过二分搜索树底层实现集合</p>
 <p>  这是上一篇博客写的二分搜索树的相关代码:</p>
