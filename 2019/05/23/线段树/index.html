@@ -88,21 +88,21 @@
 
 
 
-<meta name="description" content="数据格式化 对属性对象的输入/输出进行格式化（告诉后端前端页面是以什么格式书写属性的），如果请求的数据格式不是后端标识的格式则后端不能识别，将会报400请求错误，因为服务器无法解析请求(看不懂请求)，从其本质上讲属于”类型转换”范畴。  Spring 在格式化模块中定义了一个实现ConversionService接口的FormattingConversionService实现类，该类扩展了Gene">
+<meta name="description" content="什么是线段树  按照我的简单理解，线段树其实是每个结点存放一个区间的值，使我们查询一个区间的时间复杂度从n变为logn。   当然时间复杂度的减少，空间也就会有相应的损失，当我们要通过线段树存储一个线性结构，空间的开销就会增大。比如我们存储的线性结构的大小正好是2的整数幂，那么我们所有的叶子节点都会是单个区间的值，这个叶子节点的数量就是n，我们知道对于一个满二叉树来说，叶子节点的数量就是上层所有节">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringMVC——数据格式化与数据校验">
-<meta property="og:url" content="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/index.html">
+<meta property="og:title" content="线段树">
+<meta property="og:url" content="https://francisqiang.github.io/2019/05/23/线段树/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="数据格式化 对属性对象的输入/输出进行格式化（告诉后端前端页面是以什么格式书写属性的），如果请求的数据格式不是后端标识的格式则后端不能识别，将会报400请求错误，因为服务器无法解析请求(看不懂请求)，从其本质上讲属于”类型转换”范畴。  Spring 在格式化模块中定义了一个实现ConversionService接口的FormattingConversionService实现类，该类扩展了Gene">
+<meta property="og:description" content="什么是线段树  按照我的简单理解，线段树其实是每个结点存放一个区间的值，使我们查询一个区间的时间复杂度从n变为logn。   当然时间复杂度的减少，空间也就会有相应的损失，当我们要通过线段树存储一个线性结构，空间的开销就会增大。比如我们存储的线性结构的大小正好是2的整数幂，那么我们所有的叶子节点都会是单个区间的值，这个叶子节点的数量就是n，我们知道对于一个满二叉树来说，叶子节点的数量就是上层所有节">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/1.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/2.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/3.jpg">
-<meta property="og:updated_time" content="2019-01-28T11:00:37.586Z">
+<meta property="og:image" content="https://francisqiang.github.io/2019/05/23/线段树/1.jpg">
+<meta property="og:image" content="https://francisqiang.github.io/2019/05/23/线段树/2.jpg">
+<meta property="og:image" content="https://francisqiang.github.io/2019/05/23/线段树/3.jpg">
+<meta property="og:updated_time" content="2019-05-23T08:33:22.891Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringMVC——数据格式化与数据校验">
-<meta name="twitter:description" content="数据格式化 对属性对象的输入/输出进行格式化（告诉后端前端页面是以什么格式书写属性的），如果请求的数据格式不是后端标识的格式则后端不能识别，将会报400请求错误，因为服务器无法解析请求(看不懂请求)，从其本质上讲属于”类型转换”范畴。  Spring 在格式化模块中定义了一个实现ConversionService接口的FormattingConversionService实现类，该类扩展了Gene">
-<meta name="twitter:image" content="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/1.jpg">
+<meta name="twitter:title" content="线段树">
+<meta name="twitter:description" content="什么是线段树  按照我的简单理解，线段树其实是每个结点存放一个区间的值，使我们查询一个区间的时间复杂度从n变为logn。   当然时间复杂度的减少，空间也就会有相应的损失，当我们要通过线段树存储一个线性结构，空间的开销就会增大。比如我们存储的线性结构的大小正好是2的整数幂，那么我们所有的叶子节点都会是单个区间的值，这个叶子节点的数量就是n，我们知道对于一个满二叉树来说，叶子节点的数量就是上层所有节">
+<meta name="twitter:image" content="https://francisqiang.github.io/2019/05/23/线段树/1.jpg">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/05/23/线段树/">
 
 
 
 
 
-  <title>SpringMVC——数据格式化与数据校验 | Francis的博客</title>
+  <title>线段树 | Francis的博客</title>
   
 
 
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/05/23/线段树/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringMVC——数据格式化与数据校验</h1>
+          <h1 class="post-title" itemprop="name headline">线段树</h1>
         
 
         <div class="post-meta">
@@ -328,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-28T13:24:42+08:00">
-                2019-01-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T15:29:30+08:00">
+                2019-05-23
               </time>
             
 
@@ -351,8 +351,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spring-MVC/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring MVC</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -369,8 +369,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/28/SpringMVC——数据格式化与数据校验/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/28/SpringMVC——数据格式化与数据校验/" itemprop="commentCount"></span>
+                <a href="/2019/05/23/线段树/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/23/线段树/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -378,7 +378,7 @@
 
           
           
-             <span id="/2019/01/28/SpringMVC——数据格式化与数据校验/" class="leancloud_visitors" data-flag-title="SpringMVC——数据格式化与数据校验">
+             <span id="/2019/05/23/线段树/" class="leancloud_visitors" data-flag-title="线段树">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k
+                  1.5k
                 </span>
               
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -441,62 +441,32 @@
       
 
       
-        <h2 id="数据格式化"><a href="#数据格式化" class="headerlink" title="数据格式化"></a>数据格式化</h2><ul>
-<li><p>对属性对象的输入/输出进行格式化（告诉后端前端页面是以什么格式书写属性的），如果请求的数据格式不是后端标识的格式则后端不能识别，将会报400请求错误，因为服务器无法解析请求(看不懂请求)，从其本质上讲属于”类型转换”范畴。</p>
-</li>
-<li><p>Spring 在格式化模块中定义了一个实现ConversionService接口的<font color="red">FormattingConversionService</font>实现类，该类扩展了GenericConversionService，因此它<font color="red">既具有类型转换的功能，又具有格式化的功能</font></p>
-</li>
-<li><p>FormattingConversionService 拥有一个<font color="red"> FormattingConversionServiceFactroyBean </font> 工厂类，后者用于在 Spring 上下文中构造前者</p>
-</li>
-<li><p>FormattingConversionServiceFactroyBean 内部已经注册了 :</p>
-<ul>
-<li><p>NumberFormatAnnotationFormatterFactroy：支持对数字类型的属性使用 @NumberFormat 注解</p>
-</li>
-<li><p>JodaDateTimeFormatAnnotationFormatterFactroy：支持对日期类型的属性使用 @DateTimeFormat 注解</p>
-</li>
-</ul>
-</li>
-<li><p>装配了 FormattingConversionServiceFactroyBean 后，就可以在 Spring MVC 入参绑定及模型数据输出时使用注解驱动了。<a href="mvc:annotation-driven/" target="_blank" rel="noopener">mvc:annotation-driven/</a> 默认创建的<br>ConversionService 实例即为<br>FormattingConversionServiceFactroyBean</p>
-</li>
-</ul>
-<h3 id="日期格式化"><a href="#日期格式化" class="headerlink" title="日期格式化"></a>日期格式化</h3><p>&nbsp;&nbsp; @DateTimeFormat注解可对Date,Calendar,java.long.Long时间类型进行标注</p>
-<ul>
-<li><p><font color="red">pattern 属性</font>：类型为字符串。指定解析/格式化字段数据的模式，如：”yyyy-MM-dd hh:mm:ss”</p>
-</li>
-<li><p>iso 属性：类型为 DateTimeFormat.ISO。指定解析/格式化字段数据<br>的ISO模式，包括四种：ISO.NONE（不使用） – 默<br>认、ISO.DATE(yyyy-MM-dd) 、ISO.TIME(hh:mm:ss.SSSZ)、<br>ISO.DATE_TIME(yyyy-MM-dd hh:mm:ss.SSSZ)</p>
-</li>
-<li><p>style 属性：字符串类型。通过样式指定日期时间的格式，由两位字<br>符组成，第一位表示日期的格式，第二位表示时间的格式：S：短日<br>期/时间格式、M：中日期/时间格式、L：长日期/时间格式、F：完整<br>日期/时间格式、-：忽略日期或时间格式</p>
-</li>
-</ul>
-<h3 id="数值格式化"><a href="#数值格式化" class="headerlink" title="数值格式化"></a>数值格式化</h3><p>&nbsp;&nbsp; @NumberFormat 可对类似数字类型的属性进行标注，它拥有两个互斥的属性：</p>
-<ul>
-<li><p>style：类型为 NumberFormat.Style。用于指定样式类型，包括三种：Style.NUMBER（正常数字类型）、<br>Style.CURRENCY（货币类型）、 Style.PERCENT（<br>百分数类型）</p>
-</li>
-<li><p><font color="red">pattern</font>：类型为 String，自定义样式，如patter=”#,###”；</p>
-</li>
-<li><p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@DateTimeFormat(pattern=&quot;yyyy-MM-dd&quot;)</span><br><span class="line">private Date birth;</span><br><span class="line"></span><br><span class="line">@NumberFormat(pattern=&quot;#,###,###.#&quot;)</span><br><span class="line">private Float salary;</span><br><span class="line"></span><br><span class="line">public Integer getId() &#123;</span><br><span class="line">	return id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="数据校验-JSR303"><a href="#数据校验-JSR303" class="headerlink" title="数据校验(JSR303)"></a>数据校验(JSR303)</h2><ul>
-<li><p>JSR 303 是 Java 为 Bean 数据合法性校验提供的标准框架，它已经包含在 JavaEE 6.0 中  </p>
-</li>
-<li><p>JSR 303 通过在 Bean 属性上标注类似于@NotNull、@Max 等标准的注解指定校验规则，并通过标准的验证接口对 Bean 进行验证</p>
-</li>
-<li><p>JSR303注解：</p>
-</li>
-</ul>
-<p><img src="/2019/01/28/SpringMVC——数据格式化与数据校验/1.jpg"></p>
-<ul>
-<li>使用   直接将注解加到Java bean中的某个要校验的属性上就行，但是也要在目标方法那个bean 类型前面加上@Valid注解,注意：需要校验数据的bean对象总是和其绑定结果对象或错误对象成对出现，他们之间不允许放入其他入参(他们要连在一起)</li>
-</ul>
-<h2 id="数据绑定流程"><a href="#数据绑定流程" class="headerlink" title="数据绑定流程"></a>数据绑定流程</h2><ul>
-<li>Spring MVC 通过反射机制对目标处理方法进行解析，将请求消息绑定到处理方法的入参中。数据绑定的核心部件是DataBinder，运行机制如下：</li>
-</ul>
-<p><img src="/2019/01/28/SpringMVC——数据格式化与数据校验/2.jpg"></p>
-<p>&nbsp;&nbsp;所以说当进行数据格式化和数据校验时，最后如果是错误的，错误结果会存到BindingResult对象里面，它其实是个Errors对象，因为它继承了Errors</p>
-<p><img src="/2019/01/28/SpringMVC——数据格式化与数据校验/3.jpg"></p>
-<h2 id="代码例子："><a href="#代码例子：" class="headerlink" title="代码例子："></a>代码例子：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">   //COntroller层</span><br><span class="line">@RequestMapping(value=&quot;/emp&quot;, method=RequestMethod.POST)</span><br><span class="line">   //要检验的bean必须和BindingResult(Errors)绑定到一起，中间不能有其他入参</span><br><span class="line">public String save(@Valid Employee employee, Errors result, </span><br><span class="line">		Map&lt;String, Object&gt; map)&#123;</span><br><span class="line">	System.out.println(&quot;save: &quot; + employee);</span><br><span class="line">	</span><br><span class="line">	if(result.getErrorCount() &gt; 0)&#123;</span><br><span class="line">		System.out.println(&quot;出错了!&quot;);</span><br><span class="line">		</span><br><span class="line">		for(FieldError error:result.getFieldErrors())&#123;</span><br><span class="line">			System.out.println(error.getField() + &quot;:&quot; + error.getDefaultMessage());</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//若验证出错, 则转向定制的页面</span><br><span class="line">		map.put(&quot;departments&quot;, departmentDao.getDepartments());</span><br><span class="line">		return &quot;input&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	employeeDao.save(employee);</span><br><span class="line">	return &quot;redirect:/emps&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">   //bean里面的属性</span><br><span class="line"></span><br><span class="line">@NotEmpty</span><br><span class="line">private String lastName;</span><br><span class="line"></span><br><span class="line">@Email</span><br><span class="line">private String email;</span><br><span class="line">//1 male, 0 female</span><br><span class="line">private Integer gender;</span><br><span class="line"></span><br><span class="line">private Department department;</span><br><span class="line"></span><br><span class="line">@Past</span><br><span class="line">@DateTimeFormat(pattern=&quot;yyyy-MM-dd&quot;)</span><br><span class="line">private Date birth;</span><br><span class="line"></span><br><span class="line">@NumberFormat(pattern=&quot;#,###,###.#&quot;)</span><br><span class="line">private Float salary;</span><br><span class="line"></span><br><span class="line">public Integer getId() &#123;</span><br><span class="line">	return id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="什么是线段树"><a href="#什么是线段树" class="headerlink" title="什么是线段树"></a>什么是线段树</h2><p>  按照我的简单理解，线段树其实是每个结点存放一个区间的值，使我们查询一个区间的时间复杂度从n变为logn。</p>
+<p>  当然时间复杂度的减少，空间也就会有相应的损失，当我们要通过线段树存储一个线性结构，空间的开销就会增大。比如我们存储的线性结构的大小正好是2的整数幂，那么我们所有的叶子节点都会是单个区间的值，这个叶子节点的数量就是n，我们知道对于一个满二叉树来说，叶子节点的数量就是上层所有节点的和，那么这时候我们需要开辟的空间就是2n。但是当我们存储的大小不是2的整数幂的时候，这时候单个区间节点就不全在叶子节点上，假设我们为了使线段树尽量满足满二叉树的结构，那么在倒数第二层的单个区间的值也需要两个左右孩子节点(虽然他们是空，但还是需要空间的)，那么这时候我们就需要开辟2n*2(4n)的空间。</p>
+<p>  <img src="/2019/05/23/线段树/1.jpg" alt="线段树"></p>
+<h2 id="线段树的实现"><a href="#线段树的实现" class="headerlink" title="线段树的实现"></a>线段树的实现</h2><p>  对于线段树的实现，我们需要使用递归调用。</p>
+<p>  具体思路如下:</p>
+<p>  不考虑动态规划的情况，我们需要将整个区间一分为二，这个 middleIndex 就是(left + right) / 2,然后我们再依次递归到最后的叶子节点，当我们需要划分的left = right的时候也就是区间为1的时候(即一个区间的值)我们返回，然后我们通过后序遍历的思想将两个左右子节点的值相融合赋值给父节点。</p>
+<p>  具体实现代码:</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">buildSegmentTree</span><span class="params">(<span class="keyword">int</span> treeIndex, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (left == right)&#123;</span><br><span class="line">    tree[treeIndex] = data[left];</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//获取左右孩子的节点索引</span></span><br><span class="line">  <span class="keyword">int</span> leftChildIndex = leftChild(treeIndex);</span><br><span class="line">  <span class="keyword">int</span> rightChildIndex = rightChild(treeIndex);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//获取中间索引</span></span><br><span class="line">  <span class="keyword">int</span> middleIndex = left + (right - left) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//int middleIndex = (left + right) / 2;</span></span><br><span class="line">  <span class="comment">//为了防止整型溢出</span></span><br><span class="line"></span><br><span class="line">  buildSegmentTree(leftChildIndex, left, middleIndex);</span><br><span class="line">  buildSegmentTree(rightChildIndex, middleIndex + <span class="number">1</span>, right);</span><br><span class="line"></span><br><span class="line">  tree[treeIndex] = merger.merger(tree[leftChildIndex], tree[rightChildIndex]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="线段树的搜索"><a href="#线段树的搜索" class="headerlink" title="线段树的搜索"></a>线段树的搜索</h2><p>  基本思路:</p>
+<p>  其实还是递归的思想，我们需要获取某个区间的值，即我们创建一个query方法，其中参数有treeIndex(遍历的根节点的index)，left(在什么区间查询的左边界index),right(在什么区间查询的右边界index),queryLeft(需要查询的左边界index),queryRight(需要查询的右边界的index)。</p>
+<p>  最根本的条件就是当我们所查询的左右边界值分别和我们需要查询的左右边界值相等，那么我们直接返回这个tree[treeIndex]。</p>
+<p>  我们使用递归转换为小问题的思路就是通过left right，queryLeft queryRight的关系，我们设置一个middleIndex(这个middleIndex也是根据left,right得来的)，我们通过queryLeft和middle比较，如果queryLeft比当前所查询区间的的middle要大的话，那么我们就去查询右子树，如果queryRight比middle要小的话我们就去查询左子树，因为我们查询的一个区间基本可能实现一个大区间的子集中，那么为了精确，我们就需要在大区间的左右孩子树中查找结果然后我们再将左右结果融合在一起然后返回。</p>
+<p>  代码实现:</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">private</span> E <span class="title">query</span><span class="params">(<span class="keyword">int</span> treeIndex, <span class="keyword">int</span> left, <span class="keyword">int</span> right</span></span></span><br><span class="line"><span class="function"><span class="params">    , <span class="keyword">int</span> queryLeft, <span class="keyword">int</span> queryRight)</span></span>&#123;</span><br><span class="line">  <span class="comment">//当left == queryLeft &amp;&amp; right == queryRight时就说明是我们需要查询的区间直接返回</span></span><br><span class="line">  <span class="keyword">if</span> (left == queryLeft &amp;&amp; right == queryRight)&#123;</span><br><span class="line">    <span class="keyword">return</span> tree[treeIndex];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> middle = left + (right - left) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> childLeftIndex = leftChild(treeIndex);</span><br><span class="line">  <span class="keyword">int</span> childRightIndex = rightChild(treeIndex);</span><br><span class="line">  <span class="comment">//缩小查询范围</span></span><br><span class="line">  <span class="keyword">if</span> (queryLeft &gt;= middle + <span class="number">1</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> query(childRightIndex, middle + <span class="number">1</span>, right, queryLeft, queryRight);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (queryRight &lt;= middle)&#123;</span><br><span class="line">    <span class="keyword">return</span> query(childLeftIndex, left, middle, queryLeft, queryRight);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//我们查询的区间必定是某个大区间的左右孩子树查询结果的融合</span></span><br><span class="line">  E leftResult = query(childLeftIndex, left, middle, queryLeft, queryRight);</span><br><span class="line">  E rightResult = query(childRightIndex, middle + <span class="number">1</span>, right, queryLeft, queryRight);</span><br><span class="line">  <span class="keyword">return</span> merger.merger(leftResult, rightResult);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="线段树查询的LeetCode题目"><a href="#线段树查询的LeetCode题目" class="headerlink" title="线段树查询的LeetCode题目"></a>线段树查询的LeetCode题目</h2><p>  题目描述:</p>
+<p>  <img src="/2019/05/23/线段树/2.jpg" alt="LeetCode题目"></p>
+<p>  解题思路:</p>
+<p>  题目要求需要我们获得一个数组中某个区间段的值，并且这个sumRange函数会不断被调用，那么我们就可以使用线段树的查询操作(使merge融合改成相加就行了)</p>
+<p>  具体代码:</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NumArray</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> SegmentTree&lt;Integer&gt; segmentTree;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">NumArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">  Integer[] integers = <span class="keyword">new</span> Integer[nums.length];</span><br><span class="line">  <span class="keyword">if</span> (nums.length &gt; <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; nums.length ; i ++)&#123;</span><br><span class="line">      integers[i] = nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//λ表达式，直接实现接口</span></span><br><span class="line">    segmentTree = <span class="keyword">new</span> SegmentTree&lt;&gt;(integers, (a, b) -&gt; a + b);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sumRange</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> segmentTree.query(i, j);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="线段树的修改"><a href="#线段树的修改" class="headerlink" title="线段树的修改"></a>线段树的修改</h2><h3 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h3><p>  这里我们主要实现对线段树的某个单区间的修改操作，对于单个线段树的修改操作势必会牵连到其父节点的修改，这里我们还是可以使用后序遍历的思想再更新完子节点之后将父节点更新。</p>
+<p>  相关代码:</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(<span class="keyword">int</span> treeIndex, <span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span> index, E e)</span></span>&#123;</span><br><span class="line">  <span class="comment">//最根本条件就是我们查询的区间左右相等</span></span><br><span class="line">  <span class="comment">//这时候我们直接对该结点更新就行</span></span><br><span class="line">  <span class="keyword">if</span> (left == right)&#123;</span><br><span class="line">    tree[treeIndex] = e;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//后面也是拿index和left，right比较</span></span><br><span class="line">  <span class="comment">//通过index和left，right的关系将问题变小</span></span><br><span class="line">  <span class="keyword">int</span> middleIndex = left + (right - left) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> childLeftIndex = leftChild(treeIndex);</span><br><span class="line">  <span class="keyword">int</span> childRightIndex = rightChild(treeIndex);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (index &lt;= middleIndex)&#123;</span><br><span class="line">    set(childLeftIndex, left, middleIndex, index, e);</span><br><span class="line">  &#125;<span class="keyword">else</span> <span class="keyword">if</span> (index &gt;= middleIndex + <span class="number">1</span>)&#123;</span><br><span class="line">    set(childRightIndex, middleIndex, right, index, e);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//通过后序遍历的思想将父节点更新</span></span><br><span class="line">  tree[treeIndex] = merger.merger(tree[childLeftIndex], tree[childRightIndex]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="相关的LeetCode题目"><a href="#相关的LeetCode题目" class="headerlink" title="相关的LeetCode题目"></a>相关的LeetCode题目</h3><p>  <img src="/2019/05/23/线段树/3.jpg" alt="LeetCode题目"></p>
+<p>  这里其实就是增加一个update方法，题目又增加了修改单个结点的值，那么我们将更新方法加入原来实现的代码中。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">  segmentTree.update(i, val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -535,8 +505,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/28/SpringMVC的数据转换/" rel="next" title="SpringMVC的数据转换">
-                <i class="fa fa-chevron-left"></i> SpringMVC的数据转换
+              <a href="/2019/05/21/设计模式——策略模式/" rel="next" title="设计模式——策略模式">
+                <i class="fa fa-chevron-left"></i> 设计模式——策略模式
               </a>
             
           </div>
@@ -544,10 +514,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/29/Java中的反射和工厂模式/" rel="prev" title="Java中的反射和工厂模式">
-                Java中的反射和工厂模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -742,7 +708,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据格式化"><span class="nav-number">1.</span> <span class="nav-text">数据格式化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日期格式化"><span class="nav-number">1.1.</span> <span class="nav-text">日期格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值格式化"><span class="nav-number">1.2.</span> <span class="nav-text">数值格式化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据校验-JSR303"><span class="nav-number">2.</span> <span class="nav-text">数据校验(JSR303)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据绑定流程"><span class="nav-number">3.</span> <span class="nav-text">数据绑定流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码例子："><span class="nav-number">4.</span> <span class="nav-text">代码例子：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是线段树"><span class="nav-number">1.</span> <span class="nav-text">什么是线段树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线段树的实现"><span class="nav-number">2.</span> <span class="nav-text">线段树的实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线段树的搜索"><span class="nav-number">3.</span> <span class="nav-text">线段树的搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线段树查询的LeetCode题目"><span class="nav-number">4.</span> <span class="nav-text">线段树查询的LeetCode题目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线段树的修改"><span class="nav-number">5.</span> <span class="nav-text">线段树的修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本实现"><span class="nav-number">5.1.</span> <span class="nav-text">基本实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关的LeetCode题目"><span class="nav-number">5.2.</span> <span class="nav-text">相关的LeetCode题目</span></a></li></ol></li></ol></div>
             
 
           </div>
