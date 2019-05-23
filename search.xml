@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Mysql基学习——day1]]></title>
-    <url>%2F2019%2F05%2F23%2FMysql%E5%9F%BA%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94day1%2F</url>
+    <title><![CDATA[Mysql基础学习——day1]]></title>
+    <url>%2F2019%2F05%2F23%2FMysql%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94day1%2F</url>
     <content type="text"><![CDATA[Mysql的数据类型整型 TINYINT SMALLINT MEDIUMINT INT BIGINT 这五个从小往大，可以对对应字段设置有无符号位。 浮点型 FLOAT 单精度 DOUBLE 双精度 日期类型 YEAR TIME DATE DATETIME TIMESTAMP DATE范围： 1000/1/1~9999/12/31 DATETIME范围： 1000/1/1/0:00:00~9999/12/31/23:59:59 TIMESTAMP范围： 1970/1/1~2037/12/31 TIME范围： -8385959~8385959 YEAR范围： 可存储俩位或者四位 默认四位，可以是1970~2069 字符类型 CHAR VARCHAR TINYTEXT TEXT MEDIUMTEXT LONGTEXT ENUM SET Mysql的约束五种约束NOT NULL（非空约束） PRIMARY KEY (主键约束) UNIQUE KEY （唯一约束） DEFAULT (默认约束) FOREIGN KEY (外键约束) 外键约束的条件 父表（子表所参照的表）和子表（具有外键列的表）必须使用使用相同的存储引擎，而且禁止使用临时表。 数据表的存储引擎只能为InnoDB。 外键列（加FOREIGN KEY关键词的一列）和参照列（外键列参照的一列）必须具有相似的数据类型,如果是数字数据类型，则数字长度或者是否有符号位必须相同；如果为字符数据类型长度可以不同。 外键列和参照列（主键在创建的同时，会自动创建索引seq_in_index）必须创建索引。如果外键列不存在索引的话，MySQL将自动创建。 外键约束的参照操作 CASCADE:从父表删除或更新且自动删除或更新子表中匹配的行。 SET NULL:从父表删除或更新行，并设置子表中的外键列为NULL。 RESTRICT:拒绝对父表的删除或更新操作。 NO ACTION：标准SQL的关键字，在MySQL中与RESTRICT相同。 CASCADE的删除案例：（子表中外键列添加ON DELETE CASCADE，父表进行删除时，子表也进行相应删除）]]></content>
       <categories>
         <category>Mysql</category>
