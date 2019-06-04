@@ -88,24 +88,17 @@
 
 
 
-<meta name="description" content="基本数据类型和引用数据类型  &amp;nbsp;&amp;nbsp;在谈==与equals区别之前，我们先来谈一谈java中堆和栈的区别，还有基本数据类型和引用数据类型的区别。  基本数据类型有什么? &amp;nbsp;&amp;nbsp;八个基本数据类型：byte，short，int，long，float，double，char，boolean  引用数据类型是什么? &amp;nbsp;&amp;nbsp;引用数据类型是：类，接口，数组">
+<meta name="description" content="Java中的=赋值  一直以来我对于这些都有些模糊，今天来写一篇博客总结一下。   在Java中，=赋值对于基本类型可以简单理解为就是直接传值   12345int a = 1;int b = a;b = 2;System.out.println(a); // 1System.out.println(b); // 2   我们可以看出我们把a赋值给b然后对b进行改变的时候a的值还是不会变。   所">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈Java中==与equals的区别">
-<meta property="og:url" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/index.html">
+<meta property="og:title" content="Java中的赋值和参数传递">
+<meta property="og:url" content="https://francisqiang.github.io/2019/06/04/Java中的赋值和参数传递/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="基本数据类型和引用数据类型  &amp;nbsp;&amp;nbsp;在谈==与equals区别之前，我们先来谈一谈java中堆和栈的区别，还有基本数据类型和引用数据类型的区别。  基本数据类型有什么? &amp;nbsp;&amp;nbsp;八个基本数据类型：byte，short，int，long，float，double，char，boolean  引用数据类型是什么? &amp;nbsp;&amp;nbsp;引用数据类型是：类，接口，数组">
+<meta property="og:description" content="Java中的=赋值  一直以来我对于这些都有些模糊，今天来写一篇博客总结一下。   在Java中，=赋值对于基本类型可以简单理解为就是直接传值   12345int a = 1;int b = a;b = 2;System.out.println(a); // 1System.out.println(b); // 2   我们可以看出我们把a赋值给b然后对b进行改变的时候a的值还是不会变。   所">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/1.png">
-<meta property="og:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/2.png">
-<meta property="og:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/3.png">
-<meta property="og:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/4.png">
-<meta property="og:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/5.png">
-<meta property="og:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/6.png">
-<meta property="og:updated_time" content="2019-01-27T08:00:02.851Z">
+<meta property="og:updated_time" content="2019-06-04T02:50:36.903Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅谈Java中==与equals的区别">
-<meta name="twitter:description" content="基本数据类型和引用数据类型  &amp;nbsp;&amp;nbsp;在谈==与equals区别之前，我们先来谈一谈java中堆和栈的区别，还有基本数据类型和引用数据类型的区别。  基本数据类型有什么? &amp;nbsp;&amp;nbsp;八个基本数据类型：byte，short，int，long，float，double，char，boolean  引用数据类型是什么? &amp;nbsp;&amp;nbsp;引用数据类型是：类，接口，数组">
-<meta name="twitter:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/1.png">
+<meta name="twitter:title" content="Java中的赋值和参数传递">
+<meta name="twitter:description" content="Java中的=赋值  一直以来我对于这些都有些模糊，今天来写一篇博客总结一下。   在Java中，=赋值对于基本类型可以简单理解为就是直接传值   12345int a = 1;int b = a;b = 2;System.out.println(a); // 1System.out.println(b); // 2   我们可以看出我们把a赋值给b然后对b进行改变的时候a的值还是不会变。   所">
 
 
 
@@ -135,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/06/04/Java中的赋值和参数传递/">
 
 
 
 
 
-  <title>浅谈Java中==与equals的区别 | Francis的博客</title>
+  <title>Java中的赋值和参数传递 | Francis的博客</title>
   
 
 
@@ -302,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/06/04/Java中的赋值和参数传递/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -319,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浅谈Java中==与equals的区别</h1>
+          <h1 class="post-title" itemprop="name headline">Java中的赋值和参数传递</h1>
         
 
         <div class="post-meta">
@@ -331,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-11T15:26:56+08:00">
-                2018-12-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-04T10:16:02+08:00">
+                2019-06-04
               </time>
             
 
@@ -372,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/11/浅谈Java中-与equals的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/11/浅谈Java中-与equals的区别/" itemprop="commentCount"></span>
+                <a href="/2019/06/04/Java中的赋值和参数传递/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/04/Java中的赋值和参数传递/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -381,7 +374,7 @@
 
           
           
-             <span id="/2018/12/11/浅谈Java中-与equals的区别/" class="leancloud_visitors" data-flag-title="浅谈Java中==与equals的区别">
+             <span id="/2019/06/04/Java中的赋值和参数传递/" class="leancloud_visitors" data-flag-title="Java中的赋值和参数传递">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -407,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  623
+                  712
                 </span>
               
 
@@ -444,51 +437,20 @@
       
 
       
-        <h2 id="基本数据类型和引用数据类型"><a href="#基本数据类型和引用数据类型" class="headerlink" title="基本数据类型和引用数据类型"></a>基本数据类型和引用数据类型</h2><p>  &nbsp;&nbsp;在谈==与equals区别之前，我们先来谈一谈java中堆和栈的区别，还有基本数据类型和引用数据类型的区别。</p>
-<ul>
-<li><p><strong>基本数据类型有什么?</strong></p>
-<p>&nbsp;&nbsp;八个基本数据类型：byte，short，int，long，float，double，char，boolean</p>
-</li>
-<li><p><strong>引用数据类型是什么?</strong></p>
-<p>&nbsp;&nbsp;引用数据类型是：类，接口，数组</p>
-<p>&nbsp;&nbsp;<font size="4"><strong>具体参考下图</strong></font></p>
-</li>
-</ul>
-<p><img src="/2018/12/11/浅谈Java中-与equals的区别/1.png"></p>
-<h2 id="引用数据类型，基本数据类型和堆栈之间的关系"><a href="#引用数据类型，基本数据类型和堆栈之间的关系" class="headerlink" title="引用数据类型，基本数据类型和堆栈之间的关系"></a>引用数据类型，基本数据类型和堆栈之间的关系</h2><ul>
-<li>引用类型的变量，其内存分布在堆上或者常量池(字符串变量、基本数据类型常量)，需要通过new等方式来创建。堆内主要存放运行时，需要new来创建的对象。</li>
-<li>基本数据类型变量(8种基本数据类型)以及对象的引用变量，其内存分布在栈上，变量出了作用域就会自动释放。</li>
-</ul>
-<font size="4"><strong>如下图:</strong></font>
-
-<p><img src="/2018/12/11/浅谈Java中-与equals的区别/2.png" height="240" width="440"></p>
-<h2 id="Java中-和equals-与上述两者的关系"><a href="#Java中-和equals-与上述两者的关系" class="headerlink" title="Java中==和equals()与上述两者的关系"></a>Java中==和equals()与上述两者的关系</h2><ul>
-<li>==操作的是栈内存中的值是否相等</li>
-<li>equals比较的是堆内存中的值是否相等。</li>
-</ul>
-<font size="4">下面我们通过一些实例来证明：</font>
-
-<ul>
-<li><strong>比较两个基本数据类型</strong></li>
-</ul>
-<p><img src="/2018/12/11/浅谈Java中-与equals的区别/3.png" height="230" width="360"></p>
-<p>输出结果为: a==b</p>
-<p>&nbsp;&nbsp;<strong>可见==b比较的是栈中的内容,a和b栈中都存放了1所以相等</strong></p>
-<ul>
-<li><strong>比较两个字符串</strong></li>
-</ul>
-<p><img src="/2018/12/11/浅谈Java中-与equals的区别/4.png" height="230" width="380"></p>
-<p>输出结果为:  a==b</p>
-<p><img src="/2018/12/11/浅谈Java中-与equals的区别/5.png" height="230" width="380"></p>
-<p>输出结果为:  a.equals(b)</p>
-<p>&nbsp;&nbsp;<strong>在这个例子中，我们看到==和equals的作用是相同的，a==b说明a和b引用了同一个String对象。a.equsls(b)说明a和b指向的对象在堆中存储的内容相同。即a和b指向同一个对象。为什么会这样呢，因为<font color="red">Stirng对象在创建时，会现在String缓冲池中查看是否有相同的对象，如果有，则不创建。</font></strong></p>
-<ul>
-<li><strong>当再新建一个String对象</strong></li>
-</ul>
-<p><img src="/2018/12/11/浅谈Java中-与equals的区别/6.png" height="300" width="500"></p>
-<p>输出结果为:  a.equals(b) a!=b</p>
-<p>&nbsp;&nbsp;<strong>此时字符串a，b为不同的对象。equals比较的是堆中的内容，a和b堆中内容都是123，所以输出a.equals(b)。而又a，b不是同一个对象。所以a，b的栈中存储的地址不一样，而==又是比较栈中内容所以输出a!=b。</strong></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h2><p>&nbsp;&nbsp;<strong><font size="4">==比较的是<font color="red">栈中的内容</font>，即两个对象的地址是否为同一个。equals比较的是<font color="red">堆中内容是否相等</font>，即两个对象的内容是否相同。</font></strong></p>
+        <h2 id="Java中的-赋值"><a href="#Java中的-赋值" class="headerlink" title="Java中的=赋值"></a>Java中的=赋值</h2><p>  一直以来我对于这些都有些模糊，今天来写一篇博客总结一下。</p>
+<p>  在Java中，=赋值对于基本类型可以简单理解为就是直接传值</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> b = a;</span><br><span class="line">b = <span class="number">2</span>;</span><br><span class="line">System.out.println(a); <span class="comment">// 1</span></span><br><span class="line">System.out.println(b); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p>  我们可以看出我们把a赋值给b然后对b进行改变的时候a的值还是不会变。</p>
+<p>  所以在基本数据类型中，我们可以简单理解为=为传值。</p>
+<p>  而在对象中的=就不是赋值那么简单了，对于对象的=其实赋值的是对象的地址而不是内容，比如a = a1 ，假设这两个变量是对象，那么我们是将a1的地址赋值给a，那么a的地址就是a1的地址，即他们两共享同一地址，所以如果我们对a进行了操作，其实就是通过地址同时操作a1。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder s1 = <span class="keyword">new</span> StringBuilder(<span class="string">"123"</span>);</span><br><span class="line">StringBuilder s2 = s1;</span><br><span class="line">s2.append(<span class="string">"456"</span>);</span><br><span class="line">System.out.println(s1); <span class="comment">// 123456</span></span><br><span class="line">System.out.println(s2); <span class="comment">// 123456</span></span><br></pre></td></tr></table></figure>
+<p>  所以我们可以理解对于对象的=赋值的是对象的地址，除非我们再次new一个对象，将这个new的对象的地址重新赋值给s2。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">StringBuilder s1 = <span class="keyword">new</span> StringBuilder(<span class="string">"123"</span>);</span><br><span class="line">StringBuilder s2 = s1;</span><br><span class="line">s2.append(<span class="string">"456"</span>);</span><br><span class="line">System.out.println(s1);</span><br><span class="line">System.out.println(s2);</span><br><span class="line">s2 = <span class="keyword">new</span> StringBuilder(<span class="string">"123"</span>);</span><br><span class="line">s2.append(<span class="string">"789"</span>);</span><br><span class="line">System.out.println(s1); <span class="comment">// 123456 不变</span></span><br><span class="line">System.out.println(s2); <span class="comment">// 123789</span></span><br></pre></td></tr></table></figure>
+<p>  我们可以看出当我们给s2重新赋值一个地址的时候这个时候的s2就与s1无关了，因为他们已经不是共享同一个地址了。</p>
+<h2 id="Java中的方法参数传递"><a href="#Java中的方法参数传递" class="headerlink" title="Java中的方法参数传递"></a>Java中的方法参数传递</h2><p>  我觉得方法参数传递和=赋值差不多。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">function1</span><span class="params">(StringBuilder stringBuilder)</span> </span>&#123;</span><br><span class="line">    stringBuilder.append(<span class="string">"我改变了"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">function2</span><span class="params">(StringBuilder stringBuilder)</span> </span>&#123;</span><br><span class="line">    stringBuilder = <span class="keyword">new</span> StringBuilder(<span class="string">"我重新赋值地址了"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    StringBuilder stringBuilder = <span class="keyword">new</span> StringBuilder(<span class="string">"初始化"</span>);</span><br><span class="line">    System.out.println(stringBuilder); <span class="comment">//初始化</span></span><br><span class="line">    Test.function1(stringBuilder);</span><br><span class="line">    System.out.println(stringBuilder); <span class="comment">//初始化我改变李</span></span><br><span class="line">    Test.function2(stringBuilder);</span><br><span class="line">    System.out.println(stringBuilder); <span class="comment">//初始化我改变了</span></span><br><span class="line">    <span class="comment">//  这里我们看出function2对stringBuilder对象没有任何改变，是因为</span></span><br><span class="line">    <span class="comment">// 我们传入function2的stringBuilder是一个地址，然后我们又重新将</span></span><br><span class="line">    <span class="comment">// 新的地址赋值给stringBuilder，所以指向了不同的地址 自然就不会有关联了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  总之记住一个就是Java中的参数传递就是按值传递，当我们传入的是一个对象的时候我们传入的是地址，我们传入一个基本类型的时候传入的是一个值，我们也可以简单理解为地址就是对象的值。</p>
+<p>  其实也可以这么理解，基本类型的值在栈中，即栈中的的值，然后对象的地址在栈中，这个地址指向堆中的内容，我们可以简单理解为传值就是传入栈中的内容。</p>
 
       
     </div>
@@ -528,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/01/hello-blog/" rel="next" title="Hello Blog">
-                <i class="fa fa-chevron-left"></i> Hello Blog
+              <a href="/2019/06/03/数据结构——Trie/" rel="next" title="数据结构——Trie">
+                <i class="fa fa-chevron-left"></i> 数据结构——Trie
               </a>
             
           </div>
@@ -537,10 +499,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/14/SpringMVC核心配置文件的解析和应用/" rel="prev" title="SpringMVC核心配置文件的解析和应用">
-                SpringMVC核心配置文件的解析和应用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -735,7 +693,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本数据类型和引用数据类型"><span class="nav-number">1.</span> <span class="nav-text">基本数据类型和引用数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用数据类型，基本数据类型和堆栈之间的关系"><span class="nav-number">2.</span> <span class="nav-text">引用数据类型，基本数据类型和堆栈之间的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java中-和equals-与上述两者的关系"><span class="nav-number">3.</span> <span class="nav-text">Java中==和equals()与上述两者的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java中的-赋值"><span class="nav-number">1.</span> <span class="nav-text">Java中的=赋值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java中的方法参数传递"><span class="nav-number">2.</span> <span class="nav-text">Java中的方法参数传递</span></a></li></ol></div>
             
 
           </div>
