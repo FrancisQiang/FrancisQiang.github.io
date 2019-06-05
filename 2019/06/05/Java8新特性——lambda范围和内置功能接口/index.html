@@ -88,25 +88,17 @@
 
 
 
-<meta name="description" content="对称加密​    简单来说，对称加密是解决通信之间的安全问题的最初手段。如下图中张大胖同学通过网络结识了远在美国的Bill同学，两个人聊得水深火热，但是有一天张大胖开始变得疑神疑鬼，因为他们聊得内容越来越隐私。张大胖就跟Bill说我总感觉不安全，我感觉有个人通过截取我们的消息在偷窥我们讲话，Bill听了也连忙说，对！我们的消息都是明文传输，中间被人截获就直接被读出来了。那怎么办？加密呗！ ​">
+<meta name="description" content="lambda scopes  在lambda表达式中我们可以访问外部变量，这个功能和匿名内部类一样，但是对于匿名内部类，我们只能访问final变量，lambda表达式中都可以访问，但是它只是隐式地将变量变成了final   首先我们能通过lambda表达式来访问外部变量。 123456789@FunctionalInterfaceinterface Converter&amp;lt;F, T&amp;gt; &amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从对称加密到数字证书">
-<meta property="og:url" content="https://francisqiang.github.io/2019/04/11/从对称加密到数字证书/index.html">
+<meta property="og:title" content="Java8新特性——lambda范围和内置功能接口">
+<meta property="og:url" content="https://francisqiang.github.io/2019/06/05/Java8新特性——lambda范围和内置功能接口/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="对称加密​    简单来说，对称加密是解决通信之间的安全问题的最初手段。如下图中张大胖同学通过网络结识了远在美国的Bill同学，两个人聊得水深火热，但是有一天张大胖开始变得疑神疑鬼，因为他们聊得内容越来越隐私。张大胖就跟Bill说我总感觉不安全，我感觉有个人通过截取我们的消息在偷窥我们讲话，Bill听了也连忙说，对！我们的消息都是明文传输，中间被人截获就直接被读出来了。那怎么办？加密呗！ ​">
+<meta property="og:description" content="lambda scopes  在lambda表达式中我们可以访问外部变量，这个功能和匿名内部类一样，但是对于匿名内部类，我们只能访问final变量，lambda表达式中都可以访问，但是它只是隐式地将变量变成了final   首先我们能通过lambda表达式来访问外部变量。 123456789@FunctionalInterfaceinterface Converter&amp;lt;F, T&amp;gt; &amp;#">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://francisqiang.github.io/2019/04/11/从对称加密到数字证书/1.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/04/11/从对称加密到数字证书/2.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/04/11/从对称加密到数字证书/3.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/04/11/从对称加密到数字证书/4.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/04/11/从对称加密到数字证书/5.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/04/11/从对称加密到数字证书/6.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/04/11/从对称加密到数字证书/7.jpg">
-<meta property="og:updated_time" content="2019-04-11T12:54:33.144Z">
+<meta property="og:updated_time" content="2019-06-05T01:24:33.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从对称加密到数字证书">
-<meta name="twitter:description" content="对称加密​    简单来说，对称加密是解决通信之间的安全问题的最初手段。如下图中张大胖同学通过网络结识了远在美国的Bill同学，两个人聊得水深火热，但是有一天张大胖开始变得疑神疑鬼，因为他们聊得内容越来越隐私。张大胖就跟Bill说我总感觉不安全，我感觉有个人通过截取我们的消息在偷窥我们讲话，Bill听了也连忙说，对！我们的消息都是明文传输，中间被人截获就直接被读出来了。那怎么办？加密呗！ ​">
-<meta name="twitter:image" content="https://francisqiang.github.io/2019/04/11/从对称加密到数字证书/1.jpg">
+<meta name="twitter:title" content="Java8新特性——lambda范围和内置功能接口">
+<meta name="twitter:description" content="lambda scopes  在lambda表达式中我们可以访问外部变量，这个功能和匿名内部类一样，但是对于匿名内部类，我们只能访问final变量，lambda表达式中都可以访问，但是它只是隐式地将变量变成了final   首先我们能通过lambda表达式来访问外部变量。 123456789@FunctionalInterfaceinterface Converter&amp;lt;F, T&amp;gt; &amp;#">
 
 
 
@@ -136,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2019/04/11/从对称加密到数字证书/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/06/05/Java8新特性——lambda范围和内置功能接口/">
 
 
 
 
 
-  <title>从对称加密到数字证书 | Francis的博客</title>
+  <title>Java8新特性——lambda范围和内置功能接口 | Francis的博客</title>
   
 
 
@@ -303,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/04/11/从对称加密到数字证书/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/06/05/Java8新特性——lambda范围和内置功能接口/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -320,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">从对称加密到数字证书</h1>
+          <h1 class="post-title" itemprop="name headline">Java8新特性——lambda范围和内置功能接口</h1>
         
 
         <div class="post-meta">
@@ -332,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-11T19:08:16+08:00">
-                2019-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-05T08:07:50+08:00">
+                2019-06-05
               </time>
             
 
@@ -355,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/安全/" itemprop="url" rel="index">
-                    <span itemprop="name">安全</span>
+                  <a href="/categories/Java-SE/" itemprop="url" rel="index">
+                    <span itemprop="name">Java SE</span>
                   </a>
                 </span>
 
@@ -373,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/11/从对称加密到数字证书/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/从对称加密到数字证书/" itemprop="commentCount"></span>
+                <a href="/2019/06/05/Java8新特性——lambda范围和内置功能接口/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/05/Java8新特性——lambda范围和内置功能接口/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -382,7 +374,7 @@
 
           
           
-             <span id="/2019/04/11/从对称加密到数字证书/" class="leancloud_visitors" data-flag-title="从对称加密到数字证书">
+             <span id="/2019/06/05/Java8新特性——lambda范围和内置功能接口/" class="leancloud_visitors" data-flag-title="Java8新特性——lambda范围和内置功能接口">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -408,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.9k
+                  1.1k
                 </span>
               
 
@@ -424,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  5
                 </span>
               
             </div>
@@ -445,31 +437,27 @@
       
 
       
-        <h2 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h2><p>​    简单来说，对称加密是解决通信之间的安全问题的最初手段。如下图中张大胖同学通过网络结识了远在美国的Bill同学，两个人聊得水深火热，但是有一天张大胖开始变得疑神疑鬼，因为他们聊得内容越来越隐私。张大胖就跟Bill说我总感觉不安全，我感觉有个人通过截取我们的消息在偷窥我们讲话，Bill听了也连忙说，对！我们的消息都是明文传输，中间被人截获就直接被读出来了。那怎么办？加密呗！</p>
-<p>​    说着，张大胖就提议，不是有个对称加密嘛？我们用那个进行对消息的加密，我们首先沟通好我们的私钥，保持一致性，我给你发消息的时候我通过私钥加密，你收到消息的时候你再通过私钥进行解密，这样即使被中间人截获他也看不懂啦！Bill连忙夸赞张大胖同学说：”dei dei dei这个办法好呀！”。</p>
-<p>​    就如下图中一样，张大胖和Bill就通过对称加密来进行通信，看似安全了，但是真的安全了吗？</p>
-<p><img src="/2019/04/11/从对称加密到数字证书/1.jpg"></p>
-<p>​    可是，当张大胖和Bill开始协商秘钥的时候，问题又出现了！Bill说既然网络是不安全的，万一现在正好有人再偷窥我们协商秘钥，我们协商好之后通过网络传输，这个秘钥就是明文传输的呀！那么，我们的秘钥不就暴露了吗？张大胖听了Bill的一席话，幡然醒悟。“对呀！这个可怎么办？而且当两个人进行通信的时候就要一个秘钥，一个人如果需要同一百个，一万个好友进行通信的时候那么就要有一百个，一万个秘钥，这！这哪能记得住呀？“。Bill这时候说道：“不行不行！这个通信方式也不安全！我们得再想一个。”</p>
-<h2 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h2><p>​    张大胖和Bill得知这种办法也不行的时候就一直提心吊胆地通信着，都不敢涉及隐私了，这个偷窥者听得也没劲了。直到后来，Bill听说了一种叫RSA非对称加密的算法，他一下子来了灵感。</p>
-<p><img src="/2019/04/11/从对称加密到数字证书/2.jpg"></p>
-<p>&nbsp;    RSA算法意思是一个人同时拥有公钥和私钥，这个公钥是公开的，别人都可以知道，但是这个私钥是自己保存的，千万不能让别人知道。而且，当文本经过某个人的公钥加密的时候，只有通过这个人的私钥才能进行解密，所以当Bill向张大胖同学发消息的时候，他就使用张大胖的公钥对消息进行加密，当张大胖收到消息的时候他就使用自己的私钥进行解密。流程如下图：</p>
-<p> <img src="/2019/04/11/从对称加密到数字证书/3.jpg">    </p>
-<h2 id="非对称加密-对称加密"><a href="#非对称加密-对称加密" class="headerlink" title="非对称加密+对称加密"></a>非对称加密+对称加密</h2><p>​    这样，非对称加密就一下子解决了对称加密的两个缺点（秘钥泛滥和秘钥被网络截取），但是它也带来了一个很致命的缺点，那就是——效率问题，对同样大小的文本对称加密的速度是非对称加密速度的几百倍（我曾经拿RSA算法对一个50kb的文件进行加密，电脑直接叫唤着我不行了，我不行了）。大家知道通信是很讲究速度效率的，这个非对称加密虽然安全但是速度太慢了，这叫人怎么能忍呢？</p>
-<p>​    这么愚蠢的问题当然不会困惑张大胖和Bill很久，他们想出来了一个二者结合的方法！当张大胖和Bill要进行通信的时候，他们就先使用非对称加密沟通好对称加密的秘钥（也就是在这个非对称加密的通道里传输秘钥）这样秘钥就不会被截获了，就算截获也是密文，偷窥者没办法呀。然后双方就使用刚刚非对称加密通信产生的对称加密的秘钥来进行加密解密，这样一来安全问题和效率问题就得到了很好的解决啦！</p>
-<h2 id="中间人劫持"><a href="#中间人劫持" class="headerlink" title="中间人劫持"></a>中间人劫持</h2><p>​    现在张大胖和Bill就很欢快地聊起来了，但是问题就这么简单地结束了吗？当然没有！张大胖把自己和Bill的聊天情况告诉了他女朋友，女朋友一听就发现了一个问题，她说：“Bill给别人，给你发公钥的时候也是通过网络传输的呀！那么这时候有个中间人把这个公钥给劫持了，再把自己的公钥换掉Bill的公钥发给你，你收到的就是中间人的公钥呀！那么你通过中间人的公钥进行消息加密发给Bill，这时候中间人再次劫持消息，通过他的私钥进行解密就直接能获得消息的内容了，然后他再把解密完的消息或者自己编造一个假消息然后使用Bill的公钥进行加密发给Bill，这样就神不知鬼不觉的解密了你们的消息并且还能冒充身份和造假消息！！！张大胖一听，后背就开始发凉，难道自己和Bill发的生活照都被中间人截取了吗？？？这可怎么防呀？</p>
-<p><img src="/2019/04/11/从对称加密到数字证书/4.jpg"></p>
-<h2 id="数字签名和数字证书"><a href="#数字签名和数字证书" class="headerlink" title="数字签名和数字证书"></a>数字签名和数字证书</h2><p>​    但是怎么安全地分发公钥呢？ 似乎又回到了最初的问题： 怎么安全的保护密钥？这真的是一个很头痛的问题呀！可是似乎和最初的问题还不一样，这一次的公钥不用保密，但是一定得有个办法声明这个公钥确实是Bill的， 而不是别人的。这让张大胖想到了一个现实中的问题——签名。像我们签合同，协议都是通过签名来确定这个本人，那么我们可以把它移植到网络上！怎么移植呢？</p>
-<p>​    RSA算法给我们提供了一个很好的办法，因为它不仅可以通过公钥加密私钥解密，它还可以私钥加密公钥解密。这样我们发送公钥的时候可以通过某个消息摘要算法，首先这个消息摘要算法必须有两个特性——不可逆性和可变性。不可逆好理解，就是无法通过密文解出明文，这个可变性就是指当消息发生一点点变化的时候，它形成的密文就会发生翻天覆地的变化，这样就可以防止别人修改。这时候我们通过消息摘要算法来对公钥进行加密形成摘要，然后我们通过自己的私钥对这个摘要进行加密形成摘要密文，这个摘要密文就是我们的数字签名。这样，我们发公钥的时候就发送原本的消息附加上我们的数字签名，这样对方收到这个消息的时候就使用收到的公钥对这个数字签名进行解密（得到其实就是公钥的摘要），然后再通过同样的消息摘要算法对收到的公钥进行加密，如果对公要的加密密文和数字签名解密出来的东西是一样的，那么久说明这个公钥没有被修改过！</p>
-<p>​    可能有点难理解，我们这么想，如果中间人对这个公钥进行了修改或者替换。比如张大胖和Bill在通信，张大胖把自己的公钥和数字签名发给了Bill，中间人截获这个消息，假如他替换了公钥（替换成自己的了），那么他也不能改动数字签名，使数字签名通过这个公钥来形成中间人公钥的信息摘要，因为这个数字签名就是密文，他不知道如何下手，所以如果只改公钥，那么这样肯定会被Bill发现。但是，作为一个狠角色，要干就要干狠一点，不能改公钥，不能改数字签名，老子干脆就把它全改了，全用自己的！</p>
-<p>​    所以问题又来了，这时候我们就要请来大人物了——认证中心（CA），我们需要有一个具有公信力的中间商，当我们把自己的公钥和个人信息形成消息摘要的时候，我们使用CA的私钥进行加密形成数字签名。</p>
-<p><img src="/2019/04/11/从对称加密到数字证书/5.jpg"></p>
-<p>​    然后我们发送消息的时候我们把我们的公钥和个人信息再连带着使用CA的私钥加密过的数字签名发送给对方，这些东西合起来就有另一个名字——数字证书。</p>
-<p><img src="/2019/04/11/从对称加密到数字证书/6.jpg"></p>
-<p>​    如图所示，当Bill吧这个数字证书发给张大胖的时候，我就用同样的消息摘要算法对原本消息进行摘要，然后使用CA的公钥对数字签名进行解密获取摘要，然后对比我前后获取的摘要，如果一致那么就说明这个东西没有被篡改。你想想，如果中间人截获了这个证书，他把证书全改成自己的，但是张大胖使用的是CA的公钥解密摘要，然而中间人不知道CA的私钥，那么他这么做就露馅了！这时候张大胖就安全地拿到了Bill的公钥，后续的加密工作就可以顺利地进行了。当然，网络本就是不安全的，想必大家也想到了，当Bill获取CA的公钥的时候，这个中间人也可以发起攻击，直接篡改CA公钥，那么这样安全问题就无限的循环下去无法解决了！当然这些CA本身也有证书来证明自己的身份，并且CA的信用是像树一样分级的，高层的CA给底层的CA做信用背书，而操作系统／浏览器中会内置一些顶层的CA的证书，相当于你自动信任了他们。这些顶层的CA证书一定得安全地放入操作系统／浏览器当中，否则世界大乱。</p>
-<h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><p>​    这样，https也非常好理解了，看图就知道了。</p>
-<p><img src="/2019/04/11/从对称加密到数字证书/7.jpg"></p>
-<p>​    本博文参考于刘欣的《码农翻身》，特别感谢此书，也推荐大家阅读。</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>​    好久没写博客了，因为这学期以来就有一大堆事情要解决处理，有时候学习完，就一直没时间写总结。总感觉自己像头狮子一样，想一口气吃成大胖子，什么都要学，什么都学不精，学了之后不总结，学了就忘。当然有好奇心也是好事，但是我可不想无法精通一门东西，昨天看这本《码农翻身》，书中提到了不要让碎片化信息侵蚀你深度思考的能力，确实如此，我们现在学习知识都是以一种常识的心态去学，我们只是记住了这个常识，死记硬背，并没有深度思考其中的原因和逻辑，所以我们无法精通一门技术，我想，这大概是我现阶段学习最大的问题吧。</p>
+        <h2 id="lambda-scopes"><a href="#lambda-scopes" class="headerlink" title="lambda scopes"></a>lambda scopes</h2><p>  在lambda表达式中我们可以访问外部变量，这个功能和匿名内部类一样，但是对于匿名内部类，我们只能访问final变量，lambda表达式中都可以访问，但是它只是隐式地将变量变成了final</p>
+<p>  首先我们能通过lambda表达式来访问外部变量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Converter</span>&lt;<span class="title">F</span>, <span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="function">T <span class="title">convert</span><span class="params">(F from)</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num = <span class="number">1</span>;</span><br><span class="line">    Converter&lt;Integer, String&gt; converter = (from -&gt; String.valueOf(from + num));</span><br><span class="line">    System.out.println(converter.convert(<span class="number">2</span>)); <span class="comment">// 输出3</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  但是我们不能再改变lambda表达式中调用的外部变量了，因为一旦被lambda表达式调用，这个变量就被隐式地声明成了final变量。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Converter</span>&lt;<span class="title">F</span>, <span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="function">T <span class="title">convert</span><span class="params">(F from)</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> num = <span class="number">1</span>;</span><br><span class="line">    Converter&lt;Integer, String&gt; converter = (from -&gt; String.valueOf(from + num));</span><br><span class="line">    System.out.println(converter.convert(<span class="number">2</span>));</span><br><span class="line">    num = <span class="number">3</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  这个时候就会报错 从lambda 表达式引用的本地变量必须是最终变量或实际上的最终变量。</p>
+<p>  还有一个容易混淆的点就是这样的写法</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> num = <span class="number">1</span>;</span><br><span class="line">  Converter&lt;Integer, String&gt; converter = String::valueOf;</span><br><span class="line">  System.out.println(converter.convert(<span class="number">2</span> + num));</span><br><span class="line">  num = <span class="number">2</span>;</span><br><span class="line">  System.out.println(num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  即使是对象也是一样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Converter</span>&lt;<span class="title">F</span>, <span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="function">T <span class="title">convert</span><span class="params">(F from)</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    StringBuilder stringBuilder = <span class="keyword">new</span> StringBuilder(<span class="string">"123"</span>);</span><br><span class="line">    Converter&lt;StringBuilder, String&gt; converter = (stringBuilder1) -&gt; stringBuilder1.toString();</span><br><span class="line">    System.out.println(converter.convert(stringBuilder));</span><br><span class="line">    stringBuilder.append(<span class="string">"234"</span>);</span><br><span class="line">    System.out.println(stringBuilder);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  这个时候其实我们只是将num作为函数参数传进去了，在lambda表达式中并没有显示声明调用这个变量。</p>
+<p>  在lambda表达式中我们还可以访问静态和类中的字段</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Lambda4</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> outerStaticNum;</span><br><span class="line">  <span class="keyword">int</span> outerNum;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">testScopes</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      Converter&lt;Integer, String&gt; stringConverter1 = (from) -&gt; &#123;</span><br><span class="line">          outerNum = <span class="number">23</span>;</span><br><span class="line">          <span class="keyword">return</span> String.valueOf(from);</span><br><span class="line">      &#125;;</span><br><span class="line"></span><br><span class="line">      Converter&lt;Integer, String&gt; stringConverter2 = (from) -&gt; &#123;</span><br><span class="line">          outerStaticNum = <span class="number">72</span>;</span><br><span class="line">          <span class="keyword">return</span> String.valueOf(from);</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  还记得上次声明的Formula接口么，其中定义了一个sqrt的默认方法，在lambda中我们是不能调用默认方法的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Formula formula = (a) -&gt; sqrt(a * <span class="number">100</span>); <span class="comment">//这样编译不通过</span></span><br></pre></td></tr></table></figure>
+<h2 id="Built-in-Functional-Interfaces"><a href="#Built-in-Functional-Interfaces" class="headerlink" title="Built-in Functional Interfaces"></a>Built-in Functional Interfaces</h2><h3 id="Predicate"><a href="#Predicate" class="headerlink" title="Predicate"></a>Predicate</h3><p>  这是断言，判断的意思。先上代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Predicate&lt;String&gt; predicate = (s) -&gt; s.length() &gt; <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">predicate.test(<span class="string">"foo"</span>);              <span class="comment">// true</span></span><br><span class="line">predicate.negate().test(<span class="string">"foo"</span>);     <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">Predicate&lt;Boolean&gt; nonNull = Objects::nonNull;</span><br><span class="line">Predicate&lt;Boolean&gt; isNull = Objects::isNull;</span><br><span class="line"></span><br><span class="line">Predicate&lt;String&gt; isEmpty = String::isEmpty;</span><br><span class="line">Predicate&lt;String&gt; isNotEmpty = isEmpty.negate();</span><br></pre></td></tr></table></figure>
+<p>  其中test方法就是Predicate接口中的唯一抽象方法，我们lambda表达式中就是实现了它。</p>
+<p>  negate方法是取反的意思，其中还有and(), or()这两个默认方法对应语，或。</p>
+<p>  可以直接看源代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Predicate</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Evaluates this predicate on the given argument.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> t the input argument</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> &#123;<span class="doctag">@code</span> true&#125; if the input argument matches the predicate,</span></span><br><span class="line"><span class="comment">     * otherwise &#123;<span class="doctag">@code</span> false&#125;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">test</span><span class="params">(T t)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns a composed predicate that represents a short-circuiting logical</span></span><br><span class="line"><span class="comment">     * AND of this predicate and another.  When evaluating the composed</span></span><br><span class="line"><span class="comment">     * predicate, if this predicate is &#123;<span class="doctag">@code</span> false&#125;, then the &#123;<span class="doctag">@code</span> other&#125;</span></span><br><span class="line"><span class="comment">     * predicate is not evaluated.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;Any exceptions thrown during evaluation of either predicate are relayed</span></span><br><span class="line"><span class="comment">     * to the caller; if evaluation of this predicate throws an exception, the</span></span><br><span class="line"><span class="comment">     * &#123;<span class="doctag">@code</span> other&#125; predicate will not be evaluated.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> other a predicate that will be logically-ANDed with this</span></span><br><span class="line"><span class="comment">     *              predicate</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> a composed predicate that represents the short-circuiting logical</span></span><br><span class="line"><span class="comment">     * AND of this predicate and the &#123;<span class="doctag">@code</span> other&#125; predicate</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> NullPointerException if other is null</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">default</span> Predicate&lt;T&gt; <span class="title">and</span><span class="params">(Predicate&lt;? <span class="keyword">super</span> T&gt; other)</span> </span>&#123;</span><br><span class="line">        Objects.requireNonNull(other);</span><br><span class="line">        <span class="keyword">return</span> (t) -&gt; test(t) &amp;&amp; other.test(t);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns a predicate that represents the logical negation of this</span></span><br><span class="line"><span class="comment">     * predicate.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> a predicate that represents the logical negation of this</span></span><br><span class="line"><span class="comment">     * predicate</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">default</span> Predicate&lt;T&gt; <span class="title">negate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (t) -&gt; !test(t);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns a composed predicate that represents a short-circuiting logical</span></span><br><span class="line"><span class="comment">     * OR of this predicate and another.  When evaluating the composed</span></span><br><span class="line"><span class="comment">     * predicate, if this predicate is &#123;<span class="doctag">@code</span> true&#125;, then the &#123;<span class="doctag">@code</span> other&#125;</span></span><br><span class="line"><span class="comment">     * predicate is not evaluated.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;Any exceptions thrown during evaluation of either predicate are relayed</span></span><br><span class="line"><span class="comment">     * to the caller; if evaluation of this predicate throws an exception, the</span></span><br><span class="line"><span class="comment">     * &#123;<span class="doctag">@code</span> other&#125; predicate will not be evaluated.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> other a predicate that will be logically-ORed with this</span></span><br><span class="line"><span class="comment">     *              predicate</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> a composed predicate that represents the short-circuiting logical</span></span><br><span class="line"><span class="comment">     * OR of this predicate and the &#123;<span class="doctag">@code</span> other&#125; predicate</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> NullPointerException if other is null</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">default</span> Predicate&lt;T&gt; <span class="title">or</span><span class="params">(Predicate&lt;? <span class="keyword">super</span> T&gt; other)</span> </span>&#123;</span><br><span class="line">        Objects.requireNonNull(other);</span><br><span class="line">        <span class="keyword">return</span> (t) -&gt; test(t) || other.test(t);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns a predicate that tests if two arguments are equal according</span></span><br><span class="line"><span class="comment">     * to &#123;<span class="doctag">@link</span> Objects#equals(Object, Object)&#125;.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt; the type of arguments to the predicate</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> targetRef the object reference with which to compare for equality,</span></span><br><span class="line"><span class="comment">     *               which may be &#123;<span class="doctag">@code</span> null&#125;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> a predicate that tests if two arguments are equal according</span></span><br><span class="line"><span class="comment">     * to &#123;<span class="doctag">@link</span> Objects#equals(Object, Object)&#125;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">static</span> &lt;T&gt; <span class="function">Predicate&lt;T&gt; <span class="title">isEqual</span><span class="params">(Object targetRef)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">null</span> == targetRef)</span><br><span class="line">                ? Objects::isNull</span><br><span class="line">                : object -&gt; targetRef.equals(object);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -509,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/08/Java中的散列集/" rel="next" title="Java中的散列集">
-                <i class="fa fa-chevron-left"></i> Java中的散列集
+              <a href="/2019/06/04/Java8新特性——接口中的static，default方法/" rel="next" title="Java8新特性——接口中的static，default方法">
+                <i class="fa fa-chevron-left"></i> Java8新特性——接口中的static，default方法
               </a>
             
           </div>
@@ -518,10 +506,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/13/自己动手做Array/" rel="prev" title="自己动手做Array">
-                自己动手做Array <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -716,7 +700,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对称加密"><span class="nav-number">1.</span> <span class="nav-text">对称加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非对称加密"><span class="nav-number">2.</span> <span class="nav-text">非对称加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非对称加密-对称加密"><span class="nav-number">3.</span> <span class="nav-text">非对称加密+对称加密</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中间人劫持"><span class="nav-number">4.</span> <span class="nav-text">中间人劫持</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数字签名和数字证书"><span class="nav-number">5.</span> <span class="nav-text">数字签名和数字证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTPS"><span class="nav-number">6.</span> <span class="nav-text">HTTPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">7.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#lambda-scopes"><span class="nav-number">1.</span> <span class="nav-text">lambda scopes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Built-in-Functional-Interfaces"><span class="nav-number">2.</span> <span class="nav-text">Built-in Functional Interfaces</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Predicate"><span class="nav-number">2.1.</span> <span class="nav-text">Predicate</span></a></li></ol></li></ol></div>
             
 
           </div>
