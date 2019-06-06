@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://francisqiang.github.io/"/>
-  <updated>2019-06-05T07:16:15.137Z</updated>
+  <updated>2019-06-06T05:24:51.272Z</updated>
   <id>https://francisqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flutter组件——Text</title>
+    <link href="https://francisqiang.github.io/2019/06/06/Flutter%E7%BB%84%E4%BB%B6%E2%80%94%E2%80%94Text/"/>
+    <id>https://francisqiang.github.io/2019/06/06/Flutter组件——Text/</id>
+    <published>2019-06-06T05:22:33.000Z</published>
+    <updated>2019-06-06T05:24:51.272Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><h2 id="默认属性"><a href="#默认属性" class="headerlink" title="默认属性"></a>默认属性</h2><p>Text中有个默认必须的属性就是字符串了，你需要在一开始设置字符串的内容</p></li><li><h2 id="textAlign"><a href="#textAlign" class="headerlink" title="textAlign"></a>textAlign</h2><p>这个属性主要就是设置字符串的对齐方式的，他接受一个TextAlign对象，这个对象里面有几个常见的枚举比如说left，center，start等。</p></li><li><h2 id="maxLines"><a href="#maxLines" class="headerlink" title="maxLines"></a>maxLines</h2><p>maxLines指的是Text的最大行数，如果超过剩余字符串内容则会被隐藏</p></li><li><h2 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h2><p>overflow定义了超出字符串部分内容的显示样式(不太精确，先这么理解)，其中它接受TextOverFlow对象，这个对象设置了几个枚举类型，其中有clip，fade，ellipsis，visible效果，其中ellipsis是用的比较多的</p></li><li><h2 id="textScaleFactor"><a href="#textScaleFactor" class="headerlink" title="textScaleFactor"></a>textScaleFactor</h2><p>这个属性是设置字体大小的，它是根据比例设置，接受的是一个double，如果你设置2.0就是两倍大小，当你设置这个属性的时候就不要设置fontSize了，会有冲突</p></li><li><h2 id="Style"><a href="#Style" class="headerlink" title="Style"></a>Style</h2><p>Text中最重要的就是style属性了，style属性主要设置字体的样式，它接受一个TextStyle对象并且这个对象中还有很多属性，下面是几个常见属性。</p><ul><li><p>color属性</p><p>主要是字体的颜色，里面接受一个Color对象，我们可以使用Colors.dark的形式，因为Colors里面已经内置了很多Color常量，或者使用Color.fromARGB(a, r, g, b)</p></li><li><p>fontSize属性</p><p>字体大小不用多说，接受一个double</p></li><li><p>fontWeight属性</p><p>字体粗度，里面接受一个FontWeight对象，比如FontWeight.w800等</p></li><li><p>decoration属性</p><p>用于下划线类型的装饰，接受一个TextDecoration对象，里面有下划线，上划线等等样式，你还可以设置combine里面接受一个数组，可以把样式都添加进去。</p></li><li><p>decorationStyle属性</p><p>装饰的样式，比如将下划线变成波浪线等等。接受一个TextDecorationStyle对象，里面有solid，double，dashed，wavy，dotted类型的。</p></li><li><p>decorationColor属性</p><p>装饰的颜色，可以设置下划线的颜色，接受一个Color对象</p></li><li><p>backgroundColor属性</p><p>这个属性就是设置字体的背景的颜色，接受一个Color对象</p></li></ul></li></ul><h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyText</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Text(<span class="string">'This is my first page'</span>,</span><br><span class="line">      textAlign: TextAlign.justify,</span><br><span class="line">      maxLines: <span class="number">1</span>,</span><br><span class="line">      overflow: TextOverflow.ellipsis,</span><br><span class="line">      textScaleFactor: <span class="number">1.5</span>,</span><br><span class="line">      style: TextStyle(</span><br><span class="line">          color: Colors.red,</span><br><span class="line">          fontSize: <span class="number">30.0</span>,</span><br><span class="line">          fontWeight: FontWeight.w800,</span><br><span class="line">          decoration: TextDecoration.combine([</span><br><span class="line">            TextDecoration.lineThrough,</span><br><span class="line">            TextDecoration.underline</span><br><span class="line">          ]),</span><br><span class="line">          decorationStyle: TextDecorationStyle.wavy,</span><br><span class="line">          decorationColor: Colors.lightGreenAccent,</span><br><span class="line">        backgroundColor: Colors.red</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;ul&gt;
+&lt;li&gt;&lt;h2 id=&quot;默认属性&quot;&gt;&lt;a href=&quot;#默认属性&quot; class=&quot;headerlink&quot; title=&quot;默认属性&quot;&gt;&lt;/a&gt;默认属性&lt;/h2&gt;&lt;p&gt;Text中有个默认必须的属性就是字符串了，你需要在一开始设置字符串的内容&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;h
+      
+    
+    </summary>
+    
+      <category term="Flutter" scheme="https://francisqiang.github.io/categories/Flutter/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Java8新特性——lambda范围和内置功能接口</title>
@@ -448,29 +474,6 @@
     </summary>
     
       <category term="数据结构" scheme="https://francisqiang.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Git中.gitignore文件修改后不起作用</title>
-    <link href="https://francisqiang.github.io/2019/05/05/Git%E4%B8%AD-gitignore%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9%E5%90%8E%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/"/>
-    <id>https://francisqiang.github.io/2019/05/05/Git中-gitignore文件修改后不起作用/</id>
-    <published>2019-05-05T08:18:50.000Z</published>
-    <updated>2019-05-05T08:33:17.640Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>  当我使用git上传项目的时候，有些本应该忽略的文件没有被忽略，这时候我修改.gitignore文件再次上传的时候，本该忽略的文件还是在那里</p><h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>  这是因为git缓存的原因，如果某些文件已经被纳入版本管理中，就算是在.gitignore文件中声明了忽略文件的路径也是不起作用的，这时候我们就应该先把本地缓存删除，然后再add和push。</p><h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ol><li><p>首先清除本地缓存<br>git rm -r –cached .</p></li><li><p>再次add文件<br>git add .</p></li><li><p>提交<br>git commit -m “chore:update .gitignore”</p></li><li><p>push<br>git push</p></li></ol><h2 id="gitignore书写格式"><a href="#gitignore书写格式" class="headerlink" title=".gitignore书写格式"></a>.gitignore书写格式</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 此为注释 – 将被 Git 忽略</span><br><span class="line">*.a       # 忽略所有 .a 结尾的文件</span><br><span class="line">!lib.a    # 但 lib.a 除外</span><br><span class="line">/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span><br><span class="line">build/    # 忽略 build/ 目录下的所有文件</span><br><span class="line">doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;问题背景&quot;&gt;&lt;a href=&quot;#问题背景&quot; class=&quot;headerlink&quot; title=&quot;问题背景&quot;&gt;&lt;/a&gt;问题背景&lt;/h2&gt;&lt;p&gt;  当我使用git上传项目的时候，有些本应该忽略的文件没有被忽略，这时候我修改.gitignore文件再次上传的时候，本该忽
-      
-    
-    </summary>
-    
-      <category term="Git" scheme="https://francisqiang.github.io/categories/Git/"/>
     
     
   </entry>

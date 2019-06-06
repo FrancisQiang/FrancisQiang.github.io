@@ -88,13 +88,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Francis的博客">
-<meta property="og:url" content="https://francisqiang.github.io/categories/数据结构/page/2/index.html">
+<meta name="description" content="默认属性Text中有个默认必须的属性就是字符串了，你需要在一开始设置字符串的内容  textAlign这个属性主要就是设置字符串的对齐方式的，他接受一个TextAlign对象，这个对象里面有几个常见的枚举比如说left，center，start等。  maxLinesmaxLines指的是Text的最大行数，如果超过剩余字符串内容则会被隐藏  overflowoverflow定义了超出字符串部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter组件——Text">
+<meta property="og:url" content="https://francisqiang.github.io/2019/06/06/Flutter组件——Text/index.html">
 <meta property="og:site_name" content="Francis的博客">
+<meta property="og:description" content="默认属性Text中有个默认必须的属性就是字符串了，你需要在一开始设置字符串的内容  textAlign这个属性主要就是设置字符串的对齐方式的，他接受一个TextAlign对象，这个对象里面有几个常见的枚举比如说left，center，start等。  maxLinesmaxLines指的是Text的最大行数，如果超过剩余字符串内容则会被隐藏  overflowoverflow定义了超出字符串部分">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-06T05:24:51.272Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Francis的博客">
+<meta name="twitter:title" content="Flutter组件——Text">
+<meta name="twitter:description" content="默认属性Text中有个默认必须的属性就是字符串了，你需要在一开始设置字符串的内容  textAlign这个属性主要就是设置字符串的对齐方式的，他接受一个TextAlign对象，这个对象里面有几个常见的枚举比如说left，center，start等。  maxLinesmaxLines指的是Text的最大行数，如果超过剩余字符串内容则会被隐藏  overflowoverflow定义了超出字符串部分">
 
 
 
@@ -124,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/categories/数据结构/page/2/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/06/06/Flutter组件——Text/">
 
 
 
 
 
-  <title>分类: 数据结构 | Francis的博客</title>
+  <title>Flutter组件——Text | Francis的博客</title>
   
 
 
@@ -149,7 +153,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband">
 	<a href="https://github.com/FrancisQiang" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 	</div>
@@ -277,83 +281,294 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>数据结构<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/06/06/Flutter组件——Text/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Francis Qiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Francis的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/04/13/自己动手做Array/" itemprop="url">
-              
-                <span itemprop="name">自己动手做Array</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Flutter组件——Text</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-13T19:23:13+08:00" content="2019-04-13">
-          04-13
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T13:22:33+08:00">
+                2019-06-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Flutter/" itemprop="url" rel="index">
+                    <span itemprop="name">Flutter</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/06/Flutter组件——Text/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/06/Flutter组件——Text/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/06/06/Flutter组件——Text/" class="leancloud_visitors" data-flag-title="Flutter组件——Text">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  595
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
+      
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/03/08/Java中的散列集/" itemprop="url">
-              
-                <span itemprop="name">Java中的散列集</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-08T21:40:10+08:00" content="2019-03-08">
-          03-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
+        <ul>
+<li><h2 id="默认属性"><a href="#默认属性" class="headerlink" title="默认属性"></a>默认属性</h2><p>Text中有个默认必须的属性就是字符串了，你需要在一开始设置字符串的内容</p>
+</li>
+<li><h2 id="textAlign"><a href="#textAlign" class="headerlink" title="textAlign"></a>textAlign</h2><p>这个属性主要就是设置字符串的对齐方式的，他接受一个TextAlign对象，这个对象里面有几个常见的枚举比如说left，center，start等。</p>
+</li>
+<li><h2 id="maxLines"><a href="#maxLines" class="headerlink" title="maxLines"></a>maxLines</h2><p>maxLines指的是Text的最大行数，如果超过剩余字符串内容则会被隐藏</p>
+</li>
+<li><h2 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h2><p>overflow定义了超出字符串部分内容的显示样式(不太精确，先这么理解)，其中它接受TextOverFlow对象，这个对象设置了几个枚举类型，其中有clip，fade，ellipsis，visible效果，其中ellipsis是用的比较多的</p>
+</li>
+<li><h2 id="textScaleFactor"><a href="#textScaleFactor" class="headerlink" title="textScaleFactor"></a>textScaleFactor</h2><p>这个属性是设置字体大小的，它是根据比例设置，接受的是一个double，如果你设置2.0就是两倍大小，当你设置这个属性的时候就不要设置fontSize了，会有冲突</p>
+</li>
+<li><h2 id="Style"><a href="#Style" class="headerlink" title="Style"></a>Style</h2><p>Text中最重要的就是style属性了，style属性主要设置字体的样式，它接受一个TextStyle对象并且这个对象中还有很多属性，下面是几个常见属性。</p>
+<ul>
+<li><p>color属性</p>
+<p>主要是字体的颜色，里面接受一个Color对象，我们可以使用Colors.dark的形式，因为Colors里面已经内置了很多Color常量，或者使用Color.fromARGB(a, r, g, b)</p>
+</li>
+<li><p>fontSize属性</p>
+<p>字体大小不用多说，接受一个double</p>
+</li>
+<li><p>fontWeight属性</p>
+<p>字体粗度，里面接受一个FontWeight对象，比如FontWeight.w800等</p>
+</li>
+<li><p>decoration属性</p>
+<p>用于下划线类型的装饰，接受一个TextDecoration对象，里面有下划线，上划线等等样式，你还可以设置combine里面接受一个数组，可以把样式都添加进去。</p>
+</li>
+<li><p>decorationStyle属性</p>
+<p>装饰的样式，比如将下划线变成波浪线等等。接受一个TextDecorationStyle对象，里面有solid，double，dashed，wavy，dotted类型的。</p>
+</li>
+<li><p>decorationColor属性</p>
+<p>装饰的颜色，可以设置下划线的颜色，接受一个Color对象</p>
+</li>
+<li><p>backgroundColor属性</p>
+<p>这个属性就是设置字体的背景的颜色，接受一个Color对象</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyText</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> Text(<span class="string">'This is my first page'</span>,</span><br><span class="line">      textAlign: TextAlign.justify,</span><br><span class="line">      maxLines: <span class="number">1</span>,</span><br><span class="line">      overflow: TextOverflow.ellipsis,</span><br><span class="line">      textScaleFactor: <span class="number">1.5</span>,</span><br><span class="line">      style: TextStyle(</span><br><span class="line">          color: Colors.red,</span><br><span class="line">          fontSize: <span class="number">30.0</span>,</span><br><span class="line">          fontWeight: FontWeight.w800,</span><br><span class="line">          decoration: TextDecoration.combine([</span><br><span class="line">            TextDecoration.lineThrough,</span><br><span class="line">            TextDecoration.underline</span><br><span class="line">          ]),</span><br><span class="line">          decorationStyle: TextDecorationStyle.wavy,</span><br><span class="line">          decorationColor: Colors.lightGreenAccent,</span><br><span class="line">        backgroundColor: Colors.red</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
+    
+    
+    
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢阅读-------------</div>
+    
+</div>
+  
+    </div>
+	
+	<div>
+      
+        
+      
+    </div>
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/05/Java8新特性——lambda范围和内置功能接口/" rel="next" title="Java8新特性——lambda范围和内置功能接口">
+                <i class="fa fa-chevron-left"></i> Java8新特性——lambda范围和内置功能接口
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/categories/数据结构/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/categories/数据结构/">1</a><span class="page-number current">2</span>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -361,6 +576,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -381,9 +603,18 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -476,6 +707,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认属性"><span class="nav-number">1.</span> <span class="nav-text">默认属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#textAlign"><span class="nav-number">2.</span> <span class="nav-text">textAlign</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maxLines"><span class="nav-number">3.</span> <span class="nav-text">maxLines</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overflow"><span class="nav-number">4.</span> <span class="nav-text">overflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#textScaleFactor"><span class="nav-number">5.</span> <span class="nav-text">textScaleFactor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Style"><span class="nav-number">6.</span> <span class="nav-text">Style</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码示例"><span class="nav-number">7.</span> <span class="nav-text">代码示例</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -651,6 +898,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
