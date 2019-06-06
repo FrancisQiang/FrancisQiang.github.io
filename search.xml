@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Flutter组件——Image]]></title>
+    <url>%2F2019%2F06%2F06%2FFlutter%E7%BB%84%E4%BB%B6%E2%80%94%E2%80%94Image%2F</url>
+    <content type="text"><![CDATA[Image Image就是图片组件，其中分为很多中，比如说network(url 获取图片)，asset(本地获取图片)，还有File，Memory。这里我学习了network和asset的。 必须属性这里必须属性和Text组件的字符串内容差不多，我们需要加入图片地址，asset需要放入本地地址，network需要放入网络地址。不过在new Image.asset之前，我们需要在yaml文件中注册asset资源 123flutter: assets: - images/avatar.gif width,height宽高设置，需要double alignment排列位置，接受Alignment对象。控制的是图片在图片组件中的位置。 fit图片充满格式，接受BoxFit对象，可以使用其中已经预定义了一些常量fill(充满)，cover(覆盖)等。 repeat重复，接受ImageRepeat对象，控制的是如果图片没有占满图片组件，那么就重复。 color与混合模式一起使用，在图片上增加一个颜色层，然后使用混合模式混合，如果不加混合模式，图片就会被颜色给覆盖掉。 ColorBlendMode接受一个BlendMode，图片混合模式，该对象已经定义好几种混合类型，BlendMode.darken,BlendMode.clear等。 代码示例123456789Image.asset("images/avatar.gif", width: 200.0, height: 400.0, color: Colors.pink, colorBlendMode: BlendMode.colorBurn, fit: BoxFit.scaleDown, alignment: Alignment.bottomCenter, repeat: ImageRepeat.repeat, )]]></content>
+      <categories>
+        <category>Flutter</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Flutter组件——Container]]></title>
     <url>%2F2019%2F06%2F06%2FFlutter%E7%BB%84%E4%BB%B6%E2%80%94%E2%80%94Container%2F</url>
     <content type="text"><![CDATA[Container组件 Container组件是一个非常重要的组件有点类似于html中的div。 alignment这个是设置子组件的布局的，注意是子组件，它接受一个Alignment对象，我们可以使用Alignment(x, y)来构造它，或者我们也可以使用它已经定义好的几个常量来构造它 padding这个是设置内边距的，接受一个EdgeInsetsGeometry, 我们可以将它的子类EdgeInsets对象赋值给它，我们可以使用const EdgeInsets.all(double value)，const EdgeInsets.only等方式声明 margin它是设置Container的外边距，接受参数和padding一样 height，width它们是设置宽和高的，里面接受一个double decoration绘制在child后面的装饰，设置了decoration的话，就不能设置color属性，否则会报错，此时应该在decoration中进行颜色的设置。 其中它接受一个Decoration，我们可以使用它的子类BoxDecoration来赋值给它。 在BoxDecoration中也有许多参数 color 设置颜色的 image 设置背景图片，可以添加一个DecorationImage对象 border 设置边，接受一个BoxBorder，我们可以使用Border.all(width: 1.5, style: BorderStyle.solid, color: Colors.deepPurple),这样的发情时来构造它。 borderRadius 设置边角的，可以增加弧度，接受一个BorderRadius对象，我们可以使用BorderRadius.all来构造 gradient 设置颜色渐变效果，接受一个Gradient对象 child接受一个孩子，孩子里面可以放置子组件 代码示例12345678910111213141516171819202122Container( alignment: Alignment.bottomCenter, padding: const EdgeInsets.all(20.0), margin: const EdgeInsets.all(100.0), height: 500.0, width: 200.0, decoration: BoxDecoration( border: Border.all(width: 1.5, style: BorderStyle.solid, color: Colors.deepPurple), borderRadius: BorderRadius.circular(1.0), gradient: LinearGradient(colors: [ Colors.deepPurple, Colors.deepOrange, Colors.pink, Colors.greenAccent ]) ), child: Image.network('https://francisqiang.github.io/images/avatar.gif', fit: BoxFit.fitWidth, color: Colors.deepOrangeAccent, colorBlendMode: BlendMode.darken, ), ),]]></content>

@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="什么是Prototype模式  Prototype模式(原型模式)指的就是使用对象去制造新的对象，不像单例模式只制造出一个对象，原型模式制造的对象是多个的。原型模式多用于创建复杂的或者耗时的实例，因为这种情况下，复制一个已经存在的实例使程序运行更高效；或者创建值相等，只是命名不一样的同类数据。 实现Prototype模式  原型模式主要用于对象的复制，它的核心是就是类图中的原型类Prototype">
+<meta name="description" content="Image  Image就是图片组件，其中分为很多中，比如说network(url  获取图片)，asset(本地获取图片)，还有File，Memory。这里我学习了network和asset的。  必须属性这里必须属性和Text组件的字符串内容差不多，我们需要加入图片地址，asset需要放入本地地址，network需要放入网络地址。不过在new Image.asset之前，我们需要在yaml文件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式——Prototype模式">
-<meta property="og:url" content="https://francisqiang.github.io/2019/06/03/设计模式——Prototype模式/index.html">
+<meta property="og:title" content="Flutter组件——Image">
+<meta property="og:url" content="https://francisqiang.github.io/2019/06/06/Flutter组件——Image/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="什么是Prototype模式  Prototype模式(原型模式)指的就是使用对象去制造新的对象，不像单例模式只制造出一个对象，原型模式制造的对象是多个的。原型模式多用于创建复杂的或者耗时的实例，因为这种情况下，复制一个已经存在的实例使程序运行更高效；或者创建值相等，只是命名不一样的同类数据。 实现Prototype模式  原型模式主要用于对象的复制，它的核心是就是类图中的原型类Prototype">
+<meta property="og:description" content="Image  Image就是图片组件，其中分为很多中，比如说network(url  获取图片)，asset(本地获取图片)，还有File，Memory。这里我学习了network和asset的。  必须属性这里必须属性和Text组件的字符串内容差不多，我们需要加入图片地址，asset需要放入本地地址，network需要放入网络地址。不过在new Image.asset之前，我们需要在yaml文件">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-03T03:36:45.488Z">
+<meta property="og:updated_time" content="2019-06-06T09:10:47.569Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式——Prototype模式">
-<meta name="twitter:description" content="什么是Prototype模式  Prototype模式(原型模式)指的就是使用对象去制造新的对象，不像单例模式只制造出一个对象，原型模式制造的对象是多个的。原型模式多用于创建复杂的或者耗时的实例，因为这种情况下，复制一个已经存在的实例使程序运行更高效；或者创建值相等，只是命名不一样的同类数据。 实现Prototype模式  原型模式主要用于对象的复制，它的核心是就是类图中的原型类Prototype">
+<meta name="twitter:title" content="Flutter组件——Image">
+<meta name="twitter:description" content="Image  Image就是图片组件，其中分为很多中，比如说network(url  获取图片)，asset(本地获取图片)，还有File，Memory。这里我学习了network和asset的。  必须属性这里必须属性和Text组件的字符串内容差不多，我们需要加入图片地址，asset需要放入本地地址，network需要放入网络地址。不过在new Image.asset之前，我们需要在yaml文件">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2019/06/03/设计模式——Prototype模式/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/06/06/Flutter组件——Image/">
 
 
 
 
 
-  <title>设计模式——Prototype模式 | Francis的博客</title>
+  <title>Flutter组件——Image | Francis的博客</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/06/03/设计模式——Prototype模式/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/06/06/Flutter组件——Image/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式——Prototype模式</h1>
+          <h1 class="post-title" itemprop="name headline">Flutter组件——Image</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-03T10:14:45+08:00">
-                2019-06-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-06T16:51:45+08:00">
+                2019-06-06
               </time>
             
 
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">Java设计模式</span>
+                  <a href="/categories/Flutter/" itemprop="url" rel="index">
+                    <span itemprop="name">Flutter</span>
                   </a>
                 </span>
 
@@ -365,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/03/设计模式——Prototype模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/03/设计模式——Prototype模式/" itemprop="commentCount"></span>
+                <a href="/2019/06/06/Flutter组件——Image/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/06/Flutter组件——Image/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +374,7 @@
 
           
           
-             <span id="/2019/06/03/设计模式——Prototype模式/" class="leancloud_visitors" data-flag-title="设计模式——Prototype模式">
+             <span id="/2019/06/06/Flutter组件——Image/" class="leancloud_visitors" data-flag-title="Flutter组件——Image">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  515
+                  329
                 </span>
               
 
@@ -416,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -437,18 +437,25 @@
       
 
       
-        <h2 id="什么是Prototype模式"><a href="#什么是Prototype模式" class="headerlink" title="什么是Prototype模式"></a>什么是Prototype模式</h2><p>  Prototype模式(原型模式)指的就是使用对象去制造新的对象，不像单例模式只制造出一个对象，原型模式制造的对象是多个的。原型模式多用于创建复杂的或者耗时的实例，因为这种情况下，复制一个已经存在的实例使程序运行更高效；或者创建值相等，只是命名不一样的同类数据。</p>
-<h2 id="实现Prototype模式"><a href="#实现Prototype模式" class="headerlink" title="实现Prototype模式"></a>实现Prototype模式</h2><p>  原型模式主要用于对象的复制，它的核心是就是类图中的原型类Prototype。Prototype类需要具备以下两个条件：</p>
+        <h2 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h2><p>  Image就是图片组件，其中分为很多中，比如说network(url<br>  获取图片)，asset(本地获取图片)，还有File，Memory。这里我学习了network和asset的。</p>
 <ul>
-<li><p>实现Cloneable接口。在java语言有一个Cloneable接口，它的作用只有一个，就是在运行时通知虚拟机可以安全地在实现了此接口的类上使用clone方法。在java虚拟机中，只有实现了这个接口的类才可以被拷贝，否则在运行时会抛出CloneNotSupportedException异常。</p>
+<li><h2 id="必须属性"><a href="#必须属性" class="headerlink" title="必须属性"></a>必须属性</h2><p>这里必须属性和Text组件的字符串内容差不多，我们需要加入图片地址，asset需要放入本地地址，network需要放入网络地址。不过在new Image.asset之前，我们需要在yaml文件中注册asset资源</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">flutter:</span></span><br><span class="line"><span class="attr">  assets:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">images/avatar.gif</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>重写Object类中的clone方法。Java中，所有类的父类都是Object类，Object类中有一个clone方法，作用是返回对象的一个拷贝，但是其作用域protected类型的，一般的类无法调用，因此，Prototype类需要将clone方法的作用域修改为public类型。</p>
+<li><h2 id="width-height"><a href="#width-height" class="headerlink" title="width,height"></a>width,height</h2><p>宽高设置，需要double</p>
+</li>
+<li><h2 id="alignment"><a href="#alignment" class="headerlink" title="alignment"></a>alignment</h2><p>排列位置，接受Alignment对象。控制的是图片在图片组件中的位置。</p>
+</li>
+<li><h2 id="fit"><a href="#fit" class="headerlink" title="fit"></a>fit</h2><p>图片充满格式，接受BoxFit对象，可以使用其中已经预定义了一些常量fill(充满)，cover(覆盖)等。</p>
+</li>
+<li><h2 id="repeat"><a href="#repeat" class="headerlink" title="repeat"></a>repeat</h2><p>重复，接受ImageRepeat对象，控制的是如果图片没有占满图片组件，那么就重复。</p>
+</li>
+<li><h2 id="color"><a href="#color" class="headerlink" title="color"></a>color</h2><p>与混合模式一起使用，在图片上增加一个颜色层，然后使用混合模式混合，如果不加混合模式，图片就会被颜色给覆盖掉。</p>
+</li>
+<li><h2 id="ColorBlendMode"><a href="#ColorBlendMode" class="headerlink" title="ColorBlendMode"></a>ColorBlendMode</h2><p>接受一个BlendMode，图片混合模式，该对象已经定义好几种混合类型，BlendMode.darken,BlendMode.clear等。</p>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Shape</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.clone();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Circle</span> <span class="keyword">extends</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"this is Circle"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> <span class="keyword">extends</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"this is rectangle"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShapeMap</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> Map&lt;String, Shape&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">register</span><span class="params">(String string, Shape shape)</span></span>&#123;</span><br><span class="line">    map.put(string, shape);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> Shape <span class="title">get</span><span class="params">(String string)</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">    Shape shape = map.get(string);</span><br><span class="line">    <span class="comment">//这里是核心我们获取到这个对象之后使用clone方法</span></span><br><span class="line">    <span class="keyword">return</span> (Shape) shape.clone();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">    ShapeMap shapeMap = <span class="keyword">new</span> ShapeMap();</span><br><span class="line">    Shape circle = <span class="keyword">new</span> Circle();</span><br><span class="line">    Shape rectangle = <span class="keyword">new</span> Rectangle();</span><br><span class="line">    shapeMap.register(<span class="string">"circle"</span>, circle);</span><br><span class="line">    shapeMap.register(<span class="string">"rectangle"</span>, rectangle);</span><br><span class="line">    Shape circleClone = shapeMap.get(<span class="string">"circle"</span>);</span><br><span class="line">    Shape rectangleClone = shapeMap.get(<span class="string">"rectangle"</span>);</span><br><span class="line">    circleClone.draw();</span><br><span class="line">    rectangleClone.draw();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  最后输出打印</p>
-<p>  this is Circle</p>
-<p>  this is rectangle</p>
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Image.asset(<span class="string">"images/avatar.gif"</span>,</span><br><span class="line">              width: <span class="number">200.0</span>,</span><br><span class="line">              height: <span class="number">400.0</span>,</span><br><span class="line">              color: Colors.pink,</span><br><span class="line">              colorBlendMode: BlendMode.colorBurn,</span><br><span class="line">              fit: BoxFit.scaleDown,</span><br><span class="line">              alignment: Alignment.bottomCenter,</span><br><span class="line">              repeat: ImageRepeat.repeat,</span><br><span class="line">            )</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -488,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/02/ES6学习——day02/" rel="next" title="ES6学习——day02">
-                <i class="fa fa-chevron-left"></i> ES6学习——day02
+              <a href="/2019/06/06/Flutter组件——Container/" rel="next" title="Flutter组件——Container">
+                <i class="fa fa-chevron-left"></i> Flutter组件——Container
               </a>
             
           </div>
@@ -497,10 +504,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/03/数据结构——Trie/" rel="prev" title="数据结构——Trie">
-                数据结构——Trie <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -695,7 +698,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是Prototype模式"><span class="nav-number">1.</span> <span class="nav-text">什么是Prototype模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现Prototype模式"><span class="nav-number">2.</span> <span class="nav-text">实现Prototype模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Image"><span class="nav-number">1.</span> <span class="nav-text">Image</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#必须属性"><span class="nav-number">2.</span> <span class="nav-text">必须属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#width-height"><span class="nav-number">3.</span> <span class="nav-text">width,height</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alignment"><span class="nav-number">4.</span> <span class="nav-text">alignment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fit"><span class="nav-number">5.</span> <span class="nav-text">fit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#repeat"><span class="nav-number">6.</span> <span class="nav-text">repeat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#color"><span class="nav-number">7.</span> <span class="nav-text">color</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ColorBlendMode"><span class="nav-number">8.</span> <span class="nav-text">ColorBlendMode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码示例"><span class="nav-number">9.</span> <span class="nav-text">代码示例</span></a></li></ol></div>
             
 
           </div>
