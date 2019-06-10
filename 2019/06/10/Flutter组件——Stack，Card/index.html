@@ -88,13 +88,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Francis的博客">
-<meta property="og:url" content="https://francisqiang.github.io/page/6/index.html">
+<meta name="description" content="Stack  Stack也是一个布局组件，它用于有子组件堆叠的场景，而且当我们使用Positioned组进行辅助的时候我们可以是层叠效果变得非常灵活。  alignment它接受一个AlignmentDirectional对象，它用于控制non-positioned组件在Stack组件中的位置。默认为topStart(左上角)  overflow它接受一个Overflow对象，用于控制溢出部分的显">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flutter组件——Stack，Card">
+<meta property="og:url" content="https://francisqiang.github.io/2019/06/10/Flutter组件——Stack，Card/index.html">
 <meta property="og:site_name" content="Francis的博客">
+<meta property="og:description" content="Stack  Stack也是一个布局组件，它用于有子组件堆叠的场景，而且当我们使用Positioned组进行辅助的时候我们可以是层叠效果变得非常灵活。  alignment它接受一个AlignmentDirectional对象，它用于控制non-positioned组件在Stack组件中的位置。默认为topStart(左上角)  overflow它接受一个Overflow对象，用于控制溢出部分的显">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-10T02:40:10.204Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Francis的博客">
+<meta name="twitter:title" content="Flutter组件——Stack，Card">
+<meta name="twitter:description" content="Stack  Stack也是一个布局组件，它用于有子组件堆叠的场景，而且当我们使用Positioned组进行辅助的时候我们可以是层叠效果变得非常灵活。  alignment它接受一个AlignmentDirectional对象，它用于控制non-positioned组件在Stack组件中的位置。默认为topStart(左上角)  overflow它接受一个Overflow对象，用于控制溢出部分的显">
 
 
 
@@ -124,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/page/6/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/06/10/Flutter组件——Stack，Card/">
 
 
 
 
 
-  <title>Francis的博客</title>
+  <title>Flutter组件——Stack，Card | Francis的博客</title>
   
 
 
@@ -149,8 +153,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband">
 	<a href="https://github.com/FrancisQiang" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 	</div>
@@ -277,9 +280,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -292,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/01/26/CSS中的定位/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/06/10/Flutter组件——Stack，Card/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -309,9 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/26/CSS中的定位/" itemprop="url">CSS中的定位</a></h1>
+          <h1 class="post-title" itemprop="name headline">Flutter组件——Stack，Card</h1>
         
 
         <div class="post-meta">
@@ -323,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-26T11:41:21+08:00">
-                2019-01-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T10:02:21+08:00">
+                2019-06-10
               </time>
             
 
@@ -346,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
+                  <a href="/categories/Flutter/" itemprop="url" rel="index">
+                    <span itemprop="name">Flutter</span>
                   </a>
                 </span>
 
@@ -364,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/26/CSS中的定位/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/26/CSS中的定位/" itemprop="commentCount"></span>
+                <a href="/2019/06/10/Flutter组件——Stack，Card/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/10/Flutter组件——Stack，Card/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,7 +374,7 @@
 
           
           
-             <span id="/2019/01/26/CSS中的定位/" class="leancloud_visitors" data-flag-title="CSS中的定位">
+             <span id="/2019/06/10/Flutter组件——Stack，Card/" class="leancloud_visitors" data-flag-title="Flutter组件——Stack，Card">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -399,1070 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  858
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          position属性&nbsp;&nbsp;通过设置定位将页面中的元素摆放到页面的任意位置，我们使用position属性来设置元素的定位
-
-static&nbsp;&nbsp;默认值，元素没有开启定位
-relative&nbsp;&nbsp;开启元素的相对定位
-absolute&nbsp;&nbsp
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/26/CSS中的定位/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-	<div>
-  
-    </div>
-	
-	<div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/01/25/CSS的盒子模型/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Francis Qiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Francis的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/25/CSS的盒子模型/" itemprop="url">CSS的盒子模型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-25T22:41:46+08:00">
-                2019-01-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/25/CSS的盒子模型/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/25/CSS的盒子模型/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/01/25/CSS的盒子模型/" class="leancloud_visitors" data-flag-title="CSS的盒子模型">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1.3k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          什么是盒子模型&nbsp;&nbsp;CSS中将每个元素都设置为了一个矩形的盒子来方便页面的布局，所以当这些元素都变成了盒子之后，我们的布局就变成了在页面中摆放盒子
-
-内容(content)&nbsp;&nbsp;元素的所有子元素都是放在父元素的内容区中
-&nbsp;&nbsp;内容区有宽度和高度—
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/25/CSS的盒子模型/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-	<div>
-  
-    </div>
-	
-	<div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/01/24/CSS—的浮动/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Francis Qiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Francis的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/24/CSS—的浮动/" itemprop="url">CSS的浮动</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-24T23:08:05+08:00">
-                2019-01-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/24/CSS—的浮动/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/24/CSS—的浮动/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/01/24/CSS—的浮动/" class="leancloud_visitors" data-flag-title="CSS的浮动">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  480
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          如何使用&nbsp;&nbsp;使用float属性给元素设置浮动效果
-可选值：
-
-none  &nbsp;&nbsp;默认值,不浮动，元素还在文档流中
-left  &nbsp;&nbsp;元素向左浮动
-right  &nbsp;&nbsp;元素向右浮动特点
-
-
-元素浮动以后会脱离文档流
-浮动以后会向
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/24/CSS—的浮动/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-	<div>
-  
-    </div>
-	
-	<div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/01/09/Java中的私有构造方法和单例模式/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Francis Qiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Francis的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/09/Java中的私有构造方法和单例模式/" itemprop="url">Java中的私有构造方法和单例模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-09T12:42:31+08:00">
-                2019-01-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java设计模式/" itemprop="url" rel="index">
-                    <span itemprop="name">Java设计模式</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/09/Java中的私有构造方法和单例模式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/09/Java中的私有构造方法和单例模式/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/01/09/Java中的私有构造方法和单例模式/" class="leancloud_visitors" data-flag-title="Java中的私有构造方法和单例模式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  835
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          私有构造方法&nbsp;&nbsp;这几天在学习Netty写聊天室的时候看见了一个例子，在例子中的代码使用到了Java的单例模式，基础不是太好，所以特意去搜索了解了一下单例模式。
-本文参考于 构造方法私有化和单例模式
-&nbsp;&nbsp;写单例模式之前先说一下私有构造方法，即在构造方法之前加上p
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/09/Java中的私有构造方法和单例模式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-	<div>
-  
-    </div>
-	
-	<div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2018/12/14/SpringMVC核心配置文件的解析和应用/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Francis Qiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Francis的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/14/SpringMVC核心配置文件的解析和应用/" itemprop="url">SpringMVC核心配置文件的解析和应用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-14T16:59:34+08:00">
-                2018-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spring-MVC/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring MVC</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/14/SpringMVC核心配置文件的解析和应用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/14/SpringMVC核心配置文件的解析和应用/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/12/14/SpringMVC核心配置文件的解析和应用/" class="leancloud_visitors" data-flag-title="SpringMVC核心配置文件的解析和应用">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1k
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  4
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          使用maven导入包&nbsp;&nbsp;这里我使用的是maven导入jar包，以前不知道maven，感觉导入jar包时特别麻烦，现在好了，直接Ctrl+c，Ctrl+v就完事了。
-
-配置SpringMVC的jar包
-
-&nbsp;&nbsp;SpringMVC所需要的jar包叫做
-spring-
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/14/SpringMVC核心配置文件的解析和应用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-	<div>
-  
-    </div>
-	
-	<div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Francis Qiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Francis的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/11/浅谈Java中-与equals的区别/" itemprop="url">浅谈Java中==与equals的区别</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-11T15:26:56+08:00">
-                2018-12-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java-SE/" itemprop="url" rel="index">
-                    <span itemprop="name">Java SE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/11/浅谈Java中-与equals的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/11/浅谈Java中-与equals的区别/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/12/11/浅谈Java中-与equals的区别/" class="leancloud_visitors" data-flag-title="浅谈Java中==与equals的区别">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  623
+                  568
                 </span>
               
 
@@ -1499,21 +437,41 @@ spring-
       
 
       
-        
-          
-          基本数据类型和引用数据类型  &nbsp;&nbsp;在谈==与equals区别之前，我们先来谈一谈java中堆和栈的区别，还有基本数据类型和引用数据类型的区别。
+        <h2 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h2><p>  Stack也是一个布局组件，它用于有子组件堆叠的场景，而且当我们使用Positioned组进行辅助的时候我们可以是层叠效果变得非常灵活。</p>
+<ul>
+<li><h2 id="alignment"><a href="#alignment" class="headerlink" title="alignment"></a>alignment</h2><p>它接受一个AlignmentDirectional对象，它用于控制non-positioned组件在Stack组件中的位置。默认为topStart(左上角)</p>
+</li>
+<li><h2 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h2><p>它接受一个Overflow对象，用于控制溢出部分的显示效果</p>
+</li>
+<li><h2 id="textDirection"><a href="#textDirection" class="headerlink" title="textDirection"></a>textDirection</h2><p>用于控制子组件排列方向，接受一个TextDirection对象有ltr，rtl这些值。</p>
+</li>
+<li><h2 id="fit"><a href="#fit" class="headerlink" title="fit"></a>fit</h2><p>用于控制如何设置non-positioned节点尺寸，默认为loose。接受一个StackFit对象，里面有loose，expand，passthrough三个枚举常量。</p>
+</li>
+<li><h2 id="children"><a href="#children" class="headerlink" title="children"></a>children</h2><p>放置子元素组件。其中可以放置positioned组件Positioned组件中有left，right，top，bottom，width，height等属性，上下左右用来控制在Stack的位置的，这个组件不受alignment属性的影响。</p>
+</li>
+<li><h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2></li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Stack(&#123;</span><br><span class="line">  Key key,</span><br><span class="line">  <span class="keyword">this</span>.alignment = AlignmentDirectional.topStart,</span><br><span class="line">  <span class="keyword">this</span>.textDirection,</span><br><span class="line">  <span class="keyword">this</span>.fit = StackFit.loose,</span><br><span class="line">  <span class="keyword">this</span>.overflow = Overflow.clip,</span><br><span class="line">  <span class="built_in">List</span>&lt;Widget&gt; children = <span class="keyword">const</span> &lt;Widget&gt;[],</span><br><span class="line">&#125;) : <span class="keyword">super</span>(key: key, children: children);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Positioned(&#123;</span><br><span class="line">  Key key,</span><br><span class="line">  <span class="keyword">this</span>.left,</span><br><span class="line">  <span class="keyword">this</span>.top,</span><br><span class="line">  <span class="keyword">this</span>.right,</span><br><span class="line">  <span class="keyword">this</span>.bottom,</span><br><span class="line">  <span class="keyword">this</span>.width,</span><br><span class="line">  <span class="keyword">this</span>.height,</span><br><span class="line">  <span class="meta">@required</span> Widget child,</span><br><span class="line">&#125;) : <span class="keyword">assert</span>(left == <span class="keyword">null</span> || right == <span class="keyword">null</span> || width == <span class="keyword">null</span>),</span><br><span class="line">     <span class="keyword">assert</span>(top == <span class="keyword">null</span> || bottom == <span class="keyword">null</span> || height == <span class="keyword">null</span>),</span><br><span class="line">     <span class="keyword">super</span>(key: key, child: child);</span><br></pre></td></tr></table></figure>
+<h2 id="Card"><a href="#Card" class="headerlink" title="Card"></a>Card</h2><p>  这是一个容器组件，就是卡片的样子</p>
+<ul>
+<li><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2></li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Card(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="keyword">this</span>.color,</span><br><span class="line">    <span class="keyword">this</span>.elevation,</span><br><span class="line">    <span class="keyword">this</span>.shape,</span><br><span class="line">    <span class="keyword">this</span>.borderOnForeground = <span class="keyword">true</span>,</span><br><span class="line">    <span class="keyword">this</span>.margin,</span><br><span class="line">    <span class="keyword">this</span>.clipBehavior,</span><br><span class="line">    <span class="keyword">this</span>.child,</span><br><span class="line">    <span class="keyword">this</span>.semanticContainer = <span class="keyword">true</span>,</span><br><span class="line">  &#125;) : <span class="keyword">assert</span>(elevation == <span class="keyword">null</span> || elevation &gt;= <span class="number">0.0</span>),</span><br><span class="line">       <span class="keyword">assert</span>(borderOnForeground != <span class="keyword">null</span>),</span><br><span class="line">       <span class="keyword">super</span>(key: key);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><h2 id="color"><a href="#color" class="headerlink" title="color"></a>color</h2><p>接受一个Color对象，用来设置卡片的颜色。</p>
+</li>
+<li><h2 id="elevation"><a href="#elevation" class="headerlink" title="elevation"></a>elevation</h2><p>控制z轴的高度，就是阴影效果，接受一个double值。</p>
+</li>
+<li><h2 id="shape"><a href="#shape" class="headerlink" title="shape"></a>shape</h2><p>控制卡片的形状，接受一个shapeBorder对象，我们可以将RoundedRectangleBorder对象赋值给它，这是事项圆角卡片的对象。</p>
+</li>
+<li><h2 id="borderOnForeground"><a href="#borderOnForeground" class="headerlink" title="borderOnForeground"></a>borderOnForeground</h2><p>接受一个布尔值，默认为true，当设置为true的时候，边框渲染会在子元素前面，false就相反。</p>
+</li>
+<li><h2 id="margin"><a href="#margin" class="headerlink" title="margin"></a>margin</h2><p>用于控制外边距，接受一个EdgeInsetsGeometry对象。</p>
+</li>
+<li><h2 id="semanticContainer"><a href="#semanticContainer" class="headerlink" title="semanticContainer"></a>semanticContainer</h2><p>接受一个bool，将此标志设置为true将尝试将所有子语义合并到此节点中。将此标志设置为false会强制所有子语义节点显式。这是文档里面的解释，我不太理解，但是官方说当你子元素是多种类型的时候最好设置为false，其默认也是false。</p>
+</li>
+</ul>
 
-基本数据类型有什么?
-&nbsp;&nbsp;八个基本数据类型：byte，short，int，long，float，double，ch
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/11/浅谈Java中-与equals的区别/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
     
@@ -1521,9 +479,17 @@ spring-
     
 	<div>
   
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢阅读-------------</div>
+    
+</div>
+  
     </div>
 	
 	<div>
+      
+        
       
     </div>
 
@@ -1537,218 +503,28 @@ spring-
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2018/12/01/hello-blog/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Francis Qiang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Francis的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/01/hello-blog/" itemprop="url">Hello Blog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-01T20:23:53+08:00">
-                2018-12-01
-              </time>
+              <a href="/2019/06/09/Flutter组件——Row，Column/" rel="next" title="Flutter组件——Row，Column">
+                <i class="fa fa-chevron-left"></i> Flutter组件——Row，Column
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/其它/" itemprop="url" rel="index">
-                    <span itemprop="name">其它</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/01/hello-blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/01/hello-blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018/12/01/hello-blog/" class="leancloud_visitors" data-flag-title="Hello Blog">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  475
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="我的第一篇博客"><a href="#我的第一篇博客" class="headerlink" title="我的第一篇博客"></a>我的第一篇博客</h1>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/12/01/hello-blog/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-	<div>
-  
-    </div>
-	
-	<div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1758,14 +534,37 @@ spring-
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
-  </nav>
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
 
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1773,6 +572,13 @@ spring-
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -1793,9 +599,18 @@ spring-
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -1888,6 +703,22 @@ spring-
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Stack"><span class="nav-number">1.</span> <span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alignment"><span class="nav-number">2.</span> <span class="nav-text">alignment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overflow"><span class="nav-number">3.</span> <span class="nav-text">overflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#textDirection"><span class="nav-number">4.</span> <span class="nav-text">textDirection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fit"><span class="nav-number">5.</span> <span class="nav-text">fit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#children"><span class="nav-number">6.</span> <span class="nav-text">children</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-number">7.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Card"><span class="nav-number">8.</span> <span class="nav-text">Card</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源代码"><span class="nav-number">9.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#color"><span class="nav-number">10.</span> <span class="nav-text">color</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#elevation"><span class="nav-number">11.</span> <span class="nav-text">elevation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shape"><span class="nav-number">12.</span> <span class="nav-text">shape</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#borderOnForeground"><span class="nav-number">13.</span> <span class="nav-text">borderOnForeground</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#margin"><span class="nav-number">14.</span> <span class="nav-text">margin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#semanticContainer"><span class="nav-number">15.</span> <span class="nav-text">semanticContainer</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -2063,6 +894,10 @@ spring-
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
