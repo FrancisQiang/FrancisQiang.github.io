@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="Francis的博客">
 <meta property="og:description" content="基本路由  在Flutter中路由跳转是通过Navigator这个类进行操作的，它是一种堆栈的结构，主要有两个操作一个是push就是入栈操作，他会把当前页面放入栈顶并显示。还有一个就是pop，它会把当前页面进行出栈操作，并显示操作之后最上层的页面。   使用的时候我们需要先将需要跳转的页面文件进行导入，然后使用Navigator.push(context,MaterialPageRoute()),">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-12T03:50:44.439Z">
+<meta property="og:updated_time" content="2019-06-12T04:12:47.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flutter路由和路由传值">
 <meta name="twitter:description" content="基本路由  在Flutter中路由跳转是通过Navigator这个类进行操作的，它是一种堆栈的结构，主要有两个操作一个是push就是入栈操作，他会把当前页面放入栈顶并显示。还有一个就是pop，它会把当前页面进行出栈操作，并显示操作之后最上层的页面。   使用的时候我们需要先将需要跳转的页面文件进行导入，然后使用Navigator.push(context,MaterialPageRoute()),">
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  622
+                  891
                 </span>
               
 
@@ -416,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  4
                 </span>
               
             </div>
@@ -457,6 +457,12 @@
   <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line"><span class="meta">@override</span></span><br><span class="line">Widget build(BuildContext context) &#123;</span><br><span class="line"><span class="keyword">return</span> MaterialApp(</span><br><span class="line"> <span class="comment">// home:Tabs(),</span></span><br><span class="line"> initialRoute: <span class="string">'/'</span>, routes: &#123;</span><br><span class="line"> <span class="string">'/'</span>:(contxt)=&gt;Tabs(),</span><br><span class="line"> <span class="string">'/search'</span>:(contxt) =&gt;SearchPage(),</span><br><span class="line"> <span class="string">'/form'</span>: (context) =&gt; FormPage(),  </span><br><span class="line"> &#125;,</span><br><span class="line">  );</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  initalRoute就是初始路由。</p>
 <p>  然后我们就可以使用Navigator.pushNamed(context,routeName)这个方法进行跳转页面了。</p>
+<h2 id="命名路由传参"><a href="#命名路由传参" class="headerlink" title="命名路由传参"></a>命名路由传参</h2><p>  命名路由传参主要借助于MaterialApp的onGeneratorRoute属性，这里面接受一个RouteFactory，其实返回的就是Route。</p>
+<p>  我们首先要删除routes属性(必须要，不然无法使用)。然后我们自己定义一个route的map。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyApp</span> <span class="keyword">extends</span> <span class="title">StatelessWidget</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 我们需要在routes里面做些小变动，(context)需要变成(context,&#123;arguments&#125;)</span></span><br><span class="line">  <span class="comment">// 然后通过构造方法进行传参</span></span><br><span class="line">  <span class="keyword">final</span> routes=&#123;</span><br><span class="line">    <span class="string">'/'</span>:(context)=&gt;Tabs(),</span><br><span class="line">    <span class="string">'/form'</span>:(context)=&gt;FormPage(),</span><br><span class="line">    <span class="string">'/product'</span>:(context)=&gt;ProductPage(),</span><br><span class="line">    <span class="string">'/productinfo'</span>:(context,&#123;arguments&#125;)=&gt;ProductInfoPage(arguments:arguments),</span><br><span class="line">    <span class="string">'/search'</span>:(context,&#123;arguments&#125;)=&gt;SearchPage(arguments:arguments),</span><br><span class="line">  &#125;;</span><br><span class="line">  </span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> MaterialApp(</span><br><span class="line">      <span class="comment">// home:Tabs(),</span></span><br><span class="line">      initialRoute: <span class="string">'/'</span>, <span class="comment">//初始化的时候加载的路由</span></span><br><span class="line">      onGenerateRoute: (RouteSettings settings) &#123;</span><br><span class="line">        <span class="comment">// 统一处理</span></span><br><span class="line">        <span class="keyword">final</span> <span class="built_in">String</span> name = settings.name;</span><br><span class="line">        <span class="keyword">final</span> <span class="built_in">Function</span> pageContentBuilder = routes[name];</span><br><span class="line">        <span class="keyword">if</span> (pageContentBuilder != <span class="keyword">null</span>) &#123;</span><br><span class="line">          <span class="keyword">if</span> (settings.arguments != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">final</span> Route route = MaterialPageRoute(</span><br><span class="line">                builder: (context) =&gt;</span><br><span class="line">                    pageContentBuilder(context, arguments: settings.arguments));</span><br><span class="line">            <span class="keyword">return</span> route;</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">final</span> Route route = MaterialPageRoute(</span><br><span class="line">                builder: (context) =&gt;</span><br><span class="line">                    pageContentBuilder(context));</span><br><span class="line">            <span class="keyword">return</span> route;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  当然，我们的Navigator也需要变动</p>
+  <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//路由跳转</span></span><br><span class="line">Navigator.pushNamed(context, <span class="string">'/search'</span>,arguments: &#123;</span><br><span class="line">  <span class="string">"id"</span>:<span class="number">123</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>  这里我们需要增加argument参数(这是原本方法自带的参数)</p>
 
       
     </div>
@@ -699,7 +705,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本路由"><span class="nav-number">1.</span> <span class="nav-text">基本路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本路由传参"><span class="nav-number">2.</span> <span class="nav-text">基本路由传参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名路由"><span class="nav-number">3.</span> <span class="nav-text">命名路由</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本路由"><span class="nav-number">1.</span> <span class="nav-text">基本路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本路由传参"><span class="nav-number">2.</span> <span class="nav-text">基本路由传参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名路由"><span class="nav-number">3.</span> <span class="nav-text">命名路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名路由传参"><span class="nav-number">4.</span> <span class="nav-text">命名路由传参</span></a></li></ol></div>
             
 
           </div>
@@ -734,7 +740,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">67.6k</span>
+    <span title="Site words total count">67.9k</span>
   
   -->
 </div>
@@ -767,7 +773,7 @@ var jiathis_config={
 -->
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共67.6k字</span>
+  <span class="post-count">博客全站共67.9k字</span>
 </div>
 
         
