@@ -88,21 +88,17 @@
 
 
 
-<meta name="description" content="从一道leetcode题目开始  题目描述：      看一下题目内容其实很简单就是删除一个链表中值为val的所有节点并且返回被删除完的链表。   上篇文章讲了如何进行链表操作，这时候我们其实就可以通过老方法遍历整个链表，然后通过比较每个节点的值和val的值是否相等，相等则删除，不相等则保留。   示例代码：   12345678910111213141516171819202122232425">
+<meta name="description" content="BottomNavigatorBar  Flutter中实现底部导航需要在Scaffold脚手架中赋值bottomNavigationBar参数，这个参数接受一个Widget，一般我们直接赋值BottomNavigationBar对象。   其中有几个参数比较重要  currentIndex 当前item元素的索引  onTap 当点击的时候触发的函数  items 存放路由导航的的按钮(小部件)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="链表和递归">
-<meta property="og:url" content="https://francisqiang.github.io/2019/04/28/链表和递归/index.html">
+<meta property="og:title" content="Flutter中的底部导航和顶部导航">
+<meta property="og:url" content="https://francisqiang.github.io/2019/06/14/Flutter中的底部导航和顶部导航/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="从一道leetcode题目开始  题目描述：      看一下题目内容其实很简单就是删除一个链表中值为val的所有节点并且返回被删除完的链表。   上篇文章讲了如何进行链表操作，这时候我们其实就可以通过老方法遍历整个链表，然后通过比较每个节点的值和val的值是否相等，相等则删除，不相等则保留。   示例代码：   12345678910111213141516171819202122232425">
+<meta property="og:description" content="BottomNavigatorBar  Flutter中实现底部导航需要在Scaffold脚手架中赋值bottomNavigationBar参数，这个参数接受一个Widget，一般我们直接赋值BottomNavigationBar对象。   其中有几个参数比较重要  currentIndex 当前item元素的索引  onTap 当点击的时候触发的函数  items 存放路由导航的的按钮(小部件)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://francisqiang.github.io/2019/04/28/链表和递归/1.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/04/28/链表和递归/2.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/04/28/链表和递归/3.jpg">
-<meta property="og:updated_time" content="2019-04-28T13:18:33.848Z">
+<meta property="og:updated_time" content="2019-06-14T14:00:04.333Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="链表和递归">
-<meta name="twitter:description" content="从一道leetcode题目开始  题目描述：      看一下题目内容其实很简单就是删除一个链表中值为val的所有节点并且返回被删除完的链表。   上篇文章讲了如何进行链表操作，这时候我们其实就可以通过老方法遍历整个链表，然后通过比较每个节点的值和val的值是否相等，相等则删除，不相等则保留。   示例代码：   12345678910111213141516171819202122232425">
-<meta name="twitter:image" content="https://francisqiang.github.io/2019/04/28/链表和递归/1.jpg">
+<meta name="twitter:title" content="Flutter中的底部导航和顶部导航">
+<meta name="twitter:description" content="BottomNavigatorBar  Flutter中实现底部导航需要在Scaffold脚手架中赋值bottomNavigationBar参数，这个参数接受一个Widget，一般我们直接赋值BottomNavigationBar对象。   其中有几个参数比较重要  currentIndex 当前item元素的索引  onTap 当点击的时候触发的函数  items 存放路由导航的的按钮(小部件)">
 
 
 
@@ -132,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2019/04/28/链表和递归/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/06/14/Flutter中的底部导航和顶部导航/">
 
 
 
 
 
-  <title>链表和递归 | Francis的博客</title>
+  <title>Flutter中的底部导航和顶部导航 | Francis的博客</title>
   
 
 
@@ -299,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/04/28/链表和递归/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/06/14/Flutter中的底部导航和顶部导航/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -316,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">链表和递归</h1>
+          <h1 class="post-title" itemprop="name headline">Flutter中的底部导航和顶部导航</h1>
         
 
         <div class="post-meta">
@@ -328,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-28T19:58:04+08:00">
-                2019-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-14T20:51:55+08:00">
+                2019-06-14
               </time>
             
 
@@ -351,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
+                  <a href="/categories/Flutter/" itemprop="url" rel="index">
+                    <span itemprop="name">Flutter</span>
                   </a>
                 </span>
 
@@ -369,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/04/28/链表和递归/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/28/链表和递归/" itemprop="commentCount"></span>
+                <a href="/2019/06/14/Flutter中的底部导航和顶部导航/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/14/Flutter中的底部导航和顶部导航/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -378,7 +374,7 @@
 
           
           
-             <span id="/2019/04/28/链表和递归/" class="leancloud_visitors" data-flag-title="链表和递归">
+             <span id="/2019/06/14/Flutter中的底部导航和顶部导航/" class="leancloud_visitors" data-flag-title="Flutter中的底部导航和顶部导航">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -404,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.8k
+                  1.1k
                 </span>
               
 
@@ -420,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  4
                 </span>
               
             </div>
@@ -441,37 +437,31 @@
       
 
       
-        <h2 id="从一道leetcode题目开始"><a href="#从一道leetcode题目开始" class="headerlink" title="从一道leetcode题目开始"></a>从一道leetcode题目开始</h2><p>  题目描述：</p>
-<p>  <img src="/2019/04/28/链表和递归/1.jpg" alt="avatar"></p>
-<p>  看一下题目内容其实很简单就是删除一个链表中值为val的所有节点并且返回被删除完的链表。</p>
-<p>  上篇文章讲了如何进行链表操作，这时候我们其实就可以通过老方法遍历整个链表，然后通过比较每个节点的值和val的值是否相等，相等则删除，不相等则保留。</p>
-<p>  示例代码：</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">      <span class="comment">//这里的ListNode是leetcode给定的，里面包含next和val字段</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> ListNode <span class="title">removeElements</span><span class="params">(ListNode head, <span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//创建一个虚拟头结点</span></span><br><span class="line">    ListNode virtualNode=<span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    <span class="comment">//虚拟头结点的next节点是头结点</span></span><br><span class="line">    virtualNode.next=head;</span><br><span class="line">    <span class="comment">//将虚拟头结点赋值给currentNode当前节点</span></span><br><span class="line">    ListNode currentNode=virtualNode;</span><br><span class="line">    <span class="keyword">while</span> (currentNode.next!=<span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="comment">//通过遍历当前节点来删除元素</span></span><br><span class="line">      <span class="keyword">if</span> (currentNode.next.val==val)&#123;</span><br><span class="line">        <span class="comment">//如果当前头结点的next元素的val值等于给定的val</span></span><br><span class="line">        <span class="comment">//则将当前节点的next元素直接指向next的next</span></span><br><span class="line">        <span class="comment">//那么原来next节点就直接被删除了</span></span><br><span class="line">        currentNode.next=currentNode.next.next;</span><br><span class="line">      &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//如果不相等则跳到下一个节点，循环知道currentNode的next节点为null</span></span><br><span class="line">        currentNode=currentNode.next;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//返回虚拟头结点的next，这里就是被删除元素的原来的头结点</span></span><br><span class="line">    <span class="keyword">return</span> virtualNode.next;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p><img src="/2019/04/28/链表和递归/2.jpg" alt="avatar"></p>
-<p>  在考虑递归如何写的时候我们先需要了解递归的宏观语意。</p>
-<p>  一个递归函数其实本质就是函数调用，只不过它是自己调用自己。</p>
-<p>  递归函数就是将原来的问题转化为更小的问题，知道最后求出最基本的解。</p>
-<p>  最基本的解一般是我们通过if条件判断来终结的，如果不添加if判断给递归函数一个终结（最基本的解，例如求阶乘的时候等于1等于0的时候就是最基本的解），那么计算机就会无限产生递归调用，这会导致cpu的方法栈（写栈的时候提过，函数调用就是通过栈来实现的）爆满从而报错。</p>
-<p>  <img src="/2019/04/28/链表和递归/3.jpg" alt="avatar"></p>
-<p>  如何写一个递归函数，我们不要去考虑它的实现细节，最好是通过宏观语意来完成它。</p>
-<p>  首先我们最能确定的就是它的最基本解，然后我们需要在原本函数里面再次调用该函数并修改参数（目的是将原问题转换为更小的问题）。上图的代码只是最简单的示例，当递归函数稍微再复杂点的时候，我们就需要获取到递归调用函数产生的值并对这个return的值来做些修改最后再返回给上一级调用这个级别的递归函数的函数。</p>
-<h2 id="使用递归来实现链表的删除-上述题目"><a href="#使用递归来实现链表的删除-上述题目" class="headerlink" title="使用递归来实现链表的删除(上述题目)"></a>使用递归来实现链表的删除(上述题目)</h2><p>  首先完成一个递归函数我们需要先确定我们怎么把这个递归函数变为更小的函数。</p>
-<p>  这里，我们将这个删除长度n的链表中元素的问题转换成先判断从第二个节点开始到最后节点中删除符合条件的节点，然后再转换为从第三个节点到最后节点删除符合条件的节点，直到我们的问题变成了删除最后一个空节点中符合条件的元素，当然这个时候空节点里面是不可能有的，所以我们这时候直接返回head，这样最基本解就出来了。</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(head==<span class="keyword">null</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  之后就是转换为更小的问题了。</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将问题转换为小问题</span></span><br><span class="line">ListNode result=removeElements(head.next,val);</span><br><span class="line"><span class="comment">//每次return都是return给上一级递归的结果</span></span><br><span class="line"><span class="comment">//如果当前节点的val值和给定val相等</span></span><br><span class="line"><span class="comment">//则直接return给上一级不包含该节点的链表</span></span><br><span class="line"><span class="keyword">if</span>(head.val==val)&#123;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">//如果不相等说明不需要删除</span></span><br><span class="line">    <span class="comment">//则需要将返回的结果前面加上头结点head在返回head</span></span><br><span class="line">    head.next=result;</span><br><span class="line">    <span class="keyword">return</span> head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  完整代码：</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span>  ListNode <span class="title">removeElements</span><span class="params">(ListNode head,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line"> <span class="comment">//首先考虑最基本的问题</span></span><br><span class="line"> <span class="keyword">if</span> (head==<span class="keyword">null</span>)&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> ListNode resultNode=removeElements(head.next,val);</span><br><span class="line"> <span class="keyword">if</span> (head.val==val)&#123;</span><br><span class="line">   <span class="keyword">return</span> resultNode;</span><br><span class="line"> &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">  head.next=resultNode;</span><br><span class="line">  <span class="keyword">return</span> head;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  其实整个问题可以这么理解，我需要删除一个链表中符合元素的节点，那么我把这个问题转化为小问题，将整个链表转换为从2开始到结尾的链表，然后S到从3开始到结尾的链表，最后到从结尾到结尾的节点（null），那么我就是从最后一个节点找需要删除的节点，假设如果最后一个节点是要删除的节点，那么这时候我们只需要将这个节点删除并且返回给上一级调用递归函数。这时候我们返回的null然后上一级接收到的result就是null，然后这个函数继续执行到if(head.val==val)，这时候就判断（第二级递归就是最后两个节点的链表）当前链表中的头结点的val是否满足，满足就跟刚刚一样“删除”该节点，不满足就将这个head的next设置为result，也就是将result的头结点暂时设置为当前head（将当前head设置为头结点并返回给上一级调用的函数），这样无限的返回，最后返回的就是原本链表中需要删除元素后的链表了。</p>
-<p>  这个时候我们可以将递归写的更简单</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">removeElements</span><span class="params">(ListNode head,<span class="keyword">int</span> val)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(head==<span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">    head.next=removeElements(head.next,val);</span><br><span class="line">    <span class="keyword">return</span> head.val==val?head.next:head;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="简单实用递归实现链表的创建"><a href="#简单实用递归实现链表的创建" class="headerlink" title="简单实用递归实现链表的创建"></a>简单实用递归实现链表的创建</h2><p>  首先我们考虑如何通过递归实现该功能，创建一个链表，我们将问题缩小就是从创建节点开始。例如我们现在给定一个数组，然后我们通过这个数组来创建链表。首先这个数组的索引肯定是我们递归实现的条件，比如一个10个元素的数组，我们需要创建十个元素的链表，我们可以将问题变为创建从索引1开始到结束的链表，然后从索引2到结束，最后到从末尾到末尾（创建最后一个元素），所以这时候我们最基本条件就出来了。</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>((index+<span class="number">1</span>)==array.length)&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>  这个时候我们就要来实现将问题转换为小问题<br>  其实很简单。</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ListNode result=createElement(array,index+<span class="number">1</span>);</span><br><span class="line">ListNode currentNode=<span class="keyword">new</span> ListNode(array[index]);</span><br><span class="line">currentNode.next=result;</span><br><span class="line"><span class="keyword">return</span> currentNode;</span><br></pre></td></tr></table></figure>
-<p>  完整代码：</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ListNode <span class="title">createListNode</span><span class="params">(<span class="keyword">int</span>[] array,<span class="keyword">int</span> index)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> ((index+<span class="number">1</span>)==array.length)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> ListNode(array[index]);</span><br><span class="line">  &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    ListNode result=createListNode(array,index+<span class="number">1</span>);</span><br><span class="line">    ListNode currentNode=<span class="keyword">new</span> ListNode(array[index]);</span><br><span class="line">    currentNode.next=result;</span><br><span class="line">    <span class="keyword">return</span> currentNode;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="杂谈"><a href="#杂谈" class="headerlink" title="杂谈"></a>杂谈</h2><p>这个星期开始复习的信号系统，对于我这个学物联网的同学，不会什么高数，硬件是真的很烦躁，信号考完了，能不能过就靠老师助攻了。今天写篇博客来缓解一下一个星期没写代码的愧疚，这个递归还真的有点难理解，还需要勤敲勤练。加油吧！！</p>
+        <h2 id="BottomNavigatorBar"><a href="#BottomNavigatorBar" class="headerlink" title="BottomNavigatorBar"></a>BottomNavigatorBar</h2><p>  Flutter中实现底部导航需要在Scaffold脚手架中赋值bottomNavigationBar参数，这个参数接受一个Widget，一般我们直接赋值BottomNavigationBar对象。</p>
+<p>  其中有几个参数比较重要</p>
+<ul>
+<li><p>currentIndex</p>
+<p>当前item元素的索引</p>
+</li>
+<li><p>onTap</p>
+<p>当点击的时候触发的函数</p>
+</li>
+<li><p>items</p>
+<p>存放路由导航的的按钮(小部件)。</p>
+<p>需要注意的是整个脚手架需要放置在动态组件中。</p>
+</li>
+</ul>
+<h3 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyScaffold</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _MyScaffoldState createState() =&gt; _MyScaffoldState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_MyScaffoldState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MyScaffold</span>&gt; </span>&#123;</span><br><span class="line">  <span class="built_in">int</span> _currentIndex = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 定义导航切换的路由</span></span><br><span class="line">  <span class="built_in">List</span>&lt;Widget&gt; _tabsWidget = [TabControllerPage(), MyMessage(), MySetting()];</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> DefaultTabController(</span><br><span class="line">      length: <span class="number">2</span>,</span><br><span class="line">      child: Scaffold(</span><br><span class="line">        appBar: AppBar(</span><br><span class="line">          centerTitle: <span class="keyword">true</span>,</span><br><span class="line">          title: Text(<span class="string">'Tab Demo'</span>),</span><br><span class="line">          leading: IconButton(icon: Icon(Icons.favorite), onPressed: () &#123;&#125;),</span><br><span class="line">        ),</span><br><span class="line">        bottomNavigationBar: BottomNavigationBar(</span><br><span class="line">          currentIndex: <span class="keyword">this</span>._currentIndex,</span><br><span class="line">          <span class="comment">// 触发重构页面</span></span><br><span class="line">          onTap: (index) =&gt; setState(() =&gt; <span class="keyword">this</span>._currentIndex = index),</span><br><span class="line">          items: [</span><br><span class="line">            BottomNavigationBarItem(</span><br><span class="line">                icon: Icon(Icons.home), title: Text(<span class="string">'home'</span>)),</span><br><span class="line">            BottomNavigationBarItem(</span><br><span class="line">                icon: Icon(Icons.message), title: Text(<span class="string">'message'</span>)),</span><br><span class="line">            BottomNavigationBarItem(</span><br><span class="line">                icon: Icon(Icons.settings), title: Text(<span class="string">'settings'</span>))</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">        body: _tabsWidget[<span class="keyword">this</span>._currentIndex],</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="TabBar"><a href="#TabBar" class="headerlink" title="TabBar"></a>TabBar</h2><p>  TabBar是用来实现顶部滑动导航的。我们可以放置在脚手架中appBar中的bottom中。</p>
+<p>  但最需要注意的是我们需要在脚手架外层嵌套一个DefaultTabController，我们必须要定义这个组件中的length属性，这是用来定义导航条的数目的。然后我们再bottom中定义一个TabBar，里面的tabs属性接受一个Widget数组，数组中存放导航条，然后我们可以在Scaffold中的body里面添加TabBarView，TabBarView里面有children属性，是用来存放导航的主页面的，所以我们这里DefaultTabController中的length属性和bottom中tabs中数组的长度还有这个children数组的长度，三者必须一样。</p>
+<p>  其实这里就是在你想要实现顶部导航页面外层嵌套DefaultTabController并且定义长度，然后再里面定义TabBar和TabBarView，这个DefaultTabController用来对TabBar和TabBarView进行”连接”和监听。</p>
+<h3 id="常规顶部导航代码示例"><a href="#常规顶部导航代码示例" class="headerlink" title="常规顶部导航代码示例"></a>常规顶部导航代码示例</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyScaffold</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  _MyScaffoldState createState() =&gt; _MyScaffoldState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_MyScaffoldState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">MyScaffold</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> DefaultTabController(</span><br><span class="line">      length: <span class="number">2</span>,</span><br><span class="line">      child: Scaffold(</span><br><span class="line">        appBar: AppBar(</span><br><span class="line">          centerTitle: <span class="keyword">true</span>,</span><br><span class="line">          title: Text(<span class="string">'Tab Demo'</span>),</span><br><span class="line">          leading: IconButton(icon: Icon(Icons.favorite), onPressed: () &#123;&#125;),</span><br><span class="line">          bottom: TabBar(</span><br><span class="line">            isScrollable: <span class="keyword">true</span>,</span><br><span class="line">            tabs: &lt;Widget&gt;[</span><br><span class="line">              Tab(</span><br><span class="line">                text: <span class="string">'hot'</span>,</span><br><span class="line">              ),</span><br><span class="line">              Tab(</span><br><span class="line">                text: <span class="string">'recommend'</span>,</span><br><span class="line">              )</span><br><span class="line">            ],</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br><span class="line">        body: TabBarView(</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            ListView(</span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line">                ListTile(</span><br><span class="line">                  title: Text(<span class="string">'111111'</span>),</span><br><span class="line">                ),</span><br><span class="line">                ListTile(</span><br><span class="line">                  title: Text(<span class="string">'222222'</span>),</span><br><span class="line">                ),</span><br><span class="line">                ListTile(</span><br><span class="line">                  title: Text(<span class="string">'333333'</span>),</span><br><span class="line">                ),</span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">            ListView(</span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line">                ListTile(</span><br><span class="line">                  title: Text(<span class="string">'111111'</span>),</span><br><span class="line">                ),</span><br><span class="line">                ListTile(</span><br><span class="line">                  title: Text(<span class="string">'222222'</span>),</span><br><span class="line">                ),</span><br><span class="line">                ListTile(</span><br><span class="line">                  title: Text(<span class="string">'333333'</span>),</span><br><span class="line">                ),</span><br><span class="line">              ],</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  如果我们页面里面已经有底层导航了，这时候我们就不同在appBar中的bottom属性中存放导航条了。</p>
+<p>  比如你现在有三个底部导航路由，然后你在总的Scaffold中的appBar中添加顶部导航栏，这样就会使你的底部三个页面都存在这个顶部导航栏。</p>
+<p>  如果你在另一个页面再次使用Scaffold构建子页面 你可以做在appBar的title中定义TabBar，appBar的title属性接受一个Widget，你可以将TabBar赋值给它。或者你可以在新建的脚手架中不使用appBar属性。</p>
+<h2 id="自定义TabBar"><a href="#自定义TabBar" class="headerlink" title="自定义TabBar"></a>自定义TabBar</h2><p>  我们需要在一个动态组件中创建一个TabController 然后这个组件需要with(类似多继承)一个SingleTickerProviderStateMixin(用来设置TabController中的vsync垂直同步属性的)。然后我们这时候不需要使用DefaultTabController来嵌套组件了，我们只需要在TabBar和TabBarView组件中定义他们的Controller属性为我们的controller，当然我们需要在init组件的时候创建controller。</p>
+<p>  使用自定义的好处就是我们可以监听controller的状态从而定制一些个性化的操作。</p>
+<h3 id="自定义TabController代码"><a href="#自定义TabController代码" class="headerlink" title="自定义TabController代码"></a>自定义TabController代码</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'package:flutter/material.dart'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppBardemoPage</span> <span class="keyword">extends</span> <span class="title">StatefulWidget</span> </span>&#123;</span><br><span class="line">  AppBardemoPage(&#123;Key key&#125;) : <span class="keyword">super</span>(key: key);</span><br><span class="line"></span><br><span class="line">  _AppBardemoPageState createState() =&gt; _AppBardemoPageState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_AppBardemoPageState</span> <span class="keyword">extends</span> <span class="title">State</span>&lt;<span class="title">AppBardemoPage</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="title">with</span> <span class="title">SingleTickerProviderStateMixin</span> </span>&#123;</span><br><span class="line">  TabController _tabController;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  <span class="keyword">void</span> dispose() &#123;</span><br><span class="line">    _tabController.dispose();</span><br><span class="line">    <span class="keyword">super</span>.dispose();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">void</span> initState() &#123;</span><br><span class="line">    <span class="keyword">super</span>.initState();</span><br><span class="line">    _tabController = <span class="keyword">new</span> TabController(vsync: <span class="keyword">this</span>, length: <span class="number">3</span>);</span><br><span class="line">    <span class="comment">// 我们这时候可以添加监听器来实现自定义</span></span><br><span class="line">    _tabController.addLinstener(()&#123;</span><br><span class="line">        <span class="comment">// 获取控制器的一些值来改变一些UI组件</span></span><br><span class="line">        <span class="built_in">print</span>(_tabController.index);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@override</span></span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Scaffold(</span><br><span class="line">      appBar: <span class="keyword">new</span> AppBar(</span><br><span class="line">        title: <span class="keyword">new</span> Text(<span class="string">'顶部 tab 切换'</span>), bottom: <span class="keyword">new</span> TabBar(</span><br><span class="line">        tabs: &lt;Widget&gt;[</span><br><span class="line">          <span class="keyword">new</span> Tab(</span><br><span class="line">            icon: <span class="keyword">new</span> Icon(Icons.directions_bike),), <span class="keyword">new</span> Tab(</span><br><span class="line">            icon: <span class="keyword">new</span> Icon(Icons.directions_boat),), <span class="keyword">new</span> Tab(</span><br><span class="line">            icon: <span class="keyword">new</span> Icon(Icons.directions_bus),),</span><br><span class="line">        ], controller: _tabController,),), body: <span class="keyword">new</span> TabBarView(</span><br><span class="line">      controller: _tabController, children: &lt;Widget&gt;[</span><br><span class="line">      <span class="keyword">new</span> Center(child: <span class="keyword">new</span> Text(<span class="string">'自行车'</span>)),</span><br><span class="line">      <span class="keyword">new</span> Center(child: <span class="keyword">new</span> Text(<span class="string">'船'</span>)),</span><br><span class="line">      <span class="keyword">new</span> Center(child: <span class="keyword">new</span> Text(<span class="string">'巴士'</span>)),</span><br><span class="line">    ],),);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -511,8 +501,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/20/Java实现自定义验证注解/" rel="next" title="Java实现自定义验证注解">
-                <i class="fa fa-chevron-left"></i> Java实现自定义验证注解
+              <a href="/2019/06/12/Flutter路由和路由传值/" rel="next" title="Flutter路由和路由传值">
+                <i class="fa fa-chevron-left"></i> Flutter路由和路由传值
               </a>
             
           </div>
@@ -520,10 +510,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/03/SpringBoot整合Redis/" rel="prev" title="SpringBoot整合Redis">
-                SpringBoot整合Redis <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -718,7 +704,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#从一道leetcode题目开始"><span class="nav-number">1.</span> <span class="nav-text">从一道leetcode题目开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归"><span class="nav-number">2.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用递归来实现链表的删除-上述题目"><span class="nav-number">3.</span> <span class="nav-text">使用递归来实现链表的删除(上述题目)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单实用递归实现链表的创建"><span class="nav-number">4.</span> <span class="nav-text">简单实用递归实现链表的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#杂谈"><span class="nav-number">5.</span> <span class="nav-text">杂谈</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BottomNavigatorBar"><span class="nav-number">1.</span> <span class="nav-text">BottomNavigatorBar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码示例"><span class="nav-number">1.1.</span> <span class="nav-text">代码示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TabBar"><span class="nav-number">2.</span> <span class="nav-text">TabBar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常规顶部导航代码示例"><span class="nav-number">2.1.</span> <span class="nav-text">常规顶部导航代码示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义TabBar"><span class="nav-number">3.</span> <span class="nav-text">自定义TabBar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义TabController代码"><span class="nav-number">3.1.</span> <span class="nav-text">自定义TabController代码</span></a></li></ol></li></ol></div>
             
 
           </div>
