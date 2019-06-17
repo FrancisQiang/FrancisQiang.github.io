@@ -88,24 +88,17 @@
 
 
 
-<meta name="description" content="基本数据类型和引用数据类型  &amp;nbsp;&amp;nbsp;在谈==与equals区别之前，我们先来谈一谈java中堆和栈的区别，还有基本数据类型和引用数据类型的区别。  基本数据类型有什么? &amp;nbsp;&amp;nbsp;八个基本数据类型：byte，short，int，long，float，double，char，boolean  引用数据类型是什么? &amp;nbsp;&amp;nbsp;引用数据类型是：类，接口，数组">
+<meta name="description" content="Drawer  在Flutter中的Scaffold中有一个drawe属性，这个属性是定义页面的左边滑动抽屉的。如果我们没有在AppBar中设置自己的leading属性(控制左边的按钮)，Flutter会默认给我配置它自己的按钮。   我们可以首先查看一下Drawer中的构造函数源代码。   1234567const Drawer(&amp;#123;  Key key,  this.elevation">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈Java中==与equals的区别">
-<meta property="og:url" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/index.html">
+<meta property="og:title" content="Flutter组件——侧边栏Drawer">
+<meta property="og:url" content="https://francisqiang.github.io/2019/06/17/Flutter组件——侧边栏Drawer/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="基本数据类型和引用数据类型  &amp;nbsp;&amp;nbsp;在谈==与equals区别之前，我们先来谈一谈java中堆和栈的区别，还有基本数据类型和引用数据类型的区别。  基本数据类型有什么? &amp;nbsp;&amp;nbsp;八个基本数据类型：byte，short，int，long，float，double，char，boolean  引用数据类型是什么? &amp;nbsp;&amp;nbsp;引用数据类型是：类，接口，数组">
+<meta property="og:description" content="Drawer  在Flutter中的Scaffold中有一个drawe属性，这个属性是定义页面的左边滑动抽屉的。如果我们没有在AppBar中设置自己的leading属性(控制左边的按钮)，Flutter会默认给我配置它自己的按钮。   我们可以首先查看一下Drawer中的构造函数源代码。   1234567const Drawer(&amp;#123;  Key key,  this.elevation">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/1.png">
-<meta property="og:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/2.png">
-<meta property="og:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/3.png">
-<meta property="og:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/4.png">
-<meta property="og:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/5.png">
-<meta property="og:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/6.png">
-<meta property="og:updated_time" content="2019-01-27T08:00:02.851Z">
+<meta property="og:updated_time" content="2019-06-17T14:12:52.899Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅谈Java中==与equals的区别">
-<meta name="twitter:description" content="基本数据类型和引用数据类型  &amp;nbsp;&amp;nbsp;在谈==与equals区别之前，我们先来谈一谈java中堆和栈的区别，还有基本数据类型和引用数据类型的区别。  基本数据类型有什么? &amp;nbsp;&amp;nbsp;八个基本数据类型：byte，short，int，long，float，double，char，boolean  引用数据类型是什么? &amp;nbsp;&amp;nbsp;引用数据类型是：类，接口，数组">
-<meta name="twitter:image" content="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/1.png">
+<meta name="twitter:title" content="Flutter组件——侧边栏Drawer">
+<meta name="twitter:description" content="Drawer  在Flutter中的Scaffold中有一个drawe属性，这个属性是定义页面的左边滑动抽屉的。如果我们没有在AppBar中设置自己的leading属性(控制左边的按钮)，Flutter会默认给我配置它自己的按钮。   我们可以首先查看一下Drawer中的构造函数源代码。   1234567const Drawer(&amp;#123;  Key key,  this.elevation">
 
 
 
@@ -135,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/06/17/Flutter组件——侧边栏Drawer/">
 
 
 
 
 
-  <title>浅谈Java中==与equals的区别 | Francis的博客</title>
+  <title>Flutter组件——侧边栏Drawer | Francis的博客</title>
   
 
 
@@ -302,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2018/12/11/浅谈Java中-与equals的区别/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/06/17/Flutter组件——侧边栏Drawer/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -319,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浅谈Java中==与equals的区别</h1>
+          <h1 class="post-title" itemprop="name headline">Flutter组件——侧边栏Drawer</h1>
         
 
         <div class="post-meta">
@@ -331,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-11T15:26:56+08:00">
-                2018-12-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-17T21:40:23+08:00">
+                2019-06-17
               </time>
             
 
@@ -354,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java-SE/" itemprop="url" rel="index">
-                    <span itemprop="name">Java SE</span>
+                  <a href="/categories/Flutter/" itemprop="url" rel="index">
+                    <span itemprop="name">Flutter</span>
                   </a>
                 </span>
 
@@ -372,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/11/浅谈Java中-与equals的区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/11/浅谈Java中-与equals的区别/" itemprop="commentCount"></span>
+                <a href="/2019/06/17/Flutter组件——侧边栏Drawer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/17/Flutter组件——侧边栏Drawer/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -381,7 +374,7 @@
 
           
           
-             <span id="/2018/12/11/浅谈Java中-与equals的区别/" class="leancloud_visitors" data-flag-title="浅谈Java中==与equals的区别">
+             <span id="/2019/06/17/Flutter组件——侧边栏Drawer/" class="leancloud_visitors" data-flag-title="Flutter组件——侧边栏Drawer">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -407,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  623
+                  654
                 </span>
               
 
@@ -423,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -444,51 +437,46 @@
       
 
       
-        <h2 id="基本数据类型和引用数据类型"><a href="#基本数据类型和引用数据类型" class="headerlink" title="基本数据类型和引用数据类型"></a>基本数据类型和引用数据类型</h2><p>  &nbsp;&nbsp;在谈==与equals区别之前，我们先来谈一谈java中堆和栈的区别，还有基本数据类型和引用数据类型的区别。</p>
+        <h2 id="Drawer"><a href="#Drawer" class="headerlink" title="Drawer"></a>Drawer</h2><p>  在Flutter中的Scaffold中有一个drawe属性，这个属性是定义页面的左边滑动抽屉的。如果我们没有在AppBar中设置自己的leading属性(控制左边的按钮)，Flutter会默认给我配置它自己的按钮。</p>
+<p>  我们可以首先查看一下Drawer中的构造函数源代码。</p>
+  <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Drawer(&#123;</span><br><span class="line">  Key key,</span><br><span class="line">  <span class="keyword">this</span>.elevation = <span class="number">16.0</span>,</span><br><span class="line">  <span class="keyword">this</span>.child,</span><br><span class="line">  <span class="keyword">this</span>.semanticLabel,</span><br><span class="line">&#125;) : <span class="keyword">assert</span>(elevation != <span class="keyword">null</span> &amp;&amp; elevation &gt;= <span class="number">0.0</span>),</span><br><span class="line">     <span class="keyword">super</span>(key: key);</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>基本数据类型有什么?</strong></p>
-<p>&nbsp;&nbsp;八个基本数据类型：byte，short，int，long，float，double，char，boolean</p>
+<li><p>elevation</p>
+<p>控制z轴阴影效果，接受一个double。</p>
 </li>
-<li><p><strong>引用数据类型是什么?</strong></p>
-<p>&nbsp;&nbsp;引用数据类型是：类，接口，数组</p>
-<p>&nbsp;&nbsp;<font size="4"><strong>具体参考下图</strong></font></p>
+<li><p>child</p>
+<p>子元素，里面通常存放一个Container再嵌套一个ListView。</p>
+</li>
+<li><p>semanticLabel</p>
+<p>语意标签，目前还不知道做什么的。</p>
 </li>
 </ul>
-<p><img src="/2018/12/11/浅谈Java中-与equals的区别/1.png"></p>
-<h2 id="引用数据类型，基本数据类型和堆栈之间的关系"><a href="#引用数据类型，基本数据类型和堆栈之间的关系" class="headerlink" title="引用数据类型，基本数据类型和堆栈之间的关系"></a>引用数据类型，基本数据类型和堆栈之间的关系</h2><ul>
-<li>引用类型的变量，其内存分布在堆上或者常量池(字符串变量、基本数据类型常量)，需要通过new等方式来创建。堆内主要存放运行时，需要new来创建的对象。</li>
-<li>基本数据类型变量(8种基本数据类型)以及对象的引用变量，其内存分布在栈上，变量出了作用域就会自动释放。</li>
-</ul>
-<font size="4"><strong>如下图:</strong></font>
-
-<p><img src="/2018/12/11/浅谈Java中-与equals的区别/2.png" height="240" width="440"></p>
-<h2 id="Java中-和equals-与上述两者的关系"><a href="#Java中-和equals-与上述两者的关系" class="headerlink" title="Java中==和equals()与上述两者的关系"></a>Java中==和equals()与上述两者的关系</h2><ul>
-<li>==操作的是栈内存中的值是否相等</li>
-<li>equals比较的是堆内存中的值是否相等。</li>
-</ul>
-<font size="4">下面我们通过一些实例来证明：</font>
-
+<h2 id="DrawerHearder"><a href="#DrawerHearder" class="headerlink" title="DrawerHearder"></a>DrawerHearder</h2><p>源代码</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> DrawerHeader(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="keyword">this</span>.decoration,</span><br><span class="line">    <span class="keyword">this</span>.margin = <span class="keyword">const</span> EdgeInsets.only(bottom: <span class="number">8.0</span>),</span><br><span class="line">    <span class="keyword">this</span>.padding = <span class="keyword">const</span> EdgeInsets.fromLTRB(<span class="number">16.0</span>, <span class="number">16.0</span>, <span class="number">16.0</span>, <span class="number">8.0</span>),</span><br><span class="line">    <span class="keyword">this</span>.duration = <span class="keyword">const</span> <span class="built_in">Duration</span>(milliseconds: <span class="number">250</span>),</span><br><span class="line">    <span class="keyword">this</span>.curve = Curves.fastOutSlowIn,</span><br><span class="line">    <span class="meta">@required</span> <span class="keyword">this</span>.child,</span><br><span class="line">  &#125;) : <span class="keyword">super</span>(key: key);</span><br></pre></td></tr></table></figure>
+<p>其中decoration用来设置容器的样式装饰，比如形状，颜色等。margin和padding是用来设置边距的，后面的duration和curve是动画内容，现在我还弄清楚怎么用。</p>
+<h2 id="UserAccountsDrawerHeader"><a href="#UserAccountsDrawerHeader" class="headerlink" title="UserAccountsDrawerHeader"></a>UserAccountsDrawerHeader</h2><p>  如果我们想快速构建个人信息页面的话我们可以直接使用UserAccountDrawerHeader，这个类替我们封装了DrawerHeader，我们可以查看它的源代码。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> UserAccountsDrawerHeader(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="keyword">this</span>.decoration,</span><br><span class="line">    <span class="keyword">this</span>.margin = <span class="keyword">const</span> EdgeInsets.only(bottom: <span class="number">8.0</span>),</span><br><span class="line">    <span class="keyword">this</span>.currentAccountPicture,</span><br><span class="line">    <span class="keyword">this</span>.otherAccountsPictures,</span><br><span class="line">    <span class="meta">@required</span> <span class="keyword">this</span>.accountName,</span><br><span class="line">    <span class="meta">@required</span> <span class="keyword">this</span>.accountEmail,</span><br><span class="line">    <span class="keyword">this</span>.onDetailsPressed,</span><br><span class="line">  &#125;) : <span class="keyword">super</span>(key: key);</span><br></pre></td></tr></table></figure>
+<p>我们查看它的build方法就可以知道其中它使用了Drawer</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@override</span></span><br><span class="line">Widget build(BuildContext context) &#123;</span><br><span class="line">  <span class="keyword">assert</span>(debugCheckHasMaterial(context));</span><br><span class="line">  <span class="keyword">assert</span>(debugCheckHasMaterialLocalizations(context));</span><br><span class="line">  <span class="keyword">return</span> Semantics(</span><br><span class="line">    container: <span class="keyword">true</span>,</span><br><span class="line">    label: MaterialLocalizations.of(context).signedInLabel,</span><br><span class="line">    child: DrawerHeader(</span><br><span class="line">      decoration: widget.decoration ?? BoxDecoration(</span><br><span class="line">        color: Theme.of(context).primaryColor,</span><br><span class="line">      ),</span><br><span class="line">      margin: widget.margin,</span><br><span class="line">      padding: <span class="keyword">const</span> EdgeInsetsDirectional.only(top: <span class="number">16.0</span>, start: <span class="number">16.0</span>),</span><br><span class="line">      child: SafeArea(</span><br><span class="line">        bottom: <span class="keyword">false</span>,</span><br><span class="line">        child: Column(</span><br><span class="line">          crossAxisAlignment: CrossAxisAlignment.stretch,</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            Expanded(</span><br><span class="line">              child: Padding(</span><br><span class="line">                padding: <span class="keyword">const</span> EdgeInsetsDirectional.only(end: <span class="number">16.0</span>),</span><br><span class="line">                child: _AccountPictures(</span><br><span class="line">                  currentAccountPicture: widget.currentAccountPicture,</span><br><span class="line">                  otherAccountsPictures: widget.otherAccountsPictures,</span><br><span class="line">                ),</span><br><span class="line">              ),</span><br><span class="line">            ),</span><br><span class="line">            _AccountDetails(</span><br><span class="line">              accountName: widget.accountName,</span><br><span class="line">              accountEmail: widget.accountEmail,</span><br><span class="line">              isOpen: _isOpen,</span><br><span class="line">              onTap: widget.onDetailsPressed == <span class="keyword">null</span> ? <span class="keyword">null</span> : _handleDetailsPressed,</span><br><span class="line">            ),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们先来看一下UserAccountDrawer中的属性</p>
 <ul>
-<li><strong>比较两个基本数据类型</strong></li>
+<li><p>decoration</p>
+<p>盒子装饰属性</p>
+</li>
+<li><p>margin</p>
+<p>边距</p>
+</li>
+<li><p>currentAccountPricture</p>
+<p>当前用户的头像</p>
+</li>
+<li><p>otherAccountPicture</p>
+<p>其他用户的头像，放在当前头像的右边。</p>
+</li>
+<li><p>accountName，accountEmail</p>
+<p>用户的名字和邮箱。</p>
+</li>
 </ul>
-<p><img src="/2018/12/11/浅谈Java中-与equals的区别/3.png" height="230" width="360"></p>
-<p>输出结果为: a==b</p>
-<p>&nbsp;&nbsp;<strong>可见==b比较的是栈中的内容,a和b栈中都存放了1所以相等</strong></p>
-<ul>
-<li><strong>比较两个字符串</strong></li>
-</ul>
-<p><img src="/2018/12/11/浅谈Java中-与equals的区别/4.png" height="230" width="380"></p>
-<p>输出结果为:  a==b</p>
-<p><img src="/2018/12/11/浅谈Java中-与equals的区别/5.png" height="230" width="380"></p>
-<p>输出结果为:  a.equals(b)</p>
-<p>&nbsp;&nbsp;<strong>在这个例子中，我们看到==和equals的作用是相同的，a==b说明a和b引用了同一个String对象。a.equsls(b)说明a和b指向的对象在堆中存储的内容相同。即a和b指向同一个对象。为什么会这样呢，因为<font color="red">Stirng对象在创建时，会现在String缓冲池中查看是否有相同的对象，如果有，则不创建。</font></strong></p>
-<ul>
-<li><strong>当再新建一个String对象</strong></li>
-</ul>
-<p><img src="/2018/12/11/浅谈Java中-与equals的区别/6.png" height="300" width="500"></p>
-<p>输出结果为:  a.equals(b) a!=b</p>
-<p>&nbsp;&nbsp;<strong>此时字符串a，b为不同的对象。equals比较的是堆中的内容，a和b堆中内容都是123，所以输出a.equals(b)。而又a，b不是同一个对象。所以a，b的栈中存储的地址不一样，而==又是比较栈中内容所以输出a!=b。</strong></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结:"></a>总结:</h2><p>&nbsp;&nbsp;<strong><font size="4">==比较的是<font color="red">栈中的内容</font>，即两个对象的地址是否为同一个。equals比较的是<font color="red">堆中内容是否相等</font>，即两个对象的内容是否相同。</font></strong></p>
+<h2 id="Drawer的代码示例"><a href="#Drawer的代码示例" class="headerlink" title="Drawer的代码示例"></a>Drawer的代码示例</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">Drawer(</span><br><span class="line">          elevation: <span class="number">200.0</span>,</span><br><span class="line">          child: Container(</span><br><span class="line">              alignment: Alignment.center,</span><br><span class="line">              child: ListView(</span><br><span class="line">                padding: EdgeInsets.zero,</span><br><span class="line">                children: &lt;Widget&gt;[</span><br><span class="line">                  UserAccountsDrawerHeader(</span><br><span class="line">                    accountName: Text(<span class="string">'FrancisQiang'</span>, style: TextStyle(fontWeight: FontWeight.bold, fontSize: <span class="number">30.0</span>),),</span><br><span class="line">                    accountEmail: Text(<span class="string">'2487049041@qq.com'</span>),</span><br><span class="line">                    currentAccountPicture: CircleAvatar(</span><br><span class="line">                      backgroundImage: NetworkImage(<span class="string">'https://francisqiang.github.io/images/avatar.gif'</span>),</span><br><span class="line">                    ),</span><br><span class="line">                    decoration: BoxDecoration(</span><br><span class="line">                      image: DecorationImage(</span><br><span class="line">                          image: NetworkImage(<span class="string">'https://francisqiang.github.io/2019/06/03/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E2%80%94%E2%80%94Trie/10.jpg'</span>),</span><br><span class="line">                          fit: BoxFit.cover,</span><br><span class="line">                          colorFilter: ColorFilter.mode(</span><br><span class="line">                              Colors.purple.withOpacity(<span class="number">0.3</span>),</span><br><span class="line">                              BlendMode.srcOver</span><br><span class="line">                          )</span><br><span class="line">                      ),</span><br><span class="line">                    ),</span><br><span class="line">                  ),</span><br><span class="line">                  ListTile(</span><br><span class="line">                    title: Text(<span class="string">'Message'</span>, textAlign: TextAlign.right,),</span><br><span class="line">                    trailing: Icon(Icons.message, color: Colors.blueAccent, size: <span class="number">25.0</span>,),</span><br><span class="line">                  ),</span><br><span class="line">                  ListTile(</span><br><span class="line">                    title: Text(<span class="string">'Favorite'</span>, textAlign: TextAlign.right,),</span><br><span class="line">                    trailing: Icon(Icons.favorite, color: Colors.red, size: <span class="number">25.0</span>,),</span><br><span class="line">                  ),</span><br><span class="line">                  ListTile(</span><br><span class="line">                    title: Text(<span class="string">'Setting'</span>, textAlign: TextAlign.right,),</span><br><span class="line">                    trailing: Icon(Icons.settings,color: Colors.black87, size: <span class="number">25.0</span>,),</span><br><span class="line">                  ),</span><br><span class="line">                ],</span><br><span class="line">              )</span><br><span class="line">          ),</span><br><span class="line">        ),</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -528,8 +516,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/01/hello-blog/" rel="next" title="Hello Blog">
-                <i class="fa fa-chevron-left"></i> Hello Blog
+              <a href="/2019/06/14/Flutter中的底部导航和顶部导航/" rel="next" title="Flutter中的底部导航和顶部导航">
+                <i class="fa fa-chevron-left"></i> Flutter中的底部导航和顶部导航
               </a>
             
           </div>
@@ -537,10 +525,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/14/SpringMVC核心配置文件的解析和应用/" rel="prev" title="SpringMVC核心配置文件的解析和应用">
-                SpringMVC核心配置文件的解析和应用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -735,7 +719,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本数据类型和引用数据类型"><span class="nav-number">1.</span> <span class="nav-text">基本数据类型和引用数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用数据类型，基本数据类型和堆栈之间的关系"><span class="nav-number">2.</span> <span class="nav-text">引用数据类型，基本数据类型和堆栈之间的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java中-和equals-与上述两者的关系"><span class="nav-number">3.</span> <span class="nav-text">Java中==和equals()与上述两者的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Drawer"><span class="nav-number">1.</span> <span class="nav-text">Drawer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DrawerHearder"><span class="nav-number">2.</span> <span class="nav-text">DrawerHearder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UserAccountsDrawerHeader"><span class="nav-number">3.</span> <span class="nav-text">UserAccountsDrawerHeader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Drawer的代码示例"><span class="nav-number">4.</span> <span class="nav-text">Drawer的代码示例</span></a></li></ol></div>
             
 
           </div>
