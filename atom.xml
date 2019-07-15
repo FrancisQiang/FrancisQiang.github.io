@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://francisqiang.github.io/"/>
-  <updated>2019-06-27T07:08:33.119Z</updated>
+  <updated>2019-07-15T13:24:15.578Z</updated>
   <id>https://francisqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java是解释执行吗</title>
+    <link href="https://francisqiang.github.io/2019/07/15/Java%E6%98%AF%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E5%90%97/"/>
+    <id>https://francisqiang.github.io/2019/07/15/Java是解释执行吗/</id>
+    <published>2019-07-15T12:45:04.000Z</published>
+    <updated>2019-07-15T13:24:15.578Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="解释型语言"><a href="#解释型语言" class="headerlink" title="解释型语言"></a>解释型语言</h2><p>  所谓解释型语言就是解释器对代码进行逐条解释，解释成本地机器代码然后直接运行</p><h2 id="编译型语言"><a href="#编译型语言" class="headerlink" title="编译型语言"></a>编译型语言</h2><p>  所谓编译型语言就是在程序运行之前，将代码提前编译成本地机器代码。</p><h2 id="JIT编译技术"><a href="#JIT编译技术" class="headerlink" title="JIT编译技术"></a>JIT编译技术</h2><p>  以前不是很懂JIT和解释型语言的区别，一直以为JIT就是解释型语言。其实JIT是在程序运行时将代码逐条编译成本地机器代码，看似和解释型语言的定义没啥区别，但是JIT最重要的是加了个缓存。根据程序的局部性原理，代码会被多次循环调用，JIT所做的就是将逐条解释编译成的机器代码存入缓存中，当再次对相同语句进行编译的时候直接从缓存中调用。因为局部性原理，所以性能不会有什么损失。</p><h2 id="Java是解释执行吗"><a href="#Java是解释执行吗" class="headerlink" title="Java是解释执行吗"></a>Java是解释执行吗</h2><p>  以前一直以为Java是编译型语言，因为从.java文件到.class文件需要一个编译的过程。</p><p>  看了许多回答，其实大家对解释型语言和编译型语言都有着不同的见解。我觉得对于语言类型的定义并不重要，了解语言的本质才是精髓。</p><p>  上文提到编译型语言，当编译型语言的程序生成了目标文件，这个目标文件是本地机器能直接运行的文件，它是针对cpu而言的，因为硬件本身的差异，编译型语言的程序当需要在另外一种cpu上面运行的时候，这个程序必须要重新编译。</p><p>  这里我就直接定义为编译型语言就是在运行之前将程序直接编译成本机机器码的语言，如C，C++等。</p><p>  而对于py，java这些语言来说，可能也存在着一些编译的过程，就比如说Java中需要先将.java文件编译成.class文件，而对于本地机器，它是无法运行.class文件的，所以我们称之为解释语言。对于.java到.class的编译，它的目的就是将代码编译成统一平台(JVM)上能看得懂的代码，它是一种中间代码，不是本地机器代码，之所以java代码能Write once, run anywhere就是因为JVM这个中间层的存在，因为jvm屏蔽了操作系统和硬件的细节，它会将.class文件转换为本地机器可以执行的本地代码。</p><p>  我们通常会把Java分为编译期和运行时，上述就是编译期。而运行时的时候，JVM会通过类加载器(Class-Loader)加载字节码，解释或者编译执行。</p><p>  注意这里是解释或者编译执行，在主流Java版本Java8中它就是解释和编译混合的一种模式。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;解释型语言&quot;&gt;&lt;a href=&quot;#解释型语言&quot; class=&quot;headerlink&quot; title=&quot;解释型语言&quot;&gt;&lt;/a&gt;解释型语言&lt;/h2&gt;&lt;p&gt;  所谓解释型语言就是解释器对代码进行逐条解释，解释成本地机器代码然后直接运行&lt;/p&gt;
+&lt;h2 id=&quot;编译型语言&quot;
+      
+    
+    </summary>
+    
+      <category term="Java SE" scheme="https://francisqiang.github.io/categories/Java-SE/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Flutter实例——搜索条的实现</title>
@@ -454,29 +478,6 @@
     </summary>
     
       <category term="ES6" scheme="https://francisqiang.github.io/categories/ES6/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式——模板方法模式</title>
-    <link href="https://francisqiang.github.io/2019/05/30/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://francisqiang.github.io/2019/05/30/设计模式——模板方法模式/</id>
-    <published>2019-05-30T15:11:45.000Z</published>
-    <updated>2019-05-30T15:36:14.314Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="什么是模板方法模式"><a href="#什么是模板方法模式" class="headerlink" title="什么是模板方法模式"></a>什么是模板方法模式</h2><p>  Template Method模式，我的理解就是它是一种抽象类实现方法的一种升级版的设计模式。所谓模板就是将某一种工序流程方法抽象成一个统一的模板，比如说我有一个绘画的模板，我们可以选择任何一种画笔，比如我使用红笔画这个模板画出来的就是红色的，我用蜡笔那就蜡笔画出来的画。</p><h2 id="模板方法的实现"><a href="#模板方法的实现" class="headerlink" title="模板方法的实现"></a>模板方法的实现</h2><p>  比如这时候我们有一个流程，流程中需要调用几个工序，这几个工序的顺序是不变的，但是具体的工序是会变化的。这时候我们就可以使用模板方法模式了。</p><p>  首先，我们先定义一个抽象类，这个抽象类里面有具体的模板方法和几个工序方法，工序方法是抽象方法(这个就需要子类去实现具体方法)，模板方法里需要调用这几个方法比如说先是工序1然后是工序2最后是工序4。</p><p>  当我们需要具体实现的时候，我们需要加一个类继承于这个抽象类并且实现它的抽象方法。</p><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>  这里我就直接使用vs在md文件里手敲了，比较简单但最重要的是思想。</p><p>  首先是抽象类AbstractProcess</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractProcess</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">workOrder1</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">workOrder2</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">workOrder4</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">processTemplate</span><span class="params">()</span></span>&#123;</span><br><span class="line">        workOrder1();</span><br><span class="line">        workOrder2();</span><br><span class="line">        workOrder4();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  然后是实现类代码</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MakePencilProcess</span> <span class="keyword">extends</span> <span class="title">AbstractProcess</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MakePencilProcess</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">workOrder1</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"This is make pencil first"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">workOrder2</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"This is make pencil second"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">workOrder4</span><span class="params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"This is make pencil third"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  最后是客户端类</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        <span class="comment">//里氏替换原则，更加灵活</span></span><br><span class="line">        AbstractProcess abstractProcess = <span class="keyword">new</span> MakePencilProcess();</span><br><span class="line">        abstractProcess.processTemplate();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>  这两天在看vue，突然有好多要学的现在有点不知所措，期末，练车，数据结构，设计模式，Java项目，大创，前端项目，vue，六级考试，操作系统实验。。。感觉自己野心有点太大了，慢慢来吧，不能太急。</p><p>  这几天突然意识到自己缺少了很多生活的记忆，尤其是前几天肝项目的时候，让我回忆那几天生活里干了啥我已经记不清了，我觉得我不能成为那样的呆子，那不是我，那也是我以前不想成为的人。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;什么是模板方法模式&quot;&gt;&lt;a href=&quot;#什么是模板方法模式&quot; class=&quot;headerlink&quot; title=&quot;什么是模板方法模式&quot;&gt;&lt;/a&gt;什么是模板方法模式&lt;/h2&gt;&lt;p&gt;  Template Method模式，我的理解就是它是一种抽象类实现方法的一种升级
-      
-    
-    </summary>
-    
-      <category term="Java设计模式" scheme="https://francisqiang.github.io/categories/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>
