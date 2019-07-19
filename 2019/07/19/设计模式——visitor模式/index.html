@@ -88,13 +88,19 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Francis的博客">
-<meta property="og:url" content="https://francisqiang.github.io/categories/其它/index.html">
+<meta name="description" content="什么是visitor模式  访问者模式，《JAVA与模式》这本书中提到的一句: 访问者模式是对象的行为模式。访问者模式的目的是封装一些施加于某种数据结构元素之上的操作。一旦这些操作需要修改的话，接受这些操作的数据结构则可以保持不变。   我们先来理解一下这句话的意思，目的是封装对于数据结构元素的操作。首先，提出三个问题，这句话的封装是什么意思？这句话指的数据结构是什么？对于数据结构的操作又是什么？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="设计模式——visitor模式">
+<meta property="og:url" content="https://francisqiang.github.io/2019/07/19/设计模式——visitor模式/index.html">
 <meta property="og:site_name" content="Francis的博客">
+<meta property="og:description" content="什么是visitor模式  访问者模式，《JAVA与模式》这本书中提到的一句: 访问者模式是对象的行为模式。访问者模式的目的是封装一些施加于某种数据结构元素之上的操作。一旦这些操作需要修改的话，接受这些操作的数据结构则可以保持不变。   我们先来理解一下这句话的意思，目的是封装对于数据结构元素的操作。首先，提出三个问题，这句话的封装是什么意思？这句话指的数据结构是什么？对于数据结构的操作又是什么？">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://francisqiang.github.io/2019/07/19/设计模式——visitor模式/1.jpg">
+<meta property="og:updated_time" content="2019-07-19T11:01:56.244Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Francis的博客">
+<meta name="twitter:title" content="设计模式——visitor模式">
+<meta name="twitter:description" content="什么是visitor模式  访问者模式，《JAVA与模式》这本书中提到的一句: 访问者模式是对象的行为模式。访问者模式的目的是封装一些施加于某种数据结构元素之上的操作。一旦这些操作需要修改的话，接受这些操作的数据结构则可以保持不变。   我们先来理解一下这句话的意思，目的是封装对于数据结构元素的操作。首先，提出三个问题，这句话的封装是什么意思？这句话指的数据结构是什么？对于数据结构的操作又是什么？">
+<meta name="twitter:image" content="https://francisqiang.github.io/2019/07/19/设计模式——visitor模式/1.jpg">
 
 
 
@@ -124,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/categories/其它/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/07/19/设计模式——visitor模式/">
 
 
 
 
 
-  <title>分类: 其它 | Francis的博客</title>
+  <title>设计模式——visitor模式 | Francis的博客</title>
   
 
 
@@ -149,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband">
 	<a href="https://github.com/FrancisQiang" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
 	</div>
@@ -277,53 +283,267 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>其它<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/07/19/设计模式——visitor模式/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Francis Qiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Francis的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/12/01/hello-blog/" itemprop="url">
-              
-                <span itemprop="name">Hello Blog</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">设计模式——visitor模式</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-01T20:23:53+08:00" content="2018-12-01">
-          12-01
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T17:36:59+08:00">
+                2019-07-19
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">Java设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/19/设计模式——visitor模式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/19/设计模式——visitor模式/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/07/19/设计模式——visitor模式/" class="leancloud_visitors" data-flag-title="设计模式——visitor模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  723
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是visitor模式"><a href="#什么是visitor模式" class="headerlink" title="什么是visitor模式"></a>什么是visitor模式</h2><p>  访问者模式，《JAVA与模式》这本书中提到的一句: <strong><em>访问者模式是对象的行为模式。访问者模式的目的是封装一些施加于某种数据结构元素之上的操作。一旦这些操作需要修改的话，接受这些操作的数据结构则可以保持不变。</em></strong></p>
+<p>  我们先来理解一下这句话的意思，目的是封装对于数据结构元素的操作。首先，提出三个问题，这句话的封装是什么意思？这句话指的数据结构是什么？对于数据结构的操作又是什么？</p>
+<p>  有些官方语句之所以难理解就是因为它太抽象了，能使它容易理解那么就必须先化抽象为具体，然后再从具体去看抽象。</p>
+<p>  在visitor模式中运用到了一个最核心的理念就是<strong>双分派</strong>，何为双分派呢？既然是双，那么必定存在两个角色，这两个角色是什么呢？在访问者模式里面肯定是访问者和被访问者。</p>
+<p>  我们再来看看上面那句话，刚刚还有两个疑问分别是这句话的数据结构是什么？这句话的操作又是什么？其实我们可以直接理解为数据结构就是被访问者，操作就是访问者，封装就是通过双分派机制来使操作去拥有数据结构并且能对数据结构进行改变，而数据结构(元素)同时也接受一个操作对象(访问者)，当操作改变的时候，我们再利用面向抽象编程就可以轻松地分离出操作而不改变数据结构了。</p>
+<h2 id="visitor模式UML图"><a href="#visitor模式UML图" class="headerlink" title="visitor模式UML图"></a>visitor模式UML图</h2><p>  <img src="/2019/07/19/设计模式——visitor模式/1.jpg" alt="UML"></p>
+<p>  Visitor: 抽象访问者，为具体访问者声明一个visit方法，注意的是这里的visit方法数量是根据访问者类型多少而决定的。</p>
+<p>  ConcreteVisitor: 具体访问者，实现了visit方法，是对于访问者操作的具体实现</p>
+<p>  Element: 被访问的数据结构的抽象类，定义了一个accept方法用来接受一个访问者对象。</p>
+<p>  ConcreteElement: 被访问者的数据结构的具体实现类，实现accept方法。accept方法接受一个访问者，让后这里面会调用访问者的具体visit方法，然后再将自己作为对象传入这个访问者的具体visit方法中，在这个visit方法中就会调用一些对于对象进行操作的方法。</p>
+<p>  ObjectStructure: 这个类其实对于整个设计模式中关联性不是很强，可以忽略，它的作用就是将上述的Element放入一个集合中，可能我们会对这个集合进行遍历然后再进行操作等。</p>
 
       
     </div>
+    
+    
+    
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢阅读-------------</div>
+    
+</div>
+  
+    </div>
+	
+	<div>
+      
+        
+      
+    </div>
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/18/设计模式——Decoration模式/" rel="next" title="设计模式——Decoration模式">
+                <i class="fa fa-chevron-left"></i> 设计模式——Decoration模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -331,6 +551,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -351,9 +578,18 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -446,6 +682,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是visitor模式"><span class="nav-number">1.</span> <span class="nav-text">什么是visitor模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#visitor模式UML图"><span class="nav-number">2.</span> <span class="nav-text">visitor模式UML图</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -621,6 +873,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

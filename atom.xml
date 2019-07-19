@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://francisqiang.github.io/"/>
-  <updated>2019-07-18T15:39:37.210Z</updated>
+  <updated>2019-07-19T11:01:56.244Z</updated>
   <id>https://francisqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式——visitor模式</title>
+    <link href="https://francisqiang.github.io/2019/07/19/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94visitor%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://francisqiang.github.io/2019/07/19/设计模式——visitor模式/</id>
+    <published>2019-07-19T09:36:59.000Z</published>
+    <updated>2019-07-19T11:01:56.244Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是visitor模式"><a href="#什么是visitor模式" class="headerlink" title="什么是visitor模式"></a>什么是visitor模式</h2><p>  访问者模式，《JAVA与模式》这本书中提到的一句: <strong><em>访问者模式是对象的行为模式。访问者模式的目的是封装一些施加于某种数据结构元素之上的操作。一旦这些操作需要修改的话，接受这些操作的数据结构则可以保持不变。</em></strong></p><p>  我们先来理解一下这句话的意思，目的是封装对于数据结构元素的操作。首先，提出三个问题，这句话的封装是什么意思？这句话指的数据结构是什么？对于数据结构的操作又是什么？</p><p>  有些官方语句之所以难理解就是因为它太抽象了，能使它容易理解那么就必须先化抽象为具体，然后再从具体去看抽象。</p><p>  在visitor模式中运用到了一个最核心的理念就是<strong>双分派</strong>，何为双分派呢？既然是双，那么必定存在两个角色，这两个角色是什么呢？在访问者模式里面肯定是访问者和被访问者。</p><p>  我们再来看看上面那句话，刚刚还有两个疑问分别是这句话的数据结构是什么？这句话的操作又是什么？其实我们可以直接理解为数据结构就是被访问者，操作就是访问者，封装就是通过双分派机制来使操作去拥有数据结构并且能对数据结构进行改变，而数据结构(元素)同时也接受一个操作对象(访问者)，当操作改变的时候，我们再利用面向抽象编程就可以轻松地分离出操作而不改变数据结构了。</p><h2 id="visitor模式UML图"><a href="#visitor模式UML图" class="headerlink" title="visitor模式UML图"></a>visitor模式UML图</h2><p>  <img src="/2019/07/19/设计模式——visitor模式/1.jpg" alt="UML"></p><p>  Visitor: 抽象访问者，为具体访问者声明一个visit方法，注意的是这里的visit方法数量是根据访问者类型多少而决定的。</p><p>  ConcreteVisitor: 具体访问者，实现了visit方法，是对于访问者操作的具体实现</p><p>  Element: 被访问的数据结构的抽象类，定义了一个accept方法用来接受一个访问者对象。</p><p>  ConcreteElement: 被访问者的数据结构的具体实现类，实现accept方法。accept方法接受一个访问者，让后这里面会调用访问者的具体visit方法，然后再将自己作为对象传入这个访问者的具体visit方法中，在这个visit方法中就会调用一些对于对象进行操作的方法。</p><p>  ObjectStructure: 这个类其实对于整个设计模式中关联性不是很强，可以忽略，它的作用就是将上述的Element放入一个集合中，可能我们会对这个集合进行遍历然后再进行操作等。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;什么是visitor模式&quot;&gt;&lt;a href=&quot;#什么是visitor模式&quot; class=&quot;headerlink&quot; title=&quot;什么是visitor模式&quot;&gt;&lt;/a&gt;什么是visitor模式&lt;/h2&gt;&lt;p&gt;  访问者模式，《JAVA与模式》这本书中提到的一句: &lt;s
+      
+    
+    </summary>
+    
+      <category term="Java设计模式" scheme="https://francisqiang.github.io/categories/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>设计模式——Decoration模式</title>
@@ -455,29 +478,6 @@
     </summary>
     
       <category term="数据结构" scheme="https://francisqiang.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式——Prototype模式</title>
-    <link href="https://francisqiang.github.io/2019/06/03/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94Prototype%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://francisqiang.github.io/2019/06/03/设计模式——Prototype模式/</id>
-    <published>2019-06-03T02:14:45.000Z</published>
-    <updated>2019-06-03T03:36:45.488Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="什么是Prototype模式"><a href="#什么是Prototype模式" class="headerlink" title="什么是Prototype模式"></a>什么是Prototype模式</h2><p>  Prototype模式(原型模式)指的就是使用对象去制造新的对象，不像单例模式只制造出一个对象，原型模式制造的对象是多个的。原型模式多用于创建复杂的或者耗时的实例，因为这种情况下，复制一个已经存在的实例使程序运行更高效；或者创建值相等，只是命名不一样的同类数据。</p><h2 id="实现Prototype模式"><a href="#实现Prototype模式" class="headerlink" title="实现Prototype模式"></a>实现Prototype模式</h2><p>  原型模式主要用于对象的复制，它的核心是就是类图中的原型类Prototype。Prototype类需要具备以下两个条件：</p><ul><li><p>实现Cloneable接口。在java语言有一个Cloneable接口，它的作用只有一个，就是在运行时通知虚拟机可以安全地在实现了此接口的类上使用clone方法。在java虚拟机中，只有实现了这个接口的类才可以被拷贝，否则在运行时会抛出CloneNotSupportedException异常。</p></li><li><p>重写Object类中的clone方法。Java中，所有类的父类都是Object类，Object类中有一个clone方法，作用是返回对象的一个拷贝，但是其作用域protected类型的，一般的类无法调用，因此，Prototype类需要将clone方法的作用域修改为public类型。</p></li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Shape</span> <span class="keyword">implements</span> <span class="title">Cloneable</span></span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">super</span>.clone();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Circle</span> <span class="keyword">extends</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"this is Circle"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> <span class="keyword">extends</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"this is rectangle"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShapeMap</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> Map&lt;String, Shape&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">register</span><span class="params">(String string, Shape shape)</span></span>&#123;</span><br><span class="line">    map.put(string, shape);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> Shape <span class="title">get</span><span class="params">(String string)</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">    Shape shape = map.get(string);</span><br><span class="line">    <span class="comment">//这里是核心我们获取到这个对象之后使用clone方法</span></span><br><span class="line">    <span class="keyword">return</span> (Shape) shape.clone();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> CloneNotSupportedException </span>&#123;</span><br><span class="line">    ShapeMap shapeMap = <span class="keyword">new</span> ShapeMap();</span><br><span class="line">    Shape circle = <span class="keyword">new</span> Circle();</span><br><span class="line">    Shape rectangle = <span class="keyword">new</span> Rectangle();</span><br><span class="line">    shapeMap.register(<span class="string">"circle"</span>, circle);</span><br><span class="line">    shapeMap.register(<span class="string">"rectangle"</span>, rectangle);</span><br><span class="line">    Shape circleClone = shapeMap.get(<span class="string">"circle"</span>);</span><br><span class="line">    Shape rectangleClone = shapeMap.get(<span class="string">"rectangle"</span>);</span><br><span class="line">    circleClone.draw();</span><br><span class="line">    rectangleClone.draw();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  最后输出打印</p><p>  this is Circle</p><p>  this is rectangle</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;什么是Prototype模式&quot;&gt;&lt;a href=&quot;#什么是Prototype模式&quot; class=&quot;headerlink&quot; title=&quot;什么是Prototype模式&quot;&gt;&lt;/a&gt;什么是Prototype模式&lt;/h2&gt;&lt;p&gt;  Prototype模式(原型模式)指的就
-      
-    
-    </summary>
-    
-      <category term="Java设计模式" scheme="https://francisqiang.github.io/categories/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
   </entry>
