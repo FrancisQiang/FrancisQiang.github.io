@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Web容器和HTTP协议必知必会]]></title>
+    <url>%2F2019%2F07%2F20%2FWeb%E5%AE%B9%E5%99%A8%E5%92%8CHTTP%E5%8D%8F%E8%AE%AE%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%2F</url>
+    <content type="text"><![CDATA[Web容器是什么 在早期，Web容器是指HTTP服务器。因为在那时候浏览器只是用来浏览新闻和文章的，像类似的Apache,Nginx等HTTP服务器就是负责向浏览器返回静态资源如HTML等，然后浏览器在负责解析HTML来展现给用户。 后来，人们又要求网页呈现动态化和交互效果，于是伟大的Web开发工程师就想出了一种扩展机制来让HTTP服务器调用服务端程序，Sun公司由此推出了Servlet技术，我们可以简单理解它是运行在服务端的Java小程序，但是Servlet没有main方法,他不能独立运行，必须把它部署到Servlet容器中，由容器来实例化并调用Servlet。 而Tomcat和Jetty就是一个Servlet容器，同时它具有HTTP服务器的功能，因此Tomcat或Jetty就是一个HTTP服务器+Servlet容器，我们也叫它 Web容器。 而类似的，JBoss，WebLogic，他们不仅仅有Servlet容器的功能，同时也包含EJB容器，是完整的JavaEE应用服务器。 而对于倾向于轻量化的今天，尤其是微服务大行其道的今天，Tomcat和Jetty的轻量化更加吸引了人们的使用，在SpringBoot中Tomcat就作为嵌入应用的默认Web容器。 HTTP协议 学过网络的都知道OSI七层模型，而HTTP是在应用层的协议，HTTP是基于传输层TCP/IP协议来传输数据(HTML,图片，查询结果等)的。HTTP不涉及数据包的传输，主要规定了传输数据的格式即客户端和服务端的通信格式。 假设这时候一个浏览器要从远程HTTP服务器获取HTML文本，这个过程中，实际要做两件事情。 与服务器建立socket连接 生成请求数据并通过socket发送出去 其中这个请求数据就必须遵循某种特定的数据格式，这种数据格式其实就是HTTP协议的本质。 HTTP请求格式 请求行，请求报头，请求正文 HTTP相应格式 状态行，响应报头，报文主体 Cookie 存储在用户本地的文件，里面包含了每次请求需要传递的消息，每次HTTP请求报文中都包含有Cookie。 Session 因为Cookie的明文传输的问题，Session出现了。Session可以理解为服务器开辟的存储空间，里面保存了用户的状态信息。 那么Session在何时何地创建呢？当然还是在服务器端程序运行的过程中创建的，不同语言实现的应用程序有不同的创建Session的方法。在Java中，是Web应用程序在调用HttpServletRequest的getSession方法时，由Web容器（比如Tomcat）创建的。 同时，Session有过期时间，因此Tomcat会开启后台线程定期的轮询，如果Session过期了就将Session失效。 Session怎么和请求对应起来的呢？ Cookie， 浏览器在Cookie中填充了一个SessionID字段用来表示请求 工作流程: 创建Session同时生成唯一ID，当浏览器再次发送请求的时候会将SessionID带上，服务器通过SessionID来寻找对应的Session，然后对其进行操作，具体内容只会保存在服务器中，客户端只会存SessionID，这样来说相对安全，但不是绝对安全。但是当访问量变多时候服务器不可能能承受那么多Session，这时候服务器要做集群，但是集群中还要解决Session共享的问题，所以一般会引入中间件Redis来存储Session。]]></content>
+      <categories>
+        <category>Tomcat</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[设计模式——visitor模式]]></title>
     <url>%2F2019%2F07%2F19%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94visitor%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[什么是visitor模式 访问者模式，《JAVA与模式》这本书中提到的一句: 访问者模式是对象的行为模式。访问者模式的目的是封装一些施加于某种数据结构元素之上的操作。一旦这些操作需要修改的话，接受这些操作的数据结构则可以保持不变。 我们先来理解一下这句话的意思，目的是封装对于数据结构元素的操作。首先，提出三个问题，这句话的封装是什么意思？这句话指的数据结构是什么？对于数据结构的操作又是什么？ 有些官方语句之所以难理解就是因为它太抽象了，能使它容易理解那么就必须先化抽象为具体，然后再从具体去看抽象。 在visitor模式中运用到了一个最核心的理念就是双分派，何为双分派呢？既然是双，那么必定存在两个角色，这两个角色是什么呢？在访问者模式里面肯定是访问者和被访问者。 我们再来看看上面那句话，刚刚还有两个疑问分别是这句话的数据结构是什么？这句话的操作又是什么？其实我们可以直接理解为数据结构就是被访问者，操作就是访问者，封装就是通过双分派机制来使操作去拥有数据结构并且能对数据结构进行改变，而数据结构(元素)同时也接受一个操作对象(访问者)，当操作改变的时候，我们再利用面向抽象编程就可以轻松地分离出操作而不改变数据结构了。 visitor模式UML图 Visitor: 抽象访问者，为具体访问者声明一个visit方法，注意的是这里的visit方法数量是根据访问者类型多少而决定的。 ConcreteVisitor: 具体访问者，实现了visit方法，是对于访问者操作的具体实现 Element: 被访问的数据结构的抽象类，定义了一个accept方法用来接受一个访问者对象。 ConcreteElement: 被访问者的数据结构的具体实现类，实现accept方法。accept方法接受一个访问者，让后这里面会调用访问者的具体visit方法，然后再将自己作为对象传入这个访问者的具体visit方法中，在这个visit方法中就会调用一些对于对象进行操作的方法。 ObjectStructure: 这个类其实对于整个设计模式中关联性不是很强，可以忽略，它的作用就是将上述的Element放入一个集合中，可能我们会对这个集合进行遍历然后再进行操作等。]]></content>

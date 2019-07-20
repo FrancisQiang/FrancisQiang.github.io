@@ -88,17 +88,20 @@
 
 
 
-<meta name="description" content="Stack  Stack也是一个布局组件，它用于有子组件堆叠的场景，而且当我们使用Positioned组进行辅助的时候我们可以是层叠效果变得非常灵活。  alignment它接受一个AlignmentDirectional对象，它用于控制non-positioned组件在Stack组件中的位置。默认为topStart(左上角)  overflow它接受一个Overflow对象，用于控制溢出部分的显">
+<meta name="description" content="Web容器是什么  在早期，Web容器是指HTTP服务器。因为在那时候浏览器只是用来浏览新闻和文章的，像类似的Apache,Nginx等HTTP服务器就是负责向浏览器返回静态资源如HTML等，然后浏览器在负责解析HTML来展现给用户。   后来，人们又要求网页呈现动态化和交互效果，于是伟大的Web开发工程师就想出了一种扩展机制来让HTTP服务器调用服务端程序，Sun公司由此推出了Servlet技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Flutter组件——Stack，Card">
-<meta property="og:url" content="https://francisqiang.github.io/2019/06/10/Flutter组件——Stack，Card/index.html">
+<meta property="og:title" content="Web容器和HTTP协议必知必会">
+<meta property="og:url" content="https://francisqiang.github.io/2019/07/20/Web容器和HTTP协议必知必会/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="Stack  Stack也是一个布局组件，它用于有子组件堆叠的场景，而且当我们使用Positioned组进行辅助的时候我们可以是层叠效果变得非常灵活。  alignment它接受一个AlignmentDirectional对象，它用于控制non-positioned组件在Stack组件中的位置。默认为topStart(左上角)  overflow它接受一个Overflow对象，用于控制溢出部分的显">
+<meta property="og:description" content="Web容器是什么  在早期，Web容器是指HTTP服务器。因为在那时候浏览器只是用来浏览新闻和文章的，像类似的Apache,Nginx等HTTP服务器就是负责向浏览器返回静态资源如HTML等，然后浏览器在负责解析HTML来展现给用户。   后来，人们又要求网页呈现动态化和交互效果，于是伟大的Web开发工程师就想出了一种扩展机制来让HTTP服务器调用服务端程序，Sun公司由此推出了Servlet技术">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-10T02:40:10.204Z">
+<meta property="og:image" content="https://francisqiang.github.io/2019/07/20/Web容器和HTTP协议必知必会/1.jpg">
+<meta property="og:image" content="https://francisqiang.github.io/2019/07/20/Web容器和HTTP协议必知必会/2.jpg">
+<meta property="og:updated_time" content="2019-07-20T12:41:37.662Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flutter组件——Stack，Card">
-<meta name="twitter:description" content="Stack  Stack也是一个布局组件，它用于有子组件堆叠的场景，而且当我们使用Positioned组进行辅助的时候我们可以是层叠效果变得非常灵活。  alignment它接受一个AlignmentDirectional对象，它用于控制non-positioned组件在Stack组件中的位置。默认为topStart(左上角)  overflow它接受一个Overflow对象，用于控制溢出部分的显">
+<meta name="twitter:title" content="Web容器和HTTP协议必知必会">
+<meta name="twitter:description" content="Web容器是什么  在早期，Web容器是指HTTP服务器。因为在那时候浏览器只是用来浏览新闻和文章的，像类似的Apache,Nginx等HTTP服务器就是负责向浏览器返回静态资源如HTML等，然后浏览器在负责解析HTML来展现给用户。   后来，人们又要求网页呈现动态化和交互效果，于是伟大的Web开发工程师就想出了一种扩展机制来让HTTP服务器调用服务端程序，Sun公司由此推出了Servlet技术">
+<meta name="twitter:image" content="https://francisqiang.github.io/2019/07/20/Web容器和HTTP协议必知必会/1.jpg">
 
 
 
@@ -128,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2019/06/10/Flutter组件——Stack，Card/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/07/20/Web容器和HTTP协议必知必会/">
 
 
 
 
 
-  <title>Flutter组件——Stack，Card | Francis的博客</title>
+  <title>Web容器和HTTP协议必知必会 | Francis的博客</title>
   
 
 
@@ -295,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/06/10/Flutter组件——Stack，Card/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/07/20/Web容器和HTTP协议必知必会/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -312,7 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Flutter组件——Stack，Card</h1>
+          <h1 class="post-title" itemprop="name headline">Web容器和HTTP协议必知必会</h1>
         
 
         <div class="post-meta">
@@ -324,8 +327,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-10T10:02:21+08:00">
-                2019-06-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-20T20:03:44+08:00">
+                2019-07-20
               </time>
             
 
@@ -347,8 +350,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Flutter/" itemprop="url" rel="index">
-                    <span itemprop="name">Flutter</span>
+                  <a href="/categories/Tomcat/" itemprop="url" rel="index">
+                    <span itemprop="name">Tomcat</span>
                   </a>
                 </span>
 
@@ -365,8 +368,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/10/Flutter组件——Stack，Card/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/10/Flutter组件——Stack，Card/" itemprop="commentCount"></span>
+                <a href="/2019/07/20/Web容器和HTTP协议必知必会/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/20/Web容器和HTTP协议必知必会/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +377,7 @@
 
           
           
-             <span id="/2019/06/10/Flutter组件——Stack，Card/" class="leancloud_visitors" data-flag-title="Flutter组件——Stack，Card">
+             <span id="/2019/07/20/Web容器和HTTP协议必知必会/" class="leancloud_visitors" data-flag-title="Web容器和HTTP协议必知必会">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -400,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  568
+                  922
                 </span>
               
 
@@ -416,7 +419,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -437,41 +440,33 @@
       
 
       
-        <h2 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h2><p>  Stack也是一个布局组件，它用于有子组件堆叠的场景，而且当我们使用Positioned组进行辅助的时候我们可以是层叠效果变得非常灵活。</p>
-<ul>
-<li><h2 id="alignment"><a href="#alignment" class="headerlink" title="alignment"></a>alignment</h2><p>它接受一个AlignmentDirectional对象，它用于控制non-positioned组件在Stack组件中的位置。默认为topStart(左上角)</p>
+        <h2 id="Web容器是什么"><a href="#Web容器是什么" class="headerlink" title="Web容器是什么"></a>Web容器是什么</h2><p>  在早期，Web容器是指<strong>HTTP服务器</strong>。因为在那时候浏览器只是用来浏览新闻和文章的，像类似的Apache,Nginx等HTTP服务器就是负责向浏览器返回静态资源如HTML等，然后浏览器在负责解析HTML来展现给用户。</p>
+<p>  后来，人们又要求网页呈现动态化和交互效果，于是伟大的Web开发工程师就想出了一种扩展机制来让HTTP服务器调用服务端程序，Sun公司由此推出了Servlet技术，我们可以简单理解它是运行在服务端的Java小程序，但是Servlet没有main方法,他不能独立运行，必须把它部署到Servlet容器中，由容器来实例化并调用Servlet。</p>
+<p>  而Tomcat和Jetty就是一个Servlet容器，同时它具有HTTP服务器的功能，因此Tomcat或Jetty就是一个HTTP服务器+Servlet容器，我们也叫它 <strong><em>Web容器</em></strong>。</p>
+<p>  而类似的，JBoss，WebLogic，他们不仅仅有Servlet容器的功能，同时也包含EJB容器，是完整的JavaEE应用服务器。</p>
+<p>  而对于倾向于轻量化的今天，尤其是微服务大行其道的今天，Tomcat和Jetty的轻量化更加吸引了人们的使用，在SpringBoot中Tomcat就作为嵌入应用的默认Web容器。</p>
+<h2 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h2><p>  学过网络的都知道OSI七层模型，而HTTP是在应用层的协议，HTTP是基于传输层TCP/IP协议来传输数据(HTML,图片，查询结果等)的。<em>HTTP不涉及数据包的传输，主要规定了传输数据的格式即客户端和服务端的通信格式</em>。</p>
+<p>  假设这时候一个浏览器要从远程HTTP服务器获取HTML文本，这个过程中，实际要做两件事情。</p>
+<ol>
+<li><p>与服务器建立socket连接</p>
 </li>
-<li><h2 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h2><p>它接受一个Overflow对象，用于控制溢出部分的显示效果</p>
+<li><p>生成请求数据并通过socket发送出去</p>
+<p>其中这个请求数据就必须遵循某种特定的数据格式，这种数据格式其实就是HTTP协议的本质。</p>
 </li>
-<li><h2 id="textDirection"><a href="#textDirection" class="headerlink" title="textDirection"></a>textDirection</h2><p>用于控制子组件排列方向，接受一个TextDirection对象有ltr，rtl这些值。</p>
-</li>
-<li><h2 id="fit"><a href="#fit" class="headerlink" title="fit"></a>fit</h2><p>用于控制如何设置non-positioned节点尺寸，默认为loose。接受一个StackFit对象，里面有loose，expand，passthrough三个枚举常量。</p>
-</li>
-<li><h2 id="children"><a href="#children" class="headerlink" title="children"></a>children</h2><p>放置子元素组件。其中可以放置positioned组件Positioned组件中有left，right，top，bottom，width，height等属性，上下左右用来控制在Stack的位置的，这个组件不受alignment属性的影响。</p>
-</li>
-<li><h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2></li>
-</ul>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Stack(&#123;</span><br><span class="line">  Key key,</span><br><span class="line">  <span class="keyword">this</span>.alignment = AlignmentDirectional.topStart,</span><br><span class="line">  <span class="keyword">this</span>.textDirection,</span><br><span class="line">  <span class="keyword">this</span>.fit = StackFit.loose,</span><br><span class="line">  <span class="keyword">this</span>.overflow = Overflow.clip,</span><br><span class="line">  <span class="built_in">List</span>&lt;Widget&gt; children = <span class="keyword">const</span> &lt;Widget&gt;[],</span><br><span class="line">&#125;) : <span class="keyword">super</span>(key: key, children: children);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Positioned(&#123;</span><br><span class="line">  Key key,</span><br><span class="line">  <span class="keyword">this</span>.left,</span><br><span class="line">  <span class="keyword">this</span>.top,</span><br><span class="line">  <span class="keyword">this</span>.right,</span><br><span class="line">  <span class="keyword">this</span>.bottom,</span><br><span class="line">  <span class="keyword">this</span>.width,</span><br><span class="line">  <span class="keyword">this</span>.height,</span><br><span class="line">  <span class="meta">@required</span> Widget child,</span><br><span class="line">&#125;) : <span class="keyword">assert</span>(left == <span class="keyword">null</span> || right == <span class="keyword">null</span> || width == <span class="keyword">null</span>),</span><br><span class="line">     <span class="keyword">assert</span>(top == <span class="keyword">null</span> || bottom == <span class="keyword">null</span> || height == <span class="keyword">null</span>),</span><br><span class="line">     <span class="keyword">super</span>(key: key, child: child);</span><br></pre></td></tr></table></figure>
-<h2 id="Card"><a href="#Card" class="headerlink" title="Card"></a>Card</h2><p>  这是一个容器组件，就是卡片的样子</p>
-<ul>
-<li><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2></li>
-</ul>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Card(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="keyword">this</span>.color,</span><br><span class="line">    <span class="keyword">this</span>.elevation,</span><br><span class="line">    <span class="keyword">this</span>.shape,</span><br><span class="line">    <span class="keyword">this</span>.borderOnForeground = <span class="keyword">true</span>,</span><br><span class="line">    <span class="keyword">this</span>.margin,</span><br><span class="line">    <span class="keyword">this</span>.clipBehavior,</span><br><span class="line">    <span class="keyword">this</span>.child,</span><br><span class="line">    <span class="keyword">this</span>.semanticContainer = <span class="keyword">true</span>,</span><br><span class="line">  &#125;) : <span class="keyword">assert</span>(elevation == <span class="keyword">null</span> || elevation &gt;= <span class="number">0.0</span>),</span><br><span class="line">       <span class="keyword">assert</span>(borderOnForeground != <span class="keyword">null</span>),</span><br><span class="line">       <span class="keyword">super</span>(key: key);</span><br></pre></td></tr></table></figure>
-<ul>
-<li><h2 id="color"><a href="#color" class="headerlink" title="color"></a>color</h2><p>接受一个Color对象，用来设置卡片的颜色。</p>
-</li>
-<li><h2 id="elevation"><a href="#elevation" class="headerlink" title="elevation"></a>elevation</h2><p>控制z轴的高度，就是阴影效果，接受一个double值。</p>
-</li>
-<li><h2 id="shape"><a href="#shape" class="headerlink" title="shape"></a>shape</h2><p>控制卡片的形状，接受一个shapeBorder对象，我们可以将RoundedRectangleBorder对象赋值给它，这是事项圆角卡片的对象。</p>
-</li>
-<li><h2 id="borderOnForeground"><a href="#borderOnForeground" class="headerlink" title="borderOnForeground"></a>borderOnForeground</h2><p>接受一个布尔值，默认为true，当设置为true的时候，边框渲染会在子元素前面，false就相反。</p>
-</li>
-<li><h2 id="margin"><a href="#margin" class="headerlink" title="margin"></a>margin</h2><p>用于控制外边距，接受一个EdgeInsetsGeometry对象。</p>
-</li>
-<li><h2 id="semanticContainer"><a href="#semanticContainer" class="headerlink" title="semanticContainer"></a>semanticContainer</h2><p>接受一个bool，将此标志设置为true将尝试将所有子语义合并到此节点中。将此标志设置为false会强制所有子语义节点显式。这是文档里面的解释，我不太理解，但是官方说当你子元素是多种类型的时候最好设置为false，其默认也是false。</p>
-</li>
-</ul>
-
+</ol>
+<h3 id="HTTP请求格式"><a href="#HTTP请求格式" class="headerlink" title="HTTP请求格式"></a>HTTP请求格式</h3><p>  请求行，请求报头，请求正文</p>
+<p>  <img src="/2019/07/20/Web容器和HTTP协议必知必会/1.jpg" alt="请求格式"></p>
+<h3 id="HTTP相应格式"><a href="#HTTP相应格式" class="headerlink" title="HTTP相应格式"></a>HTTP相应格式</h3><p>  状态行，响应报头，报文主体</p>
+<p>  <img src="/2019/07/20/Web容器和HTTP协议必知必会/2.jpg" alt="相应格式"></p>
+<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><p>  存储在用户本地的文件，里面包含了每次请求需要传递的消息，每次HTTP请求报文中都包含有Cookie。</p>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><p>  因为Cookie的明文传输的问题，Session出现了。Session可以理解为服务器开辟的存储空间，里面保存了用户的状态信息。</p>
+<p>  那么Session在何时何地创建呢？当然还是在服务器端程序运行的过程中创建的，不同语言实现的应用程序有不同的创建Session的方法。在Java中，是Web应用程序在调用HttpServletRequest的getSession方法时，由Web容器（比如Tomcat）创建的。</p>
+<p>  同时，Session有过期时间，因此Tomcat会开启后台线程定期的轮询，如果Session过期了就将Session失效。</p>
+<p>  Session怎么和请求对应起来的呢？</p>
+<p>  Cookie， 浏览器在Cookie中填充了一个SessionID字段用来表示请求</p>
+<p>  工作流程:</p>
+<pre><code>创建Session同时生成唯一ID，当浏览器再次发送请求的时候会将SessionID带上，服务器通过SessionID来寻找对应的Session，然后对其进行操作，具体内容只会保存在服务器中，客户端只会存SessionID，这样来说相对安全，但不是绝对安全。但是当访问量变多时候服务器不可能能承受那么多Session，这时候服务器要做集群，但是集群中还要解决Session共享的问题，所以一般会引入中间件Redis来存储Session。
+</code></pre>
       
     </div>
     
@@ -510,8 +505,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/09/Flutter组件——Row，Column/" rel="next" title="Flutter组件——Row，Column">
-                <i class="fa fa-chevron-left"></i> Flutter组件——Row，Column
+              <a href="/2019/07/19/设计模式——visitor模式/" rel="next" title="设计模式——visitor模式">
+                <i class="fa fa-chevron-left"></i> 设计模式——visitor模式
               </a>
             
           </div>
@@ -519,10 +514,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/12/Flutter路由和路由传值/" rel="prev" title="Flutter路由和路由传值">
-                Flutter路由和路由传值 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -717,7 +708,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Stack"><span class="nav-number">1.</span> <span class="nav-text">Stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alignment"><span class="nav-number">2.</span> <span class="nav-text">alignment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overflow"><span class="nav-number">3.</span> <span class="nav-text">overflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#textDirection"><span class="nav-number">4.</span> <span class="nav-text">textDirection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fit"><span class="nav-number">5.</span> <span class="nav-text">fit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#children"><span class="nav-number">6.</span> <span class="nav-text">children</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-number">7.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Card"><span class="nav-number">8.</span> <span class="nav-text">Card</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源代码"><span class="nav-number">9.</span> <span class="nav-text">源代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#color"><span class="nav-number">10.</span> <span class="nav-text">color</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#elevation"><span class="nav-number">11.</span> <span class="nav-text">elevation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shape"><span class="nav-number">12.</span> <span class="nav-text">shape</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#borderOnForeground"><span class="nav-number">13.</span> <span class="nav-text">borderOnForeground</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#margin"><span class="nav-number">14.</span> <span class="nav-text">margin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#semanticContainer"><span class="nav-number">15.</span> <span class="nav-text">semanticContainer</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Web容器是什么"><span class="nav-number">1.</span> <span class="nav-text">Web容器是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP协议"><span class="nav-number">2.</span> <span class="nav-text">HTTP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP请求格式"><span class="nav-number">2.1.</span> <span class="nav-text">HTTP请求格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP相应格式"><span class="nav-number">2.2.</span> <span class="nav-text">HTTP相应格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">2.3.</span> <span class="nav-text">Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session"><span class="nav-number">2.4.</span> <span class="nav-text">Session</span></a></li></ol></li></ol></div>
             
 
           </div>
