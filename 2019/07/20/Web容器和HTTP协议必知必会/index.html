@@ -97,7 +97,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://francisqiang.github.io/2019/07/20/Web容器和HTTP协议必知必会/1.jpg">
 <meta property="og:image" content="https://francisqiang.github.io/2019/07/20/Web容器和HTTP协议必知必会/2.jpg">
-<meta property="og:updated_time" content="2019-07-20T12:41:37.662Z">
+<meta property="og:updated_time" content="2019-07-20T12:49:44.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Web容器和HTTP协议必知必会">
 <meta name="twitter:description" content="Web容器是什么  在早期，Web容器是指HTTP服务器。因为在那时候浏览器只是用来浏览新闻和文章的，像类似的Apache,Nginx等HTTP服务器就是负责向浏览器返回静态资源如HTML等，然后浏览器在负责解析HTML来展现给用户。   后来，人们又要求网页呈现动态化和交互效果，于是伟大的Web开发工程师就想出了一种扩展机制来让HTTP服务器调用服务端程序，Sun公司由此推出了Servlet技术">
@@ -465,8 +465,8 @@
 <p>  Session怎么和请求对应起来的呢？</p>
 <p>  Cookie， 浏览器在Cookie中填充了一个SessionID字段用来表示请求</p>
 <p>  工作流程:</p>
-<pre><code>创建Session同时生成唯一ID，当浏览器再次发送请求的时候会将SessionID带上，服务器通过SessionID来寻找对应的Session，然后对其进行操作，具体内容只会保存在服务器中，客户端只会存SessionID，这样来说相对安全，但不是绝对安全。但是当访问量变多时候服务器不可能能承受那么多Session，这时候服务器要做集群，但是集群中还要解决Session共享的问题，所以一般会引入中间件Redis来存储Session。
-</code></pre>
+<p>  创建Session同时生成唯一ID，当浏览器再次发送请求的时候会将SessionID带上，服务器通过SessionID来寻找对应的Session，然后对其进行操作，具体内容只会保存在服务器中，客户端只会存SessionID，这样来说相对安全，但不是绝对安全。但是当访问量变多时候服务器不可能能承受那么多Session，这时候服务器要做集群，但是集群中还要解决Session共享的问题，所以一般会引入中间件Redis来存储Session。</p>
+
       
     </div>
     
