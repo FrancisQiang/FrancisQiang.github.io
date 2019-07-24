@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://francisqiang.github.io/"/>
-  <updated>2019-07-24T07:21:30.277Z</updated>
+  <updated>2019-07-24T11:45:49.686Z</updated>
   <id>https://francisqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mysql基础学习da——day2</title>
+    <link href="https://francisqiang.github.io/2019/07/24/Mysql%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94day2/"/>
+    <id>https://francisqiang.github.io/2019/07/24/Mysql基础学习——day2/</id>
+    <published>2019-07-24T10:59:09.000Z</published>
+    <updated>2019-07-24T11:45:49.686Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Mysql基础语句"><a href="#Mysql基础语句" class="headerlink" title="Mysql基础语句"></a>Mysql基础语句</h2><h3 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u*** -p***</span><br></pre></td></tr></table></figure><h3 id="创建一个数据库"><a href="#创建一个数据库" class="headerlink" title="创建一个数据库"></a>创建一个数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> *** <span class="keyword">charset</span> utf8;</span><br></pre></td></tr></table></figure><p>  charset为可选参数</p><h3 id="删除一个数据库"><a href="#删除一个数据库" class="headerlink" title="删除一个数据库"></a>删除一个数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> ***;</span><br></pre></td></tr></table></figure><h3 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h3><p>  数据库不能重命名</p><h3 id="展示所有数据库"><a href="#展示所有数据库" class="headerlink" title="展示所有数据库"></a>展示所有数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</span><br></pre></td></tr></table></figure><h3 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> ***;</span><br></pre></td></tr></table></figure><h3 id="创建简单表"><a href="#创建简单表" class="headerlink" title="创建简单表"></a>创建简单表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">int</span>,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">10</span>)</span><br><span class="line">)<span class="keyword">engine</span> myisam <span class="keyword">charset</span> utf8;</span><br></pre></td></tr></table></figure><h3 id="删除指定表"><a href="#删除指定表" class="headerlink" title="删除指定表"></a>删除指定表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> ***;</span><br></pre></td></tr></table></figure><h3 id="展示所有表"><a href="#展示所有表" class="headerlink" title="展示所有表"></a>展示所有表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</span><br></pre></td></tr></table></figure><h3 id="重命名指定表"><a href="#重命名指定表" class="headerlink" title="重命名指定表"></a>重命名指定表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rename</span> <span class="keyword">table</span> student <span class="keyword">to</span> stu;</span><br></pre></td></tr></table></figure><h3 id="插入简单数据"><a href="#插入简单数据" class="headerlink" title="插入简单数据"></a>插入简单数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">table</span> <span class="keyword">values</span></span><br><span class="line">(<span class="number">1</span>,<span class="string">'zhangsan'</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">'lisi'</span>);</span><br></pre></td></tr></table></figure><h3 id="选取表中所有信息"><a href="#选取表中所有信息" class="headerlink" title="选取表中所有信息"></a>选取表中所有信息</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure><h2 id="删除表中数据"><a href="#删除表中数据" class="headerlink" title="删除表中数据"></a>删除表中数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除表再重建，得到的是新表</span></span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span>;</span><br><span class="line"><span class="comment"># 删除表中所有数据，得到是旧表</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>  重新温习一下Mysql顺便玩一下命令行使用Mysql，并且后要深入原理，加油吧！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Mysql基础语句&quot;&gt;&lt;a href=&quot;#Mysql基础语句&quot; class=&quot;headerlink&quot; title=&quot;Mysql基础语句&quot;&gt;&lt;/a&gt;Mysql基础语句&lt;/h2&gt;&lt;h3 id=&quot;连接服务器&quot;&gt;&lt;a href=&quot;#连接服务器&quot; class=&quot;header
+      
+    
+    </summary>
+    
+      <category term="Mysql" scheme="https://francisqiang.github.io/categories/Mysql/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>设计模式——责任链模式</title>
@@ -448,29 +471,6 @@
       
       
         &lt;h2 id=&quot;Image&quot;&gt;&lt;a href=&quot;#Image&quot; class=&quot;headerlink&quot; title=&quot;Image&quot;&gt;&lt;/a&gt;Image&lt;/h2&gt;&lt;p&gt;  Image就是图片组件，其中分为很多中，比如说network(url&lt;br&gt;  获取图片)，asset(本地获取
-      
-    
-    </summary>
-    
-      <category term="Flutter" scheme="https://francisqiang.github.io/categories/Flutter/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Flutter组件——Container</title>
-    <link href="https://francisqiang.github.io/2019/06/06/Flutter%E7%BB%84%E4%BB%B6%E2%80%94%E2%80%94Container/"/>
-    <id>https://francisqiang.github.io/2019/06/06/Flutter组件——Container/</id>
-    <published>2019-06-06T05:30:45.000Z</published>
-    <updated>2019-06-06T05:49:35.462Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Container组件"><a href="#Container组件" class="headerlink" title="Container组件"></a>Container组件</h2><p>  Container组件是一个非常重要的组件有点类似于html中的div。</p><ul><li><h2 id="alignment"><a href="#alignment" class="headerlink" title="alignment"></a>alignment</h2><p>这个是设置子组件的布局的，注意是子组件，它接受一个Alignment对象，我们可以使用Alignment(x, y)来构造它，或者我们也可以使用它已经定义好的几个常量来构造它</p><p><img src="/2019/06/06/Flutter组件——Container/1.jpg" alt="Alignment常量定义"></p></li><li><h2 id="padding"><a href="#padding" class="headerlink" title="padding"></a>padding</h2><p>这个是设置内边距的，接受一个EdgeInsetsGeometry, 我们可以将它的子类EdgeInsets对象赋值给它，我们可以使用const EdgeInsets.all(double value)，const EdgeInsets.only等方式声明</p></li><li><h2 id="margin"><a href="#margin" class="headerlink" title="margin"></a>margin</h2><p>它是设置Container的外边距，接受参数和padding一样</p></li><li><h2 id="height，width"><a href="#height，width" class="headerlink" title="height，width"></a>height，width</h2><p>它们是设置宽和高的，里面接受一个double</p></li><li><h2 id="decoration"><a href="#decoration" class="headerlink" title="decoration"></a>decoration</h2><p>绘制在child后面的装饰，设置了decoration的话，就不能设置color属性，否则会报错，此时应该在decoration中进行颜色的设置。</p><p>其中它接受一个Decoration，我们可以使用它的子类BoxDecoration来赋值给它。</p><p>在BoxDecoration中也有许多参数</p><ul><li><p>color  设置颜色的</p></li><li><p>image  设置背景图片，可以添加一个DecorationImage对象</p></li><li><p>border 设置边，接受一个BoxBorder，我们可以使用Border.all(width: 1.5, style: BorderStyle.solid, color: Colors.deepPurple),这样的发情时来构造它。</p></li><li><p>borderRadius  设置边角的，可以增加弧度，接受一个BorderRadius对象，我们可以使用BorderRadius.all来构造</p></li><li><p>gradient  设置颜色渐变效果，接受一个Gradient对象</p></li></ul></li><li><h2 id="child"><a href="#child" class="headerlink" title="child"></a>child</h2><p>接受一个孩子，孩子里面可以放置子组件</p></li></ul><h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Container(</span><br><span class="line">            alignment: Alignment.bottomCenter,</span><br><span class="line">            padding: <span class="keyword">const</span> EdgeInsets.all(<span class="number">20.0</span>),</span><br><span class="line">            margin: <span class="keyword">const</span> EdgeInsets.all(<span class="number">100.0</span>),</span><br><span class="line">            height: <span class="number">500.0</span>,</span><br><span class="line">            width: <span class="number">200.0</span>,</span><br><span class="line">            decoration: BoxDecoration(</span><br><span class="line">              border: Border.all(width: <span class="number">1.5</span>, style: BorderStyle.solid, color: Colors.deepPurple),</span><br><span class="line">              borderRadius: BorderRadius.circular(<span class="number">1.0</span>),</span><br><span class="line">              gradient: LinearGradient(colors: [</span><br><span class="line">                Colors.deepPurple,</span><br><span class="line">                Colors.deepOrange,</span><br><span class="line">                Colors.pink,</span><br><span class="line">                Colors.greenAccent</span><br><span class="line">              ])</span><br><span class="line">            ),</span><br><span class="line">            child: Image.network(<span class="string">'https://francisqiang.github.io/images/avatar.gif'</span>,</span><br><span class="line">              fit: BoxFit.fitWidth,</span><br><span class="line">              color: Colors.deepOrangeAccent,</span><br><span class="line">              colorBlendMode: BlendMode.darken,</span><br><span class="line">            ),</span><br><span class="line">          ),</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Container组件&quot;&gt;&lt;a href=&quot;#Container组件&quot; class=&quot;headerlink&quot; title=&quot;Container组件&quot;&gt;&lt;/a&gt;Container组件&lt;/h2&gt;&lt;p&gt;  Container组件是一个非常重要的组件有点类似于html中的
       
     
     </summary>
