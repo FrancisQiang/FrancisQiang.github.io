@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="Francis的博客">
 <meta property="og:description" content="Mysql基础语句连接服务器1mysql -u*** -p*** 创建一个数据库1create database *** charset utf8;   charset为可选参数 删除一个数据库1create database ***; 重命名  数据库不能重命名 展示所有数据库1show databases; 选择数据库1use ***; 创建简单表1234create table studen">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-24T11:45:49.686Z">
+<meta property="og:updated_time" content="2019-07-24T11:48:21.737Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql基础学习da——day2">
 <meta name="twitter:description" content="Mysql基础语句连接服务器1mysql -u*** -p*** 创建一个数据库1create database *** charset utf8;   charset为可选参数 删除一个数据库1create database ***; 重命名  数据库不能重命名 展示所有数据库1show databases; 选择数据库1use ***; 创建简单表1234create table studen">
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  197
+                  198
                 </span>
               
 
@@ -450,7 +450,7 @@
 <h3 id="重命名指定表"><a href="#重命名指定表" class="headerlink" title="重命名指定表"></a>重命名指定表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rename</span> <span class="keyword">table</span> student <span class="keyword">to</span> stu;</span><br></pre></td></tr></table></figure>
 <h3 id="插入简单数据"><a href="#插入简单数据" class="headerlink" title="插入简单数据"></a>插入简单数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">table</span> <span class="keyword">values</span></span><br><span class="line">(<span class="number">1</span>,<span class="string">'zhangsan'</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">'lisi'</span>);</span><br></pre></td></tr></table></figure>
 <h3 id="选取表中所有信息"><a href="#选取表中所有信息" class="headerlink" title="选取表中所有信息"></a>选取表中所有信息</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="删除表中数据"><a href="#删除表中数据" class="headerlink" title="删除表中数据"></a>删除表中数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除表再重建，得到的是新表</span></span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span>;</span><br><span class="line"><span class="comment"># 删除表中所有数据，得到是旧表</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="删除表中数据"><a href="#删除表中数据" class="headerlink" title="删除表中数据"></a>删除表中数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除表再重建，得到的是新表</span></span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> ***;</span><br><span class="line"><span class="comment"># 删除表中所有数据，得到是旧表</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>  重新温习一下Mysql顺便玩一下命令行使用Mysql，并且后要深入原理，加油吧！！！</p>
 
       
