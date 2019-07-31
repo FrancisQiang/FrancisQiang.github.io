@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[设计模式——享元模式]]></title>
+    <url>%2F2019%2F07%2F31%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[什么是享元模式 池技术是享元模式运用的一个经典了，享元模式是使用户共享相似对象的一种设计模式，比如在数据库连接池中，里面会放置很多已经创建好的连接对象，如果要使用相似的对象可以直接在池中取，这样就节省了大量对象的创建。所以，享元模式一般运用在系统底层来提高系统性能，像String常量池，数据库连接池，缓冲池中都有使用。 UML 这里最重要的就是FlyWeightFactory，这里面一般会存放一个map用来存储需要共享的元对象，当我们需要创建新对象的时候，会先检查池中是否已经有相似对象，如果有直接从池中取。 外部状态和内部状态 内部状态指的是共享对象的一些不可改变的状态，它们是固定的，比如我们需要共享一些棋子，对于棋子来说，其颜色黑白两色是它的内部状态是共享出去的，而且不会变。而棋子的内部状态来说可以使棋子的位置，这是一直会发生变化的，而且它不是共享出去的，是由使用者决定的。 享元模式在Integer中的应用 在Integer的静态方法valueOf中我们创造一个Integer对象会先从预先定义好的缓冲池中去取。 如果范围是-128~127会直接从缓冲池中取出对象，不然再创建新对象，这样就能减少对象的频繁创建。 我们可以看到缓冲池中会预先给我们存放元对象于数组中(在静态块中执行) 123456789101112131415161718192021222324252627282930313233private static class IntegerCache &#123; static final int low = -128; static final int high; static final Integer cache[]; static &#123; // high value may be configured by property int h = 127; String integerCacheHighPropValue = sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high"); if (integerCacheHighPropValue != null) &#123; try &#123; int i = parseInt(integerCacheHighPropValue); i = Math.max(i, 127); // Maximum array size is Integer.MAX_VALUE h = Math.min(i, Integer.MAX_VALUE - (-low) -1); &#125; catch( NumberFormatException nfe) &#123; // If the property cannot be parsed into an int, ignore it. &#125; &#125; high = h; cache = new Integer[(high - low) + 1]; int j = low; for(int k = 0; k &lt; cache.length; k++) cache[k] = new Integer(j++); // range [-128, 127] must be interned (JLS7 5.1.7) assert IntegerCache.high &gt;= 127; &#125; private IntegerCache() &#123;&#125;&#125;]]></content>
+      <categories>
+        <category>Java设计模式</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[设计模式——门面模式]]></title>
     <url>%2F2019%2F07%2F31%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[什么是门面模式(Facade) 门面模式也叫外观模式，是一种结构型设计模式。门面模式屏蔽了系统方法调用的复杂性，呈现给客户端的是一个抽象简单的接口，降低了客户端使用系统的复杂度。让客户端和系统之间解耦，还能使我们更好地划分层次结构。而且在我们重新开发新系统，我们可以使用门面模式来复用旧系统中需要调用的一系列方法，并合并成一个接口来呈现给新系统api。 使用场景 例如，我们需要设计一个家庭影院，其中启动家庭影院可能会有那么几步： 启动荧幕 启动投影机 关闭房间等 打开爆米花等等 试想，如果我们提供给用户的是上述四个启动接口，对于用户来说实在是太不友好，所以我们可以设计一个接口包含四个对象然后在接口中实现一键启动，这样对于用户来说就非常方便了]]></content>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://francisqiang.github.io/"/>
-  <updated>2019-07-31T12:06:25.322Z</updated>
+  <updated>2019-07-31T12:43:31.782Z</updated>
   <id>https://francisqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式——享元模式</title>
+    <link href="https://francisqiang.github.io/2019/07/31/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://francisqiang.github.io/2019/07/31/设计模式——享元模式/</id>
+    <published>2019-07-31T12:16:52.000Z</published>
+    <updated>2019-07-31T12:43:31.782Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是享元模式"><a href="#什么是享元模式" class="headerlink" title="什么是享元模式"></a>什么是享元模式</h2><p>  池技术是享元模式运用的一个经典了，享元模式是使用户共享相似对象的一种设计模式，比如在数据库连接池中，里面会放置很多已经创建好的连接对象，如果要使用相似的对象可以直接在池中取，这样就节省了大量对象的创建。所以，享元模式一般运用在系统底层来提高系统性能，像String常量池，数据库连接池，缓冲池中都有使用。</p><h2 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h2><p>  <img src="/2019/07/31/设计模式——享元模式/1.jpg" alt="UML"></p><p>  这里最重要的就是FlyWeightFactory，这里面一般会存放一个map用来存储需要共享的元对象，当我们需要创建新对象的时候，会先检查池中是否已经有相似对象，如果有直接从池中取。</p><h2 id="外部状态和内部状态"><a href="#外部状态和内部状态" class="headerlink" title="外部状态和内部状态"></a>外部状态和内部状态</h2><p>  内部状态指的是共享对象的一些不可改变的状态，它们是固定的，比如我们需要共享一些棋子，对于棋子来说，其颜色黑白两色是它的内部状态是共享出去的，而且不会变。而棋子的内部状态来说可以使棋子的位置，这是一直会发生变化的，而且它不是共享出去的，是由使用者决定的。</p><h2 id="享元模式在Integer中的应用"><a href="#享元模式在Integer中的应用" class="headerlink" title="享元模式在Integer中的应用"></a>享元模式在Integer中的应用</h2><p>  在Integer的静态方法valueOf中我们创造一个Integer对象会先从预先定义好的缓冲池中去取。</p><p>  <img src="/2019/07/31/设计模式——享元模式/2.jpg" alt="Integer的valueOf方法"></p><p>  如果范围是-128~127会直接从缓冲池中取出对象，不然再创建新对象，这样就能减少对象的频繁创建。</p><p>  我们可以看到缓冲池中会预先给我们存放元对象于数组中(在静态块中执行)</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">IntegerCache</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> low = -<span class="number">128</span>;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> high;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">final</span> Integer cache[];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">// high value may be configured by property</span></span><br><span class="line">        <span class="keyword">int</span> h = <span class="number">127</span>;</span><br><span class="line">        String integerCacheHighPropValue =</span><br><span class="line">            sun.misc.VM.getSavedProperty(<span class="string">"java.lang.Integer.IntegerCache.high"</span>);</span><br><span class="line">        <span class="keyword">if</span> (integerCacheHighPropValue != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">int</span> i = parseInt(integerCacheHighPropValue);</span><br><span class="line">                i = Math.max(i, <span class="number">127</span>);</span><br><span class="line">                <span class="comment">// Maximum array size is Integer.MAX_VALUE</span></span><br><span class="line">                h = Math.min(i, Integer.MAX_VALUE - (-low) -<span class="number">1</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span>( NumberFormatException nfe) &#123;</span><br><span class="line">                <span class="comment">// If the property cannot be parsed into an int, ignore it.</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        high = h;</span><br><span class="line"></span><br><span class="line">        cache = <span class="keyword">new</span> Integer[(high - low) + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> j = low;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; cache.length; k++)</span><br><span class="line">            cache[k] = <span class="keyword">new</span> Integer(j++);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// range [-128, 127] must be interned (JLS7 5.1.7)</span></span><br><span class="line">        <span class="keyword">assert</span> IntegerCache.high &gt;= <span class="number">127</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">IntegerCache</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;什么是享元模式&quot;&gt;&lt;a href=&quot;#什么是享元模式&quot; class=&quot;headerlink&quot; title=&quot;什么是享元模式&quot;&gt;&lt;/a&gt;什么是享元模式&lt;/h2&gt;&lt;p&gt;  池技术是享元模式运用的一个经典了，享元模式是使用户共享相似对象的一种设计模式，比如在数据库连接池
+      
+    
+    </summary>
+    
+      <category term="Java设计模式" scheme="https://francisqiang.github.io/categories/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>设计模式——门面模式</title>
@@ -447,29 +470,6 @@
       
       
         &lt;h2 id=&quot;Stack&quot;&gt;&lt;a href=&quot;#Stack&quot; class=&quot;headerlink&quot; title=&quot;Stack&quot;&gt;&lt;/a&gt;Stack&lt;/h2&gt;&lt;p&gt;  Stack也是一个布局组件，它用于有子组件堆叠的场景，而且当我们使用Positioned组进行辅助的时候我们可以
-      
-    
-    </summary>
-    
-      <category term="Flutter" scheme="https://francisqiang.github.io/categories/Flutter/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Flutter组件——Row，Column</title>
-    <link href="https://francisqiang.github.io/2019/06/09/Flutter%E7%BB%84%E4%BB%B6%E2%80%94%E2%80%94Row%EF%BC%8CColumn/"/>
-    <id>https://francisqiang.github.io/2019/06/09/Flutter组件——Row，Column/</id>
-    <published>2019-06-09T12:04:48.000Z</published>
-    <updated>2019-06-09T12:42:03.640Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Row"><a href="#Row" class="headerlink" title="Row"></a>Row</h2><p>  Row组件是一种很常见的布局组件，顾名思义就是水平一行的组件。它将里面的子组件排成一行，如果其子组件超出一行的范围，那么会报错。</p><ul><li><h2 id="mainAxisAlignment"><a href="#mainAxisAlignment" class="headerlink" title="mainAxisAlignment"></a>mainAxisAlignment</h2><p>Row组件分为两个方向，分别是主轴和副轴。mainAxisAlignment是控制子组件在主轴方向上的排列方式的。它接受一个MainAxisAlignment对象。</p><ul><li><p>center  设置主轴中心</p></li><li><p>end  放在主轴末尾</p></li><li><p>spaceAround  将主轴方向上的空白区域均分，使children之间的空白区域相等，但是首尾child的空白区域为1/2</p></li><li><p>spaceBetween  和spaceAround差不多，但是首尾children没有空隙</p></li><li><p>spaceEvenly  是children空白区域相等包括首尾部分。</p></li></ul></li><li><h2 id="mainAxisSize"><a href="#mainAxisSize" class="headerlink" title="mainAxisSize"></a>mainAxisSize</h2><p>它接受一个MainAxisAlignment对象，它决定了主轴方向上占有空间的值，默认是max。max是最大化主轴方向的可用空间，min则相反。</p></li><li><h2 id="crossAxisAlignment"><a href="#crossAxisAlignment" class="headerlink" title="crossAxisAlignment"></a>crossAxisAlignment</h2><p>它接受一个CrossAxisAlignment对象，控制的是在副轴上子元素排列的方式，其中有end，start，center等。</p></li><li><h2 id="verticalDirection"><a href="#verticalDirection" class="headerlink" title="verticalDirection"></a>verticalDirection</h2><p>它接受一个VerticalDirection对象，定义了children的摆放顺序(我也不是很了解)。</p><p>Row的构造函数源码</p><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  Row(&#123;</span><br><span class="line">  Key key,</span><br><span class="line">  MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,</span><br><span class="line">  MainAxisSize mainAxisSize = MainAxisSize.max,</span><br><span class="line">  CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,</span><br><span class="line">  TextDirection textDirection,</span><br><span class="line">  VerticalDirection verticalDirection = VerticalDirection.down,</span><br><span class="line">  TextBaseline textBaseline,</span><br><span class="line">  <span class="built_in">List</span>&lt;Widget&gt; children = <span class="keyword">const</span> &lt;Widget&gt;[],</span><br><span class="line">&#125;) : <span class="keyword">super</span>(</span><br><span class="line">  children: children,</span><br><span class="line">  key: key,</span><br><span class="line">  direction: Axis.horizontal,</span><br><span class="line">  mainAxisAlignment: mainAxisAlignment,</span><br><span class="line">  mainAxisSize: mainAxisSize,</span><br><span class="line">  crossAxisAlignment: crossAxisAlignment,</span><br><span class="line">  textDirection: textDirection,</span><br><span class="line">  verticalDirection: verticalDirection,</span><br><span class="line">  textBaseline: textBaseline,</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li></ul><h2 id="Column"><a href="#Column" class="headerlink" title="Column"></a>Column</h2><p>  了解了Row组件之后Column组件就非常简单了，字面理解Column组件就是控制纵向的布局组件，其属性和Row非常类似，我们可以直接看构造方法的源代码</p>  <figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">  Column(&#123;</span><br><span class="line">  Key key,</span><br><span class="line">  MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,</span><br><span class="line">  MainAxisSize mainAxisSize = MainAxisSize.max,</span><br><span class="line">  CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,</span><br><span class="line">  TextDirection textDirection,</span><br><span class="line">  VerticalDirection verticalDirection = VerticalDirection.down,</span><br><span class="line">  TextBaseline textBaseline,</span><br><span class="line">  <span class="built_in">List</span>&lt;Widget&gt; children = <span class="keyword">const</span> &lt;Widget&gt;[],</span><br><span class="line">&#125;) : <span class="keyword">super</span>(</span><br><span class="line">  children: children,</span><br><span class="line">  key: key,</span><br><span class="line">  direction: Axis.vertical,</span><br><span class="line">  mainAxisAlignment: mainAxisAlignment,</span><br><span class="line">  mainAxisSize: mainAxisSize,</span><br><span class="line">  crossAxisAlignment: crossAxisAlignment,</span><br><span class="line">  textDirection: textDirection,</span><br><span class="line">  verticalDirection: verticalDirection,</span><br><span class="line">  textBaseline: textBaseline,</span><br><span class="line">);</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Row&quot;&gt;&lt;a href=&quot;#Row&quot; class=&quot;headerlink&quot; title=&quot;Row&quot;&gt;&lt;/a&gt;Row&lt;/h2&gt;&lt;p&gt;  Row组件是一种很常见的布局组件，顾名思义就是水平一行的组件。它将里面的子组件排成一行，如果其子组件超出一行的范围，那么会报错。
       
     
     </summary>
