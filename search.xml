@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[设计模式——桥接模式]]></title>
+    <url>%2F2019%2F08%2F01%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[桥接模式简介(Bridge) 桥接模式是指将抽象和实现放入两个不同层次，使它们能任意改变。比如我们设计一个手机的类，其中有翻盖手机，直板手机，触屏手机。。然后每个手机又有不同的牌子，比如vivo，小米，华为。。。试想，如果我们通过面向对象继承来实现的话，我们需要创造n*n个类比如vivo翻盖，vivo直板，小米触屏。。。这样就会产生类爆炸，而且当我们想扩展比如一个旋转手机，那么我们还需要去创造不同品牌的手机先然后再创建xxx旋转手机的类，即当我们需要增加样式的时候，我们需要增加所有品牌的手机，这样就违反了单一职责原则。 而桥接模式基于类的最小设计原则，桥接模式是一种结构型模式，它通过聚合和继承来将两个变化的层次分离开来，从而保持类的可扩展性。 UML 其中Abstraction和RefinedAbstraction就是抽象层，而右边的Implementor就是实现层，在桥接模式中，抽象层就充当桥的部分将客户端和实现相连。在抽象层中聚合了实现，比如说我们可以将手机作为一个抽象Abstraction然后我们去实现不同类型的手机，比如说直板，触屏等，然后这个抽象类中聚合了一个品牌brand的接口,如果需要实现不同品牌类型的手机，只需要去实现brand接口然后将它聚合到抽象层中就行了。 这样，手机就可以这样设计了 这样，桥接模式来代替继承可以有效地减少类的个数，而且易于扩展维护，有助于系统的分层设计，但是桥接模式需要辨别出两个变化的部分——抽象和实现，所以使用范围有一定的局限性。]]></content>
+      <categories>
+        <category>Java设计模式</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[设计模式——享元模式]]></title>
     <url>%2F2019%2F07%2F31%2F%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[什么是享元模式 池技术是享元模式运用的一个经典了，享元模式是使用户共享相似对象的一种设计模式，比如在数据库连接池中，里面会放置很多已经创建好的连接对象，如果要使用相似的对象可以直接在池中取，这样就节省了大量对象的创建。所以，享元模式一般运用在系统底层来提高系统性能，像String常量池，数据库连接池，缓冲池中都有使用。 UML 这里最重要的就是FlyWeightFactory，这里面一般会存放一个map用来存储需要共享的元对象，当我们需要创建新对象的时候，会先检查池中是否已经有相似对象，如果有直接从池中取。 外部状态和内部状态 内部状态指的是共享对象的一些不可改变的状态，它们是固定的，比如我们需要共享一些棋子，对于棋子来说，其颜色黑白两色是它的内部状态是共享出去的，而且不会变。而棋子的内部状态来说可以使棋子的位置，这是一直会发生变化的，而且它不是共享出去的，是由使用者决定的。 享元模式在Integer中的应用 在Integer的静态方法valueOf中我们创造一个Integer对象会先从预先定义好的缓冲池中去取。 如果范围是-128~127会直接从缓冲池中取出对象，不然再创建新对象，这样就能减少对象的频繁创建。 我们可以看到缓冲池中会预先给我们存放元对象于数组中(在静态块中执行) 123456789101112131415161718192021222324252627282930313233private static class IntegerCache &#123; static final int low = -128; static final int high; static final Integer cache[]; static &#123; // high value may be configured by property int h = 127; String integerCacheHighPropValue = sun.misc.VM.getSavedProperty("java.lang.Integer.IntegerCache.high"); if (integerCacheHighPropValue != null) &#123; try &#123; int i = parseInt(integerCacheHighPropValue); i = Math.max(i, 127); // Maximum array size is Integer.MAX_VALUE h = Math.min(i, Integer.MAX_VALUE - (-low) -1); &#125; catch( NumberFormatException nfe) &#123; // If the property cannot be parsed into an int, ignore it. &#125; &#125; high = h; cache = new Integer[(high - low) + 1]; int j = low; for(int k = 0; k &lt; cache.length; k++) cache[k] = new Integer(j++); // range [-128, 127] must be interned (JLS7 5.1.7) assert IntegerCache.high &gt;= 127; &#125; private IntegerCache() &#123;&#125;&#125;]]></content>

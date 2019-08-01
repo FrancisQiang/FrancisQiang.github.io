@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://francisqiang.github.io/"/>
-  <updated>2019-07-31T12:43:31.782Z</updated>
+  <updated>2019-08-01T05:41:29.390Z</updated>
   <id>https://francisqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式——桥接模式</title>
+    <link href="https://francisqiang.github.io/2019/08/01/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://francisqiang.github.io/2019/08/01/设计模式——桥接模式/</id>
+    <published>2019-08-01T05:02:09.000Z</published>
+    <updated>2019-08-01T05:41:29.390Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="桥接模式简介-Bridge"><a href="#桥接模式简介-Bridge" class="headerlink" title="桥接模式简介(Bridge)"></a>桥接模式简介(Bridge)</h2><p>  桥接模式是指将抽象和实现放入两个不同层次，使它们能任意改变。比如我们设计一个手机的类，其中有翻盖手机，直板手机，触屏手机。。然后每个手机又有不同的牌子，比如vivo，小米，华为。。。试想，如果我们通过面向对象继承来实现的话，我们需要创造n*n个类比如vivo翻盖，vivo直板，小米触屏。。。这样就会产生类爆炸，而且当我们想扩展比如一个旋转手机，那么我们还需要去创造不同品牌的手机先然后再创建xxx旋转手机的类，即当我们需要增加样式的时候，我们需要增加所有品牌的手机，这样就违反了单一职责原则。</p><p>  <img src="/2019/08/01/设计模式——桥接模式/1.jpg" alt="传统UML"></p><p>  而桥接模式基于类的最小设计原则，桥接模式是一种结构型模式，它通过聚合和继承来将两个变化的层次分离开来，从而保持类的可扩展性。</p><h2 id="UML"><a href="#UML" class="headerlink" title="UML"></a>UML</h2><p>  <img src="/2019/08/01/设计模式——桥接模式/2.jpg" alt="UML"></p><p>  其中Abstraction和RefinedAbstraction就是抽象层，而右边的Implementor就是实现层，在桥接模式中，抽象层就充当桥的部分将客户端和实现相连。在抽象层中聚合了实现，比如说我们可以将手机作为一个抽象Abstraction然后我们去实现不同类型的手机，比如说直板，触屏等，然后这个抽象类中聚合了一个品牌brand的接口,如果需要实现不同品牌类型的手机，只需要去实现brand接口然后将它聚合到抽象层中就行了。</p><p>  这样，手机就可以这样设计了</p><p>  <img src="/2019/08/01/设计模式——桥接模式/3.jpg" alt="手机UML"></p><p>  这样，桥接模式来代替继承可以有效地减少类的个数，而且易于扩展维护，有助于系统的分层设计，但是桥接模式需要辨别出两个变化的部分——抽象和实现，所以使用范围有一定的局限性。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;桥接模式简介-Bridge&quot;&gt;&lt;a href=&quot;#桥接模式简介-Bridge&quot; class=&quot;headerlink&quot; title=&quot;桥接模式简介(Bridge)&quot;&gt;&lt;/a&gt;桥接模式简介(Bridge)&lt;/h2&gt;&lt;p&gt;  桥接模式是指将抽象和实现放入两个不同层次，使
+      
+    
+    </summary>
+    
+      <category term="Java设计模式" scheme="https://francisqiang.github.io/categories/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>设计模式——享元模式</title>
@@ -447,29 +470,6 @@
       
       
         &lt;h2 id=&quot;基本路由&quot;&gt;&lt;a href=&quot;#基本路由&quot; class=&quot;headerlink&quot; title=&quot;基本路由&quot;&gt;&lt;/a&gt;基本路由&lt;/h2&gt;&lt;p&gt;  在Flutter中路由跳转是通过Navigator这个类进行操作的，它是一种堆栈的结构，主要有两个操作一个是push就是
-      
-    
-    </summary>
-    
-      <category term="Flutter" scheme="https://francisqiang.github.io/categories/Flutter/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Flutter组件——Stack，Card</title>
-    <link href="https://francisqiang.github.io/2019/06/10/Flutter%E7%BB%84%E4%BB%B6%E2%80%94%E2%80%94Stack%EF%BC%8CCard/"/>
-    <id>https://francisqiang.github.io/2019/06/10/Flutter组件——Stack，Card/</id>
-    <published>2019-06-10T02:02:21.000Z</published>
-    <updated>2019-06-10T02:40:10.204Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Stack"><a href="#Stack" class="headerlink" title="Stack"></a>Stack</h2><p>  Stack也是一个布局组件，它用于有子组件堆叠的场景，而且当我们使用Positioned组进行辅助的时候我们可以是层叠效果变得非常灵活。</p><ul><li><h2 id="alignment"><a href="#alignment" class="headerlink" title="alignment"></a>alignment</h2><p>它接受一个AlignmentDirectional对象，它用于控制non-positioned组件在Stack组件中的位置。默认为topStart(左上角)</p></li><li><h2 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h2><p>它接受一个Overflow对象，用于控制溢出部分的显示效果</p></li><li><h2 id="textDirection"><a href="#textDirection" class="headerlink" title="textDirection"></a>textDirection</h2><p>用于控制子组件排列方向，接受一个TextDirection对象有ltr，rtl这些值。</p></li><li><h2 id="fit"><a href="#fit" class="headerlink" title="fit"></a>fit</h2><p>用于控制如何设置non-positioned节点尺寸，默认为loose。接受一个StackFit对象，里面有loose，expand，passthrough三个枚举常量。</p></li><li><h2 id="children"><a href="#children" class="headerlink" title="children"></a>children</h2><p>放置子元素组件。其中可以放置positioned组件Positioned组件中有left，right，top，bottom，width，height等属性，上下左右用来控制在Stack的位置的，这个组件不受alignment属性的影响。</p></li><li><h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2></li></ul><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Stack(&#123;</span><br><span class="line">  Key key,</span><br><span class="line">  <span class="keyword">this</span>.alignment = AlignmentDirectional.topStart,</span><br><span class="line">  <span class="keyword">this</span>.textDirection,</span><br><span class="line">  <span class="keyword">this</span>.fit = StackFit.loose,</span><br><span class="line">  <span class="keyword">this</span>.overflow = Overflow.clip,</span><br><span class="line">  <span class="built_in">List</span>&lt;Widget&gt; children = <span class="keyword">const</span> &lt;Widget&gt;[],</span><br><span class="line">&#125;) : <span class="keyword">super</span>(key: key, children: children);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Positioned(&#123;</span><br><span class="line">  Key key,</span><br><span class="line">  <span class="keyword">this</span>.left,</span><br><span class="line">  <span class="keyword">this</span>.top,</span><br><span class="line">  <span class="keyword">this</span>.right,</span><br><span class="line">  <span class="keyword">this</span>.bottom,</span><br><span class="line">  <span class="keyword">this</span>.width,</span><br><span class="line">  <span class="keyword">this</span>.height,</span><br><span class="line">  <span class="meta">@required</span> Widget child,</span><br><span class="line">&#125;) : <span class="keyword">assert</span>(left == <span class="keyword">null</span> || right == <span class="keyword">null</span> || width == <span class="keyword">null</span>),</span><br><span class="line">     <span class="keyword">assert</span>(top == <span class="keyword">null</span> || bottom == <span class="keyword">null</span> || height == <span class="keyword">null</span>),</span><br><span class="line">     <span class="keyword">super</span>(key: key, child: child);</span><br></pre></td></tr></table></figure><h2 id="Card"><a href="#Card" class="headerlink" title="Card"></a>Card</h2><p>  这是一个容器组件，就是卡片的样子</p><ul><li><h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2></li></ul><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Card(&#123;</span><br><span class="line">    Key key,</span><br><span class="line">    <span class="keyword">this</span>.color,</span><br><span class="line">    <span class="keyword">this</span>.elevation,</span><br><span class="line">    <span class="keyword">this</span>.shape,</span><br><span class="line">    <span class="keyword">this</span>.borderOnForeground = <span class="keyword">true</span>,</span><br><span class="line">    <span class="keyword">this</span>.margin,</span><br><span class="line">    <span class="keyword">this</span>.clipBehavior,</span><br><span class="line">    <span class="keyword">this</span>.child,</span><br><span class="line">    <span class="keyword">this</span>.semanticContainer = <span class="keyword">true</span>,</span><br><span class="line">  &#125;) : <span class="keyword">assert</span>(elevation == <span class="keyword">null</span> || elevation &gt;= <span class="number">0.0</span>),</span><br><span class="line">       <span class="keyword">assert</span>(borderOnForeground != <span class="keyword">null</span>),</span><br><span class="line">       <span class="keyword">super</span>(key: key);</span><br></pre></td></tr></table></figure><ul><li><h2 id="color"><a href="#color" class="headerlink" title="color"></a>color</h2><p>接受一个Color对象，用来设置卡片的颜色。</p></li><li><h2 id="elevation"><a href="#elevation" class="headerlink" title="elevation"></a>elevation</h2><p>控制z轴的高度，就是阴影效果，接受一个double值。</p></li><li><h2 id="shape"><a href="#shape" class="headerlink" title="shape"></a>shape</h2><p>控制卡片的形状，接受一个shapeBorder对象，我们可以将RoundedRectangleBorder对象赋值给它，这是事项圆角卡片的对象。</p></li><li><h2 id="borderOnForeground"><a href="#borderOnForeground" class="headerlink" title="borderOnForeground"></a>borderOnForeground</h2><p>接受一个布尔值，默认为true，当设置为true的时候，边框渲染会在子元素前面，false就相反。</p></li><li><h2 id="margin"><a href="#margin" class="headerlink" title="margin"></a>margin</h2><p>用于控制外边距，接受一个EdgeInsetsGeometry对象。</p></li><li><h2 id="semanticContainer"><a href="#semanticContainer" class="headerlink" title="semanticContainer"></a>semanticContainer</h2><p>接受一个bool，将此标志设置为true将尝试将所有子语义合并到此节点中。将此标志设置为false会强制所有子语义节点显式。这是文档里面的解释，我不太理解，但是官方说当你子元素是多种类型的时候最好设置为false，其默认也是false。</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Stack&quot;&gt;&lt;a href=&quot;#Stack&quot; class=&quot;headerlink&quot; title=&quot;Stack&quot;&gt;&lt;/a&gt;Stack&lt;/h2&gt;&lt;p&gt;  Stack也是一个布局组件，它用于有子组件堆叠的场景，而且当我们使用Positioned组进行辅助的时候我们可以
       
     
     </summary>
