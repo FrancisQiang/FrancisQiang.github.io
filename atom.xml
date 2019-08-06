@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://francisqiang.github.io/"/>
-  <updated>2019-08-06T04:21:44.749Z</updated>
+  <updated>2019-08-06T09:28:54.600Z</updated>
   <id>https://francisqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java并发编程学习——可见性,原子性,有序性问题</title>
+    <link href="https://francisqiang.github.io/2019/08/06/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E5%8F%AF%E8%A7%81%E6%80%A7-%E5%8E%9F%E5%AD%90%E6%80%A7-%E6%9C%89%E5%BA%8F%E6%80%A7%E9%97%AE%E9%A2%98/"/>
+    <id>https://francisqiang.github.io/2019/08/06/Java并发编程学习——可见性-原子性-有序性问题/</id>
+    <published>2019-08-06T08:20:42.000Z</published>
+    <updated>2019-08-06T09:28:54.600Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="并发程序幕后的故事"><a href="#并发程序幕后的故事" class="headerlink" title="并发程序幕后的故事"></a>并发程序幕后的故事</h2><p>  此系列文章为极客时间java并发编程课程的学习笔记。</p><p>  计算机中由于CPU，内存，I/O设备三者硬件速度之间的差异，而面对三者的差异，计算机体系结构，操作系统，编译程序都为之做出了自己的贡献。</p><p>  比如CPU增加了缓存机制，操作系统增加了进程，线程，分时复用CPU的理念，编译程序则会优化指令顺序。</p><p>  而这些，其实就是并发程序bug的根源所在。</p><h2 id="根源一：缓存导致的可见性问题"><a href="#根源一：缓存导致的可见性问题" class="headerlink" title="根源一：缓存导致的可见性问题"></a>根源一：缓存导致的可见性问题</h2><p>  在早期的PC中，一般使用的是单核的CPU，CPU缓存与内存的数据一致性问题很好解决。因为不同线程都是对同一个cpu缓存进行操作，一个线程对于cpu缓存的数据更改另一个线程肯定是可见的，所以如果线程A更改了缓存中的V值，对于线程B再取出V的值就是线程A已经更改的值。</p><p>  <img src="/2019/08/06/Java并发编程学习——可见性-原子性-有序性问题/1.jpg" alt="单个CPU的缓存可见性问题模型"></p><p>  但是现如今多核时代，每个CPU都有自己的缓存，这时候缓存的可见性问题并没有那么简单了。</p><p>  <img src="/2019/08/06/Java并发编程学习——可见性-原子性-有序性问题/2.jpg" alt="单个CPU的缓存可见性问题模型"></p><p>  如下面的代码</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">long</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">add10k</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> idx = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (idx++ &lt; <span class="number">100000</span>) &#123;</span><br><span class="line">      count += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">calc</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> Test test = <span class="keyword">new</span> Test();</span><br><span class="line"></span><br><span class="line">    Thread thread1 = <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">      test.add10k();</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    Thread thread2 = <span class="keyword">new</span> Thread(() -&gt; &#123;</span><br><span class="line">      test.add10k();</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    thread1.start();</span><br><span class="line">    thread2.start();</span><br><span class="line"></span><br><span class="line">    thread1.join();</span><br><span class="line">    thread2.join();</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      System.out.println(Test.calc());</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  上面代码表示创建两个线程，这两个线程同时为count做100000次自增，如果按照常理得到的结果应该是200000，但是其实输出的是100000到200000之间的数字。其原因在于在线程A和线程B执行的过程中，两个线程会将count都放入自己的寄存器中然后进行+操作，但是对于放回内存中这样的操作就会出现重叠，例如线程A计算出count为1了放入内存，线程B计算出count为1了放入内存，此时count就会为1而不是我们真正想看到的2。</p><h2 id="根源二：线程切换带来的原子性问题"><a href="#根源二：线程切换带来的原子性问题" class="headerlink" title="根源二：线程切换带来的原子性问题"></a>根源二：线程切换带来的原子性问题</h2><p>  因为CPU执行速度是非常快的，所以在早期的PC时代中人们就发明了多进程的理念，即CPU通过切换时间片来使多个进程看似在同时执行。</p><p>  <img src="/2019/08/06/Java并发编程学习——可见性-原子性-有序性问题/3.jpg" alt="单个CPU的缓存可见性问题模型"></p><p>  在一个时间片内，如果一个进程进行一个IO操作，例如读文件，这个时候该进程可以把自己标记为“休眠状态”并让出CPU的使用权，待文件读入内存，操作系统会把这个休眠的进程唤醒，唤醒后的进程就有机会重新获得CPU的使用权了。</p><p>  这里的进程在等待IO时会释放CPU使用权，是为了提高CPU使用率。此外，如果这时有另外一个进程读文件，那么读文件的操作就会排队，磁盘驱动在完成一个进程的读操作之后，会立即进行下一个操作，这样IO的使用率也提升了。而这个就是多进程分时复用，这个操作在操作系统中具有里程碑的意义，Unix就是因为解决这个问题而名噪天下的。</p><p>  早期的操作系统基于进程来调度CPU，不同进程间是不共享内存空间的，所以要做进程任务切换就要切换内存映射地址，而一个进程创建的所有线程中，他们都是共享内存空间的，所以线程做任务切换的成本就很低了。现代的操作系统都基于更轻量的线程来调度，现在我们提到的“任务切换”都是指“线程切换”。</p><p>  Java 并发程序都是基于多线程的，自然也会涉及到任务切换，也许你想不到，任务切换竟然也是并发编程里诡异 Bug 的源头之一。任务切换的时机大多数是在时间片结束的时候，我们现在基本都使用高级语言编程，高级语言里一条语句往往需要多条 CPU 指令完成，例如上面代码中的count += 1，至少需要三条 CPU 指令。</p><ol><li><p>将count从内存中取出放入寄存器</p></li><li><p>在寄存器中进行加操作</p></li><li><p>从寄存器中取出放入内存中（缓存机制导致可能写入的是 CPU 缓存而不是内存）。</p><p>操作系统做任务切换，可以发生在任何一条<strong>CPU 指令</strong>执行完，而不是高级语言里的一条语句。对于上面的三条指令来说，我们假设 count=0，如果线程 A在指令 1 执行完后做线程切换，线程 A 和线程 B 按照下图的序列执行，那么我们会发现两个线程都执行了 count+=1 的操作，但是得到的结果不是我们期望的 2，而是 1。</p><p><img src="/2019/08/06/Java并发编程学习——可见性-原子性-有序性问题/4.jpg" alt="任务切换带来的BUG"></p><p>如果我们将这条语句作为原子操作那是可以的，而对于线程切换，它的基本单位是cpu指令而不是语句，我们把一个或者多个操作在 CPU 执行的过程中不被中断的特性称为原子性。</p></li></ol><h2 id="源头三：编译优化带来的有序性问题"><a href="#源头三：编译优化带来的有序性问题" class="headerlink" title="源头三：编译优化带来的有序性问题"></a>源头三：编译优化带来的有序性问题</h2><p>  Java的编译优化是很智能的，为了提高程序的性能，编译器有时候会更改语句执行顺序，按照常理有些语句的顺序变更是不会影响结果的，但是在多线程的情境下就变得复杂起来了。</p><p>  例如在单例模式的双重检查中</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> Singleton instance;</span><br><span class="line">  <span class="function"><span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">      <span class="keyword">synchronized</span>(Singleton.class) &#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>)</span><br><span class="line">           instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line">   <span class="keyword">return</span> instance;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  假如现有两个线程A，B同时进入getInstance方法他们同时判断instance是否为空，此时为空两个线程同时进入语句，由于synchronized的存在，JVM只会让一个线程进入并且上锁。假设此时A进入B等待锁，那么A获得锁判断instance是否为空，为空则创建对象，然后A释放锁，此时B获得锁并进入语句判断instance不为空跳出语句并return不为空的instance。一切看起来完美，但是我们一直以为的new操作是这样的。</p><ol><li><p>在内存中开辟一个地址空间M</p></li><li><p>在地址空间M中初始化Singleton对象</p></li><li><p>将地址赋值给instance变量</p><p>但经过了编译优化它是这样的</p></li><li><p>在内存中开辟一个地址空间M</p></li><li><p>将地址赋值给instance变量</p></li><li><p>在地址空间初始化Singleton对象</p><p>试想一下，如果在执行2指令的时候进行了线程切换，线程B会判断instance是否为空，此时不为空那么直接返回，但是在返回instance的地址空间并没有Singleton对象，所以之后如果调用instance的变量，方法就会产生空指针异常。</p><p><img src="/2019/08/06/Java并发编程学习——可见性-原子性-有序性问题/5.jpg" alt="编译优化带来的BUG"></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;并发程序幕后的故事&quot;&gt;&lt;a href=&quot;#并发程序幕后的故事&quot; class=&quot;headerlink&quot; title=&quot;并发程序幕后的故事&quot;&gt;&lt;/a&gt;并发程序幕后的故事&lt;/h2&gt;&lt;p&gt;  此系列文章为极客时间java并发编程课程的学习笔记。&lt;/p&gt;
+&lt;p&gt;  计算机中
+      
+    
+    </summary>
+    
+      <category term="Java并发编程" scheme="https://francisqiang.github.io/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>设计模式——解释器模式</title>
@@ -451,30 +475,6 @@
     </summary>
     
       <category term="Java设计模式" scheme="https://francisqiang.github.io/categories/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java是解释执行吗</title>
-    <link href="https://francisqiang.github.io/2019/07/15/Java%E6%98%AF%E8%A7%A3%E9%87%8A%E6%89%A7%E8%A1%8C%E5%90%97/"/>
-    <id>https://francisqiang.github.io/2019/07/15/Java是解释执行吗/</id>
-    <published>2019-07-15T12:45:04.000Z</published>
-    <updated>2019-07-15T13:24:15.578Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="解释型语言"><a href="#解释型语言" class="headerlink" title="解释型语言"></a>解释型语言</h2><p>  所谓解释型语言就是解释器对代码进行逐条解释，解释成本地机器代码然后直接运行</p><h2 id="编译型语言"><a href="#编译型语言" class="headerlink" title="编译型语言"></a>编译型语言</h2><p>  所谓编译型语言就是在程序运行之前，将代码提前编译成本地机器代码。</p><h2 id="JIT编译技术"><a href="#JIT编译技术" class="headerlink" title="JIT编译技术"></a>JIT编译技术</h2><p>  以前不是很懂JIT和解释型语言的区别，一直以为JIT就是解释型语言。其实JIT是在程序运行时将代码逐条编译成本地机器代码，看似和解释型语言的定义没啥区别，但是JIT最重要的是加了个缓存。根据程序的局部性原理，代码会被多次循环调用，JIT所做的就是将逐条解释编译成的机器代码存入缓存中，当再次对相同语句进行编译的时候直接从缓存中调用。因为局部性原理，所以性能不会有什么损失。</p><h2 id="Java是解释执行吗"><a href="#Java是解释执行吗" class="headerlink" title="Java是解释执行吗"></a>Java是解释执行吗</h2><p>  以前一直以为Java是编译型语言，因为从.java文件到.class文件需要一个编译的过程。</p><p>  看了许多回答，其实大家对解释型语言和编译型语言都有着不同的见解。我觉得对于语言类型的定义并不重要，了解语言的本质才是精髓。</p><p>  上文提到编译型语言，当编译型语言的程序生成了目标文件，这个目标文件是本地机器能直接运行的文件，它是针对cpu而言的，因为硬件本身的差异，编译型语言的程序当需要在另外一种cpu上面运行的时候，这个程序必须要重新编译。</p><p>  这里我就直接定义为编译型语言就是在运行之前将程序直接编译成本机机器码的语言，如C，C++等。</p><p>  而对于py，java这些语言来说，可能也存在着一些编译的过程，就比如说Java中需要先将.java文件编译成.class文件，而对于本地机器，它是无法运行.class文件的，所以我们称之为解释语言。对于.java到.class的编译，它的目的就是将代码编译成统一平台(JVM)上能看得懂的代码，它是一种中间代码，不是本地机器代码，之所以java代码能Write once, run anywhere就是因为JVM这个中间层的存在，因为jvm屏蔽了操作系统和硬件的细节，它会将.class文件转换为本地机器可以执行的本地代码。</p><p>  我们通常会把Java分为编译期和运行时，上述就是编译期。而运行时的时候，JVM会通过类加载器(Class-Loader)加载字节码，解释或者编译执行。</p><p>  注意这里是解释或者编译执行，在主流Java版本Java8中它就是解释和编译混合的一种模式。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;解释型语言&quot;&gt;&lt;a href=&quot;#解释型语言&quot; class=&quot;headerlink&quot; title=&quot;解释型语言&quot;&gt;&lt;/a&gt;解释型语言&lt;/h2&gt;&lt;p&gt;  所谓解释型语言就是解释器对代码进行逐条解释，解释成本地机器代码然后直接运行&lt;/p&gt;
-&lt;h2 id=&quot;编译型语言&quot;
-      
-    
-    </summary>
-    
-      <category term="Java SE" scheme="https://francisqiang.github.io/categories/Java-SE/"/>
     
     
   </entry>
