@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://francisqiang.github.io/"/>
-  <updated>2019-08-10T08:55:16.091Z</updated>
+  <updated>2019-08-10T09:58:58.659Z</updated>
   <id>https://francisqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java并发编程学习——为什么局部变量是线程安全的</title>
+    <link href="https://francisqiang.github.io/2019/08/10/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E4%B8%BA%E4%BB%80%E4%B9%88%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E6%98%AF%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84/"/>
+    <id>https://francisqiang.github.io/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/</id>
+    <published>2019-08-10T09:32:30.000Z</published>
+    <updated>2019-08-10T09:58:58.659Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="局部变量不存在数据竞争"><a href="#局部变量不存在数据竞争" class="headerlink" title="局部变量不存在数据竞争"></a>局部变量不存在数据竞争</h2><p>  在并发编程领域里，<strong>没有共享就没有伤害</strong>。对于局部变量是不存在数据竞争的，为什么呢？</p><p>  比如，下面代码里的 fibonacci() 这个方法，会根据传入的参数 n ，返回 1 到 n 的斐波那契数列，斐波那契数列类似这样： 1、1、2、3、5、8、13、21、34……第 1 项和第 2 项是 1，从第 3 项开始，每一项都等于前两项之和。在这个方法里面，有个局部变量：数组 r 用来保存数列的结果，每次计算完一项，都会更新数组 r 对应位置中的值。你可以思考这样一个问题，当多个线程调用 fibonacci() 这个方法的时候，数组 r 是否存在数据竞争（Data Race）呢？</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回斐波那契数列</span></span><br><span class="line"><span class="keyword">int</span>[] fibonacci(<span class="keyword">int</span> n) &#123;</span><br><span class="line">  <span class="comment">// 创建结果数组</span></span><br><span class="line">  <span class="keyword">int</span>[] r = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">  <span class="comment">// 初始化第一、第二个数</span></span><br><span class="line">  r[<span class="number">0</span>] = r[<span class="number">1</span>] = <span class="number">1</span>;  <span class="comment">// ①</span></span><br><span class="line">  <span class="comment">// 计算 2..n</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">      r[i] = r[i-<span class="number">2</span>] + r[i-<span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>  我们试想一下貌似多个线程同时执行fibonacci方法的时候对数组r的写入读取会发生数据竞争。</p><h2 id="方法是如何被执行的"><a href="#方法是如何被执行的" class="headerlink" title="方法是如何被执行的"></a>方法是如何被执行的</h2><p>  对于CPU来说是没有方法这一层面的，对于它来说任何操作都是一条条指令，那么CPU如果进行一个方法调用总要进行返回到调用方法的代码片段(地址)去执行，这个CPU是怎么做到的呢？</p><p>  答案就是栈，在我的关于栈的文章中提到过方法栈，CPU就是通过栈来实现返回到原来调用方法的地址的。</p><p>  <img src="/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/1.jpg" alt="方法栈"></p><p>  在线程执行进入方法的时候，会将这个方法的一些信息作为<strong>栈帧</strong>压入<strong>方法栈</strong>中。一些信息可能有参数，返回地址(这个肯定是必要的，因为出栈的时候需要用到，不然无法返回了)。但栈帧出栈的时候就意味着这个方法执行完了，所以隐含意思就是<strong>一个栈帧对应着一次一个方法的执行，栈帧和一次一个方法的执行是同生死共命运的</strong>。</p><p>  而我们也知道，对于局部变量来说，在方法执行完就会消失，所以局部变量和栈帧就有着同样的性质了，即局部变量，栈帧，一次一个方法的执行这三者是同时消亡的。所以把局部变量放入栈帧中是最合适不过的了，现实也是这么做的。这也解释了<strong>Java中为什么局部变量是存放在栈中的</strong>，想要跨越方法的边界，那么变量就必须放入堆中。</p><p>  <img src="/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/2.jpg" alt="方法栈"></p><h2 id="线程与方法栈"><a href="#线程与方法栈" class="headerlink" title="线程与方法栈"></a>线程与方法栈</h2><p> <img src="/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/3.jpg" alt="方法栈"></p><p>  从操作系统层面来说，每个线程不独立拥有资源，但是它还是拥有一些必要的资源比如线程控制块(也不算资源)，用户栈，内核栈。。所以线程是拥有自己的栈的，也就是说每个线程执行过程中都拥有自己的方法调用栈，而栈帧是在这个方法栈中的，栈帧里面拥有着局部变量，所以可以说，每个线程的局部变量根本不是一个地址，所以就不会出现数据竞争了，所以局部变量是线程安全的。</p><h2 id="线程封闭"><a href="#线程封闭" class="headerlink" title="线程封闭"></a>线程封闭</h2><p>  因为局部变量不存在并发问题，现在也成为了一个解决并发问题的重要思路了，叫<strong>线程封闭</strong>。</p><p>  采用线程封闭技术的案例非常多，例如从数据库连接池里获取的连接 Connection，在 JDBC 规范里并没有要求这个 Connection 必须是线程安全的。数据库连接池通过线程封闭技术，保证一个 Connection 一旦被一个线程获取之后，在这个线程关闭 Connection 之前的这段时间里，不会再分配给其他线程，从而保证了 Connection 不会有并发问题。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;局部变量不存在数据竞争&quot;&gt;&lt;a href=&quot;#局部变量不存在数据竞争&quot; class=&quot;headerlink&quot; title=&quot;局部变量不存在数据竞争&quot;&gt;&lt;/a&gt;局部变量不存在数据竞争&lt;/h2&gt;&lt;p&gt;  在并发编程领域里，&lt;strong&gt;没有共享就没有伤害&lt;/stro
+      
+    
+    </summary>
+    
+      <category term="Java并发编程" scheme="https://francisqiang.github.io/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Java并发编程学习——创建多少线程才是合适的</title>
@@ -451,29 +474,6 @@
     </summary>
     
       <category term="Flutter" scheme="https://francisqiang.github.io/categories/Flutter/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql基础学习da——day2</title>
-    <link href="https://francisqiang.github.io/2019/07/24/Mysql%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94day2/"/>
-    <id>https://francisqiang.github.io/2019/07/24/Mysql基础学习——day2/</id>
-    <published>2019-07-24T10:59:09.000Z</published>
-    <updated>2019-07-24T11:48:21.737Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Mysql基础语句"><a href="#Mysql基础语句" class="headerlink" title="Mysql基础语句"></a>Mysql基础语句</h2><h3 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u*** -p***</span><br></pre></td></tr></table></figure><h3 id="创建一个数据库"><a href="#创建一个数据库" class="headerlink" title="创建一个数据库"></a>创建一个数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> *** <span class="keyword">charset</span> utf8;</span><br></pre></td></tr></table></figure><p>  charset为可选参数</p><h3 id="删除一个数据库"><a href="#删除一个数据库" class="headerlink" title="删除一个数据库"></a>删除一个数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> ***;</span><br></pre></td></tr></table></figure><h3 id="重命名"><a href="#重命名" class="headerlink" title="重命名"></a>重命名</h3><p>  数据库不能重命名</p><h3 id="展示所有数据库"><a href="#展示所有数据库" class="headerlink" title="展示所有数据库"></a>展示所有数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</span><br></pre></td></tr></table></figure><h3 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> ***;</span><br></pre></td></tr></table></figure><h3 id="创建简单表"><a href="#创建简单表" class="headerlink" title="创建简单表"></a>创建简单表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">int</span>,</span><br><span class="line">    <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">10</span>)</span><br><span class="line">)<span class="keyword">engine</span> myisam <span class="keyword">charset</span> utf8;</span><br></pre></td></tr></table></figure><h3 id="删除指定表"><a href="#删除指定表" class="headerlink" title="删除指定表"></a>删除指定表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> ***;</span><br></pre></td></tr></table></figure><h3 id="展示所有表"><a href="#展示所有表" class="headerlink" title="展示所有表"></a>展示所有表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</span><br></pre></td></tr></table></figure><h3 id="重命名指定表"><a href="#重命名指定表" class="headerlink" title="重命名指定表"></a>重命名指定表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">rename</span> <span class="keyword">table</span> student <span class="keyword">to</span> stu;</span><br></pre></td></tr></table></figure><h3 id="插入简单数据"><a href="#插入简单数据" class="headerlink" title="插入简单数据"></a>插入简单数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">table</span> <span class="keyword">values</span></span><br><span class="line">(<span class="number">1</span>,<span class="string">'zhangsan'</span>),</span><br><span class="line">(<span class="number">2</span>,<span class="string">'lisi'</span>);</span><br></pre></td></tr></table></figure><h3 id="选取表中所有信息"><a href="#选取表中所有信息" class="headerlink" title="选取表中所有信息"></a>选取表中所有信息</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure><h2 id="删除表中数据"><a href="#删除表中数据" class="headerlink" title="删除表中数据"></a>删除表中数据</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除表再重建，得到的是新表</span></span><br><span class="line"><span class="keyword">truncate</span> <span class="keyword">table</span> ***;</span><br><span class="line"><span class="comment"># 删除表中所有数据，得到是旧表</span></span><br><span class="line"><span class="keyword">delete</span> <span class="keyword">from</span> <span class="keyword">table</span>;</span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>  重新温习一下Mysql顺便玩一下命令行使用Mysql，并且后要深入原理，加油吧！！！</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Mysql基础语句&quot;&gt;&lt;a href=&quot;#Mysql基础语句&quot; class=&quot;headerlink&quot; title=&quot;Mysql基础语句&quot;&gt;&lt;/a&gt;Mysql基础语句&lt;/h2&gt;&lt;h3 id=&quot;连接服务器&quot;&gt;&lt;a href=&quot;#连接服务器&quot; class=&quot;header
-      
-    
-    </summary>
-    
-      <category term="Mysql" scheme="https://francisqiang.github.io/categories/Mysql/"/>
     
     
   </entry>

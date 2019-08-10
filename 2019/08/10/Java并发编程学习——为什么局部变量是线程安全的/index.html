@@ -88,17 +88,21 @@
 
 
 
-<meta name="description" content="问题背景  当我使用git上传项目的时候，有些本应该忽略的文件没有被忽略，这时候我修改.gitignore文件再次上传的时候，本该忽略的文件还是在那里 问题原因  这是因为git缓存的原因，如果某些文件已经被纳入版本管理中，就算是在.gitignore文件中声明了忽略文件的路径也是不起作用的，这时候我们就应该先把本地缓存删除，然后再add和push。 问题解决 首先清除本地缓存git rm -r">
+<meta name="description" content="局部变量不存在数据竞争  在并发编程领域里，没有共享就没有伤害。对于局部变量是不存在数据竞争的，为什么呢？   比如，下面代码里的 fibonacci() 这个方法，会根据传入的参数 n ，返回 1 到 n 的斐波那契数列，斐波那契数列类似这样： 1、1、2、3、5、8、13、21、34……第 1 项和第 2 项是 1，从第 3 项开始，每一项都等于前两项之和。在这个方法里面，有个局部变量：数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git中.gitignore文件修改后不起作用">
-<meta property="og:url" content="https://francisqiang.github.io/2019/05/05/Git中-gitignore文件修改后不起作用/index.html">
+<meta property="og:title" content="Java并发编程学习——为什么局部变量是线程安全的">
+<meta property="og:url" content="https://francisqiang.github.io/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="问题背景  当我使用git上传项目的时候，有些本应该忽略的文件没有被忽略，这时候我修改.gitignore文件再次上传的时候，本该忽略的文件还是在那里 问题原因  这是因为git缓存的原因，如果某些文件已经被纳入版本管理中，就算是在.gitignore文件中声明了忽略文件的路径也是不起作用的，这时候我们就应该先把本地缓存删除，然后再add和push。 问题解决 首先清除本地缓存git rm -r">
+<meta property="og:description" content="局部变量不存在数据竞争  在并发编程领域里，没有共享就没有伤害。对于局部变量是不存在数据竞争的，为什么呢？   比如，下面代码里的 fibonacci() 这个方法，会根据传入的参数 n ，返回 1 到 n 的斐波那契数列，斐波那契数列类似这样： 1、1、2、3、5、8、13、21、34……第 1 项和第 2 项是 1，从第 3 项开始，每一项都等于前两项之和。在这个方法里面，有个局部变量：数组">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-05T08:33:17.640Z">
+<meta property="og:image" content="https://francisqiang.github.io/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/1.jpg">
+<meta property="og:image" content="https://francisqiang.github.io/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/2.jpg">
+<meta property="og:image" content="https://francisqiang.github.io/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/3.jpg">
+<meta property="og:updated_time" content="2019-08-10T09:58:58.659Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git中.gitignore文件修改后不起作用">
-<meta name="twitter:description" content="问题背景  当我使用git上传项目的时候，有些本应该忽略的文件没有被忽略，这时候我修改.gitignore文件再次上传的时候，本该忽略的文件还是在那里 问题原因  这是因为git缓存的原因，如果某些文件已经被纳入版本管理中，就算是在.gitignore文件中声明了忽略文件的路径也是不起作用的，这时候我们就应该先把本地缓存删除，然后再add和push。 问题解决 首先清除本地缓存git rm -r">
+<meta name="twitter:title" content="Java并发编程学习——为什么局部变量是线程安全的">
+<meta name="twitter:description" content="局部变量不存在数据竞争  在并发编程领域里，没有共享就没有伤害。对于局部变量是不存在数据竞争的，为什么呢？   比如，下面代码里的 fibonacci() 这个方法，会根据传入的参数 n ，返回 1 到 n 的斐波那契数列，斐波那契数列类似这样： 1、1、2、3、5、8、13、21、34……第 1 项和第 2 项是 1，从第 3 项开始，每一项都等于前两项之和。在这个方法里面，有个局部变量：数组">
+<meta name="twitter:image" content="https://francisqiang.github.io/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/1.jpg">
 
 
 
@@ -128,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2019/05/05/Git中-gitignore文件修改后不起作用/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/">
 
 
 
 
 
-  <title>Git中.gitignore文件修改后不起作用 | Francis的博客</title>
+  <title>Java并发编程学习——为什么局部变量是线程安全的 | Francis的博客</title>
   
 
 
@@ -295,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/05/05/Git中-gitignore文件修改后不起作用/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -312,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Git中.gitignore文件修改后不起作用</h1>
+          <h1 class="post-title" itemprop="name headline">Java并发编程学习——为什么局部变量是线程安全的</h1>
         
 
         <div class="post-meta">
@@ -324,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T16:18:50+08:00">
-                2019-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-10T17:32:30+08:00">
+                2019-08-10
               </time>
             
 
@@ -347,8 +351,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/Java并发编程/" itemprop="url" rel="index">
+                    <span itemprop="name">Java并发编程</span>
                   </a>
                 </span>
 
@@ -365,8 +369,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/05/05/Git中-gitignore文件修改后不起作用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/05/Git中-gitignore文件修改后不起作用/" itemprop="commentCount"></span>
+                <a href="/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -374,7 +378,7 @@
 
           
           
-             <span id="/2019/05/05/Git中-gitignore文件修改后不起作用/" class="leancloud_visitors" data-flag-title="Git中.gitignore文件修改后不起作用">
+             <span id="/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/" class="leancloud_visitors" data-flag-title="Java并发编程学习——为什么局部变量是线程安全的">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -400,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  246
+                  1k
                 </span>
               
 
@@ -416,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -437,19 +441,20 @@
       
 
       
-        <h2 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h2><p>  当我使用git上传项目的时候，有些本应该忽略的文件没有被忽略，这时候我修改.gitignore文件再次上传的时候，本该忽略的文件还是在那里</p>
-<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>  这是因为git缓存的原因，如果某些文件已经被纳入版本管理中，就算是在.gitignore文件中声明了忽略文件的路径也是不起作用的，这时候我们就应该先把本地缓存删除，然后再add和push。</p>
-<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><ol>
-<li><p>首先清除本地缓存<br>git rm -r –cached .</p>
-</li>
-<li><p>再次add文件<br>git add .</p>
-</li>
-<li><p>提交<br>git commit -m “chore:update .gitignore”</p>
-</li>
-<li><p>push<br>git push</p>
-</li>
-</ol>
-<h2 id="gitignore书写格式"><a href="#gitignore书写格式" class="headerlink" title=".gitignore书写格式"></a>.gitignore书写格式</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 此为注释 – 将被 Git 忽略</span><br><span class="line">*.a       # 忽略所有 .a 结尾的文件</span><br><span class="line">!lib.a    # 但 lib.a 除外</span><br><span class="line">/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</span><br><span class="line">build/    # 忽略 build/ 目录下的所有文件</span><br><span class="line">doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</span><br></pre></td></tr></table></figure>
+        <h2 id="局部变量不存在数据竞争"><a href="#局部变量不存在数据竞争" class="headerlink" title="局部变量不存在数据竞争"></a>局部变量不存在数据竞争</h2><p>  在并发编程领域里，<strong>没有共享就没有伤害</strong>。对于局部变量是不存在数据竞争的，为什么呢？</p>
+<p>  比如，下面代码里的 fibonacci() 这个方法，会根据传入的参数 n ，返回 1 到 n 的斐波那契数列，斐波那契数列类似这样： 1、1、2、3、5、8、13、21、34……第 1 项和第 2 项是 1，从第 3 项开始，每一项都等于前两项之和。在这个方法里面，有个局部变量：数组 r 用来保存数列的结果，每次计算完一项，都会更新数组 r 对应位置中的值。你可以思考这样一个问题，当多个线程调用 fibonacci() 这个方法的时候，数组 r 是否存在数据竞争（Data Race）呢？</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回斐波那契数列</span></span><br><span class="line"><span class="keyword">int</span>[] fibonacci(<span class="keyword">int</span> n) &#123;</span><br><span class="line">  <span class="comment">// 创建结果数组</span></span><br><span class="line">  <span class="keyword">int</span>[] r = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">  <span class="comment">// 初始化第一、第二个数</span></span><br><span class="line">  r[<span class="number">0</span>] = r[<span class="number">1</span>] = <span class="number">1</span>;  <span class="comment">// ①</span></span><br><span class="line">  <span class="comment">// 计算 2..n</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++) &#123;</span><br><span class="line">      r[i] = r[i-<span class="number">2</span>] + r[i-<span class="number">1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  我们试想一下貌似多个线程同时执行fibonacci方法的时候对数组r的写入读取会发生数据竞争。</p>
+<h2 id="方法是如何被执行的"><a href="#方法是如何被执行的" class="headerlink" title="方法是如何被执行的"></a>方法是如何被执行的</h2><p>  对于CPU来说是没有方法这一层面的，对于它来说任何操作都是一条条指令，那么CPU如果进行一个方法调用总要进行返回到调用方法的代码片段(地址)去执行，这个CPU是怎么做到的呢？</p>
+<p>  答案就是栈，在我的关于栈的文章中提到过方法栈，CPU就是通过栈来实现返回到原来调用方法的地址的。</p>
+<p>  <img src="/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/1.jpg" alt="方法栈"></p>
+<p>  在线程执行进入方法的时候，会将这个方法的一些信息作为<strong>栈帧</strong>压入<strong>方法栈</strong>中。一些信息可能有参数，返回地址(这个肯定是必要的，因为出栈的时候需要用到，不然无法返回了)。但栈帧出栈的时候就意味着这个方法执行完了，所以隐含意思就是<strong>一个栈帧对应着一次一个方法的执行，栈帧和一次一个方法的执行是同生死共命运的</strong>。</p>
+<p>  而我们也知道，对于局部变量来说，在方法执行完就会消失，所以局部变量和栈帧就有着同样的性质了，即局部变量，栈帧，一次一个方法的执行这三者是同时消亡的。所以把局部变量放入栈帧中是最合适不过的了，现实也是这么做的。这也解释了<strong>Java中为什么局部变量是存放在栈中的</strong>，想要跨越方法的边界，那么变量就必须放入堆中。</p>
+<p>  <img src="/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/2.jpg" alt="方法栈"></p>
+<h2 id="线程与方法栈"><a href="#线程与方法栈" class="headerlink" title="线程与方法栈"></a>线程与方法栈</h2><p> <img src="/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/3.jpg" alt="方法栈"></p>
+<p>  从操作系统层面来说，每个线程不独立拥有资源，但是它还是拥有一些必要的资源比如线程控制块(也不算资源)，用户栈，内核栈。。所以线程是拥有自己的栈的，也就是说每个线程执行过程中都拥有自己的方法调用栈，而栈帧是在这个方法栈中的，栈帧里面拥有着局部变量，所以可以说，每个线程的局部变量根本不是一个地址，所以就不会出现数据竞争了，所以局部变量是线程安全的。</p>
+<h2 id="线程封闭"><a href="#线程封闭" class="headerlink" title="线程封闭"></a>线程封闭</h2><p>  因为局部变量不存在并发问题，现在也成为了一个解决并发问题的重要思路了，叫<strong>线程封闭</strong>。</p>
+<p>  采用线程封闭技术的案例非常多，例如从数据库连接池里获取的连接 Connection，在 JDBC 规范里并没有要求这个 Connection 必须是线程安全的。数据库连接池通过线程封闭技术，保证一个 Connection 一旦被一个线程获取之后，在这个线程关闭 Connection 之前的这段时间里，不会再分配给其他线程，从而保证了 Connection 不会有并发问题。</p>
 
       
     </div>
@@ -489,8 +494,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/05/从源文件到可执行文件/" rel="next" title="从源文件到可执行文件">
-                <i class="fa fa-chevron-left"></i> 从源文件到可执行文件
+              <a href="/2019/08/10/Java并发编程学习——创建多少线程才是合适的/" rel="next" title="Java并发编程学习——创建多少线程才是合适的">
+                <i class="fa fa-chevron-left"></i> Java并发编程学习——创建多少线程才是合适的
               </a>
             
           </div>
@@ -498,10 +503,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/06/二分搜索树的增删改查/" rel="prev" title="二分搜索树的增删改查">
-                二分搜索树的增删改查 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -696,7 +697,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题背景"><span class="nav-number">1.</span> <span class="nav-text">问题背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题原因"><span class="nav-number">2.</span> <span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题解决"><span class="nav-number">3.</span> <span class="nav-text">问题解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore书写格式"><span class="nav-number">4.</span> <span class="nav-text">.gitignore书写格式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#局部变量不存在数据竞争"><span class="nav-number">1.</span> <span class="nav-text">局部变量不存在数据竞争</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法是如何被执行的"><span class="nav-number">2.</span> <span class="nav-text">方法是如何被执行的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程与方法栈"><span class="nav-number">3.</span> <span class="nav-text">线程与方法栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程封闭"><span class="nav-number">4.</span> <span class="nav-text">线程封闭</span></a></li></ol></div>
             
 
           </div>
