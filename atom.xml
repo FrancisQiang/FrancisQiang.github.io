@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://francisqiang.github.io/"/>
-  <updated>2019-08-11T11:36:41.200Z</updated>
+  <updated>2019-08-12T06:14:20.284Z</updated>
   <id>https://francisqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java并发编程学习——Java并发编程之美读书笔记二</title>
+    <link href="https://francisqiang.github.io/2019/08/12/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E4%B9%8B%E7%BE%8E%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%BA%8C/"/>
+    <id>https://francisqiang.github.io/2019/08/12/Java并发编程学习——Java并发编程之美读书笔记二/</id>
+    <published>2019-08-12T04:41:22.000Z</published>
+    <updated>2019-08-12T06:14:20.284Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="什么是多线程并发编程"><a href="#什么是多线程并发编程" class="headerlink" title="什么是多线程并发编程"></a>什么是多线程并发编程</h2><p>  并发：同一个时间段多个任务同时都在执行。</p><p>  并行：多个任务在单位时间内同时执行。</p><p>  也就是说并发使用cpu在短时间内切换进程造成了多个任务同时执行的假象。而在多线程编程实践中，<em>线程的个数往往大于CPU个数</em>，所以一般都称多线程并发编程而不是多线程并行编程(意味着一个核上存在多个线程，所以是并发)。</p><h2 id="为什么要进行多线程并发编程"><a href="#为什么要进行多线程并发编程" class="headerlink" title="为什么要进行多线程并发编程"></a>为什么要进行多线程并发编程</h2><p>  多核CPU时代打破了单核CPU对多线程效能的限制(频繁切换线程会带来额外开销)，多线程并发编程可以显著提高性能以应对海量数据和请求。</p><h2 id="Java中的线程安全问题"><a href="#Java中的线程安全问题" class="headerlink" title="Java中的线程安全问题"></a>Java中的线程安全问题</h2><p>  多个线程去改变或读取(至少有一个去改变)一个共享资源会产生线程安全问题。</p><h2 id="Java中共享变量的内存可见性问题"><a href="#Java中共享变量的内存可见性问题" class="headerlink" title="Java中共享变量的内存可见性问题"></a>Java中共享变量的内存可见性问题</h2><p>  <img src="/2019/08/12/Java并发编程学习——Java并发编程之美读书笔记二/1.jpg" alt="1.jpg"></p><p>  Java内存规定，将所有变量都存放在主内存， <strong><em>当线程使用变量时，会把主内存里面的变量复制到自己的工作空间或者叫工作内存</em></strong> 。</p><p>  而这个线程的工作内存又是怎样的呢？</p><p>  <img src="/2019/08/12/Java并发编程学习——Java并发编程之美读书笔记二/2.jpg" alt="2.jpg"></p><p>  上图是一个双核CPU系统架构，每个核都有自己的控制器和运算器，其中控制器包含一组寄存器和操作控制器，运算器执行算术逻辑运算。每个核都有自己的一级缓存，在有些架构里面还有一个所有CPU共享的二级缓存。 <strong><em>那么Java内存模型里面的工作内存，就对应着这里的L1或者L2或者CPU的寄存器</em></strong> 。</p><p>  由于cache的存在会导致内存不可见，比如线程A和线程B要对一个共享变量x做增加的操作。</p><p>  线程A首先去获取共享变量x的值，由于两级缓存都没有命中，那么线程A从主存中取出x的值为0并做增加操作，并且放入一级缓存和二级缓存，线程B也去获取共享变量x的值，首先一级缓存没有命中，二级缓存命中(刚刚线程A写入了二级共享缓存)，然后发现二级缓存中的值为1，然后进行增加操作并写入自己的一级缓存和二级缓存，主存。</p><p>  这样看来没什么问题，但是如果线程A继续进行增加操作呢？线程A首先会去获取共享变量x的值，一级缓存命中！并且获取到了x的值为1，然后进行增加操作变为2，问题就出现了。</p><p>  <strong>线程自己的工作内存(自己的缓存)会导致内存不可见性</strong>。</p><h2 id="Java中的synchronized关键字"><a href="#Java中的synchronized关键字" class="headerlink" title="Java中的synchronized关键字"></a>Java中的synchronized关键字</h2><p>  synchronized是Java提供的一种原子性内置锁，由于Java的线程和操作系统中的线程一一对应，所有当阻塞一个线程的时候，需要从用户态切换到内核态执行阻塞操作，这是一个很耗时的操作。而synchronized就会导致上下文切换。</p><h3 id="synchronized的内存语意"><a href="#synchronized的内存语意" class="headerlink" title="synchronized的内存语意"></a>synchronized的内存语意</h3><p>  synchronized代码块中的变量会 <strong><em>从线程的工作内存中清除</em></strong> ，也就是说synchronized可以解决内存的不可见性。</p><h3 id="Java中的volatile关键字"><a href="#Java中的volatile关键字" class="headerlink" title="Java中的volatile关键字"></a>Java中的volatile关键字</h3><p>  使用synchronized的方式可以解决内存不可见，volatile也可以。</p><p>  <strong><em>当变量声明为volatile时，线程在写入变量时不会把值缓存在寄存器或者其他地方，而是把值刷新会主内存</em></strong> 。</p><p>  volatile虽然解决了内存可见性问题，但是并不是原子操作，所以在多线程并发时也会出现异常。而一般在什么时候使用volatile关键字呢？</p><ol><li><p>写入变量不依赖与变量的当前值(加一和赋值操作),因为如果依赖于当前值，那么获取——计算——写入这三步不是原子操作，而不保证volatile的原子性。</p></li><li><p>读写变量时没有加锁。加锁已经保证了内存可见性，所以没必要把变量再声明为volatile了。</p></li></ol><h2 id="java中的原子性操作"><a href="#java中的原子性操作" class="headerlink" title="java中的原子性操作"></a>java中的原子性操作</h2><p>  因为 <strong><em>线程切换是CPU指令级别的</em></strong> ，而Java中的一条语句通常是由很多指令组成的，所以在多线程环境下线程切换会导致很多并发不安全的问题，而synchronized会保证同时只有一个线程执行。</p><h2 id="Java中的CAS操作"><a href="#Java中的CAS操作" class="headerlink" title="Java中的CAS操作"></a>Java中的CAS操作</h2><p>  CAS即Compare and Swap，是JDK提供的<em>非阻塞原子性操作</em>，它通过硬件保证了比较——更新操作的原子性。</p><h3 id="ABA问题"><a href="#ABA问题" class="headerlink" title="ABA问题"></a>ABA问题</h3><p>  当线程1使用CAS修改初始值为A的变量X，那么线程1会首先获取当前变量X的值，然后使用CAS操作尝试修改X的值为B，但是这个时候线程2使用CAS修改变量的值为B然后又通过CAS操作修改变脸的值为A，此时线程1执行CAS的时候X的值虽然是A，然是这个A已经不是线程1获取时的A了。</p><p>  解决：ABA问题就是变量的状态发生了环形转换，可以提供给变量的状态值配置一个时间戳来避免ABA问题产生。</p><h2 id="Unsafe类"><a href="#Unsafe类" class="headerlink" title="Unsafe类"></a>Unsafe类</h2><p>  Unsafe类提供了硬件级别的原子性操作，里面的方法都是native方法，他们使用JNI方式访问本地C++实现库。</p><p>  当我们要使用Unsafe类的时候，在本身getUnsafe()方法中会判断当前类加载是否是Bootstrap类加载器，如果不是抛出异常，而我们启动main函数所在的类是使用AppClassLoader加载的，所以在main函数这里面加载Unsafe类的时候，根据委托机制，会委托给Bootstrap去加载Unsafe类。</p><p>  如果不加以限制，我们可以直接通过Unsafe操作内存，这是不安全的，所以我们需要在rt.jar包下使用Unsafe类，我们也可以通过万能的反射来实现。</p><h2 id="Java指令重排序"><a href="#Java指令重排序" class="headerlink" title="Java指令重排序"></a>Java指令重排序</h2><p>  <strong>Java内存模型允许编译器和处理器对指令重排序以提高运行性能</strong>。而多线程的环境下指令重排序会导致一些并发问题，而如果使用volatile修饰变量可以避免一些重排序和内存可见性问题。</p><p>  写volatile变量的时候，可以确保volatile变量写之前的操作不会被编译器重排序到volatile写之后。读volatile变量时，可以确保对volatile变量读之后的操作不会被编译器重排序到volatile读之前。</p><h2 id="伪共享"><a href="#伪共享" class="headerlink" title="伪共享"></a>伪共享</h2><h3 id="什么是伪共享"><a href="#什么是伪共享" class="headerlink" title="什么是伪共享"></a>什么是伪共享</h3><p>  为了解决内存和CPU之间的速度差异，CPU会添加一个或多个缓存存储器，而缓存在内部是 <strong><em>按行存储</em></strong> 的。因为局部性原理，当一个变量要存入缓存中其实是连带着周围的变量存入缓存的。所以存入Cache行的<strong>是内存而不是单个变量</strong>。</p><p>  比如现在两个CPU，有两个变量x，y放入了缓存行，当线程1对CPU1的缓存行进行修改变量x的值的时候，因为缓存一致性协议，会导致CPU2对应的缓存行失效。所以线程2需要写入x或y的值的时候就要去二级缓存中查找。</p><h3 id="为何出现伪共享"><a href="#为何出现伪共享" class="headerlink" title="为何出现伪共享"></a>为何出现伪共享</h3><p>  因为放入缓存行的是多个数据(是一个内存空间)。</p><h3 id="如何避免伪共享"><a href="#如何避免伪共享" class="headerlink" title="如何避免伪共享"></a>如何避免伪共享</h3><p>  填充缓存行(创建一个对象封装相应的变量使对象空间和缓存行空间一样大)。</p><p>  JDK8后使用sun.misc.Contended注解(会自动补齐缓存行)。</p><h2 id="锁的概述"><a href="#锁的概述" class="headerlink" title="锁的概述"></a>锁的概述</h2><h3 id="乐观锁和悲观锁"><a href="#乐观锁和悲观锁" class="headerlink" title="乐观锁和悲观锁"></a>乐观锁和悲观锁</h3><p>  悲观锁：对数据被外界修改保持保守态度，认为数据很容易就被其他线程修改，在对数据处理之前先加锁。</p><p>  乐观锁：认为数据在一般情况下不会造成冲突，所以在访问记录前不会加排它锁，而在进行数据提交更新的时候，才会正式对数据冲突与否进行检测。</p><h3 id="公平锁与非公平锁"><a href="#公平锁与非公平锁" class="headerlink" title="公平锁与非公平锁"></a>公平锁与非公平锁</h3><p>  公平锁：先来先获得锁。</p><p>  非公平：后来的也可以抢占锁。</p><p>  在一般情况下使用非公平锁，公平锁会带来额外开销。</p><h3 id="独占锁和共享锁"><a href="#独占锁和共享锁" class="headerlink" title="独占锁和共享锁"></a>独占锁和共享锁</h3><p>  独占锁：只能一个线程拥有</p><p>  共享锁：多个线程拥有，比如说ReadWriteLock读写锁允许一个资源被多个线程进行读操作。</p><h3 id="可重入锁"><a href="#可重入锁" class="headerlink" title="可重入锁"></a>可重入锁</h3><p>  可重入锁：已经获得了锁的资源再次申请该锁的时候不会被阻塞，synchronized就是一个可重入锁。</p><h3 id="自旋锁"><a href="#自旋锁" class="headerlink" title="自旋锁"></a>自旋锁</h3><p>  当前线程在获取锁的时候，如果发现锁已经被占用，它不马上阻塞自己，而是在不放弃CPU使用权的情况下，多次(默认情况下是10次)尝试获取。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;什么是多线程并发编程&quot;&gt;&lt;a href=&quot;#什么是多线程并发编程&quot; class=&quot;headerlink&quot; title=&quot;什么是多线程并发编程&quot;&gt;&lt;/a&gt;什么是多线程并发编程&lt;/h2&gt;&lt;p&gt;  并发：同一个时间段多个任务同时都在执行。&lt;/p&gt;
+&lt;p&gt;  并行：多个任
+      
+    
+    </summary>
+    
+      <category term="Java并发编程" scheme="https://francisqiang.github.io/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Java并发编程学习——Java并发编程之美读书笔记一</title>
@@ -446,29 +470,6 @@
       
       
         &lt;h2 id=&quot;什么是享元模式&quot;&gt;&lt;a href=&quot;#什么是享元模式&quot; class=&quot;headerlink&quot; title=&quot;什么是享元模式&quot;&gt;&lt;/a&gt;什么是享元模式&lt;/h2&gt;&lt;p&gt;  池技术是享元模式运用的一个经典了，享元模式是使用户共享相似对象的一种设计模式，比如在数据库连接池
-      
-    
-    </summary>
-    
-      <category term="Java设计模式" scheme="https://francisqiang.github.io/categories/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式——门面模式</title>
-    <link href="https://francisqiang.github.io/2019/07/31/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/"/>
-    <id>https://francisqiang.github.io/2019/07/31/设计模式——门面模式/</id>
-    <published>2019-07-31T11:42:17.000Z</published>
-    <updated>2019-07-31T12:06:25.322Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="什么是门面模式-Facade"><a href="#什么是门面模式-Facade" class="headerlink" title="什么是门面模式(Facade)"></a>什么是门面模式(Facade)</h2><p>  门面模式也叫外观模式，是一种结构型设计模式。门面模式屏蔽了系统方法调用的复杂性，呈现给客户端的是一个抽象简单的接口，降低了客户端使用系统的复杂度。让客户端和系统之间解耦，还能使我们更好地划分层次结构。而且在我们重新开发新系统，我们可以使用门面模式来复用旧系统中需要调用的一系列方法，并合并成一个接口来呈现给新系统api。</p><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><p>  例如，我们需要设计一个家庭影院，其中启动家庭影院可能会有那么几步：</p><ol><li><p>启动荧幕</p></li><li><p>启动投影机</p></li><li><p>关闭房间等</p></li><li><p>打开爆米花等等</p><p>试想，如果我们提供给用户的是上述四个启动接口，对于用户来说实在是太不友好，所以我们可以设计一个接口包含四个对象然后在接口中实现一键启动，这样对于用户来说就非常方便了</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;什么是门面模式-Facade&quot;&gt;&lt;a href=&quot;#什么是门面模式-Facade&quot; class=&quot;headerlink&quot; title=&quot;什么是门面模式(Facade)&quot;&gt;&lt;/a&gt;什么是门面模式(Facade)&lt;/h2&gt;&lt;p&gt;  门面模式也叫外观模式，是一种结构型设
       
     
     </summary>
