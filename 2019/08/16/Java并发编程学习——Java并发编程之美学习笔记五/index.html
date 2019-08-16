@@ -88,21 +88,20 @@
 
 
 
-<meta name="description" content="数据格式化 对属性对象的输入/输出进行格式化（告诉后端前端页面是以什么格式书写属性的），如果请求的数据格式不是后端标识的格式则后端不能识别，将会报400请求错误，因为服务器无法解析请求(看不懂请求)，从其本质上讲属于”类型转换”范畴。  Spring 在格式化模块中定义了一个实现ConversionService接口的FormattingConversionService实现类，该类扩展了Gene">
+<meta name="description" content="Java并发包中并发List介绍  并发包中的List只有 CopyOnWriteArrayList 。 CopyOnWriteArrayList是一个线程安全的List，对其的修改操作都是在底层的一个复制的数组上进行的，也就是使用了 写时复制 策略。      在CopyOnWriteArrayList中，每个对象里有一个array数组对象用来存放具体元素，ReentrantLock独占锁对象用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringMVC——数据格式化与数据校验">
-<meta property="og:url" content="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/index.html">
+<meta property="og:title" content="Java并发编程学习——Java并发编程之美学习笔记五">
+<meta property="og:url" content="https://francisqiang.github.io/2019/08/16/Java并发编程学习——Java并发编程之美学习笔记五/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="数据格式化 对属性对象的输入/输出进行格式化（告诉后端前端页面是以什么格式书写属性的），如果请求的数据格式不是后端标识的格式则后端不能识别，将会报400请求错误，因为服务器无法解析请求(看不懂请求)，从其本质上讲属于”类型转换”范畴。  Spring 在格式化模块中定义了一个实现ConversionService接口的FormattingConversionService实现类，该类扩展了Gene">
+<meta property="og:description" content="Java并发包中并发List介绍  并发包中的List只有 CopyOnWriteArrayList 。 CopyOnWriteArrayList是一个线程安全的List，对其的修改操作都是在底层的一个复制的数组上进行的，也就是使用了 写时复制 策略。      在CopyOnWriteArrayList中，每个对象里有一个array数组对象用来存放具体元素，ReentrantLock独占锁对象用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/1.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/2.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/3.jpg">
-<meta property="og:updated_time" content="2019-01-28T11:00:37.586Z">
+<meta property="og:image" content="https://francisqiang.github.io/2019/08/16/Java并发编程学习——Java并发编程之美学习笔记五/CopyOnWriteArrayList.jpg">
+<meta property="og:image" content="https://francisqiang.github.io/2019/08/16/Java并发编程学习——Java并发编程之美学习笔记五/1.jpg">
+<meta property="og:updated_time" content="2019-08-16T07:17:57.903Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringMVC——数据格式化与数据校验">
-<meta name="twitter:description" content="数据格式化 对属性对象的输入/输出进行格式化（告诉后端前端页面是以什么格式书写属性的），如果请求的数据格式不是后端标识的格式则后端不能识别，将会报400请求错误，因为服务器无法解析请求(看不懂请求)，从其本质上讲属于”类型转换”范畴。  Spring 在格式化模块中定义了一个实现ConversionService接口的FormattingConversionService实现类，该类扩展了Gene">
-<meta name="twitter:image" content="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/1.jpg">
+<meta name="twitter:title" content="Java并发编程学习——Java并发编程之美学习笔记五">
+<meta name="twitter:description" content="Java并发包中并发List介绍  并发包中的List只有 CopyOnWriteArrayList 。 CopyOnWriteArrayList是一个线程安全的List，对其的修改操作都是在底层的一个复制的数组上进行的，也就是使用了 写时复制 策略。      在CopyOnWriteArrayList中，每个对象里有一个array数组对象用来存放具体元素，ReentrantLock独占锁对象用">
+<meta name="twitter:image" content="https://francisqiang.github.io/2019/08/16/Java并发编程学习——Java并发编程之美学习笔记五/CopyOnWriteArrayList.jpg">
 
 
 
@@ -132,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/08/16/Java并发编程学习——Java并发编程之美学习笔记五/">
 
 
 
 
 
-  <title>SpringMVC——数据格式化与数据校验 | Francis的博客</title>
+  <title>Java并发编程学习——Java并发编程之美学习笔记五 | Francis的博客</title>
   
 
 
@@ -299,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/01/28/SpringMVC——数据格式化与数据校验/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/08/16/Java并发编程学习——Java并发编程之美学习笔记五/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -316,7 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringMVC——数据格式化与数据校验</h1>
+          <h1 class="post-title" itemprop="name headline">Java并发编程学习——Java并发编程之美学习笔记五</h1>
         
 
         <div class="post-meta">
@@ -328,8 +327,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-28T13:24:42+08:00">
-                2019-01-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-16T12:52:26+08:00">
+                2019-08-16
               </time>
             
 
@@ -351,8 +350,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Spring-MVC/" itemprop="url" rel="index">
-                    <span itemprop="name">Spring MVC</span>
+                  <a href="/categories/Java并发编程/" itemprop="url" rel="index">
+                    <span itemprop="name">Java并发编程</span>
                   </a>
                 </span>
 
@@ -369,8 +368,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/28/SpringMVC——数据格式化与数据校验/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/01/28/SpringMVC——数据格式化与数据校验/" itemprop="commentCount"></span>
+                <a href="/2019/08/16/Java并发编程学习——Java并发编程之美学习笔记五/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/16/Java并发编程学习——Java并发编程之美学习笔记五/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -378,7 +377,7 @@
 
           
           
-             <span id="/2019/01/28/SpringMVC——数据格式化与数据校验/" class="leancloud_visitors" data-flag-title="SpringMVC——数据格式化与数据校验">
+             <span id="/2019/08/16/Java并发编程学习——Java并发编程之美学习笔记五/" class="leancloud_visitors" data-flag-title="Java并发编程学习——Java并发编程之美学习笔记五">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -404,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k
+                  1.5k
                 </span>
               
 
@@ -420,7 +419,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  6
                 </span>
               
             </div>
@@ -441,62 +440,37 @@
       
 
       
-        <h2 id="数据格式化"><a href="#数据格式化" class="headerlink" title="数据格式化"></a>数据格式化</h2><ul>
-<li><p>对属性对象的输入/输出进行格式化（告诉后端前端页面是以什么格式书写属性的），如果请求的数据格式不是后端标识的格式则后端不能识别，将会报400请求错误，因为服务器无法解析请求(看不懂请求)，从其本质上讲属于”类型转换”范畴。</p>
-</li>
-<li><p>Spring 在格式化模块中定义了一个实现ConversionService接口的<font color="red">FormattingConversionService</font>实现类，该类扩展了GenericConversionService，因此它<font color="red">既具有类型转换的功能，又具有格式化的功能</font></p>
-</li>
-<li><p>FormattingConversionService 拥有一个<font color="red"> FormattingConversionServiceFactroyBean </font> 工厂类，后者用于在 Spring 上下文中构造前者</p>
-</li>
-<li><p>FormattingConversionServiceFactroyBean 内部已经注册了 :</p>
+        <h2 id="Java并发包中并发List介绍"><a href="#Java并发包中并发List介绍" class="headerlink" title="Java并发包中并发List介绍"></a>Java并发包中并发List介绍</h2><p>  并发包中的List只有 <strong><em>CopyOnWriteArrayList</em></strong> 。 CopyOnWriteArrayList是一个线程安全的List，对其的修改操作都是在底层的一个复制的数组上进行的，也就是使用了 <strong><em>写时复制</em></strong> 策略。</p>
+<p>  <img src="/2019/08/16/Java并发编程学习——Java并发编程之美学习笔记五/CopyOnWriteArrayList.jpg" alt="运行结果"></p>
+<p>  在CopyOnWriteArrayList中，每个对象里有一个array数组对象用来存放具体元素，<strong>ReentrantLock独占锁对象用来保证同时只有一个线程能对array进行修改</strong>。</p>
+<p>  如果让我们自己做一个写时复制的线程安全的List我们会怎么做？我们需要考虑什么？</p>
 <ul>
-<li><p>NumberFormatAnnotationFormatterFactroy：支持对数字类型的属性使用 @NumberFormat 注解</p>
+<li><p>何时初始化list，初始化list元素为多少个，list是有限大小吗？</p>
 </li>
-<li><p>JodaDateTimeFormatAnnotationFormatterFactroy：支持对日期类型的属性使用 @DateTimeFormat 注解</p>
+<li><p>如何保证线程安全？</p>
 </li>
-</ul>
-</li>
-<li><p>装配了 FormattingConversionServiceFactroyBean 后，就可以在 Spring MVC 入参绑定及模型数据输出时使用注解驱动了。<a href="mvc:annotation-driven/" target="_blank" rel="noopener">mvc:annotation-driven/</a> 默认创建的<br>ConversionService 实例即为<br>FormattingConversionServiceFactroyBean</p>
+<li><p>如何保证使用迭代器遍历list时的数据一致性。</p>
 </li>
 </ul>
-<h3 id="日期格式化"><a href="#日期格式化" class="headerlink" title="日期格式化"></a>日期格式化</h3><p>&nbsp;&nbsp; @DateTimeFormat注解可对Date,Calendar,java.long.Long时间类型进行标注</p>
-<ul>
-<li><p><font color="red">pattern 属性</font>：类型为字符串。指定解析/格式化字段数据的模式，如：”yyyy-MM-dd hh:mm:ss”</p>
-</li>
-<li><p>iso 属性：类型为 DateTimeFormat.ISO。指定解析/格式化字段数据<br>的ISO模式，包括四种：ISO.NONE（不使用） – 默<br>认、ISO.DATE(yyyy-MM-dd) 、ISO.TIME(hh:mm:ss.SSSZ)、<br>ISO.DATE_TIME(yyyy-MM-dd hh:mm:ss.SSSZ)</p>
-</li>
-<li><p>style 属性：字符串类型。通过样式指定日期时间的格式，由两位字<br>符组成，第一位表示日期的格式，第二位表示时间的格式：S：短日<br>期/时间格式、M：中日期/时间格式、L：长日期/时间格式、F：完整<br>日期/时间格式、-：忽略日期或时间格式</p>
-</li>
-</ul>
-<h3 id="数值格式化"><a href="#数值格式化" class="headerlink" title="数值格式化"></a>数值格式化</h3><p>&nbsp;&nbsp; @NumberFormat 可对类似数字类型的属性进行标注，它拥有两个互斥的属性：</p>
-<ul>
-<li><p>style：类型为 NumberFormat.Style。用于指定样式类型，包括三种：Style.NUMBER（正常数字类型）、<br>Style.CURRENCY（货币类型）、 Style.PERCENT（<br>百分数类型）</p>
-</li>
-<li><p><font color="red">pattern</font>：类型为 String，自定义样式，如patter=”#,###”；</p>
-</li>
-<li><p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@DateTimeFormat(pattern=&quot;yyyy-MM-dd&quot;)</span><br><span class="line">private Date birth;</span><br><span class="line"></span><br><span class="line">@NumberFormat(pattern=&quot;#,###,###.#&quot;)</span><br><span class="line">private Float salary;</span><br><span class="line"></span><br><span class="line">public Integer getId() &#123;</span><br><span class="line">	return id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="数据校验-JSR303"><a href="#数据校验-JSR303" class="headerlink" title="数据校验(JSR303)"></a>数据校验(JSR303)</h2><ul>
-<li><p>JSR 303 是 Java 为 Bean 数据合法性校验提供的标准框架，它已经包含在 JavaEE 6.0 中  </p>
-</li>
-<li><p>JSR 303 通过在 Bean 属性上标注类似于@NotNull、@Max 等标准的注解指定校验规则，并通过标准的验证接口对 Bean 进行验证</p>
-</li>
-<li><p>JSR303注解：</p>
-</li>
-</ul>
-<p><img src="/2019/01/28/SpringMVC——数据格式化与数据校验/1.jpg"></p>
-<ul>
-<li>使用   直接将注解加到Java bean中的某个要校验的属性上就行，但是也要在目标方法那个bean 类型前面加上@Valid注解,注意：需要校验数据的bean对象总是和其绑定结果对象或错误对象成对出现，他们之间不允许放入其他入参(他们要连在一起)</li>
-</ul>
-<h2 id="数据绑定流程"><a href="#数据绑定流程" class="headerlink" title="数据绑定流程"></a>数据绑定流程</h2><ul>
-<li>Spring MVC 通过反射机制对目标处理方法进行解析，将请求消息绑定到处理方法的入参中。数据绑定的核心部件是DataBinder，运行机制如下：</li>
-</ul>
-<p><img src="/2019/01/28/SpringMVC——数据格式化与数据校验/2.jpg"></p>
-<p>&nbsp;&nbsp;所以说当进行数据格式化和数据校验时，最后如果是错误的，错误结果会存到BindingResult对象里面，它其实是个Errors对象，因为它继承了Errors</p>
-<p><img src="/2019/01/28/SpringMVC——数据格式化与数据校验/3.jpg"></p>
-<h2 id="代码例子："><a href="#代码例子：" class="headerlink" title="代码例子："></a>代码例子：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">   //COntroller层</span><br><span class="line">@RequestMapping(value=&quot;/emp&quot;, method=RequestMethod.POST)</span><br><span class="line">   //要检验的bean必须和BindingResult(Errors)绑定到一起，中间不能有其他入参</span><br><span class="line">public String save(@Valid Employee employee, Errors result, </span><br><span class="line">		Map&lt;String, Object&gt; map)&#123;</span><br><span class="line">	System.out.println(&quot;save: &quot; + employee);</span><br><span class="line">	</span><br><span class="line">	if(result.getErrorCount() &gt; 0)&#123;</span><br><span class="line">		System.out.println(&quot;出错了!&quot;);</span><br><span class="line">		</span><br><span class="line">		for(FieldError error:result.getFieldErrors())&#123;</span><br><span class="line">			System.out.println(error.getField() + &quot;:&quot; + error.getDefaultMessage());</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//若验证出错, 则转向定制的页面</span><br><span class="line">		map.put(&quot;departments&quot;, departmentDao.getDepartments());</span><br><span class="line">		return &quot;input&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	employeeDao.save(employee);</span><br><span class="line">	return &quot;redirect:/emps&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">   //bean里面的属性</span><br><span class="line"></span><br><span class="line">@NotEmpty</span><br><span class="line">private String lastName;</span><br><span class="line"></span><br><span class="line">@Email</span><br><span class="line">private String email;</span><br><span class="line">//1 male, 0 female</span><br><span class="line">private Integer gender;</span><br><span class="line"></span><br><span class="line">private Department department;</span><br><span class="line"></span><br><span class="line">@Past</span><br><span class="line">@DateTimeFormat(pattern=&quot;yyyy-MM-dd&quot;)</span><br><span class="line">private Date birth;</span><br><span class="line"></span><br><span class="line">@NumberFormat(pattern=&quot;#,###,###.#&quot;)</span><br><span class="line">private Float salary;</span><br><span class="line"></span><br><span class="line">public Integer getId() &#123;</span><br><span class="line">	return id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="主要方法解析"><a href="#主要方法解析" class="headerlink" title="主要方法解析"></a>主要方法解析</h2><h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 默认初始化个数0</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">CopyOnWriteArrayList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    setArray(<span class="keyword">new</span> Object[<span class="number">0</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 传入一个集合的时候，将集合复制到自身属性的array中</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">CopyOnWriteArrayList</span><span class="params">(Collection&lt;? extends E&gt; c)</span> </span>&#123;</span><br><span class="line">    Object[] elements;</span><br><span class="line">    <span class="keyword">if</span> (c.getClass() == CopyOnWriteArrayList.class)</span><br><span class="line">        elements = ((CopyOnWriteArrayList&lt;?&gt;)c).getArray();</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        elements = c.toArray();</span><br><span class="line">        <span class="comment">// c.toArray might (incorrectly) not return Object[] (see 6260652)</span></span><br><span class="line">        <span class="keyword">if</span> (elements.getClass() != Object[].class)</span><br><span class="line">            elements = Arrays.copyOf(elements, elements.length, Object[].class);</span><br><span class="line">    &#125;</span><br><span class="line">    setArray(elements);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 传入为数组的时候直接复制</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">CopyOnWriteArrayList</span><span class="params">(E[] toCopyIn)</span> </span>&#123;</span><br><span class="line">    setArray(Arrays.copyOf(toCopyIn, toCopyIn.length, Object[].class));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="增加方法"><a href="#增加方法" class="headerlink" title="增加方法"></a>增加方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 获取独占锁并加锁</span></span><br><span class="line">    <span class="keyword">final</span> ReentrantLock lock = <span class="keyword">this</span>.lock;</span><br><span class="line">    lock.lock();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 获取自身array并且复制一个快照</span></span><br><span class="line">        Object[] elements = getArray();</span><br><span class="line">        <span class="keyword">int</span> len = elements.length;</span><br><span class="line">        Object[] newElements = Arrays.copyOf(elements, len + <span class="number">1</span>);</span><br><span class="line">        <span class="comment">// 在快照上进行操作</span></span><br><span class="line">        newElements[len] = e;</span><br><span class="line">        <span class="comment">// 将新的快照赋值给array属性</span></span><br><span class="line">        setArray(newElements);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="comment">// 最后解锁</span></span><br><span class="line">        lock.unlock();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="获取指定位置的元素"><a href="#获取指定位置的元素" class="headerlink" title="获取指定位置的元素"></a>获取指定位置的元素</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> Object[] getArray() &#123;</span><br><span class="line">    <span class="keyword">return</span> array;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line"><span class="function"><span class="keyword">private</span> E <span class="title">get</span><span class="params">(Object[] a, <span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (E) a[index];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> get(getArray(), index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  获取操作并没有加锁，可能会产生 <strong><em>弱一致性问题</em></strong> 。比如当线程A执行get，线程B执行删除操作。线程A这里可以分为两个步骤 1. 获取当前array  2. 通过获取到的array根据索引获得指定元素。</p>
+<p>  假如这个时候当线程A执行完步骤1，然后线程B执行删除操作，我们假设线程A需要获得的是index为1的元素，此时线程B将原来array复制到新的array中然后对这个新array进行remove(1)的操作，之后把这个新的array重新赋值到对象中的array中，当这一系列操作完成后，线程A获取指定元素，而这个时候线程A是通过原来array获取的，所以它仍能获取到index为1的元素。</p>
+<p>  例如对于以下程序 运行结果可能会是2或者3</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CopyOnWriteArrayListTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    CopyOnWriteArrayList&lt;Integer&gt; copyOnWriteArrayList = <span class="keyword">new</span> CopyOnWriteArrayList&lt;&gt;();</span><br><span class="line">    copyOnWriteArrayList.add(<span class="number">1</span>);</span><br><span class="line">    copyOnWriteArrayList.add(<span class="number">2</span>);</span><br><span class="line">    copyOnWriteArrayList.add(<span class="number">3</span>);</span><br><span class="line">    copyOnWriteArrayList.add(<span class="number">4</span>);</span><br><span class="line">    Thread threadOne = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">      <span class="meta">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        copyOnWriteArrayList.remove(<span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    Thread threadTwo = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">      <span class="meta">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(copyOnWriteArrayList.get(<span class="number">1</span>));</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    threadOne.start();</span><br><span class="line">    threadTwo.start();</span><br><span class="line">    threadTwo.join();</span><br><span class="line">    threadOne.join();</span><br><span class="line">    System.out.println(<span class="string">"结束"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="修改指定元素"><a href="#修改指定元素" class="headerlink" title="修改指定元素"></a>修改指定元素</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">set</span><span class="params">(<span class="keyword">int</span> index, E element)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> ReentrantLock lock = <span class="keyword">this</span>.lock;</span><br><span class="line">    <span class="comment">// 获取锁并加锁</span></span><br><span class="line">    lock.lock();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 获取array</span></span><br><span class="line">        Object[] elements = getArray();</span><br><span class="line">        <span class="comment">// 获取原来的指定元素</span></span><br><span class="line">        E oldValue = get(elements, index);</span><br><span class="line">        <span class="comment">// 如果参数不和老值相同则进行更新</span></span><br><span class="line">        <span class="keyword">if</span> (oldValue != element) &#123;</span><br><span class="line">            <span class="keyword">int</span> len = elements.length;</span><br><span class="line">            <span class="comment">// 复制array</span></span><br><span class="line">            Object[] newElements = Arrays.copyOf(elements, len);</span><br><span class="line">            <span class="comment">// 在新的array中进行更新</span></span><br><span class="line">            newElements[index] = element;</span><br><span class="line">            <span class="comment">// 重新设置array</span></span><br><span class="line">            setArray(newElements);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// Not quite a no-op; ensures volatile write semantics</span></span><br><span class="line">            <span class="comment">// 确保volatile语义还是需要重新设置array</span></span><br><span class="line">            <span class="comment">// 因为对于volatile变量的写操作happens-before对volatile</span></span><br><span class="line">            <span class="comment">// 变量的读操作</span></span><br><span class="line">            setArray(elements);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> oldValue;</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        lock.unlock();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="删除指定元素"><a href="#删除指定元素" class="headerlink" title="删除指定元素"></a>删除指定元素</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> ReentrantLock lock = <span class="keyword">this</span>.lock;</span><br><span class="line">    <span class="comment">// 获取锁并加锁</span></span><br><span class="line">    lock.lock();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 进行快照的准备工作</span></span><br><span class="line">        Object[] elements = getArray();</span><br><span class="line">        <span class="keyword">int</span> len = elements.length;</span><br><span class="line">        E oldValue = get(elements, index);</span><br><span class="line">        <span class="keyword">int</span> numMoved = len - index - <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 如果删除的是最后一个</span></span><br><span class="line">        <span class="keyword">if</span> (numMoved == <span class="number">0</span>)</span><br><span class="line">            <span class="comment">// 直接移除最后一个的空间</span></span><br><span class="line">            setArray(Arrays.copyOf(elements, len - <span class="number">1</span>));</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 创建一个快照</span></span><br><span class="line">            Object[] newElements = <span class="keyword">new</span> Object[len - <span class="number">1</span>];</span><br><span class="line">            System.arraycopy(elements, <span class="number">0</span>, newElements, <span class="number">0</span>, index);</span><br><span class="line">            System.arraycopy(elements, index + <span class="number">1</span>, newElements, index,</span><br><span class="line">                             numMoved);</span><br><span class="line">            <span class="comment">// 将array设置为快照</span></span><br><span class="line">            setArray(newElements);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> oldValue;</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="comment">// 释放锁</span></span><br><span class="line">        lock.unlock();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="弱一致性的迭代器"><a href="#弱一致性的迭代器" class="headerlink" title="弱一致性的迭代器"></a>弱一致性的迭代器</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">COWIterator</span>&lt;<span class="title">E</span>&gt; <span class="keyword">implements</span> <span class="title">ListIterator</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">// 数组的快照</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Object[] snapshot;</span><br><span class="line">    <span class="comment">/** Index of element to be returned by subsequent call to next.  */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> cursor;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">COWIterator</span><span class="params">(Object[] elements, <span class="keyword">int</span> initialCursor)</span> </span>&#123;</span><br><span class="line">        cursor = initialCursor;</span><br><span class="line">        snapshot = elements;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断是否还有下一个元素</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cursor &lt; snapshot.length;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">hasPrevious</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> cursor &gt; <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 遍历的方法</span></span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> E <span class="title">next</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (! hasNext())</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> NoSuchElementException();</span><br><span class="line">        <span class="keyword">return</span> (E) snapshot[cursor++];</span><br><span class="line">    &#125;</span><br><span class="line">    。。。。。</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  在snapshot中保存着当前array的快照,也就是说迭代器所操作的是array的一个快照，所以当其他线程对array进行更改的时候，迭代器是感知不到的，这又会产生弱一致性问题。</p>
+<p>  我们来看一下实例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CopyOnWriteArrayListTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">    CopyOnWriteArrayList&lt;Integer&gt; copyOnWriteArrayList = <span class="keyword">new</span> CopyOnWriteArrayList&lt;&gt;();</span><br><span class="line">    copyOnWriteArrayList.add(<span class="number">1</span>);</span><br><span class="line">    copyOnWriteArrayList.add(<span class="number">2</span>);</span><br><span class="line">    copyOnWriteArrayList.add(<span class="number">3</span>);</span><br><span class="line">    copyOnWriteArrayList.add(<span class="number">4</span>);</span><br><span class="line">    copyOnWriteArrayList.add(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">    Thread threadOne = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">      <span class="meta">@Override</span></span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        copyOnWriteArrayList.set(<span class="number">1</span>,<span class="number">123</span>);</span><br><span class="line">        copyOnWriteArrayList.remove(<span class="number">2</span>);</span><br><span class="line">        copyOnWriteArrayList.remove(<span class="number">3</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 保证iterator先获取</span></span><br><span class="line">    Iterator&lt;Integer&gt; integerIterator = copyOnWriteArrayList.iterator();</span><br><span class="line"></span><br><span class="line">    threadOne.start();</span><br><span class="line"></span><br><span class="line">    threadOne.join();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (integerIterator.hasNext()) &#123;</span><br><span class="line">      System.out.println(integerIterator.next());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  <img src="/2019/08/16/Java并发编程学习——Java并发编程之美学习笔记五/1.jpg" alt="运行结果"></p>
+<p>  我们可以看到运行结果是1 2 3 4 5</p>
+<p>  我们来看一下创建iterator的源码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Iterator&lt;E&gt; <span class="title">iterator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> COWIterator&lt;E&gt;(getArray(), <span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">COWIterator</span><span class="params">(Object[] elements, <span class="keyword">int</span> initialCursor)</span> </span>&#123;</span><br><span class="line">    cursor = initialCursor;</span><br><span class="line">    snapshot = elements;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  其实跟上面讲到的获取和删除的弱一致性一样，因为修改和删除操作时对一个快照进行修改和删除的，并且最终把新的快照地址重新赋值给array，虽然此时的array指向的地址已经变了，但是原来迭代器中获取array的地址并没有改变，所以迭代器操作的还是原来的array，这就是写时复制产生的弱一致性问题。</p>
+
       
     </div>
     
@@ -535,8 +509,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/28/SpringMVC的数据转换/" rel="next" title="SpringMVC的数据转换">
-                <i class="fa fa-chevron-left"></i> SpringMVC的数据转换
+              <a href="/2019/08/14/Java并发编程学习——Java并发编程之美学习笔记四/" rel="next" title="Java并发编程学习——Java并发编程之美学习笔记四">
+                <i class="fa fa-chevron-left"></i> Java并发编程学习——Java并发编程之美学习笔记四
               </a>
             
           </div>
@@ -544,10 +518,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/29/Java中的反射和工厂模式/" rel="prev" title="Java中的反射和工厂模式">
-                Java中的反射和工厂模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -742,7 +712,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据格式化"><span class="nav-number">1.</span> <span class="nav-text">数据格式化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#日期格式化"><span class="nav-number">1.1.</span> <span class="nav-text">日期格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值格式化"><span class="nav-number">1.2.</span> <span class="nav-text">数值格式化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据校验-JSR303"><span class="nav-number">2.</span> <span class="nav-text">数据校验(JSR303)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据绑定流程"><span class="nav-number">3.</span> <span class="nav-text">数据绑定流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码例子："><span class="nav-number">4.</span> <span class="nav-text">代码例子：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java并发包中并发List介绍"><span class="nav-number">1.</span> <span class="nav-text">Java并发包中并发List介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要方法解析"><span class="nav-number">2.</span> <span class="nav-text">主要方法解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#构造方法"><span class="nav-number">2.1.</span> <span class="nav-text">构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增加方法"><span class="nav-number">2.2.</span> <span class="nav-text">增加方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取指定位置的元素"><span class="nav-number">2.3.</span> <span class="nav-text">获取指定位置的元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改指定元素"><span class="nav-number">2.4.</span> <span class="nav-text">修改指定元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除指定元素"><span class="nav-number">2.5.</span> <span class="nav-text">删除指定元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弱一致性的迭代器"><span class="nav-number">2.6.</span> <span class="nav-text">弱一致性的迭代器</span></a></li></ol></li></ol></div>
             
 
           </div>
