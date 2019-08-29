@@ -88,20 +88,17 @@
 
 
 
-<meta name="description" content="什么是线程  在操作系统中，进程是资源分配的基本单位，线程是资源调度的基本单位，因为真正占用CPU的是线程。      对于整个Java应用程序来说是一个进程，里面有很多线程。在操作系统中说，线程不独立拥有资源(进程是拥有资源的基本单位)，但是线程还是会拥有自己独立的一些资源的比如说程序计数器，栈等。   程序计数器：用来记录当前线程要执行的指令地址。我的理解是，第一为了确定线程要执行的后面的指令">
+<meta name="description" content="前言  以前一直不敢读Java编程思想这本书，第一个原因是因为从别人口中听来这是一本进阶的书，我感觉自己的水平还达不到，第二个是因为这本书太厚了，且不说七八百页，每页密密麻麻的字就让人望而却步。现如今尝试一下拜读此书，希望自己能获取什么。   该系列博客仅为个人读书笔记，所以只是为了给自己看的，想着我的网站也没多少人会看，可能网站没备案导致搜索引擎搜不到，而最重要的是自己的文章只是泛泛而谈，精华确">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java并发编程学习——Java并发编程之美读书笔记一">
-<meta property="og:url" content="https://francisqiang.github.io/2019/08/11/Java并发编程学习——Java并发编程之美读书笔记一/index.html">
+<meta property="og:title" content="Java编程思想读书笔记一">
+<meta property="og:url" content="https://francisqiang.github.io/2019/08/29/Java编程思想读书笔记一/index.html">
 <meta property="og:site_name" content="Francis的博客">
-<meta property="og:description" content="什么是线程  在操作系统中，进程是资源分配的基本单位，线程是资源调度的基本单位，因为真正占用CPU的是线程。      对于整个Java应用程序来说是一个进程，里面有很多线程。在操作系统中说，线程不独立拥有资源(进程是拥有资源的基本单位)，但是线程还是会拥有自己独立的一些资源的比如说程序计数器，栈等。   程序计数器：用来记录当前线程要执行的指令地址。我的理解是，第一为了确定线程要执行的后面的指令">
+<meta property="og:description" content="前言  以前一直不敢读Java编程思想这本书，第一个原因是因为从别人口中听来这是一本进阶的书，我感觉自己的水平还达不到，第二个是因为这本书太厚了，且不说七八百页，每页密密麻麻的字就让人望而却步。现如今尝试一下拜读此书，希望自己能获取什么。   该系列博客仅为个人读书笔记，所以只是为了给自己看的，想着我的网站也没多少人会看，可能网站没备案导致搜索引擎搜不到，而最重要的是自己的文章只是泛泛而谈，精华确">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://francisqiang.github.io/2019/08/11/Java并发编程学习——Java并发编程之美读书笔记一/1.jpg">
-<meta property="og:image" content="https://francisqiang.github.io/2019/08/11/Java并发编程学习——Java并发编程之美读书笔记一/2.jpg">
-<meta property="og:updated_time" content="2019-08-11T11:36:41.200Z">
+<meta property="og:updated_time" content="2019-08-29T07:26:59.252Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java并发编程学习——Java并发编程之美读书笔记一">
-<meta name="twitter:description" content="什么是线程  在操作系统中，进程是资源分配的基本单位，线程是资源调度的基本单位，因为真正占用CPU的是线程。      对于整个Java应用程序来说是一个进程，里面有很多线程。在操作系统中说，线程不独立拥有资源(进程是拥有资源的基本单位)，但是线程还是会拥有自己独立的一些资源的比如说程序计数器，栈等。   程序计数器：用来记录当前线程要执行的指令地址。我的理解是，第一为了确定线程要执行的后面的指令">
-<meta name="twitter:image" content="https://francisqiang.github.io/2019/08/11/Java并发编程学习——Java并发编程之美读书笔记一/1.jpg">
+<meta name="twitter:title" content="Java编程思想读书笔记一">
+<meta name="twitter:description" content="前言  以前一直不敢读Java编程思想这本书，第一个原因是因为从别人口中听来这是一本进阶的书，我感觉自己的水平还达不到，第二个是因为这本书太厚了，且不说七八百页，每页密密麻麻的字就让人望而却步。现如今尝试一下拜读此书，希望自己能获取什么。   该系列博客仅为个人读书笔记，所以只是为了给自己看的，想着我的网站也没多少人会看，可能网站没备案导致搜索引擎搜不到，而最重要的是自己的文章只是泛泛而谈，精华确">
 
 
 
@@ -131,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="https://francisqiang.github.io/2019/08/11/Java并发编程学习——Java并发编程之美读书笔记一/">
+  <link rel="canonical" href="https://francisqiang.github.io/2019/08/29/Java编程思想读书笔记一/">
 
 
 
 
 
-  <title>Java并发编程学习——Java并发编程之美读书笔记一 | Francis的博客</title>
+  <title>Java编程思想读书笔记一 | Francis的博客</title>
   
 
 
@@ -298,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/08/11/Java并发编程学习——Java并发编程之美读书笔记一/">
+    <link itemprop="mainEntityOfPage" href="https://francisqiang.github.io/2019/08/29/Java编程思想读书笔记一/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Francis Qiang">
@@ -315,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java并发编程学习——Java并发编程之美读书笔记一</h1>
+          <h1 class="post-title" itemprop="name headline">Java编程思想读书笔记一</h1>
         
 
         <div class="post-meta">
@@ -327,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-11T14:04:03+08:00">
-                2019-08-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-29T14:31:49+08:00">
+                2019-08-29
               </time>
             
 
@@ -350,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java并发编程/" itemprop="url" rel="index">
-                    <span itemprop="name">Java并发编程</span>
+                  <a href="/categories/Java-SE/" itemprop="url" rel="index">
+                    <span itemprop="name">Java SE</span>
                   </a>
                 </span>
 
@@ -368,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/08/11/Java并发编程学习——Java并发编程之美读书笔记一/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/11/Java并发编程学习——Java并发编程之美读书笔记一/" itemprop="commentCount"></span>
+                <a href="/2019/08/29/Java编程思想读书笔记一/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/08/29/Java编程思想读书笔记一/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -377,7 +374,7 @@
 
           
           
-             <span id="/2019/08/11/Java并发编程学习——Java并发编程之美读书笔记一/" class="leancloud_visitors" data-flag-title="Java并发编程学习——Java并发编程之美读书笔记一">
+             <span id="/2019/08/29/Java编程思想读书笔记一/" class="leancloud_visitors" data-flag-title="Java编程思想读书笔记一">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -403,7 +400,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.7k
+                  1.3k
                 </span>
               
 
@@ -419,7 +416,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  9
+                  4
                 </span>
               
             </div>
@@ -440,83 +437,82 @@
       
 
       
-        <h2 id="什么是线程"><a href="#什么是线程" class="headerlink" title="什么是线程"></a>什么是线程</h2><p>  在操作系统中，进程是资源分配的基本单位，线程是资源调度的基本单位，因为<strong>真正占用CPU的是线程</strong>。</p>
-<p>  <img src="/2019/08/11/Java并发编程学习——Java并发编程之美读书笔记一/1.jpg" alt="Java进程模型"></p>
-<p>  对于整个Java应用程序来说是一个进程，里面有很多线程。在操作系统中说，线程不独立拥有资源(进程是拥有资源的基本单位)，但是线程还是会拥有自己独立的一些资源的比如说程序计数器，栈等。</p>
-<p>  程序计数器：<strong>用来记录当前线程要执行的指令地址</strong>。我的理解是，第一为了确定线程要执行的后面的指令地址，第二是为了<strong>确保线程切换的时候，线程能记住它的执行状态(当前执行到哪了)，当下一次再次获得CPU资源的时候，线程能从它私有的程序计数器中获取指令地址继续执行</strong>。但是如果执行的是native方法，那么pc计数器记录的是undefined地址，只有执行Java代码的时候记录的才是下一条指令的地址。</p>
-<p>  栈：对于任何语言来说，线程是需要有栈的，这个栈中存放是就是<strong>栈帧</strong>。因为，对于CPU来说，是没有方法层面的，当高级语言进行方法调用的时候其实对于CPU来说还是执行相应地址中的指令，所以在高级语言中需要有一个<strong>方法调用栈</strong>，每执行一次方法调用的时候将参数，返回地址存入栈帧中并压入方法栈，等到被调用的方法执行完再出栈取出返回地址继续执行指令。而因为<strong>栈帧和方法同生死共命运</strong>，所以局部变量，参数等都是放入栈帧中的。</p>
-<p>  总结：线程中这个栈是方法调用栈，其中基本单位是栈帧，每次该线程进行方法调用的时候创建栈帧并压入方法调用栈，栈帧中有相应的方法参数，返回地址，和局部变量(<strong>Java中局部变量在栈中的原因</strong>)</p>
-<p>  堆：堆是进程中最大的一块内存，堆是被进程中的所有线程所共享的。堆中主要存放的是new操作创建的对象实例(Java对象在堆中)。</p>
-<p>  方法区：用来存放JVM加载的类，常量及静态变量等信息，也是所有线程共享的。</p>
-<h2 id="线程创建与运行"><a href="#线程创建与运行" class="headerlink" title="线程创建与运行"></a>线程创建与运行</h2><p>  线程创建有三种方式</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>  以前一直不敢读Java编程思想这本书，第一个原因是因为从别人口中听来这是一本进阶的书，我感觉自己的水平还达不到，第二个是因为这本书太厚了，且不说七八百页，每页密密麻麻的字就让人望而却步。现如今尝试一下拜读此书，希望自己能获取什么。</p>
+<p>  该系列博客仅为个人读书笔记，所以只是为了给自己看的，想着我的网站也没多少人会看，可能网站没备案导致搜索引擎搜不到，而最重要的是自己的文章只是泛泛而谈，精华确实很少，所以准备再花一段时间提升自己然后转战到类似掘金，简书等站点。</p>
+<h2 id="一些乱七八糟的总结"><a href="#一些乱七八糟的总结" class="headerlink" title="一些乱七八糟的总结"></a>一些乱七八糟的总结</h2><ul>
+<li><p>当使用父类作为多态的时候，应充分考虑抽象性</p>
+<p>因为如果将子类 <strong><em>向上转型</em></strong> 为基类的话，那么子类很多拓展的功能是不能使用的。例如:</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">skin</span><span class="params">(Fruit fruit)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    fruit.xxx;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  这个时候应该考虑到，我们操作的是水果，我们中能调用水果中的方法而不能调用子类如苹果扩展出来的新方法。</p>
+<ul>
+<li><p>Java要确定每种 <strong><em>基本类型</em></strong> 所占存储空间的大小</p>
+<p>因为他们的大小不像其他语言一样随着硬件架构的变化而变化。</p>
+</li>
+<li><p>可以使用 BigInteger 或 BigDecimal 来实现高精度。</p>
+<p>计算机的二进制会产生精度误差，使用这两个可以避免，但是效率会低。</p>
+</li>
+<li><p>Java 中没有作用域隐藏</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">12</span>;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">96</span>;  <span class="comment">// 非法的</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  上述代码在 java 中是非法的编译器会告诉你 x 已经定义，而 C++ 中可以，因为它会把外面的隐藏。</p>
+<ul>
+<li><p>方法和参数列表合起来被称为 <strong><em>方法签名</em></strong> 它们唯一标识着某个方法。</p>
+</li>
+<li><p>main 函数中的 String[] args代表命令行参数，就比如JVM，Tomcat等启动命令附带的参数。</p>
+</li>
+<li><p>equals() 方法默认行为是比较引用</p>
+</li>
+<li><p>Java 允许我们把任何基本数据类型转换成别的基本数据类型，但布尔型除外</p>
+</li>
+<li><p>如果int 和 long相乘得到的结果会变为long，也就是会往 <strong><em>最大的数据类型</em></strong> 转换。</p>
+</li>
+<li><p>如果两个较大的基本数据类型相加如 int ，其结果可能会溢出。</p>
+</li>
+<li><p>在循环外可以定义标签来解决多层循环嵌套无法跳出的情况。</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">outer:</span><br><span class="line"><span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">    ...</span><br><span class="line">    inner:</span><br><span class="line">    <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(...) &#123;</span><br><span class="line">            <span class="comment">// break 会跳到标签，但是不会再次进入循环语句</span></span><br><span class="line">            <span class="keyword">break</span> outer;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(...) &#123;</span><br><span class="line">            <span class="comment">// continue 会调到标签并且会再次进入循环语句</span></span><br><span class="line">            <span class="keyword">continue</span> inner;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>对象可能不被垃圾回收，垃圾回收不等于 C++ 中的析构。</p>
+</li>
+<li><p>不要使用finalize() 作为通用的清理方法。</p>
+<p>之所以有finalize 是因为给对象分配内存的时候可能采用的不是new 而是使用c或c++的方式，而释放他们需要使用free类似函数，所以需要在finalize中用本地方法调用它。</p>
+</li>
+<li><p>new可以被看作 static 方法，比如</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Initialization</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 这条语句会和static方法一样在构造对象之前执行</span></span><br><span class="line">    Table table = <span class="keyword">new</span> Table();</span><br><span class="line">    <span class="comment">// 但这个不行</span></span><br><span class="line">    Table table1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  总结一下对象的创建过程:</p>
 <ol>
-<li><p>实现Runnable接口并重写run方法</p>
+<li><p>即使没有显示地使用 static 关键字，构造器也是静态方法。因此当首次类型为Dog的对象的时候，或者Dog的静态方法/静态域首次被访问时，java解释器必须查找类路径，以定位Dog.class文件。</p>
 </li>
-<li><p>继承Thread类并重写run方法</p>
+<li><p>然后载入Dog.class(创建一个Class对象) 有关静态初始化的所有动作都会执行。因此，静态初始化只在Class对象首次加载的时候进行一次。</p>
 </li>
-<li><p>使用FutureTask创建</p>
-<p>使用继承的好处是，获取当前线程直接使用this就可以了，但是Java不支持多继承，所以该类继承了Thread类之后不能再继承其他类了(降低了可扩展性)，而且继承Thread类即将任务代码和线程耦合了。</p>
-<p>实现Runnable接口并重写run方法，最后将该实现接口实例作为参数传入Thread构造函数中，这种方法将任务代码和线程之间解耦，并且解决了多继承的问题。</p>
-<p>而对于上面两种创建线程的方法来说，线程是没有返回值的，因为run方法是void方法。要使线程具有返回值可以通过FutureTask创建线程。</p>
-<p>具体的步骤是：</p>
+<li><p>当用 new Dog() 创建爱你对象的时候，首先将在堆上为Dog对象分配足够的存储空间。</p>
 </li>
-<li><p>创建一个类实现Callable接口并重写call()方法</p>
+<li><p>这块存储空间会被清零，这就自动将Dog对象中的所有基本类型数据都设置成了默认值，而引用被设置成了null。</p>
 </li>
-<li>将该类作为参数传入Thread构造方法并启动线程</li>
-<li>最后通过FutureTask.get()等待任务执行完毕返回结果</li>
-</ol>
-<h2 id="线程等待与通知"><a href="#线程等待与通知" class="headerlink" title="线程等待与通知"></a>线程等待与通知</h2><h3 id="wait-函数"><a href="#wait-函数" class="headerlink" title="wait()函数"></a>wait()函数</h3><p>  它是Object中的一个方法，在并发编程中，它的调用者其实是<strong>共享变量</strong>，因为只有获得了synchronized隐式锁的线程才能使用wait方法，如果没有则会抛出IllegalMonitorStateException。</p>
-<p>  当线程调用这个wait方法的时候会被<strong>阻塞挂起</strong>，只有</p>
-<ol>
-<li>其他线程调用了该共享变量的notify或者notifyAll(也就是说wait方法会释放当前共享变量的锁)</li>
-<li><p>其他线程调用了该线程的interrupt()方法，该线程抛出InterruptedException异常并返回。</p>
-<p>为了防范<em>虚假唤醒</em>，所以wait方法有它的编程范式</p>
+<li><p>执行所有出现于字段定义处的初始化动作。</p>
+</li>
+<li><p>执行构造器。</p>
 </li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span> (obj) &#123;</span><br><span class="line">    <span class="keyword">while</span>(条件不满足) &#123;</span><br><span class="line">        obj.wait();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="wait-long-timeout"><a href="#wait-long-timeout" class="headerlink" title="wait(long timeout)"></a>wait(long timeout)</h3><p>  增加wait时间限制，如果超出时间限制，不管上文提到的两个情况是否满足，该线程<strong>还是会因为超时而返回</strong>。</p>
-<h3 id="wait-long-timeout-int-nanos"><a href="#wait-long-timeout-int-nanos" class="headerlink" title="wait(long timeout, int nanos)"></a>wait(long timeout, int nanos)</h3><p>  差不多，内部其实调用的是wait(long timeout)函数</p>
-<h3 id="notify"><a href="#notify" class="headerlink" title="notify()"></a>notify()</h3><p>  会<strong>随机</strong>唤醒一个在该共享变量下调用wait()方法而阻塞的线程。</p>
-<p>  被唤醒的线程不能直接执行，还需要重新获得共享变量的锁，才能继续执行。</p>
-<h3 id="notifyAll"><a href="#notifyAll" class="headerlink" title="notifyAll()"></a>notifyAll()</h3><p>  通知所有在该共享变量下因为调用wait而阻塞的线程。</p>
-<h2 id="等待线程执行终止的join方法"><a href="#等待线程执行终止的join方法" class="headerlink" title="等待线程执行终止的join方法"></a>等待线程执行终止的join方法</h2><p>  join方法是Thread直接提供的无参且返回值为void的方法。</p>
-<p>  作用是<strong>等待线程执行完毕</strong>。</p>
-<h2 id="让线程睡眠的sleep-方法"><a href="#让线程睡眠的sleep-方法" class="headerlink" title="让线程睡眠的sleep()方法"></a>让线程睡眠的sleep()方法</h2><p>  会让线程暂时让出指定时间的执行权，也就是在这期间不参与<strong>CPU调度</strong>，但是线程持有的监视器资源(比如锁)是<strong>不会释放</strong>的。</p>
-<h2 id="让出CPU执行权的yield-方法"><a href="#让出CPU执行权的yield-方法" class="headerlink" title="让出CPU执行权的yield()方法"></a>让出CPU执行权的yield()方法</h2><p>  当一个线程调用这个方法的时候就是在暗示线程调度器 当前线程请求让出自己的CPU使用，<strong>但是，线程调度器可以无条件忽略这个暗示</strong>。我们知道时间片轮转会让某个线程持有CPU资源一段时间，线程如果还没使用完这个时间就不想使用了，可以调用这个方法来告诉线程调度器可以进行下一轮的线程调度了。</p>
-<h2 id="线程中断"><a href="#线程中断" class="headerlink" title="线程中断"></a>线程中断</h2><p>  <strong>线程中断是线程之间的一种协作模式</strong>，通过设置<em>中断标志</em>不能直接终止线程的执行，而是 <strong><em>线程根据中断状态自己去处理</em></strong> 。</p>
-<p>  下面三个方法是关于线程中断的</p>
-<ol>
-<li><p>void interrupt()方法 中断线程，例如线程A执行时，线程B可以通过调用线程A的interrupt()方法来设置线程A的<strong>中断标志为true，并立即返回</strong>，注意：仅仅是设置中断标志，线程A并没有真正被中断。若线程A调用了wait(),join(),sleep()方法而被阻塞挂起的时候，线程B调用线程A的interrupt()方法会在 <strong><em>调用这些方法的地方抛出InterruptedException而返回(注意：这里是wait()这些方法，而不是interrupt()方法)</em></strong> 。</p>
+<ul>
+<li><p>静态块代码只有在首次生成这个类的一个对象时，或者首次访问属于那个类的 <strong><em>静态数据成员</em></strong>时会执行，如果没有则不执行。</p>
 </li>
-<li><p>boolean isInterrupted()方法 检测当前线程是否被中断，如果是返回true，否则false。</p>
+<li><p>实例化子句会在构造器执行之前执行，而且每次都会执行。</p>
 </li>
-<li><p>boolean interrupted()方法 检测 <strong><em>当前线程</em></strong> 是否被中断，如果是返回true，否则false。并且它还会<strong>清除中断状态</strong>。它是Thread的静态方法，不管在哪调用返回的都是当前执行的线程的中断状态并清楚中断状态。</p>
-<p>如果某个线程为了等待某些条件发生而阻塞(一般会调用sleep，wait或join函数)，比如这个线程调用了sleep(3000)函数去等待某种条件发生，但是在1秒的时候条件已经满足，这个时候可以调用该线程的interrupt()方法来 <strong><em>强制sleep()抛出InterruptedException而返回，线程恢复到激活状态</em></strong>。</p>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">"这是实例化子句"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>可变参数其实传进去的就是一个数组，尽量少使用可变参数，因为可变参数会产生冲突，可以给产生冲突的方法都加上可变参数，但不一定解决。</p>
 </li>
-</ol>
-<h2 id="理解线程上下文切换"><a href="#理解线程上下文切换" class="headerlink" title="理解线程上下文切换"></a>理解线程上下文切换</h2><p>  正如一开始所讲的程序计数器，程序技术器中保存了相应的下一个执行指令地址，栈中保存了执行的一些信息。这些就是线程上下文切换所需要的资源。</p>
-<p>  线程上下文切换的时机</p>
-<ol>
-<li><p>当前线程CPU时间使用完处于就绪状态。</p>
+<li><p>switch语句和enum搭配一起使用特别实用。</p>
 </li>
-<li><p>当前线程被其他线程中断。</p>
-</li>
-</ol>
-<h2 id="线程死锁"><a href="#线程死锁" class="headerlink" title="线程死锁"></a>线程死锁</h2><p>  死锁的四个必要条件：1. 互斥，2. 请求并占有， 3. 不可剥夺， 4. 环路等待</p>
-<p>  避免：破坏一个必要条件。</p>
-<h2 id="守护线程与用户线程"><a href="#守护线程与用户线程" class="headerlink" title="守护线程与用户线程"></a>守护线程与用户线程</h2><p>  Java中的线程分为两类：分别为daemon线程和user线程。JVM在启动时会调用main函数，main函数所在的线程是user线程，其实JVM在启动时还启动了好多daemon线程比如垃圾回收线程。</p>
-<p>  用户线程和守护线程的区别：当最后一个用户线程结束的时候JVM会退出，而守护线程的消亡不会影响到JVM的退出。</p>
-<p>  比如在main函数中启动一个无限循环的用户线程，当主线程执行完毕的时候JVM不会退出，但是如果把这个无限循环的线程改为守护线程，那么在主线程结束后JVM会自动退出。</p>
-<p>  如何设置守护线程？</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deamonThread.setDaemon(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
-<p>  main线程运行结束后，JVM会自动启动一个叫做DestroyJavaVM的线程，该线程会等待所有 <strong><em>用户线程</em></strong> 结束后终止JVM进程。</p>
-<p>  而Tomcat的NIO实现NioEndPoint中会开启一组接受线程来接受用户的连接请求以及一组处理线程负责具体处理用户请求，这些线程线程被设置成了守护线程，即当tomcat收到shutdown命令之后并且没有其他用户线程存在的情况下，tomcat进程会马上消亡而<strong>不会等待处理线程处理完当前的请求</strong>。</p>
-<h2 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h2><p>  线程本地化，可以将共享变量复制到线程本地存储空间。这是一种无锁的同步方式。</p>
-<p>  使用方式： 创建ThreadLocal变量，在线程运行方法中设置刚刚的threadLocal变量实例。</p>
-<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>  <img src="/2019/08/11/Java并发编程学习——Java并发编程之美读书笔记一/2.jpg" alt="ThreadLocal原理"></p>
-<p>  当ThreadLocal实例在线程执行的时候第一次调用set或者get方法的时候会在线程中创建相应的threadLocals(这个是一个ThreadLocalMap，一种定制化的HashMap，里面存放了许多线程本地化变量)，key为当前ThreadLocal实例的引用，值为自己设置的值。后面调用就直接会在线程的threadLocals这个Map中进行操作。</p>
-<p>  注意当本地变量不再使用的时候最好使用remove将其删除，避免内存溢出。还要注意的是ThreadLocal不支持继承，也就是说子线程不会拥有父线程的threadLocals变量。</p>
-<p>  但是可以使用InheritableThreadLocal类，可以追溯Thread创建的源码，Thread在创建的过程中会判断父线程的inheritableThreadLocals(上图的Thread中有这个私有变量)是否为空，如果不为空那么将其复制到子线程的inheritableThreadLocals中去。</p>
+</ul>
 
       
     </div>
@@ -556,8 +552,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/10/Java并发编程学习——为什么局部变量是线程安全的/" rel="next" title="Java并发编程学习——为什么局部变量是线程安全的">
-                <i class="fa fa-chevron-left"></i> Java并发编程学习——为什么局部变量是线程安全的
+              <a href="/2019/08/22/Java并发编程学习——Java并发编程之美学习笔记十/" rel="next" title="Java并发编程学习——Java并发编程之美学习笔记十">
+                <i class="fa fa-chevron-left"></i> Java并发编程学习——Java并发编程之美学习笔记十
               </a>
             
           </div>
@@ -565,10 +561,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/12/Java并发编程学习——Java并发编程之美读书笔记二/" rel="prev" title="Java并发编程学习——Java并发编程之美读书笔记二">
-                Java并发编程学习——Java并发编程之美读书笔记二 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -763,7 +755,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是线程"><span class="nav-number">1.</span> <span class="nav-text">什么是线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程创建与运行"><span class="nav-number">2.</span> <span class="nav-text">线程创建与运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程等待与通知"><span class="nav-number">3.</span> <span class="nav-text">线程等待与通知</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#wait-函数"><span class="nav-number">3.1.</span> <span class="nav-text">wait()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wait-long-timeout"><span class="nav-number">3.2.</span> <span class="nav-text">wait(long timeout)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wait-long-timeout-int-nanos"><span class="nav-number">3.3.</span> <span class="nav-text">wait(long timeout, int nanos)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#notify"><span class="nav-number">3.4.</span> <span class="nav-text">notify()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#notifyAll"><span class="nav-number">3.5.</span> <span class="nav-text">notifyAll()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#等待线程执行终止的join方法"><span class="nav-number">4.</span> <span class="nav-text">等待线程执行终止的join方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#让线程睡眠的sleep-方法"><span class="nav-number">5.</span> <span class="nav-text">让线程睡眠的sleep()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#让出CPU执行权的yield-方法"><span class="nav-number">6.</span> <span class="nav-text">让出CPU执行权的yield()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程中断"><span class="nav-number">7.</span> <span class="nav-text">线程中断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解线程上下文切换"><span class="nav-number">8.</span> <span class="nav-text">理解线程上下文切换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程死锁"><span class="nav-number">9.</span> <span class="nav-text">线程死锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#守护线程与用户线程"><span class="nav-number">10.</span> <span class="nav-text">守护线程与用户线程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ThreadLocal"><span class="nav-number">11.</span> <span class="nav-text">ThreadLocal</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#实现原理"><span class="nav-number">11.1.</span> <span class="nav-text">实现原理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些乱七八糟的总结"><span class="nav-number">2.</span> <span class="nav-text">一些乱七八糟的总结</span></a></li></ol></div>
             
 
           </div>
