@@ -3,6 +3,17 @@
   
     
     <entry>
+      <title>Java编程思想读书笔记二</title>
+      <link href="/2019/09/10/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%BA%8C/"/>
+      <url>/2019/09/10/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%BA%8C/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一些乱七八糟的总结"><a href="#一些乱七八糟的总结" class="headerlink" title="一些乱七八糟的总结"></a>一些乱七八糟的总结</h2><ul><li><p>public访问权限：接口访问权限，任何都可以访问</p></li><li><p>protected访问权限：继承访问权限，任何子类可以访问，包内可以访问</p></li><li><p>默认访问权限：包访问权限，包内可以访问</p></li><li><p>private访问权限：私有访问权限，只有自己可以访问、</p></li><li><p>一个既是 <em>static</em>又是 <em>final</em> 的域值占据一段不能改变的存储空间</p></li><li><p>在java的早期实现中，如果将方法声明为 final 就是同意编译器针对对该方法的所有调用都转为内嵌调用，这样将消除方法调用的开销，可以提升性能，但是当方法很大，程序代码会很膨胀，因而可能看不到内嵌带来的任何性能提升。现在java版本，虚拟机能探测到这样的情况并优化去掉这些效率反而降低的额外的内嵌调用，*所以现在不需要使用final方法进行优化了。</p></li><li><p>在main方法调用前会先进性静态变量的初始化，如果有继承那么先加载父类的静态变量然后再加载派生类的静态变量。</p></li><li><p>多态是后期绑定，想想向上转型。</p></li><li><p>Java中除了 static 方法和 final 方法 ( private 属于 final 方法)，其他所有的方法都是后期绑定。所以这两个特殊的方法不具有多态性。</p></li><li><p>如果为一个类创建了dispose清理方法，然后我们继承了这个类，所以我们需要在导出类中覆盖dispose方法并且调用基类的dispose方法。</p></li><li><p>基类初始化 -&gt; 基类构造 -&gt; 导出类初始化 -&gt; 导出类构造</p></li><li><p>销毁的顺序和初始化的顺序相反</p></li><li><p>用继承表达行为间的差异，并用字段表达状态上的变化</p></li><li><p>应尽量避免在不同接口中使用相同的方法名</p></li><li><p>当放入接口中的任何域都自动是 static 和 final 的</p></li><li><p>匿名类内部只能使用 final， 匿名类没有命名构造器</p></li><li><p>将内部类声明为 static 它只能访问外围的 static 类型的变量方法等</p></li><li><p>可以使用嵌套类测试main、方法，这样可以避免需要编译所有代码。</p></li><li><p>可以使用内部类实现接口从而代替外部类同时实现多个接口</p></li><li><p>继承内部类的时候需要先进行外部类的实例化</p></li><li><p>内部类不会被覆盖 不同类的内部类是完全两个不同的个体</p></li><li><p>TreeSet将元素存储在红黑树，而HashSet是散列函数，LinkedHashList因为查询速度的原因也使用了散列</p></li><li><p>异常链，即在捕捉到异常的时候再抛出异常。抛出异常的时候将上一个异常作为参数放入构造器中</p><p>如</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    xxxx</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> ClassNotFoundException(<span class="string">"xxxx"</span>, e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>即使try中有return，finally块中的语句还是会执行，但是在finally中抛出异常会直接生吞try中的异常。</p></li><li><p>在覆盖方法的时候，只能抛出基类方法的异常说明里列出的那些异常(可以是派生的异常)</p></li><li><p>注意构造器抛出异常导致finally清除出现异常，最好的是在最外围再嵌套一个try catch。</p></li><li><p>异常匹配会匹配最近的合适的异常。</p></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>Java编程思想读书笔记一</title>
       <link href="/2019/08/29/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
       <url>/2019/08/29/Java%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%80/</url>
