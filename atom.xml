@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://francisqiang.github.io/"/>
-  <updated>2019-09-16T02:41:28.425Z</updated>
+  <updated>2019-09-17T14:34:51.908Z</updated>
   <id>https://francisqiang.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java核心技术I第九章集合笔记</title>
+    <link href="https://francisqiang.github.io/2019/09/17/Java%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AFI%E7%AC%AC%E4%B9%9D%E7%AB%A0%E9%9B%86%E5%90%88%E7%AC%94%E8%AE%B0/"/>
+    <id>https://francisqiang.github.io/2019/09/17/Java核心技术I第九章集合笔记/</id>
+    <published>2019-09-17T14:05:16.000Z</published>
+    <updated>2019-09-17T14:34:51.908Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一些乱七八糟的总结"><a href="#一些乱七八糟的总结" class="headerlink" title="一些乱七八糟的总结"></a>一些乱七八糟的总结</h2><ul><li><p>队列通常的两种实现方式：循环数组和链表。</p></li><li><p>在Java 8 中迭代可迭代对象可以直接使用</p></li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iterator.forEachRemaining(element -&gt; <span class="keyword">do</span> something with element);</span><br></pre></td></tr></table></figure><ul><li><p>Iterator 接口的 remove 方法将会删除上次调用 next 方法时返回的元素，如果调用 remove 方法前没有调用 next 方法会抛出 IllegalStateException。</p></li><li><p>hashCode 方法的定义是要保证包含相同严肃的两个集会得到相同的散列码。</p></li><li><p>| 集合类型 | 描述|<br>| :-: | :-: |<br>| ArrayList | 一种可以动态增长和缩减的索引序列 |<br>| LinkedList | 一种可以在任何位置进行高效地插入和删除操作的有序序列 |<br>| ArrayDeque | 一种用循环数组实现的双端队列 |<br>| HashSet| 一种没有重复元素的无序集合 |<br>| TreeSet | 一种有序集合 |<br>| EnumSet | 一种包含枚举类型的集合 |<br>| LinkedHashSet | 一种可以记住元素插入次序的集合 |<br>| PriorityQueue | 优先队列 |<br>| HashMap | 键值对映射 |<br>| TreeMap | 一种键值有序排列的映射表 |<br>| EnumMap | 一种属于枚举类型的映射表 |<br>| LinkedHashMap | 一种可以记住键值项添加次序的映射表 |<br>| WeakHashMap | 一种其值无用武之地之后可以被垃圾回收器回收的映射表 |<br>| IdentityHashMap | 一种用 == 而不是 equals 比较键值的映射表</p></li><li><p>ListIterator 继承了 Iterator 其中定义了一些反向遍历等方法。并且通过get(n)方法可以返回链表指定位置元素(其中做了一些优化 如果n大于size/2 那么从尾到头遍历)。</p></li><li><p>散列表通过链表数组实现，如果其中的桶被占满会出现 散列冲突现象。</p></li><li><p>TreeSet 在 Java 8 之后使用 红黑树 进行实现。TreeSet 性能会比 HashSet慢一些。如果需要自定义比较器 需要传入Comparator。</p></li><li><p>:: 为 Java 8之后的静态方法引用，注意 是引用不是调用。</p></li><li><p>Collections 工具类中提供了很多方法 比如排序，对集合的各种操作，返回不可更改集合， 返回受查视图等。</p></li><li><p>toArray() 返回的是一个 Object[] 数组。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;一些乱七八糟的总结&quot;&gt;&lt;a href=&quot;#一些乱七八糟的总结&quot; class=&quot;headerlink&quot; title=&quot;一些乱七八糟的总结&quot;&gt;&lt;/a&gt;一些乱七八糟的总结&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;队列通常的两种实现方式：循环数组和链表。&lt;/p&gt;
+&lt;/li&gt;
+&lt;l
+      
+    
+    </summary>
+    
+      <category term="Java SE" scheme="https://francisqiang.github.io/categories/Java-SE/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Java编程思想读书笔记三</title>
@@ -449,29 +475,6 @@
       
         &lt;h2 id=&quot;安全性问题&quot;&gt;&lt;a href=&quot;#安全性问题&quot; class=&quot;headerlink&quot; title=&quot;安全性问题&quot;&gt;&lt;/a&gt;安全性问题&lt;/h2&gt;&lt;p&gt;  在并发编程中需要考虑三个基本问题——安全性，活跃性以及性能。&lt;/p&gt;
 &lt;p&gt;  所谓安全性就是指程序能否按照我们
-      
-    
-    </summary>
-    
-      <category term="Java并发编程" scheme="https://francisqiang.github.io/categories/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Java并发编程学习——使用等待通知机制优化循环等待</title>
-    <link href="https://francisqiang.github.io/2019/08/09/Java%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E2%80%94%E2%80%94%E4%BD%BF%E7%94%A8%E7%AD%89%E5%BE%85%E9%80%9A%E7%9F%A5%E6%9C%BA%E5%88%B6%E4%BC%98%E5%8C%96%E5%BE%AA%E7%8E%AF%E7%AD%89%E5%BE%85/"/>
-    <id>https://francisqiang.github.io/2019/08/09/Java并发编程学习——使用等待通知机制优化循环等待/</id>
-    <published>2019-08-09T04:56:22.000Z</published>
-    <updated>2019-08-09T05:23:03.499Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="什么是等待通知机制"><a href="#什么是等待通知机制" class="headerlink" title="什么是等待通知机制"></a>什么是等待通知机制</h2><p>  在前面提到的破坏占用且等待条件的时候使用了死循环来获取资源，当apply()操作历时非常长或者并发量很大的时候，这个死循环是非常占cpu资源的，所以这种场景下可以使用等待通知机制来优化循环等待。</p><p>  什么是等待通知机制？所谓等待就是当线程获取锁进入临界区想要获取相应资源而条件不满足获取不到的时候，线程自己进入阻塞状态(等待)并且释放锁，等到线程需要的资源都有的时候则<strong>通知</strong>线程它需要的资源<strong>曾经</strong>满足过。</p><p>  为什么说曾经满足过，因为当线程被通知唤醒的时候还需要重新获得互斥锁，在这个阶段是有时差的，所以这个时候可能会出现一些情况导致刚刚满足的资源又被其它线程拿走了。</p><h2 id="完美的就医流程"><a href="#完美的就医流程" class="headerlink" title="完美的就医流程"></a>完美的就医流程</h2><p>  就医流程就可以比作这个等待通知机制。</p><ol><li>患者需要挂号，等待叫号</li><li>等到叫到自己的号的时候就可以找医生就诊了。(获取互斥锁)</li><li>就诊过程医生可能要叫患者去做一些检查。同时叫下一个患者(因为某种条件，资源不符合线程释放锁进入阻塞状态)</li><li>患者做完检查，拿着报告重新分诊(资源满足要重新获得互斥锁)</li><li>医生再次叫到自己号的时候，患者再去找医生就诊(条件资源满足重新获得锁)</li></ol><h2 id="使用synchronized实现等待-通知机制"><a href="#使用synchronized实现等待-通知机制" class="headerlink" title="使用synchronized实现等待-通知机制"></a>使用synchronized实现等待-通知机制</h2><p>  在Java语言中可以通过synchronized结合wait(),notify(),notifyAll()这三个方法来实现等待-通知机制。</p><p>  在下面这个图里，左边有一个等待队列，同一时刻，只允许一个线程进入 synchronized 保护的临界区（这个临界区可以看作大夫的诊室），当有一个线程进入临界区后，其他线程就只能进入图中左边的等待队列里等待（相当于患者分诊等待）。<strong>这个等待队列和互斥锁是一对一的关系，每个互斥锁都有自己独立的等待队列</strong>。</p><p>  <img src="/2019/08/09/Java并发编程学习——使用等待通知机制优化循环等待/1.jpg" alt="wait原理"></p><p>  在并发程序中，当一个线程进入临界区后，由于某些条件不满足，需要进入等待状态，Java 对象的 wait() 方法就能够满足这种需求。如上图所示，当调用 wait() 方法后，当前线程就会被阻塞，并且进入到右边的等待队列中，这个等待队列也是互斥锁的等待队列。 线程在进入等待队列的同时，会释放持有的互斥锁，线程释放锁后，其他线程就有机会获得锁，并进入临界区了。</p><p>  上面我们一直强调 wait()、notify()、notifyAll() 方法操作的等待队列是互斥锁的等待队列，所以如果 synchronized 锁定的是 this，那么对应的一定是 this.wait()、this.notify()、this.notifyAll()；如果 synchronized 锁定的是 target，那么对应的一定是 target.wait()、target.notify()、target.notifyAll() 。而且 wait()、notify()、notifyAll() 这三个方法能够被调用的前提是已经获取了相应的互斥锁，所以我们会发现 wait()、notify()、notifyAll() 都是在 synchronized{}内部被调用的。如果在 synchronized{}外部调用，或者锁定的 this，而用 target.wait() 调用的话，JVM 会抛出一个运行时异常：java.lang.IllegalMonitorStateException</p><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Allocator</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> List&lt;Object&gt; als;</span><br><span class="line">  <span class="comment">// 一次性申请所有资源</span></span><br><span class="line">  <span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">apply</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    Object from, Object to)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 经典写法</span></span><br><span class="line">    <span class="comment">// 不满足则等待(释放锁并阻塞自己)</span></span><br><span class="line">    <span class="keyword">while</span>(als.contains(from) ||</span><br><span class="line">         als.contains(to))&#123;</span><br><span class="line">      <span class="keyword">try</span>&#123;</span><br><span class="line">        wait();</span><br><span class="line">      &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    als.add(from);</span><br><span class="line">    als.add(to);  </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 归还资源</span></span><br><span class="line">  <span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">free</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    Object from, Object to)</span></span>&#123;</span><br><span class="line">    als.remove(from);</span><br><span class="line">    als.remove(to);</span><br><span class="line">    notifyAll();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="尽量使用notifyAll"><a href="#尽量使用notifyAll" class="headerlink" title="尽量使用notifyAll"></a>尽量使用notifyAll</h2><p>  notify会随机通知等待队列中的某一个线程，而notifyAll会通知等待队列中的所有线程。</p><p>  所以使用notify的风险就是有些线程可能永远不会被唤醒，所以除非经过深思熟虑，不然尽量避免使用notify。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;什么是等待通知机制&quot;&gt;&lt;a href=&quot;#什么是等待通知机制&quot; class=&quot;headerlink&quot; title=&quot;什么是等待通知机制&quot;&gt;&lt;/a&gt;什么是等待通知机制&lt;/h2&gt;&lt;p&gt;  在前面提到的破坏占用且等待条件的时候使用了死循环来获取资源，当apply()操作
       
     
     </summary>

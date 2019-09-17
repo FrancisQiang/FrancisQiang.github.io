@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java核心技术I第九章集合笔记]]></title>
+    <url>%2F2019%2F09%2F17%2FJava%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AFI%E7%AC%AC%E4%B9%9D%E7%AB%A0%E9%9B%86%E5%90%88%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[一些乱七八糟的总结 队列通常的两种实现方式：循环数组和链表。 在Java 8 中迭代可迭代对象可以直接使用 1iterator.forEachRemaining(element -&gt; do something with element); Iterator 接口的 remove 方法将会删除上次调用 next 方法时返回的元素，如果调用 remove 方法前没有调用 next 方法会抛出 IllegalStateException。 hashCode 方法的定义是要保证包含相同严肃的两个集会得到相同的散列码。 | 集合类型 | 描述|| :-: | :-: || ArrayList | 一种可以动态增长和缩减的索引序列 || LinkedList | 一种可以在任何位置进行高效地插入和删除操作的有序序列 || ArrayDeque | 一种用循环数组实现的双端队列 || HashSet| 一种没有重复元素的无序集合 || TreeSet | 一种有序集合 || EnumSet | 一种包含枚举类型的集合 || LinkedHashSet | 一种可以记住元素插入次序的集合 || PriorityQueue | 优先队列 || HashMap | 键值对映射 || TreeMap | 一种键值有序排列的映射表 || EnumMap | 一种属于枚举类型的映射表 || LinkedHashMap | 一种可以记住键值项添加次序的映射表 || WeakHashMap | 一种其值无用武之地之后可以被垃圾回收器回收的映射表 || IdentityHashMap | 一种用 == 而不是 equals 比较键值的映射表 ListIterator 继承了 Iterator 其中定义了一些反向遍历等方法。并且通过get(n)方法可以返回链表指定位置元素(其中做了一些优化 如果n大于size/2 那么从尾到头遍历)。 散列表通过链表数组实现，如果其中的桶被占满会出现 散列冲突现象。 TreeSet 在 Java 8 之后使用 红黑树 进行实现。TreeSet 性能会比 HashSet慢一些。如果需要自定义比较器 需要传入Comparator。 :: 为 Java 8之后的静态方法引用，注意 是引用不是调用。 Collections 工具类中提供了很多方法 比如排序，对集合的各种操作，返回不可更改集合， 返回受查视图等。 toArray() 返回的是一个 Object[] 数组。]]></content>
+      <categories>
+        <category>Java SE</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[Java编程思想读书笔记三]]></title>
     <url>%2F2019%2F09%2F16%2FJava%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E4%B8%89%2F</url>
     <content type="text"><![CDATA[一些乱七八糟的总结 当 String 类型的对象进行修改操作的时候，编译器会自动引入 StringBuilder 类型， 编译器会自动构造一个 StringBuilder 对象，用以构造最终的 String 。但是别指望编译器能有多智能，当String类型的对象进行循环更改操作的时候， StringBuilder 对象是在循环体中构造的，所以每次循环都会创建一个 StringBuilder 对象，而我们通过显示的使用 StringBuilder对象就可以避免这个问题。 如果想要打印对象的内存地址，需要在重写的 toString() 方法中使用 super.toString() 方法。 一旦某个类的 Class 对象被载入内存，它就用来创建这个类的所有对象。 类加载过程 加载，链接，初始化。 使用嵌套类继承本身类并且实现 Null 接口(自己提前定义好的) 这样可以统一定义空对象而且避免空指针。 如果在集合内部使用数组的话，最好使用 Object[] 来存储而不是 T[] 。因为我们不太可能忘记这个数组的运行时类型，从而意外地引入缺陷(尽管大多数缺陷能再运行时被探测到)。 使用 System.arraycopy() 方法来赋值数组比for循环赋值来的更加高效便捷，对于对象的赋值，只是复制引用(浅拷贝)。 Arrays 类提供了重载之后的 equals() 方法 数组相等的条件是 数组元素个数相等，且对应位置上的元素也相等。 在已排序好的数组中可以使用 Arrays。binarySearch() 执行快速查找。]]></content>
